@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Law Tags Progress</title>
+<meta http-equiv="refresh" content="0; url=site/">
+<style>
+  :root { color-scheme: light; --page: #f9f9f7; --ink: #0b0b0b; --link: #1c5cab; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --page: #0d0d0d; --ink: #f0efec; --link: #86b6ef; } }
+  :root[data-theme="dark"] { color-scheme: dark; --page: #0d0d0d; --ink: #f0efec; --link: #86b6ef; }
+  body { margin: 2rem 16px; background: var(--page); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  a { color: var(--link); }
+</style>
+</head>
+<body>
+<p>The progress page is at <a href="site/">site/</a>.</p>
+<script>location.replace("site/" + location.hash);</script>
+</body>
+</html>

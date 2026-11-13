@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Law Tags Progress</title>
+<meta name="description" content="Where the law review subject-tags project stands: phases, what is running, the beta plan. Updated every 10 minutes.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='9' width='3' height='6' rx='1' fill='%232a78d6'/%3E%3Crect x='6.5' y='5' width='3' height='10' rx='1' fill='%232a78d6'/%3E%3Crect x='12' y='1' width='3' height='14' rx='1' fill='%232a78d6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script>
+  try { var t = localStorage.getItem("progress-theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="top">
+  <div class="wrap">
+    <p class="kicker" id="kicker">Progress page</p>
+    <h1 id="title">Law review subject tags: progress</h1>
+    <p class="lead" id="headline" aria-live="polite">Loading the latest status&hellip;</p>
+    <p class="meta">
+      <span id="updated">Not loaded yet</span>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <span id="musts"></span>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <button type="button" class="theme-btn" id="theme" aria-label="Color theme: follows the system">Theme: auto</button>
+    </p>
+    <div id="banner" role="status"></div>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <noscript><p class="banner warn">This page needs JavaScript to read status.json.</p></noscript>
+
+  <section id="alerts-sec" aria-labelledby="h-alerts" hidden>
+    <h2 id="h-alerts">Needs attention</h2>
+    <ul class="alerts" id="alerts"></ul>
+  </section>
+
+  <section aria-labelledby="h-phases">
+    <h2 id="h-phases">Where we are in the process</h2>
+    <p class="sub">Five phases. The highlighted phase is the current focus (open below; the others open on a click); highlighted steps are being worked on now.</p>
+    <ol class="stepper" id="stepper"></ol>
+    <div class="phase-list" id="phases"></div>
+  </section>
+
+  <section aria-labelledby="h-running">
+    <h2 id="h-running">Running now, and what must keep running</h2>
+    <p class="sub">Collectors and coding runs, with their pace over the last 10 and 60 minutes. "Must keep running" jobs raise an alert when they stop.</p>
+    <div class="grid" id="running"></div>
+    <h3 class="sub" style="margin-top:18px">Finished or paused</h3>
+    <div class="grid tight" id="resting"></div>
+  </section>
+
+  <section aria-labelledby="h-beta">
+    <h2 id="h-beta">The beta release (v0.9) and v1.0</h2>
+    <p class="sub">What each release means, what is done, and the rough dates. Dates are estimates with their assumptions.</p>
+    <div id="beta"></div>
+  </section>
+
+  <section aria-labelledby="h-collection">
+    <h2 id="h-collection">Phase 1: the collection</h2>
+    <p class="sub">Every paper on the list should get its abstract or first pages. Counts are record lines as the collectors keep them; coverage is a measured count with its date.</p>
+    <div id="collection"></div>
+  </section>
+
+  <section aria-labelledby="h-labels">
+    <h2 id="h-labels">Phase 2: the labels</h2>
+    <p class="sub">Subject labels coded by independent Claude coders, one coding workflow per usage window. Counts only; no label is shown here.</p>
+    <div id="labels"></div>
+  </section>
+
+  <section aria-labelledby="h-model">
+    <h2 id="h-model">Phase 3: the model</h2>
+    <p class="sub">Four of our own architectures compete; a pre-registered rule picks the winner on DEV. The preview model is for trying tags now; its numbers are never the paper's.</p>
+    <div id="model"></div>
+  </section>
+
+  <section aria-labelledby="h-events">
+    <h2 id="h-events">Recent events</h2>
+    <p class="sub">Starts, stops and milestones, newest first, read from the jobs' own logs.</p>
+    <ol class="events" id="events"></ol>
+    <div id="events-more"></div>
+  </section>
+
+  <section aria-labelledby="h-links">
+    <h2 id="h-links">Links</h2>
+    <p class="sub">Public pages open here. Local-only pages and files live on the owner's Mac: how to open each is given.</p>
+    <div class="grid" id="links"></div>
+  </section>
+</main>
+<footer>
+  <div class="wrap" id="footer">
+    <p>This page is public. It shows progress facts only: counts, rates, phases and dates. It never shows paper texts, labels, keys, addresses or local paths.</p>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

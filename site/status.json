@@ -1,0 +1,1859 @@
+{
+ "schema": "lawrank-progress status 1",
+ "generated_at": "2026-11-13T23:55:25Z",
+ "project": {
+  "name": "Law review subject tags",
+  "tagline": "Every law review paper on our list gets its abstract or first pages; our own model then tags each paper with its subjects, and the tags go paper -> professor -> school on the law school rankings site.",
+  "paper_list": {
+   "papers": 583596,
+   "journals": 457
+  },
+  "taxonomy_version": "0.2.2"
+ },
+ "headline": {
+  "sentence": "Phase 2 of 5 (Labels) is the focus now: Silver S1 coding at 13 of 317 units. Phase 1 (Collect) and Phase 3 (Model) keep running beside it. 4 of 4 jobs that must keep running are running. Next milestone: the v0.9 beta, estimated 2026-11-22 to 2026-12-02.",
+  "focus_phase": "p2",
+  "must_up": 4,
+  "must_total": 4,
+  "critical_alerts": 0,
+  "coverage": {
+   "papers": 583596,
+   "without_text": 383403,
+   "with_text": 200193,
+   "pct": 34.3,
+   "measured_at": "2026-11-11T11:22:23Z",
+   "how": "the CORE lane's target list: every paper without a usable text after the s18 plan with the side stores (weak texts counted as missing)"
+  }
+ },
+ "phases": [
+  {
+   "id": "p1",
+   "n": 1,
+   "name": "Collect",
+   "goal": "Every paper on the list (583,596 papers in 457 journals) gets its abstract, or the text of its first pages, from the journal's own site, its school's repository, a Wayback Machine copy, or an open scholarly source.",
+   "status": "running",
+   "estimate": {
+    "id": "collection",
+    "what": "Collection finishes (harvest gaps queue and CORE lane)",
+    "from": "2026-11-27",
+    "to": "2026-12-18",
+    "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
+   },
+   "is_focus": false,
+   "steps": [
+    {
+     "id": "p1-list",
+     "name": "Paper list",
+     "status": "done",
+     "detail": "583,596 papers in 457 journals.",
+     "needs": ""
+    },
+    {
+     "id": "p1-faculty",
+     "name": "Faculty repositories reader",
+     "status": "done",
+     "job": "faculty",
+     "detail": "Finished 2026-11-09: 123,865 records read, 64,805 matched to papers on the list.",
+     "needs": "",
+     "live": {
+      "state": "finished",
+      "health": "ok",
+      "progress": null,
+      "eta": null,
+      "last_activity": "2026-11-09T13:49:57Z"
+     }
+    },
+    {
+     "id": "p1-openalex",
+     "name": "OpenAlex snapshot",
+     "status": "done",
+     "job": "openalex",
+     "detail": "Finished 2026-11-10: 384,929 records paired; 148,126 papers have an OpenAlex abstract.",
+     "needs": "",
+     "live": {
+      "state": "finished",
+      "health": "ok",
+      "progress": null,
+      "eta": null,
+      "last_activity": "2026-11-10T22:39:09Z"
+     }
+    },
+    {
+     "id": "p1-s2",
+     "name": "Semantic Scholar datasets",
+     "status": "running",
+     "job": "s2",
+     "detail": "Reads the papers, abstracts and full-text parts offline, then pairs what it kept with the list.",
+     "needs": "Keeps running until its last part and the pairing step are done (hours).",
+     "live": {
+      "state": "running",
+      "health": "ok",
+      "progress": {
+       "done": 415,
+       "total": 420,
+       "unit": "dataset parts read",
+       "pct": 98.81
+      },
+      "eta": null,
+      "last_activity": "2026-11-13T21:25:39Z"
+     }
+    },
+    {
+     "id": "p1-core",
+     "name": "CORE lane",
+     "status": "running",
+     "job": "core",
+     "detail": "Looks up the papers still without a text in CORE, by OAI id, DOI or title.",
+     "needs": "Keeps running (its keep-alive restarts it); about 2-3 weeks at today's pace.",
+     "live": {
+      "state": "running",
+      "health": "ok",
+      "progress": {
+       "done": 15880,
+       "total": 383403,
+       "unit": "papers looked up",
+       "pct": 4.14
+      },
+      "eta": {
+       "seconds": 1613515,
+       "at": "2026-12-02T16:07:20Z",
+       "basis": "papers in the last 60 minutes"
+      },
+      "last_activity": "2026-11-13T23:54:22Z"
+     }
+    },
+    {
+     "id": "p1-harvest",
+     "name": "Journal harvest",
+     "status": "running",
+     "job": "harvest",
+     "detail": "Journals' own sites, school repositories and Wayback copies; one request at a time per site, about 15-25 requests a minute in all (archive.org allows about 15 a minute).",
+     "needs": "Keeps running until its gaps queue is empty (its keep-alive restarts it).",
+     "live": {
+      "state": "running",
+      "health": "ok",
+      "progress": {
+       "done": 2054,
+       "total": 209547,
+       "unit": "papers of the gaps queue tried",
+       "pct": 0.98,
+       "since": "2026-11-13"
+      },
+      "eta": {
+       "seconds": 1836072,
+       "at": "2026-12-05T05:56:37Z",
+       "basis": "the harvest's own estimate (8.8 s a paper)"
+      },
+      "last_activity": "2026-11-13T23:55:12Z"
+     }
+    },
+    {
+     "id": "p1-gap",
+     "name": "Count what is still missing",
+     "status": "next",
+     "detail": "The exact number of papers still without a text, by journal and reason; then decide on the last gap.",
+     "needs": "The harvest and the CORE lane finished."
+    }
+   ],
+   "current_steps": [
+    "p1-s2",
+    "p1-core",
+    "p1-harvest"
+   ],
+   "steps_done": 3,
+   "steps_total": 7
+  },
+  {
+   "id": "p2",
+   "n": 2,
+   "name": "Labels",
+   "goal": "Subject labels to train and test the model: taxonomy 0.2.2 (78 subjects in 15 groups), coded by independent Claude coders, with adjudication where three coders read a paper.",
+   "status": "running",
+   "estimate": {
+    "id": "s1",
+    "what": "Silver S1 coded",
+    "from": "2026-11-17",
+    "to": "2026-11-21",
+    "assumes": "About 7 five-hour usage windows (5.6 for the 10,000 papers, 1.1 for the doubled 2,000), one or two dedicated windows a day."
+   },
+   "is_focus": true,
+   "steps": [
+    {
+     "id": "p2-tax",
+     "name": "Taxonomy 0.2.2",
+     "status": "done",
+     "detail": "78 subjects (leaves) in 15 groups, with a codebook.",
+     "needs": ""
+    },
+    {
+     "id": "p2-pilot",
+     "name": "Pilot coding",
+     "status": "done",
+     "detail": "300 papers, 3 coders and an adjudicator under codebook 0.2.2; the coders agree on the top subject almost always (rank-1 Fleiss' kappa 0.99). It set the coding rules used since.",
+     "needs": ""
+    },
+    {
+     "id": "p2-dev",
+     "name": "DEV coding",
+     "status": "done",
+     "job": "coding_dev",
+     "detail": "1,580 papers in 63 batches, 3 coders and an adjudicator each. DEV chooses the model.",
+     "needs": "",
+     "live": {
+      "state": "finished",
+      "health": "ok",
+      "progress": {
+       "done": 252,
+       "total": 252,
+       "unit": "coding units",
+       "pct": 100.0
+      },
+      "eta": null,
+      "last_activity": "2026-11-11T20:53:57Z"
+     }
+    },
+    {
+     "id": "p2-s1",
+     "name": "Silver S1 coding (training labels)",
+     "status": "running",
+     "job": "coding_s1",
+     "detail": "10,000 training papers, one coder each; 2,000 of them coded a second time in a later window (SILVER-VAL).",
+     "needs": "About 7-8 five-hour usage windows (about 40 units a window), one coding workflow per window; the doubled 2,000 only in a window after the first pass is final.",
+     "live": {
+      "state": "running",
+      "health": "ok",
+      "progress": {
+       "done": 13,
+       "total": 317,
+       "unit": "coding units",
+       "pct": 4.1
+      },
+      "eta": null,
+      "last_activity": "2026-11-13T23:55:14Z"
+     }
+    },
+    {
+     "id": "p2-test",
+     "name": "TEST coding",
+     "status": "next",
+     "job": "coding_test",
+     "detail": "Paused on 2026-11-13 after its first 25 batches; it resumes after silver S1. TEST stays sealed until the final report.",
+     "needs": "Silver S1 finished; about 14 more usage windows.",
+     "live": {
+      "state": "paused",
+      "health": "info",
+      "progress": {
+       "done": 102,
+       "total": 861,
+       "unit": "coding units",
+       "pct": 11.85
+      },
+      "eta": null,
+      "last_activity": "2026-11-13T18:30:04Z"
+     }
+    },
+    {
+     "id": "p2-more",
+     "name": "More silver (S2, S3)",
+     "status": "later",
+     "detail": "More training labels, coded the same way as S1; a fourth set only if the third still helps.",
+     "needs": "The contest's first results."
+    }
+   ],
+   "current_steps": [
+    "p2-s1"
+   ],
+   "steps_done": 3,
+   "steps_total": 6
+  },
+  {
+   "id": "p3",
+   "n": 3,
+   "name": "Model",
+   "goal": "Our own model: an abstract or first pages in, ranked subject tags out. Four of our architectures compete; a pre-registered rule picks the winner on DEV.",
+   "status": "running",
+   "estimate": {
+    "id": "training",
+    "what": "Contest trained on S1 and the winner chosen on DEV",
+    "from": "2026-11-19",
+    "to": "2026-11-26",
+    "assumes": "2-4 days of training on this Mac after S1, one model job at a time."
+   },
+   "is_focus": false,
+   "steps": [
+    {
+     "id": "p3-arch",
+     "name": "Four architectures built and tested",
+     "status": "done",
+     "detail": "CLARK, ULMFiT AWD-LSTM, GAN-BERT-CLARK and CLARK-G; none trained on real labels yet.",
+     "needs": ""
+    },
+    {
+     "id": "p3-preview",
+     "name": "Preview model and local test page",
+     "status": "running",
+     "job": "preview",
+     "detail": "A quick model on the frozen embeddings already on disk, so tags can be tried now. Never a contest entry; its numbers are never the paper's.",
+     "needs": "",
+     "live": {
+      "state": "built",
+      "health": "info",
+      "progress": null,
+      "eta": null,
+      "last_activity": "2026-11-13T23:54:44Z"
+     }
+    },
+    {
+     "id": "p3-train",
+     "name": "Contest training on silver S1",
+     "status": "next",
+     "detail": "Each architecture trained on the S1 labels.",
+     "needs": "Silver S1 coded; one model job at a time; the harvest keeps memory priority. About 2-4 days on this Mac."
+    },
+    {
+     "id": "p3-choose",
+     "name": "Choose the winner on DEV",
+     "status": "next",
+     "detail": "The registered selection rule, on the complete DEV set.",
+     "needs": "Contest training done."
+    },
+    {
+     "id": "p3-tag",
+     "name": "Tag every paper that has a text",
+     "status": "next",
+     "detail": "The winner tags every paper that has a text.",
+     "needs": "The winner. Papers that get a text later are tagged when the collection ends."
+    }
+   ],
+   "current_steps": [
+    "p3-preview"
+   ],
+   "steps_done": 1,
+   "steps_total": 5
+  },
+  {
+   "id": "p4",
+   "n": 4,
+   "name": "Beta release (v0.9)",
+   "goal": "A working product to audit: the contest winner, trained on silver S1 and chosen on DEV, tags every paper that has a text; served on the test page and a private Hugging Face Space, with its DEV numbers; the owner's audit opens.",
+   "status": "next",
+   "estimate": {
+    "id": "beta",
+    "what": "v0.9 beta",
+    "from": "2026-11-22",
+    "to": "2026-12-02",
+    "assumes": "S1 and the contest as above; then about a day to tag every paper that has a text by then and a day to serve it with its DEV numbers. It does not wait for the collection: papers that get a text later are tagged again when the collection ends."
+   },
+   "is_focus": false,
+   "steps": [
+    {
+     "id": "p4-model",
+     "name": "Winner trained on silver S1, chosen on DEV",
+     "status": "next",
+     "needs": "Phase 3 training and choice."
+    },
+    {
+     "id": "p4-tags",
+     "name": "Tags for every paper that has a text by then",
+     "status": "next",
+     "needs": "The winner (papers that get a text later are tagged again for v1.0)."
+    },
+    {
+     "id": "p4-serve",
+     "name": "Served on the test page and a private Hugging Face Space",
+     "status": "next",
+     "needs": "The winner."
+    },
+    {
+     "id": "p4-numbers",
+     "name": "DEV numbers published with the beta",
+     "status": "next",
+     "needs": "The choice on DEV."
+    },
+    {
+     "id": "p4-audit",
+     "name": "The owner's audit opened",
+     "status": "next",
+     "needs": "The beta served; the audit frames are already designed."
+    }
+   ],
+   "current_steps": [],
+   "steps_done": 0,
+   "steps_total": 5
+  },
+  {
+   "id": "p5",
+   "n": 5,
+   "name": "v1.0 public release",
+   "goal": "The finished, public version: TEST numbers, the paper, the model and dataset on Hugging Face, and the public site with the tags.",
+   "status": "later",
+   "estimate": {
+    "id": "v1",
+    "what": "v1.0 public release",
+    "from": "2027-01",
+    "to": "2027-04",
+    "assumes": "TEST scored once, the owner's audit, the paper written; the original 26-week plan froze the labels by 2027-04-04."
+   },
+   "is_focus": false,
+   "steps": [
+    {
+     "id": "p5-test",
+     "name": "TEST coded and scored once",
+     "status": "later",
+     "needs": "TEST coding finished; the final model frozen."
+    },
+    {
+     "id": "p5-audit",
+     "name": "Audit corrections folded in",
+     "status": "later",
+     "needs": "The owner's audit."
+    },
+    {
+     "id": "p5-paper",
+     "name": "The paper",
+     "status": "later",
+     "needs": "TEST numbers and the audit."
+    },
+    {
+     "id": "p5-hf",
+     "name": "Model and dataset on Hugging Face",
+     "status": "later",
+     "needs": "The paper's numbers; the dataset shares texts only as licensing allows."
+    },
+    {
+     "id": "p5-site",
+     "name": "Public site with the tags (rankings site v3)",
+     "status": "later",
+     "needs": "The final tags; the owner's go-ahead."
+    }
+   ],
+   "current_steps": [],
+   "steps_done": 0,
+   "steps_total": 5
+  }
+ ],
+ "beta": {
+  "version": "v0.9",
+  "name": "Beta",
+  "definition": "The contest winner, trained on silver S1 and chosen on DEV, tagging every paper that has a text; served on the test page and a private Hugging Face Space, with its DEV numbers; and the owner's audit opened.",
+  "estimate": {
+   "id": "beta",
+   "what": "v0.9 beta",
+   "from": "2026-11-22",
+   "to": "2026-12-02",
+   "assumes": "S1 and the contest as above; then about a day to tag every paper that has a text by then and a day to serve it with its DEV numbers. It does not wait for the collection: papers that get a text later are tagged again when the collection ends."
+  },
+  "checklist": [
+   {
+    "text": "DEV labels complete (1,580 papers)",
+    "done": true,
+    "auto": "dev_complete",
+    "auto_met": true
+   },
+   {
+    "text": "Silver S1 coded (10,000 papers, and the 2,000 coded twice)",
+    "done": false,
+    "auto": "s1_complete",
+    "auto_met": false
+   },
+   {
+    "text": "Preview model and local test page built",
+    "done": true,
+    "auto": "preview_ready",
+    "auto_met": true
+   },
+   {
+    "text": "Contest models trained on silver S1",
+    "done": false,
+    "auto": "contest_trained",
+    "auto_met": false
+   },
+   {
+    "text": "Winner chosen on DEV by the registered rule",
+    "done": false
+   },
+   {
+    "text": "Every paper that has a text tagged",
+    "done": false
+   },
+   {
+    "text": "Served on the test page and a private Hugging Face Space",
+    "done": false
+   },
+   {
+    "text": "DEV numbers written up with the beta",
+    "done": false
+   },
+   {
+    "text": "The owner's audit opened",
+    "done": false
+   }
+  ],
+  "done_count": 2
+ },
+ "v1": {
+  "version": "v1.0",
+  "name": "Public release",
+  "definition": "TEST numbers, the paper, the model and dataset on Hugging Face, and the public site.",
+  "estimate": {
+   "id": "v1",
+   "what": "v1.0 public release",
+   "from": "2027-01",
+   "to": "2027-04",
+   "assumes": "TEST scored once, the owner's audit, the paper written; the original 26-week plan froze the labels by 2027-04-04."
+  },
+  "checklist": [
+   {
+    "text": "Collection finished (harvest and CORE lane)",
+    "done": false,
+    "auto": "collection_done",
+    "auto_met": false
+   },
+   {
+    "text": "Papers that got a text after the beta tagged",
+    "done": false
+   },
+   {
+    "text": "TEST coding finished (sealed until scored)",
+    "done": false,
+    "auto": "test_complete",
+    "auto_met": false
+   },
+   {
+    "text": "Final model scored once on TEST",
+    "done": false
+   },
+   {
+    "text": "Audit corrections folded in",
+    "done": false
+   },
+   {
+    "text": "The paper written",
+    "done": false
+   },
+   {
+    "text": "Model and dataset cards on Hugging Face",
+    "done": false
+   },
+   {
+    "text": "Tags on the public rankings site",
+    "done": false
+   }
+  ],
+  "done_count": 0
+ },
+ "estimates": [
+  {
+   "id": "s2",
+   "what": "Semantic Scholar read finishes",
+   "from": "2026-11-13",
+   "to": "2026-11-14",
+   "assumes": "5 of the 330 full-text parts were left at 16:15 MST on 11-13 (35-70 s a part when the API is not pausing the read), then the pairing step writes the side store."
+  },
+  {
+   "id": "collection",
+   "what": "Collection finishes (harvest gaps queue and CORE lane)",
+   "from": "2026-11-27",
+   "to": "2026-12-18",
+   "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
+  },
+  {
+   "id": "s1",
+   "what": "Silver S1 coded",
+   "from": "2026-11-17",
+   "to": "2026-11-21",
+   "assumes": "About 7 five-hour usage windows (5.6 for the 10,000 papers, 1.1 for the doubled 2,000), one or two dedicated windows a day."
+  },
+  {
+   "id": "training",
+   "what": "Contest trained on S1 and the winner chosen on DEV",
+   "from": "2026-11-19",
+   "to": "2026-11-26",
+   "assumes": "2-4 days of training on this Mac after S1, one model job at a time."
+  },
+  {
+   "id": "beta",
+   "what": "v0.9 beta",
+   "from": "2026-11-22",
+   "to": "2026-12-02",
+   "assumes": "S1 and the contest as above; then about a day to tag every paper that has a text by then and a day to serve it with its DEV numbers. It does not wait for the collection: papers that get a text later are tagged again when the collection ends."
+  },
+  {
+   "id": "test",
+   "what": "TEST coding finished",
+   "from": "2026-11-26",
+   "to": "2026-12-10",
+   "assumes": "About 14 more usage windows after S1 (102 of 861 TEST units were done on 11-13)."
+  },
+  {
+   "id": "v1",
+   "what": "v1.0 public release",
+   "from": "2027-01",
+   "to": "2027-04",
+   "assumes": "TEST scored once, the owner's audit, the paper written; the original 26-week plan froze the labels by 2027-04-04."
+  }
+ ],
+ "jobs": [
+  {
+   "id": "harvest",
+   "label": "Journal harvest",
+   "phase": "p1",
+   "what": "Abstracts or first pages from journals' sites, school repositories and Wayback copies.",
+   "must_keep_running": true,
+   "must_continue": false,
+   "expected": "running",
+   "kept_alive_by": "keep_harvest.sh in a Terminal tab (restarts it up to 50 times)",
+   "check": "python3 .recovery/tools/progress.py --watch 60",
+   "stop": "create .recovery/tools/STOP_HARVEST",
+   "state": "running",
+   "health": "ok",
+   "running": true,
+   "watcher_running": true,
+   "uptime_s": 20551,
+   "last_activity": "2026-11-13T23:55:12Z",
+   "rate": {
+    "unit": "requests a minute",
+    "last10": 6.9,
+    "last60": 11.3
+   },
+   "rates": [
+    {
+     "label": "requests (last 10 min)",
+     "value": 69
+    },
+    {
+     "label": "requests (last 60 min)",
+     "value": 681
+    },
+    {
+     "label": "not found, refused or no answer (last 10 min)",
+     "value": 2
+    },
+    {
+     "label": "sites asked (last 15 min)",
+     "value": 3
+    },
+    {
+     "label": "records kept (last 10 min, harvest's count)",
+     "value": 10
+    },
+    {
+     "label": "abstracts kept (last 10 min, harvest's count)",
+     "value": 5
+    }
+   ],
+   "progress": {
+    "done": 2054,
+    "total": 209547,
+    "unit": "papers of the gaps queue tried",
+    "pct": 0.98,
+    "since": "2026-11-13"
+   },
+   "queue": {
+    "left": 207493,
+    "unit": "papers in the gaps queue",
+    "done_this_run": 2177,
+    "texts_this_run": 482,
+    "skipped_for_now": 3523,
+    "secs_each": 8.8
+   },
+   "eta": {
+    "seconds": 1836072,
+    "at": "2026-12-05T05:56:37Z",
+    "basis": "the harvest's own estimate (8.8 s a paper)"
+   },
+   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 73 requests (7.3 a minute), 8 records, 4 abstracts; this run: 3,286 requests, 525 records, 140 abstracts; gaps beside the passes: 2,147 papers done (473 texts), 207,496 left, about 20.9 days left at 8.7 s each (3,523 skipped for now); workers: 14 working of 125 (111 waiting for work); memory 72%, aiming at 90-95%",
+   "details": [
+    {
+     "k": "journal passes",
+     "v": "531 done of 536"
+    },
+    {
+     "k": "workers",
+     "v": "14 working of 125 (memory 71.5%, aiming at 90-95%)"
+    },
+    {
+     "k": "sites paused or left alone",
+     "v": "18 paused in this run, 116 left alone for days"
+    },
+    {
+     "k": "this run",
+     "v": "3,354 requests, 535 records, 145 abstracts"
+    },
+    {
+     "k": "this run started",
+     "v": "2026-11-13T18:13:01Z"
+    }
+   ],
+   "notes": [],
+   "spark": "h_left",
+   "estimate": {
+    "id": "collection",
+    "what": "Collection finishes (harvest gaps queue and CORE lane)",
+    "from": "2026-11-27",
+    "to": "2026-12-18",
+    "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
+   },
+   "eta_alt": {
+    "seconds": 1776449,
+    "at": "2026-12-04T13:22:54Z",
+    "basis": "the queue's fall over the last 6 hours"
+   },
+   "line_at": "2026-11-13T23:45:22Z"
+  },
+  {
+   "id": "core",
+   "label": "CORE lane",
+   "phase": "p1",
+   "what": "CORE lookups for papers still without a text.",
+   "must_keep_running": true,
+   "must_continue": false,
+   "expected": "running",
+   "kept_alive_by": "keep_core.sh in a Terminal tab (never restarts after a STOPPED file)",
+   "check": "cd .recovery/s18/build/core && python3 -B -m corelane status",
+   "stop": "create STOP in the lane's work folder",
+   "state": "running",
+   "health": "ok",
+   "running": true,
+   "watcher_running": true,
+   "uptime_s": 53429,
+   "last_activity": "2026-11-13T23:54:22Z",
+   "rate": {
+    "unit": "papers a minute",
+    "last10": 12.0,
+    "last60": 13.7
+   },
+   "rates": [
+    {
+     "label": "papers (last 10 min)",
+     "value": 120
+    },
+    {
+     "label": "papers (last 60 min)",
+     "value": 820
+    },
+    {
+     "label": "with a text (last 10 min)",
+     "value": 55
+    }
+   ],
+   "progress": {
+    "done": 15880,
+    "total": 383403,
+    "unit": "papers looked up",
+    "pct": 4.14
+   },
+   "queue": null,
+   "eta": {
+    "seconds": 1613515,
+    "at": "2026-12-02T16:07:20Z",
+    "basis": "papers in the last 60 minutes"
+   },
+   "line": "15,800 papers in 885 min, 7,765 requests (0.49 a paper): matched 8,307 (6,947 with a text, 1,161 a link only), review 277, never-source 501, no match 1,228, no hits 5,478, errors 3; side lines written 8,108",
+   "details": [
+    {
+     "k": "requests to CORE",
+     "v": "7,851 in all"
+    },
+    {
+     "k": "pace",
+     "v": "6.3 s between requests"
+    },
+    {
+     "k": "matched",
+     "v": "8,307 papers (6,947 with a text)"
+    },
+    {
+     "k": "side-store lines written",
+     "v": "8,108"
+    }
+   ],
+   "notes": [],
+   "spark": "c_done",
+   "estimate": {
+    "id": "collection",
+    "what": "Collection finishes (harvest gaps queue and CORE lane)",
+    "from": "2026-11-27",
+    "to": "2026-12-18",
+    "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
+   },
+   "line_at": "2026-11-13T23:49:34Z"
+  },
+  {
+   "id": "s2",
+   "label": "Semantic Scholar datasets",
+   "phase": "p1",
+   "what": "Offline read of the Semantic Scholar papers, abstracts and full-text parts.",
+   "must_keep_running": true,
+   "must_continue": false,
+   "expected": "running",
+   "kept_alive_by": "its Terminal tab (no keep-alive)",
+   "check": "cd .recovery/s18/build/s2 && python3 -B -m s2bulk status",
+   "stop": "",
+   "state": "running",
+   "health": "ok",
+   "running": true,
+   "watcher_running": null,
+   "uptime_s": 2516,
+   "last_activity": "2026-11-13T21:25:39Z",
+   "rate": {
+    "unit": "parts an hour",
+    "last10": 0.0,
+    "last60": 0.0
+   },
+   "rates": [
+    {
+     "label": "parts (last 10 min)",
+     "value": 0
+    },
+    {
+     "label": "parts (last 60 min)",
+     "value": 0
+    }
+   ],
+   "progress": {
+    "done": 415,
+    "total": 420,
+    "unit": "dataset parts read",
+    "pct": 98.81
+   },
+   "queue": null,
+   "eta": null,
+   "line": "full-text part 325 of 330 read; the last kept 32 of 61,962 lines in 31.7 s",
+   "details": [
+    {
+     "k": "paper-record parts",
+     "v": "60 of 60 read, 471,982 papers kept"
+    },
+    {
+     "k": "abstract parts",
+     "v": "30 of 30 read, 41,755 papers kept"
+    },
+    {
+     "k": "full-text parts",
+     "v": "325 of 330 read, 11,678 papers kept"
+    }
+   ],
+   "notes": [],
+   "spark": "s2_parts",
+   "estimate": {
+    "id": "s2",
+    "what": "Semantic Scholar read finishes",
+    "from": "2026-11-13",
+    "to": "2026-11-14",
+    "assumes": "5 of the 330 full-text parts were left at 16:15 MST on 11-13 (35-70 s a part when the API is not pausing the read), then the pairing step writes the side store."
+   }
+  },
+  {
+   "id": "coding_s1",
+   "label": "Silver S1 coding",
+   "phase": "p2",
+   "what": "One coder per paper; a unit is one coder agent reading one batch of 37-38 papers. Claude coding workflows, one per usage window.",
+   "must_keep_running": false,
+   "must_continue": true,
+   "expected": "running",
+   "kept_alive_by": "a coding workflow launched at the start of each usage window (coding-run-v022, run silver_s1)",
+   "check": "python3 classifier/annotation/runs/coding_plan.py silver_s1",
+   "stop": "",
+   "state": "running",
+   "health": "ok",
+   "running": null,
+   "watcher_running": null,
+   "uptime_s": null,
+   "last_activity": "2026-11-13T23:55:14Z",
+   "rate": {
+    "unit": "units an hour",
+    "last10": null,
+    "last60": 6.0
+   },
+   "rates": [
+    {
+     "label": "units (last 60 min)",
+     "value": 6
+    },
+    {
+     "label": "units (last 24 h)",
+     "value": 13
+    }
+   ],
+   "progress": {
+    "done": 13,
+    "total": 317,
+    "unit": "coding units",
+    "pct": 4.1
+   },
+   "queue": null,
+   "eta": null,
+   "line": "stage s1: 13 of 264 units (264 batches, 1 coder(s))",
+   "details": [],
+   "notes": [
+    "1 unit(s) partly written (cut off; re-run fresh next time)."
+   ],
+   "spark": "s1",
+   "estimate": {
+    "id": "s1",
+    "what": "Silver S1 coded",
+    "from": "2026-11-17",
+    "to": "2026-11-21",
+    "assumes": "About 7 five-hour usage windows (5.6 for the 10,000 papers, 1.1 for the doubled 2,000), one or two dedicated windows a day."
+   },
+   "run": "silver_s1",
+   "stages": [
+    {
+     "stage": "s1",
+     "batches": 264,
+     "n_coders": 1,
+     "adjudicated": false,
+     "done": 13,
+     "total": 264,
+     "pct": 4.92
+    },
+    {
+     "stage": "s1_double",
+     "batches": 53,
+     "n_coders": 1,
+     "adjudicated": false,
+     "done": 0,
+     "total": 53,
+     "pct": 0.0,
+     "ready": false,
+     "wait": "264 of 264 batches of s1 not final (first b001)"
+    }
+   ]
+  },
+  {
+   "id": "preview",
+   "label": "Preview model test page",
+   "phase": "p3",
+   "what": "Paste an abstract or upload a PDF, see ranked tags, mark right or wrong.",
+   "must_keep_running": false,
+   "must_continue": false,
+   "expected": "optional",
+   "kept_alive_by": "",
+   "check": "launch configuration preview-model (once the page is built), then localhost:8765",
+   "stop": "",
+   "state": "built",
+   "health": "info",
+   "running": false,
+   "watcher_running": null,
+   "uptime_s": null,
+   "last_activity": "2026-11-13T23:54:44Z",
+   "rate": null,
+   "rates": [],
+   "progress": null,
+   "queue": null,
+   "eta": null,
+   "line": "model built; the test page is not running now",
+   "details": [
+    {
+     "k": "on DEV (cross-fitted)",
+     "v": "lenient rank-1 92.0% of 950 papers"
+    }
+   ],
+   "notes": [],
+   "spark": null,
+   "estimate": null
+  },
+  {
+   "id": "updater",
+   "label": "This page's updater",
+   "phase": "",
+   "what": "Collects these numbers every 10 minutes, scans them, commits and pushes.",
+   "must_keep_running": true,
+   "must_continue": false,
+   "expected": "running",
+   "kept_alive_by": "progress-site/updater/keep_updater.sh",
+   "check": "progress-site/updater/log/updater.log",
+   "stop": "create progress-site/updater/STOP",
+   "state": "running",
+   "health": "ok",
+   "running": true,
+   "watcher_running": false,
+   "uptime_s": null,
+   "last_activity": null,
+   "rate": null,
+   "rates": [],
+   "progress": null,
+   "queue": null,
+   "eta": null,
+   "line": "",
+   "details": [],
+   "notes": [],
+   "spark": null,
+   "estimate": null
+  },
+  {
+   "id": "coding_test",
+   "label": "TEST coding",
+   "phase": "p2",
+   "what": "3 coders and an adjudicator per batch of 24-25 papers (4 units a batch), then one-coder stages; sealed: only counts are shown.",
+   "must_keep_running": false,
+   "must_continue": false,
+   "expected": "paused",
+   "kept_alive_by": "",
+   "check": "python3 classifier/annotation/runs/coding_plan.py test_coding",
+   "stop": "",
+   "state": "paused",
+   "health": "info",
+   "running": null,
+   "watcher_running": null,
+   "uptime_s": null,
+   "last_activity": "2026-11-13T18:30:04Z",
+   "rate": {
+    "unit": "units an hour",
+    "last10": null,
+    "last60": 0.0
+   },
+   "rates": [
+    {
+     "label": "units (last 60 min)",
+     "value": 0
+    },
+    {
+     "label": "units (last 24 h)",
+     "value": 95
+    }
+   ],
+   "progress": {
+    "done": 102,
+    "total": 861,
+    "unit": "coding units",
+    "pct": 11.85
+   },
+   "queue": null,
+   "eta": null,
+   "line": "stage test: 102 of 476 units (119 batches, 3 coder(s) + adjudicator)",
+   "details": [],
+   "notes": [],
+   "spark": "te",
+   "estimate": {
+    "id": "test",
+    "what": "TEST coding finished",
+    "from": "2026-11-26",
+    "to": "2026-12-10",
+    "assumes": "About 14 more usage windows after S1 (102 of 861 TEST units were done on 11-13)."
+   },
+   "run": "test_coding",
+   "stages": [
+    {
+     "stage": "test",
+     "batches": 119,
+     "n_coders": 3,
+     "adjudicated": true,
+     "done": 102,
+     "total": 476,
+     "pct": 21.43
+    },
+    {
+     "stage": "retest",
+     "batches": 6,
+     "n_coders": 3,
+     "adjudicated": true,
+     "done": 0,
+     "total": 24,
+     "pct": 0.0,
+     "ready": false,
+     "wait": "94 of 119 batches of test not final (first b026)"
+    },
+    {
+     "stage": "test_only",
+     "batches": 328,
+     "n_coders": 1,
+     "adjudicated": false,
+     "done": 0,
+     "total": 328,
+     "pct": 0.0
+    },
+    {
+     "stage": "test_only_double",
+     "batches": 33,
+     "n_coders": 1,
+     "adjudicated": false,
+     "done": 0,
+     "total": 33,
+     "pct": 0.0,
+     "ready": false,
+     "wait": "328 of 328 batches of test_only not final (first b126)"
+    }
+   ]
+  },
+  {
+   "id": "openalex",
+   "label": "OpenAlex snapshot",
+   "phase": "p1",
+   "what": "The OpenAlex works snapshot, paired with the list.",
+   "must_keep_running": false,
+   "must_continue": false,
+   "expected": "finished",
+   "kept_alive_by": "",
+   "check": "lawRank-space/s18b-openalex/pair_runs.jsonl",
+   "stop": "",
+   "state": "finished",
+   "health": "ok",
+   "running": false,
+   "watcher_running": null,
+   "uptime_s": null,
+   "last_activity": "2026-11-10T22:39:09Z",
+   "rate": null,
+   "rates": [],
+   "progress": null,
+   "queue": null,
+   "eta": null,
+   "line": "384,929 records paired; 148,126 papers with an OpenAlex abstract, 168,361 with a text, 159,193 with a PDF link",
+   "details": [
+    {
+     "k": "side-store lines",
+     "v": "384,929 in 456 files"
+    }
+   ],
+   "notes": [],
+   "spark": null,
+   "estimate": null
+  },
+  {
+   "id": "faculty",
+   "label": "Faculty repositories",
+   "phase": "p1",
+   "what": "Schools' faculty-scholarship repositories.",
+   "must_keep_running": false,
+   "must_continue": false,
+   "expected": "finished",
+   "kept_alive_by": "",
+   "check": "store_alt/faculty in the harvest's abstracts folder (finished; nothing runs)",
+   "stop": "",
+   "state": "finished",
+   "health": "ok",
+   "running": false,
+   "watcher_running": null,
+   "uptime_s": null,
+   "last_activity": "2026-11-09T13:49:57Z",
+   "rate": null,
+   "rates": [],
+   "progress": null,
+   "queue": null,
+   "eta": null,
+   "line": "126,669 side-store lines from 110 repositories",
+   "details": [
+    {
+     "k": "side-store lines",
+     "v": "126,669 in 110 files"
+    }
+   ],
+   "notes": [],
+   "spark": null,
+   "estimate": null
+  },
+  {
+   "id": "coding_dev",
+   "label": "DEV coding",
+   "phase": "p2",
+   "what": "3 coders and an adjudicator per batch of 25 papers (a unit is one agent on one batch: 4 units a batch).",
+   "must_keep_running": false,
+   "must_continue": false,
+   "expected": "finished",
+   "kept_alive_by": "",
+   "check": "python3 classifier/annotation/runs/coding_plan.py dev_coding",
+   "stop": "",
+   "state": "finished",
+   "health": "ok",
+   "running": null,
+   "watcher_running": null,
+   "uptime_s": null,
+   "last_activity": "2026-11-11T20:53:57Z",
+   "rate": {
+    "unit": "units an hour",
+    "last10": null,
+    "last60": 0.0
+   },
+   "rates": [
+    {
+     "label": "units (last 60 min)",
+     "value": 0
+    },
+    {
+     "label": "units (last 24 h)",
+     "value": 0
+    }
+   ],
+   "progress": {
+    "done": 252,
+    "total": 252,
+    "unit": "coding units",
+    "pct": 100.0
+   },
+   "queue": null,
+   "eta": null,
+   "line": "all 3 stage(s) final",
+   "details": [],
+   "notes": [],
+   "spark": "dv",
+   "estimate": null,
+   "run": "dev_coding",
+   "stages": [
+    {
+     "stage": "g1",
+     "batches": 4,
+     "n_coders": 3,
+     "adjudicated": true,
+     "done": 16,
+     "total": 16,
+     "pct": 100.0
+    },
+    {
+     "stage": "dev",
+     "batches": 56,
+     "n_coders": 3,
+     "adjudicated": true,
+     "done": 224,
+     "total": 224,
+     "pct": 100.0
+    },
+    {
+     "stage": "design",
+     "batches": 3,
+     "n_coders": 3,
+     "adjudicated": true,
+     "done": 12,
+     "total": 12,
+     "pct": 100.0
+    }
+   ]
+  }
+ ],
+ "collection": {
+  "paper_list": {
+   "papers": 583596,
+   "journals": 457
+  },
+  "coverage": {
+   "papers": 583596,
+   "without_text": 383403,
+   "with_text": 200193,
+   "pct": 34.3,
+   "measured_at": "2026-11-11T11:22:23Z",
+   "how": "the CORE lane's target list: every paper without a usable text after the s18 plan with the side stores (weak texts counted as missing)"
+  },
+  "openalex": {
+   "at": "2026-11-10T22:39:09Z",
+   "paired": 384929,
+   "papers": 583596,
+   "with_abstract": 148126,
+   "with_text": 168361,
+   "with_pdf": 159193,
+   "with_any": 290132
+  },
+  "store": {
+   "lines": 384929,
+   "with_text": 142821,
+   "kinds": {
+    "unknown": 124819,
+    "first_pages": 14970,
+    "abstract_pdf": 3006,
+    "abstract": 22,
+    "intro_pdf": 4
+   },
+   "files": 428,
+   "newest": "2026-11-13T23:14:45Z",
+   "note": "record lines before de-duplication; a line has a text when its abstract field is not empty"
+  },
+  "side_stores": [
+   {
+    "source": "core",
+    "lines": 7870,
+    "files": 163,
+    "newest": "2026-11-13T23:14:46Z"
+   },
+   {
+    "source": "faculty",
+    "lines": 126669,
+    "files": 110,
+    "newest": "2026-11-09T13:49:57Z"
+   },
+   {
+    "source": "openalex",
+    "lines": 384929,
+    "files": 456,
+    "newest": "2026-11-10T16:54:28Z"
+   }
+  ],
+  "counted_at": "2026-11-13T23:14:55Z",
+  "count_seconds": 0.27
+ },
+ "labels": {
+  "taxonomy": {
+   "version": "0.2.2",
+   "leaves": 78,
+   "groups": 15,
+   "date": "2026-11-08"
+  },
+  "runs": [
+   "coding_dev",
+   "coding_s1",
+   "coding_test"
+  ]
+ },
+ "model": {
+  "architectures": [
+   {
+    "id": "clark",
+    "name": "CLARK",
+    "about": "label-aware hierarchical ranking head on a domain-pretrained encoder (our design)",
+    "built": true,
+    "trained_runs": 0,
+    "trained_on_real_labels": false
+   },
+   {
+    "id": "ulmfit",
+    "name": "ULMFiT AWD-LSTM",
+    "about": "the fast.ai recipe, language model pretrained from scratch on our corpus",
+    "built": true,
+    "trained_runs": 0,
+    "trained_on_real_labels": false
+   },
+   {
+    "id": "gan",
+    "name": "GAN-BERT-CLARK",
+    "about": "semi-supervised GAN-BERT-style variant ending in CLARK's list model",
+    "built": true,
+    "trained_runs": 0,
+    "trained_on_real_labels": false
+   },
+   {
+    "id": "graph",
+    "name": "CLARK-G",
+    "about": "CLARK with a label graph",
+    "built": true,
+    "trained_runs": 0,
+    "trained_on_real_labels": false
+   }
+  ],
+  "tests": {
+   "passed": 301,
+   "as_of": "2026-11-10T00:26:57Z",
+   "source": "classifier/ml/BUILD_LOG.md (the last recorded run of the suite)"
+  },
+  "contest": {
+   "runs": 0,
+   "checkpoints": 0,
+   "training_now": false,
+   "status": "not started (waits for silver S1)"
+  },
+  "preview": {
+   "exists": true,
+   "metrics": [
+    {
+     "k": "Rank-1 tag is one of the reference tags (lenient rank-1)",
+     "v": 0.92
+    },
+    {
+     "k": "Rank-1 tag is the reference rank 1 (strict rank-1)",
+     "v": 0.7789
+    },
+    {
+     "k": "Reference rank 1 among the top 3 tags",
+     "v": 0.9463
+    },
+    {
+     "k": "Rank-1 subject group right",
+     "v": 0.84
+    },
+    {
+     "k": "F1 per paper (mean)",
+     "v": 0.7739
+    },
+    {
+     "k": "F1 per subject (macro mean)",
+     "v": 0.7297
+    }
+   ],
+   "metrics_at": "2026-11-13T23:29:18Z",
+   "model_card": true,
+   "port": 8765,
+   "numbers": {
+    "rows_tried": 188,
+    "n_papers": 950,
+    "subset": "DEV-main random sample",
+    "measures": [
+     {
+      "k": "Rank-1 tag is one of the reference tags (lenient rank-1)",
+      "v": 0.92,
+      "unit": "share",
+      "lo": 0.9021,
+      "hi": 0.9368
+     },
+     {
+      "k": "Rank-1 tag is the reference rank 1 (strict rank-1)",
+      "v": 0.7789,
+      "unit": "share",
+      "lo": 0.7537,
+      "hi": 0.8042
+     },
+     {
+      "k": "Reference rank 1 among the top 3 tags",
+      "v": 0.9463,
+      "unit": "share",
+      "lo": 0.9316,
+      "hi": 0.96
+     },
+     {
+      "k": "Rank-1 subject group right",
+      "v": 0.84,
+      "unit": "share",
+      "lo": 0.8168,
+      "hi": 0.8621
+     },
+     {
+      "k": "F1 per paper (mean)",
+      "v": 0.7739,
+      "unit": "share",
+      "lo": 0.7586,
+      "hi": 0.7885
+     },
+     {
+      "k": "F1 per subject (macro mean)",
+      "v": 0.7297,
+      "unit": "share",
+      "lo": 0.6977,
+      "hi": 0.7453
+     }
+    ],
+    "encoder": "qwen3-embedding-0.6b",
+    "trained_on_dev_labels": true,
+    "made": "2026-11-13T23:29:18Z",
+    "after_choice": {
+     "k": "Lenient rank-1 after choosing among all rows (honest estimate)",
+     "v": 0.9134,
+     "unit": "share",
+     "sd": 0.0116
+    }
+   },
+   "page_code": true,
+   "model_card_at": "2026-11-13T23:30:39Z"
+  }
+ },
+ "alerts": [
+  {
+   "severity": "info",
+   "job": "s2",
+   "text": "Semantic Scholar's API asked for a pause; the read waits and goes on by itself.",
+   "since": null,
+   "until": "2026-11-14T00:23:24Z"
+  }
+ ],
+ "events": [
+  {
+   "t": "2026-11-13T23:55:25Z",
+   "job": "updater",
+   "kind": "updater",
+   "text": "updater started (every 600 s; push off)"
+  },
+  {
+   "t": "2026-11-13T23:55:25Z",
+   "job": "updater",
+   "kind": "start",
+   "text": "This page's updater started running"
+  },
+  {
+   "t": "2026-11-13T23:45:38Z",
+   "job": "coding_s1",
+   "kind": "progress",
+   "text": "Silver S1 coding: 13 unit(s) finished on 2026-11-13"
+  },
+  {
+   "t": "2026-11-13T23:23:29Z",
+   "job": "preview",
+   "kind": "milestone",
+   "text": "Preview model built (metrics or model card written)"
+  },
+  {
+   "t": "2026-11-13T21:00:23Z",
+   "job": "s2",
+   "kind": "milestone",
+   "text": "Semantic Scholar full text: 300 of 330 parts read"
+  },
+  {
+   "t": "2026-11-13T20:15:32Z",
+   "job": "s2",
+   "kind": "milestone",
+   "text": "Semantic Scholar full text: 250 of 330 parts read"
+  },
+  {
+   "t": "2026-11-13T19:21:23Z",
+   "job": "s2",
+   "kind": "milestone",
+   "text": "Semantic Scholar full text: 200 of 330 parts read"
+  },
+  {
+   "t": "2026-11-13T18:30:02Z",
+   "job": "coding_test",
+   "kind": "progress",
+   "text": "TEST coding: 95 unit(s) finished on 2026-11-13"
+  },
+  {
+   "t": "2026-11-13T18:29:18Z",
+   "job": "s2",
+   "kind": "milestone",
+   "text": "Semantic Scholar full text: 150 of 330 parts read"
+  },
+  {
+   "t": "2026-11-13T18:13:01Z",
+   "job": "harvest",
+   "kind": "start",
+   "text": "Harvest run started"
+  },
+  {
+   "t": "2026-11-13T18:10:51Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 10,868 requests"
+  },
+  {
+   "t": "2026-11-13T17:39:20Z",
+   "job": "s2",
+   "kind": "milestone",
+   "text": "Semantic Scholar full text: 100 of 330 parts read"
+  },
+  {
+   "t": "2026-11-13T16:57:24Z",
+   "job": "s2",
+   "kind": "milestone",
+   "text": "Semantic Scholar full text: 50 of 330 parts read"
+  },
+  {
+   "t": "2026-11-13T16:08:31Z",
+   "job": "core",
+   "kind": "milestone",
+   "text": "CORE lane: 10,000 papers looked up"
+  },
+  {
+   "t": "2026-11-13T15:46:57Z",
+   "job": "s2",
+   "kind": "milestone",
+   "text": "Semantic Scholar: all 30 abstract parts read (41,755 papers kept)"
+  },
+  {
+   "t": "2026-11-13T14:58:06Z",
+   "job": "s2",
+   "kind": "milestone",
+   "text": "Semantic Scholar: all 60 paper-record parts read (471,982 papers kept)"
+  },
+  {
+   "t": "2026-11-13T14:08:59Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 138 requests"
+  },
+  {
+   "t": "2026-11-13T09:21:48Z",
+   "job": "s2",
+   "kind": "start",
+   "text": "Semantic Scholar read started (this release)"
+  },
+  {
+   "t": "2026-11-13T09:04:56Z",
+   "job": "core",
+   "kind": "start",
+   "text": "CORE lane started"
+  },
+  {
+   "t": "2026-11-13T08:31:55Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 1,243 requests"
+  },
+  {
+   "t": "2026-11-13T07:43:11Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 2,060 requests"
+  },
+  {
+   "t": "2026-11-12T19:48:17Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 5,396 requests"
+  },
+  {
+   "t": "2026-11-12T06:21:08Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 293 requests"
+  },
+  {
+   "t": "2026-11-11T21:04:48Z",
+   "job": "coding_test",
+   "kind": "progress",
+   "text": "TEST coding: 7 unit(s) finished on 2026-11-11"
+  },
+  {
+   "t": "2026-11-11T20:56:43Z",
+   "job": "core",
+   "kind": "stop",
+   "text": "CORE lane paused: the request ceiling (30) is reached (the same command goes on)"
+  },
+  {
+   "t": "2026-11-11T20:54:39Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 483 requests"
+  },
+  {
+   "t": "2026-11-11T20:53:42Z",
+   "job": "coding_dev",
+   "kind": "progress",
+   "text": "DEV coding: 63 unit(s) finished on 2026-11-11"
+  },
+  {
+   "t": "2026-11-11T20:53:42Z",
+   "job": "coding_dev",
+   "kind": "milestone",
+   "text": "DEV coding complete (252 of 252 units)"
+  },
+  {
+   "t": "2026-11-11T20:48:52Z",
+   "job": "core",
+   "kind": "start",
+   "text": "CORE lane started"
+  },
+  {
+   "t": "2026-11-11T17:48:21Z",
+   "job": "core",
+   "kind": "stop",
+   "text": "CORE lane interrupted (its state is saved; the same command goes on)"
+  },
+  {
+   "t": "2026-11-11T17:46:26Z",
+   "job": "core",
+   "kind": "start",
+   "text": "CORE lane started"
+  },
+  {
+   "t": "2026-11-11T11:07:06Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 1,899 requests"
+  },
+  {
+   "t": "2026-11-11T05:57:01Z",
+   "job": "coding_dev",
+   "kind": "progress",
+   "text": "DEV coding: 93 unit(s) finished on 2026-11-10"
+  },
+  {
+   "t": "2026-11-10T22:39:09Z",
+   "job": "openalex",
+   "kind": "milestone",
+   "text": "OpenAlex pairing run: 384,929 records paired"
+  },
+  {
+   "t": "2026-11-10T16:54:30Z",
+   "job": "openalex",
+   "kind": "milestone",
+   "text": "OpenAlex pairing run: 384,929 records paired"
+  },
+  {
+   "t": "2026-11-10T05:21:07Z",
+   "job": "coding_dev",
+   "kind": "progress",
+   "text": "DEV coding: 101 unit(s) finished on 2026-11-09"
+  },
+  {
+   "t": "2026-11-09T22:08:26Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 2,279 requests"
+  },
+  {
+   "t": "2026-11-09T08:19:22Z",
+   "job": "openalex",
+   "kind": "milestone",
+   "text": "OpenAlex pairing run: 605 records paired"
+  },
+  {
+   "t": "2026-11-08T22:14:51Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 16,426 requests"
+  },
+  {
+   "t": "2026-11-08T18:23:51Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 4,840 requests"
+  },
+  {
+   "t": "2026-11-07T16:28:41Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (finished) after 89 requests"
+  },
+  {
+   "t": "2026-11-07T13:07:31Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (finished) after 2,209 requests"
+  },
+  {
+   "t": "2026-11-07T12:00:26Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 306 requests"
+  },
+  {
+   "t": "2026-11-07T11:12:13Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 2,590 requests"
+  },
+  {
+   "t": "2026-11-07T06:44:25Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 121 requests"
+  },
+  {
+   "t": "2026-11-07T06:28:55Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 2,076 requests"
+  },
+  {
+   "t": "2026-11-06T22:13:20Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 10,924 requests"
+  },
+  {
+   "t": "2026-11-06T04:37:02Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 13,964 requests"
+  },
+  {
+   "t": "2026-11-05T19:18:38Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 23,605 requests"
+  },
+  {
+   "t": "2026-11-05T01:27:02Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 13,233 requests"
+  },
+  {
+   "t": "2026-11-04T22:03:48Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 195 requests"
+  },
+  {
+   "t": "2026-11-04T20:45:22Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 262 requests"
+  },
+  {
+   "t": "2026-11-04T17:57:09Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 371 requests"
+  },
+  {
+   "t": "2026-11-04T14:47:52Z",
+   "job": "harvest",
+   "kind": "stop",
+   "text": "Harvest run ended (interrupted) after 327 requests"
+  }
+ ],
+ "machine": {
+  "disk_free_gb": 29.8,
+  "memory_pct": 71.5,
+  "memory_source": "the harvest's own reading"
+ },
+ "links": [
+  {
+   "label": "This progress page",
+   "url": "https://nathanreitinger.github.io/lawrank-progress/"
+  },
+  {
+   "label": "Progress page source",
+   "url": "https://github.com/nathanReitinger/lawrank-progress"
+  },
+  {
+   "label": "Law school rankings site",
+   "url": "https://nathanreitinger.github.io/lawRankings/"
+  },
+  {
+   "label": "Rankings site source",
+   "url": "https://github.com/nathanReitinger/lawRankings"
+  },
+  {
+   "label": "Hugging Face profile (models start private)",
+   "url": "https://huggingface.co/nathanReitinger"
+  },
+  {
+   "label": "Preview model test page",
+   "local": "localhost:8765 on the owner's Mac",
+   "how": "Once the page is built: start the preview-model configuration (.claude/launch.json), then open localhost:8765."
+  },
+  {
+   "label": "This page, offline",
+   "local": "progress-site/site/index.html",
+   "how": "Open the file in a browser; it reads local-data.js, which the collector writes."
+  },
+  {
+   "label": "Project record",
+   "local": "PROJECT_RECORD/",
+   "how": "DECISIONS.md, STEPS.md, PLAN.md, OPEN.md."
+  },
+  {
+   "label": "Classifier plan",
+   "local": "classifier/plan/",
+   "how": "PROTOCOL.md, ARCHITECTURE.md, SILVER.md, NEXT.md."
+  },
+  {
+   "label": "Harvest live progress",
+   "local": "python3 .recovery/tools/progress.py --watch 60",
+   "how": "Run it from the project folder; it only reads."
+  },
+  {
+   "label": "CORE lane status",
+   "local": "cd .recovery/s18/build/core && python3 -B -m corelane status",
+   "how": "Offline; it only reads."
+  },
+  {
+   "label": "Semantic Scholar status",
+   "local": "cd .recovery/s18/build/s2 && python3 -B -m s2bulk status",
+   "how": "Offline; it only reads."
+  },
+  {
+   "label": "Coding plan of a run",
+   "local": "python3 classifier/annotation/runs/coding_plan.py silver_s1",
+   "how": "Also dev_coding or test_coding; offline."
+  },
+  {
+   "label": "Updater log",
+   "local": "progress-site/updater/log/updater.log",
+   "how": "One line per cycle: collected, scanned, committed, pushed."
+  }
+ ],
+ "unmeasured": [
+  {
+   "what": "Semantic Scholar side store",
+   "why": "written only by the read's last step (pairing)"
+  },
+  {
+   "what": "Usage-limit waits of the coding workflows",
+   "why": "not written to any file the collector reads; a coding run that should run but has finished no unit for 2 hours is flagged instead"
+  }
+ ],
+ "collector": {
+  "version": "1",
+  "seconds": 0.36,
+  "max_rss_mb": 35.9,
+  "errors": [],
+  "history_points": 12,
+  "note": "read-only; one cycle every 10 minutes when the updater runs"
+ }
+}
