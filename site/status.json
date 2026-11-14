@@ -1,6 +1,6 @@
 {
  "schema": "lawrank-progress status 1",
- "generated_at": "2026-11-14T04:49:32Z",
+ "generated_at": "2026-11-14T04:59:36Z",
  "project": {
   "name": "Law review subject tags",
   "tagline": "Every law review paper on our list gets its abstract or first pages; our own model then tags each paper with its subjects, and the tags go paper -> professor -> school on the law school rankings site.",
@@ -11,7 +11,7 @@
   "taxonomy_version": "0.2.2"
  },
  "headline": {
-  "sentence": "Phase 2 of 5 (Labels) is the focus now: Silver S1 coding at 19 of 317 units. Phase 1 (Collect) and Phase 3 (Model) keep running beside it. 3 of 3 jobs that must keep running are running. Next milestone: the v0.9 beta, estimated 2026-11-22 to 2026-12-02.",
+  "sentence": "Phase 2 of 5 (Labels) is the focus now: Silver S1 coding at 21 of 317 units. Phase 1 (Collect) and Phase 3 (Model) keep running beside it. 3 of 3 jobs that must keep running are running. Next milestone: the v0.9 beta, estimated 2026-11-22 to 2026-12-02.",
   "focus_phase": "p2",
   "must_up": 3,
   "must_total": 3,
@@ -109,17 +109,17 @@
       "state": "running",
       "health": "ok",
       "progress": {
-       "done": 19800,
+       "done": 19940,
        "total": 383403,
        "unit": "papers looked up",
-       "pct": 5.16
+       "pct": 5.2
       },
       "eta": {
-       "seconds": 1596305,
-       "at": "2026-12-02T16:14:38Z",
+       "seconds": 1635583,
+       "at": "2026-12-03T03:19:20Z",
        "basis": "papers in the last 60 minutes"
       },
-      "last_activity": "2026-11-14T04:48:29Z"
+      "last_activity": "2026-11-14T04:58:40Z"
      }
     },
     {
@@ -132,19 +132,9 @@
      "live": {
       "state": "running",
       "health": "ok",
-      "progress": {
-       "done": 4607,
-       "total": 209547,
-       "unit": "papers of the gaps queue tried",
-       "pct": 2.2,
-       "since": "2026-11-13"
-      },
-      "eta": {
-       "seconds": 2166517,
-       "at": "2026-12-09T06:38:10Z",
-       "basis": "the harvest's own estimate (10.6 s a paper)"
-      },
-      "last_activity": "2026-11-14T04:42:26Z"
+      "progress": null,
+      "eta": null,
+      "last_activity": "2026-11-14T04:59:15Z"
      }
     },
     {
@@ -223,13 +213,13 @@
       "state": "running",
       "health": "ok",
       "progress": {
-       "done": 19,
+       "done": 21,
        "total": 317,
        "unit": "coding units",
-       "pct": 5.99
+       "pct": 6.62
       },
       "eta": null,
-      "last_activity": "2026-11-14T04:49:30Z"
+      "last_activity": "2026-11-14T04:55:43Z"
      }
     },
     {
@@ -240,16 +230,20 @@
      "detail": "Paused on 2026-11-13 after its first 25 batches; it resumes after silver S1. TEST stays sealed until the final report.",
      "needs": "Silver S1 finished; about 14 more usage windows.",
      "live": {
-      "state": "paused",
-      "health": "info",
+      "state": "running",
+      "health": "ok",
       "progress": {
-       "done": 102,
+       "done": 103,
        "total": 861,
        "unit": "coding units",
-       "pct": 11.85
+       "pct": 11.96
       },
-      "eta": null,
-      "last_activity": "2026-11-13T18:30:04Z"
+      "eta": {
+       "seconds": 682200,
+       "at": "2026-11-22T02:29:36Z",
+       "basis": "units finished in the last 24 hours (usage windows decide)"
+      },
+      "last_activity": "2026-11-14T04:56:47Z"
      }
     },
     {
@@ -300,7 +294,7 @@
       "health": "info",
       "progress": null,
       "eta": null,
-      "last_activity": "2026-11-14T04:28:01Z"
+      "last_activity": "2026-11-14T04:54:26Z"
      }
     },
     {
@@ -609,80 +603,63 @@
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 294,
-   "last_activity": "2026-11-14T04:42:26Z",
+   "uptime_s": 285,
+   "last_activity": "2026-11-14T04:59:15Z",
    "rate": {
     "unit": "requests a minute",
-    "last10": 4.7,
-    "last60": 12.6
+    "last10": 0.4,
+    "last60": 11.1
    },
    "rates": [
     {
      "label": "requests (last 10 min)",
-     "value": 47
+     "value": 4
     },
     {
      "label": "requests (last 60 min)",
-     "value": 758
+     "value": 663
     },
     {
      "label": "not found, refused or no answer (last 10 min)",
-     "value": 2
+     "value": 0
     },
     {
      "label": "sites asked (last 15 min)",
-     "value": 5
+     "value": 2
     },
     {
      "label": "records kept (last 10 min, harvest's count)",
-     "value": 45
+     "value": 0
     },
     {
      "label": "abstracts kept (last 10 min, harvest's count)",
-     "value": 6
+     "value": 0
     }
    ],
-   "progress": {
-    "done": 4607,
-    "total": 209547,
-    "unit": "papers of the gaps queue tried",
-    "pct": 2.2,
-    "since": "2026-11-13"
-   },
-   "queue": {
-    "left": 204940,
-    "unit": "papers in the gaps queue",
-    "done_this_run": 3454,
-    "texts_this_run": 1067,
-    "skipped_for_now": 3616,
-    "secs_each": 10.6
-   },
-   "eta": {
-    "seconds": 2166517,
-    "at": "2026-12-09T06:38:10Z",
-    "basis": "the harvest's own estimate (10.6 s a paper)"
-   },
+   "progress": null,
+   "queue": null,
+   "eta": null,
    "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 156 requests (15.6 a minute), 33 records, 5 abstracts; this run: 6,041 requests, 1,138 records, 314 abstracts; gaps beside the passes: 3,417 papers done (1,047 texts), 204,949 left, about 25.1 days left at 10.6 s each (3,603 skipped for now); workers: 8 working of 125 (117 waiting for work); memory 68%, aiming at 90-95%",
    "details": [
     {
      "k": "journal passes",
-     "v": "532 done of 536"
+     "v": "531 done of 536"
     },
     {
      "k": "workers",
-     "v": "0 working of 125 (memory 68.4%, aiming at 90-95%)"
+     "v": "1 working of 30 (memory 70%, aiming at 90-95%)"
     },
     {
      "k": "sites paused or left alone",
-     "v": "18 paused in this run, 145 left alone for days"
+     "v": "0 paused in this run, 122 left alone for days"
     },
     {
      "k": "this run",
-     "v": "6,131 requests, 1,158 records, 316 abstracts"
+     "v": "4 requests, 0 records, 0 abstracts"
     },
     {
      "k": "this run started",
-     "v": "2026-11-13T18:13:01Z"
+     "v": "2026-11-14T04:54:59Z"
     }
    ],
    "notes": [],
@@ -693,11 +670,6 @@
     "from": "2026-11-27",
     "to": "2026-12-18",
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
-   },
-   "eta_alt": {
-    "seconds": 1601043,
-    "at": "2026-12-02T17:33:35Z",
-    "basis": "the queue's fall over the last 6 hours"
    },
    "line_at": "2026-11-14T04:37:35Z"
   },
@@ -716,44 +688,44 @@
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 71076,
-   "last_activity": "2026-11-14T04:48:29Z",
+   "uptime_s": 71680,
+   "last_activity": "2026-11-14T04:58:40Z",
    "rate": {
     "unit": "papers a minute",
-    "last10": 18.0,
-    "last60": 13.7
+    "last10": 14.0,
+    "last60": 13.3
    },
    "rates": [
     {
      "label": "papers (last 10 min)",
-     "value": 180
+     "value": 140
     },
     {
      "label": "papers (last 60 min)",
-     "value": 820
+     "value": 800
     },
     {
      "label": "with a text (last 10 min)",
-     "value": 110
+     "value": 68
     }
    ],
    "progress": {
-    "done": 19800,
+    "done": 19940,
     "total": 383403,
     "unit": "papers looked up",
-    "pct": 5.16
+    "pct": 5.2
    },
    "queue": null,
    "eta": {
-    "seconds": 1596305,
-    "at": "2026-12-02T16:14:38Z",
+    "seconds": 1635583,
+    "at": "2026-12-03T03:19:20Z",
     "basis": "papers in the last 60 minutes"
    },
-   "line": "19,700 papers in 1178 min, 10,381 requests (0.53 a paper): matched 10,421 (8,681 with a text, 1,431 a link only), review 367, never-source 728, no match 1,454, no hits 6,721, errors 3; side lines written 10,112",
+   "line": "19,900 papers in 1193 min, 10,506 requests (0.53 a paper): matched 10,527 (8,774 with a text, 1,442 a link only), review 373, never-source 739, no match 1,464, no hits 6,788, errors 3; side lines written 10,216",
    "details": [
     {
      "k": "requests to CORE",
-     "v": "10,470 in all"
+     "v": "10,554 in all"
     },
     {
      "k": "pace",
@@ -761,11 +733,11 @@
     },
     {
      "k": "matched",
-     "v": "10,421 papers (8,681 with a text)"
+     "v": "10,527 papers (8,774 with a text)"
     },
     {
      "k": "side-store lines written",
-     "v": "10,112"
+     "v": "10,216"
     }
    ],
    "notes": [],
@@ -778,11 +750,11 @@
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
    },
    "found": {
-    "with_text": 8723,
+    "with_text": 8791,
     "unit": "papers with a text found",
-    "of": 19800
+    "of": 19940
    },
-   "line_at": "2026-11-14T04:43:25Z"
+   "line_at": "2026-11-14T04:58:01Z"
   },
   {
    "id": "s2",
@@ -875,35 +847,33 @@
    "running": null,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-14T04:49:30Z",
+   "last_activity": "2026-11-14T04:55:43Z",
    "rate": {
     "unit": "units an hour",
     "last10": null,
-    "last60": 4.0
+    "last60": 6.0
    },
    "rates": [
     {
      "label": "units (last 60 min)",
-     "value": 4
+     "value": 6
     },
     {
      "label": "units (last 24 h)",
-     "value": 19
+     "value": 21
     }
    ],
    "progress": {
-    "done": 19,
+    "done": 21,
     "total": 317,
     "unit": "coding units",
-    "pct": 5.99
+    "pct": 6.62
    },
    "queue": null,
    "eta": null,
-   "line": "stage s1: 19 of 264 units (264 batches, 1 coder(s))",
+   "line": "stage s1: 21 of 264 units (264 batches, 1 coder(s))",
    "details": [],
-   "notes": [
-    "1 unit(s) partly written (cut off; re-run fresh next time)."
-   ],
+   "notes": [],
    "spark": "s1",
    "estimate": {
     "id": "s1",
@@ -919,9 +889,9 @@
      "batches": 264,
      "n_coders": 1,
      "adjudicated": false,
-     "done": 19,
+     "done": 21,
      "total": 264,
-     "pct": 7.2
+     "pct": 7.95
     },
     {
      "stage": "s1_double",
@@ -952,7 +922,7 @@
    "running": false,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-14T04:28:01Z",
+   "last_activity": "2026-11-14T04:54:26Z",
    "rate": null,
    "rates": [],
    "progress": null,
@@ -985,7 +955,7 @@
    "running": true,
    "watcher_running": true,
    "uptime_s": null,
-   "last_activity": "2026-11-14T04:39:31Z",
+   "last_activity": "2026-11-14T04:49:35Z",
    "rate": null,
    "rates": [],
    "progress": null,
@@ -995,7 +965,7 @@
    "details": [
     {
      "k": "last push",
-     "v": "2026-11-14T04:39:31Z (ok)"
+     "v": "2026-11-14T04:49:35Z (ok)"
     },
     {
      "k": "last scan",
@@ -1003,7 +973,7 @@
     },
     {
      "k": "cycles",
-     "v": "31"
+     "v": "32"
     }
    ],
    "notes": [],
@@ -1021,36 +991,40 @@
    "kept_alive_by": "",
    "check": "python3 classifier/annotation/runs/coding_plan.py test_coding",
    "stop": "",
-   "state": "paused",
-   "health": "info",
+   "state": "running",
+   "health": "ok",
    "running": null,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-13T18:30:04Z",
+   "last_activity": "2026-11-14T04:56:47Z",
    "rate": {
     "unit": "units an hour",
     "last10": null,
-    "last60": 0.0
+    "last60": 1.0
    },
    "rates": [
     {
      "label": "units (last 60 min)",
-     "value": 0
+     "value": 1
     },
     {
      "label": "units (last 24 h)",
-     "value": 95
+     "value": 96
     }
    ],
    "progress": {
-    "done": 102,
+    "done": 103,
     "total": 861,
     "unit": "coding units",
-    "pct": 11.85
+    "pct": 11.96
    },
    "queue": null,
-   "eta": null,
-   "line": "stage test: 102 of 476 units (119 batches, 3 coder(s) + adjudicator)",
+   "eta": {
+    "seconds": 682200,
+    "at": "2026-11-22T02:29:36Z",
+    "basis": "units finished in the last 24 hours (usage windows decide)"
+   },
+   "line": "stage test: 103 of 476 units (119 batches, 3 coder(s) + adjudicator)",
    "details": [],
    "notes": [],
    "spark": "te",
@@ -1068,9 +1042,9 @@
      "batches": 119,
      "n_coders": 3,
      "adjudicated": true,
-     "done": 102,
+     "done": 103,
      "total": 476,
-     "pct": 21.43
+     "pct": 21.64
     },
     {
      "stage": "retest",
@@ -1462,22 +1436,34 @@
     }
    },
    "page_code": true,
-   "model_card_at": "2026-11-13T23:30:39Z"
+   "model_card_at": "2026-11-14T04:54:26Z"
   }
  },
  "alerts": [],
  "events": [
   {
+   "t": "2026-11-14T04:55:43Z",
+   "job": "coding_s1",
+   "kind": "progress",
+   "text": "Silver S1 coding: 21 unit(s) finished on 2026-11-13"
+  },
+  {
+   "t": "2026-11-14T04:55:00Z",
+   "job": "coding_test",
+   "kind": "progress",
+   "text": "TEST coding: 96 unit(s) finished on 2026-11-13"
+  },
+  {
+   "t": "2026-11-14T04:54:59Z",
+   "job": "harvest",
+   "kind": "start",
+   "text": "Harvest run started"
+  },
+  {
    "t": "2026-11-14T04:42:49Z",
    "job": "harvest",
    "kind": "stop",
    "text": "Harvest run ended (interrupted) after 6,131 requests"
-  },
-  {
-   "t": "2026-11-14T04:37:30Z",
-   "job": "coding_s1",
-   "kind": "progress",
-   "text": "Silver S1 coding: 19 unit(s) finished on 2026-11-13"
   },
   {
    "t": "2026-11-14T00:57:53Z",
@@ -1546,22 +1532,10 @@
    "text": "Semantic Scholar full text: 200 of 330 parts read"
   },
   {
-   "t": "2026-11-13T18:30:02Z",
-   "job": "coding_test",
-   "kind": "progress",
-   "text": "TEST coding: 95 unit(s) finished on 2026-11-13"
-  },
-  {
    "t": "2026-11-13T18:29:18Z",
    "job": "s2",
    "kind": "milestone",
    "text": "Semantic Scholar full text: 150 of 330 parts read"
-  },
-  {
-   "t": "2026-11-13T18:13:01Z",
-   "job": "harvest",
-   "kind": "start",
-   "text": "Harvest run started"
   },
   {
    "t": "2026-11-13T18:10:51Z",
@@ -1824,7 +1798,7 @@
  ],
  "machine": {
   "disk_free_gb": 26.4,
-  "memory_pct": 68.4,
+  "memory_pct": 70.0,
   "memory_source": "the harvest's own reading"
  },
  "links": [
@@ -1902,10 +1876,10 @@
  ],
  "collector": {
   "version": "1",
-  "seconds": 0.42,
-  "max_rss_mb": 36.2,
+  "seconds": 0.98,
+  "max_rss_mb": 43.3,
   "errors": [],
-  "history_points": 43,
+  "history_points": 44,
   "note": "read-only; one cycle every 10 minutes when the updater runs"
  }
 }
