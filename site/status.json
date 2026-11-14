@@ -1,6 +1,6 @@
 {
  "schema": "lawrank-progress status 1",
- "generated_at": "2026-11-14T13:33:15Z",
+ "generated_at": "2026-11-14T13:43:19Z",
  "project": {
   "name": "Law review subject tags",
   "tagline": "Every law review paper on our list gets its abstract or first pages; our own model then tags each paper with its subjects, and the tags go paper -> professor -> school on the law school rankings site.",
@@ -109,17 +109,17 @@
       "state": "running",
       "health": "ok",
       "progress": {
-       "done": 26280,
+       "done": 26400,
        "total": 383403,
        "unit": "papers looked up",
-       "pct": 6.85
+       "pct": 6.89
       },
       "eta": {
-       "seconds": 1785615,
-       "at": "2026-12-05T05:33:30Z",
+       "seconds": 1836015,
+       "at": "2026-12-05T19:43:35Z",
        "basis": "papers in the last 60 minutes"
       },
-      "last_activity": "2026-11-14T13:31:40Z"
+      "last_activity": "2026-11-14T13:42:05Z"
      }
     },
     {
@@ -133,18 +133,18 @@
       "state": "running",
       "health": "ok",
       "progress": {
-       "done": 7008,
+       "done": 7037,
        "total": 209547,
        "unit": "papers of the gaps queue tried",
-       "pct": 3.34,
+       "pct": 3.36,
        "since": "2026-11-13"
       },
       "eta": {
-       "seconds": 4140810,
-       "at": "2027-01-01T11:46:46Z",
-       "basis": "the harvest's own estimate (20.4 s a paper)"
+       "seconds": 4061840,
+       "at": "2026-12-31T14:00:40Z",
+       "basis": "the harvest's own estimate (20.1 s a paper)"
       },
-      "last_activity": "2026-11-14T13:33:09Z"
+      "last_activity": "2026-11-14T13:43:17Z"
      }
     },
     {
@@ -609,25 +609,25 @@
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 31104,
-   "last_activity": "2026-11-14T13:33:09Z",
+   "uptime_s": 31708,
+   "last_activity": "2026-11-14T13:43:17Z",
    "rate": {
     "unit": "requests a minute",
-    "last10": 9.1,
-    "last60": 7.3
+    "last10": 14.0,
+    "last60": 6.5
    },
    "rates": [
     {
      "label": "requests (last 10 min)",
-     "value": 91
+     "value": 140
     },
     {
      "label": "requests (last 60 min)",
-     "value": 436
+     "value": 392
     },
     {
      "label": "not found, refused or no answer (last 10 min)",
-     "value": 13
+     "value": 15
     },
     {
      "label": "sites asked (last 15 min)",
@@ -635,34 +635,34 @@
     },
     {
      "label": "records kept (last 10 min, harvest's count)",
-     "value": 24
+     "value": 44
     },
     {
      "label": "abstracts kept (last 10 min, harvest's count)",
-     "value": 8
+     "value": 6
     }
    ],
    "progress": {
-    "done": 7008,
+    "done": 7037,
     "total": 209547,
     "unit": "papers of the gaps queue tried",
-    "pct": 3.34,
+    "pct": 3.36,
     "since": "2026-11-13"
    },
    "queue": {
-    "left": 202539,
+    "left": 202510,
     "unit": "papers in the gaps queue",
-    "done_this_run": 1459,
-    "texts_this_run": 832,
+    "done_this_run": 1518,
+    "texts_this_run": 875,
     "skipped_for_now": 4229,
-    "secs_each": 20.4
+    "secs_each": 20.1
    },
    "eta": {
-    "seconds": 4140810,
-    "at": "2027-01-01T11:46:46Z",
-    "basis": "the harvest's own estimate (20.4 s a paper)"
+    "seconds": 4061840,
+    "at": "2026-12-31T14:00:40Z",
+    "basis": "the harvest's own estimate (20.1 s a paper)"
    },
-   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 105 requests (10.5 a minute), 21 records, 6 abstracts; this run: 5,034 requests, 890 records, 184 abstracts; gaps beside the passes: 1,450 papers done (826 texts), 202,542 left, about 47.8 days left at 20.4 s each (4,229 skipped for now); workers: 5 working of 65 (60 waiting for work); memory 71%, aiming at 90-95%",
+   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 90 requests (9 a minute), 23 records, 5 abstracts; this run: 5,125 requests, 914 records, 189 abstracts; gaps beside the passes: 1,479 papers done (848 texts), 202,532 left, about 47.9 days left at 20.4 s each (4,229 skipped for now); workers: 5 working of 65 (60 waiting for work); memory 70%, aiming at 90-95%",
    "details": [
     {
      "k": "journal passes",
@@ -678,7 +678,7 @@
     },
     {
      "k": "this run",
-     "v": "5,062 requests, 898 records, 186 abstracts"
+     "v": "5,204 requests, 942 records, 192 abstracts"
     },
     {
      "k": "this run started",
@@ -695,11 +695,11 @@
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
    },
    "eta_alt": {
-    "seconds": 14374605,
-    "at": "2027-04-29T22:30:01Z",
+    "seconds": 13260270,
+    "at": "2027-04-17T01:07:50Z",
     "basis": "the queue's fall over the last 6 hours"
    },
-   "line_at": "2026-11-14T13:28:59Z"
+   "line_at": "2026-11-14T13:39:03Z"
   },
   {
    "id": "core",
@@ -716,12 +716,12 @@
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 102499,
-   "last_activity": "2026-11-14T13:31:40Z",
+   "uptime_s": 103103,
+   "last_activity": "2026-11-14T13:42:05Z",
    "rate": {
     "unit": "papers a minute",
     "last10": 10.0,
-    "last60": 12.0
+    "last60": 11.7
    },
    "rates": [
     {
@@ -730,30 +730,30 @@
     },
     {
      "label": "papers (last 60 min)",
-     "value": 720
+     "value": 700
     },
     {
      "label": "with a text (last 10 min)",
-     "value": 20
+     "value": 38
     }
    ],
    "progress": {
-    "done": 26280,
+    "done": 26400,
     "total": 383403,
     "unit": "papers looked up",
-    "pct": 6.85
+    "pct": 6.89
    },
    "queue": null,
    "eta": {
-    "seconds": 1785615,
-    "at": "2026-12-05T05:33:30Z",
+    "seconds": 1836015,
+    "at": "2026-12-05T19:43:35Z",
     "basis": "papers in the last 60 minutes"
    },
-   "line": "26,200 papers in 1701 min, 14,870 requests (0.57 a paper): matched 13,807 (11,386 with a text, 1,883 a link only), review 486, never-source 1,065, no match 1,969, no hits 8,860, errors 7; side lines written 13,269",
+   "line": "26,300 papers in 1710 min, 14,953 requests (0.57 a paper): matched 13,849 (11,414 with a text, 1,894 a link only), review 489, never-source 1,071, no match 1,982, no hits 8,896, errors 7; side lines written 13,308",
    "details": [
     {
      "k": "requests to CORE",
-     "v": "14,968 in all"
+     "v": "15,051 in all"
     },
     {
      "k": "pace",
@@ -761,11 +761,11 @@
     },
     {
      "k": "matched",
-     "v": "13,807 papers (11,386 with a text)"
+     "v": "13,849 papers (11,414 with a text)"
     },
     {
      "k": "side-store lines written",
-     "v": "13,269"
+     "v": "13,308"
     }
    ],
    "notes": [],
@@ -778,11 +778,11 @@
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
    },
    "found": {
-    "with_text": 11399,
+    "with_text": 11446,
     "unit": "papers with a text found",
-    "of": 26280
+    "of": 26400
    },
-   "line_at": "2026-11-14T13:25:49Z"
+   "line_at": "2026-11-14T13:35:00Z"
   },
   {
    "id": "s2",
@@ -985,7 +985,7 @@
    "running": true,
    "watcher_running": true,
    "uptime_s": null,
-   "last_activity": "2026-11-14T13:23:14Z",
+   "last_activity": "2026-11-14T13:33:18Z",
    "rate": null,
    "rates": [],
    "progress": null,
@@ -995,7 +995,7 @@
    "details": [
     {
      "k": "last push",
-     "v": "2026-11-14T13:23:14Z (ok)"
+     "v": "2026-11-14T13:33:18Z (ok)"
     },
     {
      "k": "last scan",
@@ -1003,7 +1003,7 @@
     },
     {
      "k": "cycles",
-     "v": "83"
+     "v": "84"
     }
    ],
    "notes": [],
@@ -1039,7 +1039,7 @@
     },
     {
      "label": "units (last 24 h)",
-     "value": 54
+     "value": 49
     }
    ],
    "progress": {
@@ -1472,7 +1472,7 @@
   {
    "severity": "warn",
    "job": "coding_s1",
-   "text": "Silver S1 coding: no unit finished for 3.8 h; it waits for a usage window, or no coding workflow is running.",
+   "text": "Silver S1 coding: no unit finished for 4.0 h; it waits for a usage window, or no coding workflow is running.",
    "since": "2026-11-14T09:44:42Z"
   }
  ],
@@ -1839,7 +1839,7 @@
   }
  ],
  "machine": {
-  "disk_free_gb": 23.6,
+  "disk_free_gb": 23.5,
   "memory_pct": 70.5,
   "memory_source": "the harvest's own reading"
  },
@@ -1919,9 +1919,9 @@
  "collector": {
   "version": "1",
   "seconds": 0.24,
-  "max_rss_mb": 36.2,
+  "max_rss_mb": 35.5,
   "errors": [],
-  "history_points": 95,
+  "history_points": 96,
   "note": "read-only; one cycle every 10 minutes when the updater runs"
  }
 }
