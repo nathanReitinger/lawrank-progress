@@ -1,6 +1,6 @@
 {
  "schema": "lawrank-progress status 1",
- "generated_at": "2026-11-14T19:11:37Z",
+ "generated_at": "2026-11-14T19:21:41Z",
  "project": {
   "name": "Law review subject tags",
   "tagline": "Every law review paper on our list gets its abstract or first pages; our own model then tags each paper with its subjects, and the tags go paper -> professor -> school on the law school rankings site.",
@@ -11,11 +11,11 @@
   "taxonomy_version": "0.2.2"
  },
  "headline": {
-  "sentence": "Phase 2 of 5 (Labels) is the focus now: Silver S1 coding at 36 of 317 units. Phase 1 (Collect) and Phase 3 (Model) keep running beside it. 1 of 3 jobs that must keep running are running. Next milestone: the v0.9 beta, estimated 2026-11-22 to 2026-12-02.",
+  "sentence": "Phase 2 of 5 (Labels) is the focus now: Silver S1 coding at 36 of 317 units. Phase 1 (Collect) and Phase 3 (Model) keep running beside it. 2 of 3 jobs that must keep running are running. Next milestone: the v0.9 beta, estimated 2026-11-22 to 2026-12-02.",
   "focus_phase": "p2",
-  "must_up": 1,
+  "must_up": 2,
   "must_total": 3,
-  "critical_alerts": 1,
+  "critical_alerts": 0,
   "coverage": {
    "papers": 583596,
    "without_text": 383403,
@@ -106,20 +106,20 @@
      "detail": "Looks up the papers still without a text in CORE, by OAI id, DOI or title.",
      "needs": "Keeps running (its keep-alive restarts it); about 2-3 weeks at today's pace.",
      "live": {
-      "state": "stopped",
-      "health": "critical",
+      "state": "running",
+      "health": "ok",
       "progress": {
-       "done": 26920,
+       "done": 26980,
        "total": 383403,
        "unit": "papers looked up",
-       "pct": 7.02
+       "pct": 7.04
       },
       "eta": {
-       "seconds": 9129642,
-       "at": "2027-02-28T11:12:19Z",
-       "basis": "papers in the last 6 hours"
+       "seconds": 21385380,
+       "at": "2027-07-20T07:44:41Z",
+       "basis": "papers in the last 60 minutes"
       },
-      "last_activity": "2026-11-14T14:41:43Z"
+      "last_activity": "2026-11-14T19:21:27Z"
      }
     },
     {
@@ -131,20 +131,20 @@
      "needs": "Keeps running until its gaps queue is empty (its keep-alive restarts it).",
      "live": {
       "state": "running",
-      "health": "warn",
+      "health": "ok",
       "progress": {
-       "done": 8408,
+       "done": 8420,
        "total": 209547,
        "unit": "papers of the gaps queue tried",
-       "pct": 4.01,
+       "pct": 4.02,
        "since": "2026-11-13"
       },
       "eta": {
-       "seconds": 2293560,
-       "at": "2026-12-11T08:17:37Z",
-       "basis": "the harvest's own estimate (11.4 s a paper)"
+       "seconds": 2305994,
+       "at": "2026-12-11T11:54:56Z",
+       "basis": "the harvest's own estimate (11.5 s a paper)"
       },
-      "last_activity": "2026-11-14T19:11:36Z"
+      "last_activity": "2026-11-14T19:21:33Z"
      }
     },
     {
@@ -220,8 +220,8 @@
      "detail": "10,000 training papers, one coder each; 2,000 of them coded a second time in a later window (SILVER-VAL).",
      "needs": "About 7-8 five-hour usage windows (about 40 units a window), one coding workflow per window; the doubled 2,000 only in a window after the first pass is final.",
      "live": {
-      "state": "idle",
-      "health": "warn",
+      "state": "running",
+      "health": "ok",
       "progress": {
        "done": 36,
        "total": 317,
@@ -229,11 +229,11 @@
        "pct": 11.36
       },
       "eta": {
-       "seconds": 809280,
-       "at": "2026-11-24T03:59:37Z",
+       "seconds": 867085,
+       "at": "2026-11-24T20:13:07Z",
        "basis": "units finished in the last 24 hours (usage windows decide)"
       },
-      "last_activity": "2026-11-14T14:37:39Z"
+      "last_activity": "2026-11-14T19:20:57Z"
      }
     },
     {
@@ -610,24 +610,24 @@
    "check": "python3 .recovery/tools/progress.py --watch 60",
    "stop": "create .recovery/tools/STOP_HARVEST",
    "state": "running",
-   "health": "warn",
+   "health": "ok",
    "running": true,
-   "watcher_running": false,
-   "uptime_s": 15274,
-   "last_activity": "2026-11-14T19:11:36Z",
+   "watcher_running": true,
+   "uptime_s": 15878,
+   "last_activity": "2026-11-14T19:21:33Z",
    "rate": {
     "unit": "requests a minute",
-    "last10": 10.4,
-    "last60": 10.8
+    "last10": 12.8,
+    "last60": 11.3
    },
    "rates": [
     {
      "label": "requests (last 10 min)",
-     "value": 104
+     "value": 128
     },
     {
      "label": "requests (last 60 min)",
-     "value": 651
+     "value": 677
     },
     {
      "label": "not found, refused or no answer (last 10 min)",
@@ -639,34 +639,34 @@
     },
     {
      "label": "records kept (last 10 min, harvest's count)",
-     "value": 6
+     "value": 15
     },
     {
      "label": "abstracts kept (last 10 min, harvest's count)",
-     "value": 2
+     "value": 1
     }
    ],
    "progress": {
-    "done": 8408,
+    "done": 8420,
     "total": 209547,
     "unit": "papers of the gaps queue tried",
-    "pct": 4.01,
+    "pct": 4.02,
     "since": "2026-11-13"
    },
    "queue": {
-    "left": 201139,
+    "left": 201127,
     "unit": "papers in the gaps queue",
-    "done_this_run": 1240,
-    "texts_this_run": 604,
+    "done_this_run": 1286,
+    "texts_this_run": 619,
     "skipped_for_now": 2514,
-    "secs_each": 11.4
+    "secs_each": 11.5
    },
    "eta": {
-    "seconds": 2293560,
-    "at": "2026-12-11T08:17:37Z",
-    "basis": "the harvest's own estimate (11.4 s a paper)"
+    "seconds": 2305994,
+    "at": "2026-12-11T11:54:56Z",
+    "basis": "the harvest's own estimate (11.5 s a paper)"
    },
-   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 111 requests (11.1 a minute), 11 records, 2 abstracts; this run: 3,374 requests, 651 records, 182 abstracts; gaps beside the passes: 1,233 papers done (604 texts), 201,140 left, about 26.4 days left at 11.4 s each (2,514 skipped for now); workers: 5 working of 31 (26 waiting for work); memory 73%, aiming at 90-95%",
+   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 117 requests (11.7 a minute), 11 records, 1 abstracts; this run: 3,493 requests, 662 records, 183 abstracts; gaps beside the passes: 1,274 papers done (615 texts), 201,131 left, about 26.7 days left at 11.5 s each (2,514 skipped for now); workers: 5 working of 31 (26 waiting for work); memory 78%, aiming at 90-95%",
    "details": [
     {
      "k": "journal passes",
@@ -674,7 +674,7 @@
     },
     {
      "k": "workers",
-     "v": "5 working of 31 (memory 73.3%, aiming at 90-95%)"
+     "v": "5 working of 31 (memory 84.2%, aiming at 90-95%)"
     },
     {
      "k": "sites paused or left alone",
@@ -682,7 +682,7 @@
     },
     {
      "k": "this run",
-     "v": "3,396 requests, 651 records, 182 abstracts"
+     "v": "3,526 requests, 666 records, 183 abstracts"
     },
     {
      "k": "this run started",
@@ -699,11 +699,11 @@
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
    },
    "eta_alt": {
-    "seconds": 3045064,
-    "at": "2026-12-20T01:02:41Z",
+    "seconds": 3040342,
+    "at": "2026-12-19T23:54:04Z",
     "basis": "the queue's fall over the last 6 hours"
    },
-   "line_at": "2026-11-14T19:09:10Z"
+   "line_at": "2026-11-14T19:19:15Z"
   },
   {
    "id": "core",
@@ -716,52 +716,52 @@
    "kept_alive_by": "keep_core.sh in a Terminal tab (never restarts after a STOPPED file)",
    "check": "cd .recovery/s18/build/core && python3 -B -m corelane status",
    "stop": "create STOP in the lane's work folder",
-   "state": "stopped",
-   "health": "critical",
-   "running": false,
-   "watcher_running": false,
-   "uptime_s": null,
-   "last_activity": "2026-11-14T14:41:43Z",
+   "state": "running",
+   "health": "ok",
+   "running": true,
+   "watcher_running": true,
+   "uptime_s": 520,
+   "last_activity": "2026-11-14T19:21:27Z",
    "rate": {
     "unit": "papers a minute",
-    "last10": 0.0,
-    "last60": 0.0
+    "last10": 6.0,
+    "last60": 1.0
    },
    "rates": [
     {
      "label": "papers (last 10 min)",
-     "value": 0
+     "value": 60
     },
     {
      "label": "papers (last 60 min)",
-     "value": 0
+     "value": 60
     },
     {
      "label": "with a text (last 10 min)",
-     "value": 0
+     "value": 18
     }
    ],
    "progress": {
-    "done": 26920,
+    "done": 26980,
     "total": 383403,
     "unit": "papers looked up",
-    "pct": 7.02
+    "pct": 7.04
    },
    "queue": null,
    "eta": {
-    "seconds": 9129642,
-    "at": "2027-02-28T11:12:19Z",
-    "basis": "papers in the last 6 hours"
+    "seconds": 21385380,
+    "at": "2027-07-20T07:44:41Z",
+    "basis": "papers in the last 60 minutes"
    },
    "line": "100 papers in 13 min, 72 requests (0.72 a paper): matched 54 (39 with a text, 5 a link only), review 4, never-source 10, no match 6, no hits 26, errors 0; side lines written 44",
    "details": [
     {
      "k": "requests to CORE",
-     "v": "15,443 in all"
+     "v": "15,492 in all"
     },
     {
      "k": "pace",
-     "v": "8.51 s between requests"
+     "v": "6.3 s between requests"
     },
     {
      "k": "matched",
@@ -782,9 +782,9 @@
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
    },
    "found": {
-    "with_text": 11645,
+    "with_text": 11663,
     "unit": "papers with a text found",
-    "of": 26920
+    "of": 26980
    },
    "line_at": "2026-11-14T14:39:57Z"
   },
@@ -874,12 +874,12 @@
    "kept_alive_by": "a coding workflow launched at the start of each usage window (coding-run-v022, run silver_s1)",
    "check": "python3 classifier/annotation/runs/coding_plan.py silver_s1",
    "stop": "",
-   "state": "idle",
-   "health": "warn",
+   "state": "running",
+   "health": "ok",
    "running": null,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-14T14:37:39Z",
+   "last_activity": "2026-11-14T19:20:57Z",
    "rate": {
     "unit": "units an hour",
     "last10": null,
@@ -892,7 +892,7 @@
     },
     {
      "label": "units (last 24 h)",
-     "value": 30
+     "value": 28
     }
    ],
    "progress": {
@@ -903,14 +903,14 @@
    },
    "queue": null,
    "eta": {
-    "seconds": 809280,
-    "at": "2026-11-24T03:59:37Z",
+    "seconds": 867085,
+    "at": "2026-11-24T20:13:07Z",
     "basis": "units finished in the last 24 hours (usage windows decide)"
    },
    "line": "stage s1: 36 of 264 units (264 batches, 1 coder(s))",
    "details": [],
    "notes": [
-    "2 unit(s) partly written (cut off; re-run fresh next time)."
+    "1 unit(s) partly written (cut off; re-run fresh next time)."
    ],
    "spark": "s1",
    "estimate": {
@@ -988,12 +988,12 @@
    "kept_alive_by": "progress-site/updater/keep_updater.sh",
    "check": "progress-site/updater/log/updater.log",
    "stop": "create progress-site/updater/STOP",
-   "state": "stopped",
+   "state": "restarting",
    "health": "warn",
    "running": false,
-   "watcher_running": false,
+   "watcher_running": true,
    "uptime_s": null,
-   "last_activity": "2026-11-14T19:01:35Z",
+   "last_activity": "2026-11-14T19:11:40Z",
    "rate": null,
    "rates": [],
    "progress": null,
@@ -1003,7 +1003,7 @@
    "details": [
     {
      "k": "last push",
-     "v": "2026-11-14T19:01:35Z (ok)"
+     "v": "2026-11-14T19:11:40Z (ok)"
     },
     {
      "k": "last scan",
@@ -1011,7 +1011,7 @@
     },
     {
      "k": "cycles",
-     "v": "113"
+     "v": "114"
     }
    ],
    "notes": [],
@@ -1476,33 +1476,20 @@
    "model_card_at": "2026-11-14T04:54:26Z"
   }
  },
- "alerts": [
-  {
-   "severity": "critical",
-   "job": "core",
-   "text": "The CORE lane is not running and nothing will restart it.",
-   "since": null
-  },
-  {
-   "severity": "warn",
-   "job": "harvest",
-   "text": "keep_harvest.sh is not running: if the harvest stops, nothing restarts it.",
-   "since": null
-  },
-  {
-   "severity": "warn",
-   "job": "coding_s1",
-   "text": "Silver S1 coding: no unit finished for 4.6 h; it waits for a usage window, or no coding workflow is running.",
-   "since": "2026-11-14T14:37:39Z"
-  },
-  {
-   "severity": "warn",
-   "job": "updater",
-   "text": "The updater is not running, so this page is not refreshed (start updater/keep_updater.sh).",
-   "since": null
-  }
- ],
+ "alerts": [],
  "events": [
+  {
+   "t": "2026-11-14T19:21:41Z",
+   "job": "core",
+   "kind": "start",
+   "text": "CORE lane started running"
+  },
+  {
+   "t": "2026-11-14T19:13:01Z",
+   "job": "core",
+   "kind": "start",
+   "text": "CORE lane started"
+  },
   {
    "t": "2026-11-14T15:19:55Z",
    "job": "updater",
@@ -1850,23 +1837,11 @@
    "job": "harvest",
    "kind": "stop",
    "text": "Harvest run ended (finished) after 89 requests"
-  },
-  {
-   "t": "2026-11-07T13:07:31Z",
-   "job": "harvest",
-   "kind": "stop",
-   "text": "Harvest run ended (finished) after 2,209 requests"
-  },
-  {
-   "t": "2026-11-07T12:00:26Z",
-   "job": "harvest",
-   "kind": "stop",
-   "text": "Harvest run ended (interrupted) after 306 requests"
   }
  ],
  "machine": {
-  "disk_free_gb": 49.1,
-  "memory_pct": 73.3,
+  "disk_free_gb": 48.0,
+  "memory_pct": 84.2,
   "memory_source": "the harvest's own reading"
  },
  "links": [
@@ -1944,10 +1919,10 @@
  ],
  "collector": {
   "version": "1",
-  "seconds": 0.18,
-  "max_rss_mb": 36.2,
+  "seconds": 1.69,
+  "max_rss_mb": 35.8,
   "errors": [],
-  "history_points": 125,
+  "history_points": 126,
   "note": "read-only; one cycle every 10 minutes when the updater runs"
  }
 }
