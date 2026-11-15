@@ -15,10 +15,13 @@ The page shows:
   assumptions);
 - recent events, and links.
 
-The numbers are refreshed every 10 minutes on the project owner's computer by a read-only collector that reads the
-running jobs' own logs and state files; nothing in a job was changed to report progress. Every change is checked for
-keys, tokens, addresses, local paths and long texts before it is committed and again before it is pushed, and the
-push is never forced. The page shows progress facts only: counts, rates, phases and dates. It never shows paper
-texts, labels, keys or addresses.
+The numbers are refreshed every minute on the project owner's computer by a read-only collector that reads the
+running jobs' own logs and state files and the small heartbeat files some jobs write for this page. The newest status
+goes to this repository's `live` branch every minute (one data file, replaced each time; GitHub Pages does not build
+it), and the page with its data goes to GitHub Pages from `main` every 10 minutes (`main` is never force-pushed).
+Every change is checked for keys, tokens, addresses, local paths and long texts before it is committed and again
+before it is pushed. The page shows progress facts only: counts, rates, phases and dates. It never shows paper texts,
+labels, keys or addresses.
 
-Data: `site/status.json` (the latest status) and `site/history.jsonl` (one line per update, the last 3,000).
+Data: `site/status.json` (the latest status; the newest copy is on the `live` branch) and `site/history.jsonl` (a
+point a minute for the last 6 hours, then one per 10 minutes; at most 3,600 lines).
