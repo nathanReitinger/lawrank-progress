@@ -1677,7 +1677,7 @@
   // ------------------------------------------------------------------ celebration
   function celebrate(el) {
     if (el) el.classList.add("glow");
-    if (REDUCED.matches) return;
+    return;  // the owner (2026-11-14): no confetti
     var cv = $("confetti");
     if (!cv || !cv.getContext) return;
     var ctx = cv.getContext("2d"), dpr = Math.min(2, window.devicePixelRatio || 1);
