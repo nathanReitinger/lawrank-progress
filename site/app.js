@@ -485,6 +485,7 @@
   function svLight(sup, short) {
     if (sup.state === "loading") return light("unknown", null, "Loading");
     var w = short ? { running: "On duty", stale: "Quiet", missing: "Not reporting", unreadable: "Unreadable", off: "Turned off" }[sup.state] : SV_WORD[sup.state];
+    if (sup.state === "stale" && sup.switch_on === true) w = short ? "On (paused by macOS)" : "Supervisor on, paused by macOS";
     var st0 = ["running", "stale", "unreadable", "off"].indexOf(sup.state) >= 0 ? sup.state : "missing";
     return light(st0, null, w || "Unknown", sup.state === "running");
   }
@@ -497,7 +498,8 @@
     var supAt = ms(sup.at), bad = rows.filter(kaAttn), loading = !S.status && !S.error, oldData = freshness() === "stale";
     box.classList.toggle("old", oldData);
     box.classList.toggle("attn", bad.length > 0);
-    box.classList.toggle("warn", !bad.length && !loading && (sup.state !== "running" || rows.some(kaHandled)));
+    var supPaused = sup.state === "stale" && sup.switch_on === true;
+    box.classList.toggle("warn", !bad.length && !loading && ((sup.state !== "running" && !supPaused) || rows.some(kaHandled)));
     var lead = h("div", { "class": "ka-lead" }, icon("shield"), h("b", null, "Keep-alive"), loading ? light("unknown", null, "Loading") : svLight(sup, true));
     var leadMeta = [];
     if (loading) leadMeta.push(h("span", null, "reading the latest status"));
@@ -545,9 +547,9 @@
     if (S.status && freshness() === "stale") warn.appendChild(h("div", { "class": "banner warn", style: "margin-top:8px" }, icon("clock"), h("span", { "class": "b-body" },
       "This page has had no new data for " + fDurShort(dataAge()) + ", so the states below may be out of date. To see what runs now:", cmdChip("lawrank status", true))));
     if (sup.install_running === true) warn.appendChild(h("p", { "class": "banner info", style: "margin-top:8px" }, icon("clock"), h("span", { "class": "b-body" }, "An install is running on the Mac: the harvest, the CORE lane and the re-planner wait for it and start by themselves when it ends.")));
-    if (k.warning) warn.appendChild(h("p", { "class": "banner warn", style: "margin-top:8px" }, icon("alert"), h("span", { "class": "b-body" }, str(k.warning))));
+    if (k.warning) warn.appendChild(h("p", { "class": "banner " + (sup.state === "stale" && sup.switch_on === true ? "info" : "warn"), style: "margin-top:8px" }, icon(sup.state === "stale" && sup.switch_on === true ? "clock" : "alert"), h("span", { "class": "b-body" }, str(k.warning))));
     else if (sup.state === "running" && sup.auto_restart === false) warn.appendChild(h("p", { "class": "banner warn", style: "margin-top:8px" }, icon("alert"), h("span", { "class": "b-body" }, "Auto-restart is switched off for the whole supervisor: nothing restarts by itself until it is switched on again.", cmdChip("lawrank supervisor on", true))));
-    if (S.status && ["missing", "stale", "unreadable", "off"].indexOf(sup.state) >= 0)   // the supervisor itself is not on duty
+    if (S.status && ["missing", "stale", "unreadable", "off"].indexOf(sup.state) >= 0 && !(sup.state === "stale" && sup.switch_on === true))   // the supervisor itself is not on duty (not: on, paused by macOS)
       warn.appendChild(h("p", { "class": "kr-meta", style: "margin-top:8px" }, h("span", null, "Is the supervisor itself on?"), cmdChip("lawrank supervisor status"), h("span", null, "To turn it on:"), cmdChip("lawrank supervisor on")));
 
     var list = clear($("kr-list"));
