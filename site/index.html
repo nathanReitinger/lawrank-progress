@@ -4,168 +4,208 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Law Tags Mission Control</title>
-<meta name="description" content="Mission control for the law review subject-tags project: where we are, what each crew member is doing, and what comes next. Updated every 10 minutes.">
+<meta name="description" content="Live mission control for the law review subject-tags project: what runs now, every job's exact step, live measurements, the keep-alive runbook, and what comes next.">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#e9eef5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0d1520" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232a78d6'/%3E%3Cellipse cx='16' cy='16' rx='11' ry='5' fill='none' stroke='%23ffffff' stroke-width='2' transform='rotate(-24 16 16)'/%3E%3Ccircle cx='24' cy='11' r='3' fill='%23ffffff'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0d12" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='8' fill='%230e131a'/%3E%3Cpath d='M7 21 L12 14 L16 18 L21 9 L25 13' fill='none' stroke='%23ffffff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='25' cy='13' r='3' fill='%230ca30c'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 <script>
   try { var t = localStorage.getItem("progress-theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
 </script>
 </head>
-<body class="is-loading">
+<body>
 <a class="skip" href="#main">Skip to the content</a>
 
-<header class="band" id="top">
-  <div class="wrap band-in">
-    <div class="band-head">
-      <svg class="patch" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-        <circle class="patch-rim" cx="60" cy="60" r="56"/>
-        <circle class="patch-face" cx="60" cy="60" r="47"/>
-        <path class="patch-book" d="M34 74 C44 68 53 68 60 74 C67 68 76 68 86 74 L86 48 C76 42 67 42 60 48 C53 42 44 42 34 48 Z M60 48 L60 74"/>
-        <g class="patch-orbit-g">
-          <ellipse class="patch-orbit" cx="60" cy="60" rx="44" ry="16" transform="rotate(-22 60 60)"/>
-          <g class="patch-sat"><path class="patch-tag" d="M95 38 L103 38 L108 43 L103 48 L95 48 Z"/><circle class="patch-tag-hole" cx="98.5" cy="43" r="1.6"/></g>
-        </g>
-        <circle class="patch-star" cx="60" cy="24" r="3"/>
-      </svg>
-      <div class="band-title">
-        <p class="eyebrow">Law review subject tags</p>
-        <h1>Mission control</h1>
-      </div>
-      <button type="button" class="theme-btn" id="theme" aria-label="Color theme: follows the system. Press to change.">Theme: auto</button>
+<header class="topbar" id="top">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top" aria-label="Law Tags Mission Control, back to the top">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="2" y="2" width="28" height="28" rx="8"/><path d="M7 21 L12 14 L16 18 L21 9 L25 13"/><circle cx="25" cy="13" r="3"/></svg>
+      <span class="brand-text"><span class="brand-name">Law Tags</span> <span class="brand-sub">Mission Control</span></span>
+    </a>
+    <div class="pulse-pill" id="pulse" data-state="loading">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span class="pulse-word" id="pulse-word">Loading</span>
+      <span class="pulse-age" id="pulse-age" aria-hidden="true">&ndash;</span>
+      <span class="pulse-src" id="pulse-src"></span>
     </div>
-    <p class="lead" id="mc-sentence" aria-live="polite">Loading the latest status&hellip;</p>
-    <p class="sublead" id="mc-subsentence"></p>
-    <ul class="tele" aria-label="Mission telemetry">
-      <li class="tele-tile">
-        <p class="tele-label">Mission clock</p>
-        <p class="tele-value" id="mc-day">Day &ndash;</p>
-        <p class="tele-foot"><span class="mono" id="mc-clock" aria-hidden="true">T+ &ndash;</span> <span id="mc-since-start"></span></p>
-      </li>
-      <li class="tele-tile">
-        <p class="tele-label">Live feed</p>
-        <p class="tele-value"><span class="pulse" id="mc-pulse" aria-hidden="true"></span><span id="mc-updated">Not loaded yet</span></p>
-        <p class="tele-foot" id="mc-next-check">Checks for news every 2 minutes</p>
-      </li>
-      <li class="tele-tile">
-        <p class="tele-label">Crew on duty</p>
-        <p class="tele-value" id="mc-crew-up">&ndash;</p>
-        <p class="tele-foot" id="mc-crew-note"></p>
-      </li>
-      <li class="tele-tile">
-        <p class="tele-label">Next stop</p>
-        <p class="tele-value" id="mc-next-name">&ndash;</p>
-        <p class="tele-foot" id="mc-next-when"></p>
-      </li>
-    </ul>
-    <div id="banner" role="status"></div>
+    <div class="topbar-tools">
+      <button type="button" class="btn ghost sm" id="refresh" title="Check for new data now">Check now</button>
+      <button type="button" class="btn ghost sm" id="theme" aria-label="Color theme: follows the system. Press to change.">Auto</button>
+    </div>
   </div>
+  <div class="ticker" id="ticker" aria-label="Newest events">
+    <div class="wrap ticker-in">
+      <span class="ticker-tag" aria-hidden="true">Live log</span>
+      <div class="ticker-view"><div class="ticker-track" id="ticker-track"></div></div>
+    </div>
+  </div>
+  <div class="pollbar" aria-hidden="true"><span id="pollbar"></span></div>
 </header>
-
 <nav class="wrap jump" aria-label="Sections">
-  <a href="#since">Since you checked</a>
+  <a href="#bridge">Bridge</a>
+  <a href="#runbook">Keep-alive</a>
+  <a href="#running">Running now</a>
+  <a href="#measurements">Measurements</a>
+  <a href="#grids">Grids</a>
   <a href="#map">Mission map</a>
   <a href="#crew">Crew</a>
-  <a href="#collection">Collection</a>
-  <a href="#labels">Labels</a>
-  <a href="#lab">Model lab</a>
   <a href="#log">Mission log</a>
-  <a href="#badges">Badges</a>
+  <a href="#milestones">Milestones</a>
+  <a href="#notes">Talk to the team</a>
   <a href="#links">Links</a>
 </nav>
 
+<div class="wrap" id="alerts" aria-live="polite"></div>
+
 <main id="main" class="wrap">
-  <noscript><p class="banner warn">This page needs JavaScript to read its status file.</p></noscript>
+  <noscript><p class="banner crit">This page needs JavaScript to read its status file. The runbook: open Terminal on the Mac and run <code>lawrank status</code>, <code>lawrank start all</code>, <code>lawrank stop all</code> or <code>lawrank logs &lt;job&gt;</code>.</p></noscript>
 
-  <section class="panel" id="alerts-sec" aria-labelledby="h-alerts" hidden>
-    <h2 id="h-alerts">Needs attention</h2>
-    <ul class="alerts" id="alerts"></ul>
+  <section id="bridge" class="section bridge" aria-labelledby="bridge-h">
+    <div class="bridge-head">
+      <div class="bridge-title">
+        <p class="eyebrow" id="bridge-eyebrow">Law review subject tags</p>
+        <h1 id="bridge-h" class="headline">Loading the latest status&hellip;</h1>
+        <p class="headline-more" id="headline-more"></p>
+        <p class="subline" id="subline"></p>
+      </div>
+      <div class="range" role="group" aria-label="Trends cover" id="range">
+        <span class="range-label">Trends</span>
+        <button type="button" class="seg" data-range="3600" aria-pressed="false">1 h</button>
+        <button type="button" class="seg" data-range="21600" aria-pressed="false">6 h</button>
+        <button type="button" class="seg" data-range="86400" aria-pressed="true">24 h</button>
+        <button type="button" class="seg" data-range="259200" aria-pressed="false">3 d</button>
+        <button type="button" class="seg" data-range="0" aria-pressed="false">All</button>
+      </div>
+    </div>
+
+    <div class="ka-strip" id="ka-strip" role="region" aria-label="Keep-alive at a glance"></div>
+
+    <div class="bridge-grid">
+      <div class="hero-tiles" id="hero-tiles"></div>
+      <div class="card readiness" aria-labelledby="ready-h">
+        <div class="card-head">
+          <h2 id="ready-h" class="card-title">Readiness <span class="muted">by phase</span></h2>
+          <span class="card-note" id="ready-note"></span>
+        </div>
+        <div class="ready-row" id="readiness"></div>
+      </div>
+
+      <aside class="bridge-side" aria-label="Keep-alive, runbook and where the work happens">
+        <section class="card runbook" id="runbook" aria-labelledby="runbook-h">
+          <div class="card-head">
+            <h2 id="runbook-h" class="card-title">Keep-alive and runbook</h2>
+            <span class="sv-chip" id="sv-chip"></span>
+          </div>
+          <p class="runbook-sentence" id="runbook-sentence">This page cannot start programs on the Mac; the supervisor restarts anything that stops within a few minutes, unless you stopped it on purpose.</p>
+          <div id="runbook-warn"></div>
+          <ul class="kr-list" id="kr-list" aria-label="Kept-alive jobs"></ul>
+          <h3 class="mini-h">Run by hand</h3>
+          <ul class="cmd-list" id="cmd-list" aria-label="General commands"></ul>
+          <p class="runbook-how" id="runbook-how">To run a command by hand: open Terminal on the Mac, paste the command, press Return.</p>
+        </section>
+        <section class="card where-card" aria-labelledby="where-h">
+          <div class="card-head"><h2 id="where-h" class="card-title">Where the work happens</h2></div>
+          <div class="where" id="where"></div>
+        </section>
+      </aside>
+
+      <div class="stat-groups" id="stat-groups"></div>
+    </div>
   </section>
 
-  <section class="panel" id="since" aria-labelledby="h-since">
-    <div class="panel-head">
-      <h2 id="h-since">Since you last checked</h2>
-      <p class="sub" id="since-sub">What the crew got done while you were away. Your last visit is remembered on this device only.</p>
+  <section id="running" class="section" aria-labelledby="running-h">
+    <div class="section-head">
+      <h2 id="running-h">Running now</h2>
+      <p class="section-sub" id="running-sub">Every job, its exact current step, progress, pace and finish estimate. Tap a block for everything it reports.</p>
     </div>
-    <div id="since-body"><p class="placeholder">Waiting for the first status&hellip;</p></div>
+    <div class="flight card" id="flight-card" aria-labelledby="flight-h">
+      <div class="card-head">
+        <h3 id="flight-h" class="card-title">Coding units in flight</h3>
+        <span class="card-note" id="flight-note"></span>
+      </div>
+      <div class="team-strip" id="team-strip"></div>
+      <div id="flight"></div>
+    </div>
+    <div class="job-grid" id="jobs"></div>
   </section>
 
-  <section class="panel" id="map" aria-labelledby="h-map">
-    <div class="panel-head">
-      <h2 id="h-map">Mission map</h2>
-      <p class="sub">Five phases, from the paper list to the public release. Several run at once; the focus is marked. Every date is an estimate until its step is done.</p>
+  <section id="measurements" class="section" aria-labelledby="meas-h">
+    <div class="section-head">
+      <h2 id="meas-h">Measurements</h2>
+      <p class="section-sub" id="meas-sub">Every lane and job, measured each cycle. Hover or tap a chart for exact values; each chart has a table view.</p>
     </div>
-    <div id="map-body"><p class="placeholder">Plotting the course&hellip;</p></div>
+    <div id="charts"></div>
   </section>
 
-  <section class="panel" id="crew" aria-labelledby="h-crew">
-    <div class="panel-head">
-      <h2 id="h-crew">The crew</h2>
-      <p class="sub">Everyone on the mission, people and programs. Tap a card for its latest status line and trend.</p>
+  <section id="grids" class="section" aria-labelledby="grids-h">
+    <div class="section-head">
+      <h2 id="grids-h">Grids</h2>
+      <p class="section-sub">One cell per coding unit, per journal pass and per CORE window: everything at once. Hover or tap a cell for its numbers.</p>
     </div>
-    <div class="crew-grid" id="crew-body"><p class="placeholder">Calling the roll&hellip;</p></div>
+    <div class="grid-cards" id="grid-cards"></div>
   </section>
 
-  <section class="panel" id="collection" aria-labelledby="h-collection">
-    <div class="panel-head">
-      <p class="kicker">Phase 1</p>
-      <h2 id="h-collection">Collection: a text for every paper</h2>
-      <p class="sub">The goal is an abstract, or the first pages, for each of the papers on our list.</p>
+  <section id="map" class="section" aria-labelledby="map-h">
+    <div class="section-head">
+      <h2 id="map-h">Mission map</h2>
+      <p class="section-sub" id="map-sub">Five phases, each step with its status. Dates are estimates and say what they assume.</p>
     </div>
-    <div id="collection-body"><p class="placeholder">Counting texts&hellip;</p></div>
+    <ol class="phases" id="phases"></ol>
+    <div class="releases" id="releases"></div>
   </section>
 
-  <section class="panel" id="labels" aria-labelledby="h-labels">
-    <div class="panel-head">
-      <p class="kicker">Phase 2</p>
-      <h2 id="h-labels">Labels: coding the subjects</h2>
-      <p class="sub">Claude coders label papers with subjects for training (silver S1), choosing the model (DEV) and the final test (TEST, sealed: counts only). A unit is one coder agent on one batch of papers.</p>
+  <section id="crew" class="section" aria-labelledby="crew-h">
+    <div class="section-head">
+      <h2 id="crew-h">Crew</h2>
+      <p class="section-sub">Who does what. Each job keeps one color everywhere on this page.</p>
     </div>
-    <div id="labels-body"><p class="placeholder">Reading the coding plans&hellip;</p></div>
+    <div class="crew-grid" id="crew-grid"></div>
   </section>
 
-  <section class="panel" id="lab" aria-labelledby="h-lab">
-    <div class="panel-head">
-      <p class="kicker">Phase 3</p>
-      <h2 id="h-lab">Model lab</h2>
-      <p class="sub">Four of our own architectures compete; a pre-registered rule picks the winner on DEV. The preview model is for trying tags now, and its numbers are never the paper's.</p>
+  <section id="log" class="section" aria-labelledby="log-h">
+    <div class="section-head">
+      <h2 id="log-h">Mission log</h2>
+      <p class="section-sub">What happened, newest first, as the jobs and the updater reported it.</p>
     </div>
-    <div id="lab-body"><p class="placeholder">Warming up the lab&hellip;</p></div>
+    <div class="log-filters" id="log-filters" role="group" aria-label="Filter the log"></div>
+    <ol class="log-list" id="log-list"></ol>
+    <div class="log-more" id="log-more"></div>
   </section>
 
-  <section class="panel" id="log" aria-labelledby="h-log">
-    <div class="panel-head">
-      <h2 id="h-log">Mission log</h2>
-      <p class="sub">Starts, stops and milestones, newest first, read from the jobs' own logs.</p>
+  <section id="milestones" class="section" aria-labelledby="ms-h">
+    <div class="section-head">
+      <h2 id="ms-h">Milestones and since you last checked</h2>
     </div>
-    <div id="log-body"><p class="placeholder">Opening the log&hellip;</p></div>
+    <div class="ms-grid">
+      <div class="card" id="since-card"><div class="card-head"><h3 class="card-title">Since you last checked</h3><span class="card-note" id="since-note"></span></div><div id="since"></div></div>
+      <div class="card"><div class="card-head"><h3 class="card-title">Milestones reached</h3></div><ol class="ms-list" id="ms-list"></ol></div>
+      <div class="card"><div class="card-head"><h3 class="card-title">Coming up</h3><span class="card-note">estimates</span></div><ol class="ms-list" id="ms-next"></ol></div>
+    </div>
+    <div class="badges" id="badges" aria-label="Badges earned"></div>
   </section>
 
-  <section class="panel" id="badges" aria-labelledby="h-badges">
-    <div class="panel-head">
-      <h2 id="h-badges">Badges</h2>
-      <p class="sub">Milestones the team has earned, and the next ones up. Each is checked from the numbers on this page.</p>
+  <section id="notes" class="section" aria-labelledby="notes-h">
+    <div class="section-head">
+      <h2 id="notes-h">Talk to the team</h2>
     </div>
-    <div id="badges-body"><p class="placeholder">Polishing the badges&hellip;</p></div>
+    <div class="card notes" id="notes-body"></div>
   </section>
 
-  <section class="panel" id="links" aria-labelledby="h-links">
-    <div class="panel-head">
-      <h2 id="h-links">Links</h2>
-      <p class="sub">Public pages open from anywhere. The others live on the PI's Mac and are listed so the crew knows where to look.</p>
+  <section id="links" class="section" aria-labelledby="links-h">
+    <div class="section-head">
+      <h2 id="links-h">Links</h2>
     </div>
-    <div class="links-grid" id="links-body"></div>
+    <div class="links" id="links-body"></div>
   </section>
 </main>
 
 <footer class="foot">
-  <div class="wrap" id="footer">
-    <p>This page is public. It shows progress facts only: counts, rates, phases and dates. It never shows paper texts, labels, keys, addresses or local paths.</p>
-  </div>
+  <div class="wrap foot-in" id="foot"></div>
 </footer>
-<canvas id="confetti" aria-hidden="true" hidden></canvas>
+
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<div class="sr-only" id="sr-live" aria-live="polite"></div>
 <script src="app.js"></script>
 </body>
 </html>
