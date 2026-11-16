@@ -211,8 +211,11 @@
           <span class="every-state" id="every-state"></span>
         </div>
         <p class="every-what">The preview model: paste an abstract or upload a PDF and see its ranked subject tags.</p>
-        <p class="every-where"><b>To open it:</b> on your phone or the Mac with Tailscale on, use the address in <b>RUNBOOK.md</b> on the Mac (its part on the test page on your phone). On the Mac itself: <code class="every-host">localhost:8765</code></p>
-        <p class="every-private"><b>Private:</b> opens only on your own devices in your tailnet (Tailscale). Anyone else gets no answer, and this public page does not print its address.</p>
+        <div class="every-open">
+          <a class="btn primary" id="every-test-link" href="https://law-reitinger-01.tail2c9d5e.ts.net/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Open the private test page</a>
+          <code class="every-host">law-reitinger-01.tail2c9d5e.ts.net</code>
+        </div>
+        <p class="every-private"><b>Private:</b> opens only on your own Tailscale devices (your phone, and this Mac with Tailscale on). Anyone else gets no answer. On the Mac itself: <code class="every-host">localhost:8765</code></p>
         <p class="every-live" id="every-live">A Hugging Face Space would need a paid plan, so the test page stays on the Mac and is reached over Tailscale.</p>
       </div>
       <div class="card" aria-labelledby="every-web-h">
