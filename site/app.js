@@ -152,6 +152,22 @@
     if (s <= 0) return "due now";
     return "in " + fDurShort(s);
   }
+  function fAgoShort(t) {   // "45 s", "12 min", "4 h", "2 d": for the narrow rows of the contents
+    if (!isNum(t)) return "";
+    var s = (Date.now() - t) / 1000;
+    if (s < -90) return "in " + fDurShort(-s);
+    if (s < 5) return "now";
+    if (s < 60) return Math.round(s) + " s";
+    if (s < 3600) return Math.floor(s / 60) + " min";
+    if (s < 86400) return Math.floor(s / 3600) + " h";
+    return Math.floor(s / 86400) + " d";
+  }
+  function dayWord(t) {   // a date without a time: today, yesterday, or the date
+    if (!isNum(t)) return "";
+    if (sameDay(t, Date.now())) return "today";
+    if (sameDay(t, Date.now() - 86400e3)) return "yesterday";
+    return fDay(t);
+  }
   function fTime(t) { return isNum(t) ? new Date(t).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : "–"; }
   function fTimeS(t) { return isNum(t) ? new Date(t).toLocaleTimeString([], { hour: "numeric", minute: "2-digit", second: "2-digit" }) : "–"; }
   function fDay(t) { return isNum(t) ? new Date(t).toLocaleDateString([], { month: "short", day: "numeric" }) : "–"; }
@@ -332,6 +348,7 @@
   // "Label: text", unless the text already starts with the label ("TEST coding: 9 units finished")
   function labelled(id, text) {
     var t = str(text), lab = id === "machine" && /supervisor/i.test(t) ? "Keep-alive" : jobLabel(id);
+    if (/ (started|stopped)( running)?$|^The supervisor /.test(t)) return t;   // it names its job already (by the name the job had then)
     return lab && t.toLowerCase().indexOf(String(lab).toLowerCase()) !== 0 ? lab + ": " + t : t;
   }
 
@@ -434,11 +451,15 @@
     { name: "replan", label: "Harvest re-planner", job: "harvest" },
     { name: "updater", label: "Progress page updater", job: "updater" }
   ];
-  var KA_GENERAL = [
+  var KA_GENERAL = [   // the collector's general commands (keepalive.commands), for when the data has none
     { id: "status", label: "See what runs", cmd: "lawrank status", what: "every job, running or not, with auto-restart on or off" },
     { id: "start_all", label: "Start everything", cmd: "lawrank start all", what: "starts every job that is not running and turns auto-restart back on" },
     { id: "stop_all", label: "Stop everything", cmd: "lawrank stop all", what: "stops every job on purpose; nothing restarts until you start it again" },
+    { id: "check", label: "Check now", cmd: "lawrank check", what: "one supervisor check right now: starts any job that is down instead of waiting up to 2 minutes" },
     { id: "logs", label: "Read a job's log", cmd: "lawrank logs <job>", what: "the newest lines a job wrote (put a job name in place of <job>)" },
+    { id: "supervisor_on", label: "Turn auto-restart on", cmd: "lawrank supervisor on", what: "turns the supervisor on; it stays on after a restart or log-in (lawrank supervisor off turns it off)" },
+    { id: "supervisor_status", label: "Is the supervisor on?", cmd: "lawrank supervisor status", what: "whether the supervisor is on and when it last checked" },
+    { id: "help", label: "Every command", cmd: "lawrank help", what: "every lawrank command with one line each, and the job names" },
     { id: "desktop", label: "Or double-click", cmd: null, what: "double-click Start LawRank on the Mac's Desktop (the same as lawrank start all)" }
   ];
   var KA_SENTENCE = "This page cannot start programs on the Mac; the supervisor restarts anything that stops within a few minutes, unless you stopped it on purpose.";
@@ -596,7 +617,10 @@
       list.appendChild(li);
     });
 
-    var cl = clear($("cmd-list"));
+    fillCmdList(clear($("cmd-list")), k, rows);
+  }
+  // the general commands, each with a copy button, and the job names (the runbook and "Everything in one place" share it)
+  function fillCmdList(cl, k, rows) {
     var gens = arr(k.commands).filter(isObj);
     if (!gens.length) gens = KA_GENERAL;
     gens.forEach(function (c) {
@@ -1318,7 +1342,9 @@
     if (facts.length) { var fb = h("div", { "class": "job-facts" }); facts.slice(0, 4).forEach(function (f) { fb.appendChild(factEl(f)); }); card.appendChild(fb); }
     var eta = h("div", { "class": "job-eta" });
     if (isObj(j.rate) && (isNum(j.rate.last10) || isNum(j.rate.last60))) eta.appendChild(h("span", null, "pace ", h("b", null, (isNum(j.rate.last10) ? f1(j.rate.last10) + " (10 min)" : "") + (isNum(j.rate.last10) && isNum(j.rate.last60) ? ", " : "") + (isNum(j.rate.last60) ? f1(j.rate.last60) + " (60 min)" : "")), " " + str(j.rate.unit)));
-    if (isObj(j.eta) && ms(j.eta.at)) eta.appendChild(h("span", { title: str(j.eta.basis) }, "finishes ", h("b", null, fDay(ms(j.eta.at))), " ", estChip(), " ", h("span", { "class": "muted" }, str(j.eta.basis))));
+    // a heartbeat's estimate is when its own count is full (for the pretraining: this epoch's batches), not the whole job: say which, with the time
+    var hbAll = j.source === "heartbeat" && isObj(j.progress) && isNum(j.progress.total) && str(j.progress.unit) ? "all " + fInt(j.progress.total) + " " + str(j.progress.unit) + " done about " : "";
+    if (isObj(j.eta) && ms(j.eta.at)) eta.appendChild(h("span", { title: str(j.eta.basis) }, hbAll || "finishes ", h("b", null, hbAll ? fDayTime(ms(j.eta.at)) : fDay(ms(j.eta.at))), " ", estChip(), " ", h("span", { "class": "muted" }, str(j.eta.basis))));
     if (isObj(j.eta_alt) && ms(j.eta_alt.at)) eta.appendChild(h("span", { title: str(j.eta_alt.basis) }, "or ", h("b", null, fDay(ms(j.eta_alt.at))), " ", h("span", { "class": "muted" }, "(" + str(j.eta_alt.basis) + ")")));
     if (isNum(j.uptime_s) && j.running) eta.appendChild(h("span", null, "up ", h("b", null, fDurShort(j.uptime_s))));
     if (eta.childNodes.length) card.appendChild(eta);
@@ -1610,7 +1636,7 @@
   }
   var GROUPS = [
     { id: "harvest", title: "Harvest", crew: "harvest" }, { id: "core", title: "CORE lane", crew: "core" },
-    { id: "s2", title: "Semantic Scholar", crew: "s2" }, { id: "coding", title: "Coding", crew: "coders" },
+    { id: "s2", title: "Semantic Scholar", crew: "s2" }, { id: "coding", title: "Labels (coding)", crew: "coders" },
     { id: "model", title: "Model lab", crew: "lab" }, { id: "machine", title: "Machine, stores and alerts", crew: "relay" }
   ];
   function chartTable(d) {
@@ -1759,7 +1785,7 @@
         S.charts.push({ d: d, holder: holder });
       });
       if (!grid.childNodes.length) return;
-      box.appendChild(h("div", { "class": "mgroup" }, h("div", { "class": "mgroup-head" }, crewDot(c), gr.title), grid));
+      box.appendChild(h("div", { "class": "mgroup", id: "m-" + gr.id }, h("div", { "class": "mgroup-head" }, crewDot(c), gr.title), grid));
     });
     if (!box.childNodes.length) box.appendChild(h("p", { "class": "placeholder" }, S.status ? "No measurements yet: the history is empty." : "Measurements show once a status loads."));
     requestAnimationFrame(function () { S.charts.forEach(function (c) { if (!c.holder.hidden) drawDef(c.d, c.holder); }); });
@@ -1929,10 +1955,16 @@
     return s;
   }
   var STEP_WORD = { done: "done", running: "running", next: "next", later: "later" };
+  function stepName(s) {   // the name, its date when the roadmap gives one (done that day, or running since), and the status for screen readers
+    var dt = ymdMs(str(s.date));
+    return h("span", { "class": "step-name" }, str(s.name),
+      dt ? h("span", { "class": "step-date" }, (s.status === "running" ? "since " : "") + ymdText(str(s.date))) : null,
+      h("span", { "class": "sr-only" }, " (" + (STEP_WORD[s.status] || str(s.status)) + ")"));
+  }
   function renderMap() {
     var box = clear($("phases"));
     var phases = arr(st().phases).filter(isObj);
-    if (!phases.length) { box.appendChild(h("li", { "class": "placeholder" }, S.status ? "This status has no phases." : "The mission map shows once a status loads.")); clear($("releases")); return; }
+    if (!phases.length) { box.appendChild(h("li", { "class": "placeholder" }, S.status ? "This status has no phases." : "The mission map shows once a status loads.")); clear($("releases")); clear($("ops")); return; }
     phases.forEach(function (p) {
       var li = h("li", { "class": "card phase" + (p.is_focus ? " focus" : "") });
       var frac = isNum(p.steps_total) && p.steps_total ? p.steps_done / p.steps_total : null;
@@ -1944,18 +1976,32 @@
       li.appendChild(h("p", { "class": "phase-goal" }, str(p.goal)));
       var steps = h("ul", { "class": "steps" });
       arr(p.steps).filter(isObj).forEach(function (s) {
-        var row = h("li", { "class": "step " + str(s.status) }, stepIcon(s.status), h("span", { "class": "step-name" }, str(s.name), h("span", { "class": "sr-only" }, " (" + (STEP_WORD[s.status] || s.status) + ")")));
+        var row = h("li", { "class": "step " + str(s.status) }, stepIcon(s.status), stepName(s));
         var lv = isObj(s.live) ? s.live : null, pr = lv && isObj(lv.progress) ? lv.progress : null;
         if (pr && isNum(pr.pct) && s.status !== "done") {
           var mm = h("div", { "class": "meter thin" }); var sp2 = h("span"); sp2.style.width = clamp(pr.pct, 0, 100) + "%"; mm.appendChild(sp2); mm.style.setProperty("--meter", crewVar(crewOf(s.job)));
           row.appendChild(mm);
-          row.appendChild(h("span", { "class": "step-detail" }, fInt(pr.done) + " of " + fInt(pr.total) + " " + str(pr.unit) + " (" + fPct(pr.pct) + ")" + (lv && isObj(lv.eta) && ms(lv.eta.at) ? ", about " + fDay(ms(lv.eta.at)) + " (estimate)" : "")));
-        } else if (s.status !== "done" && (s.needs || s.detail)) row.appendChild(h("span", { "class": "step-detail" }, s.status === "running" ? str(s.detail) : "Needs: " + (str(s.needs) || str(s.detail))));
+          var sj = job(s.job), sstep = sj && sj.source === "heartbeat" ? clause(nowOf(sj).step) : "";   // a heartbeat's count belongs to its current step (an epoch, say)
+          row.appendChild(h("span", { "class": "step-detail" }, (sstep ? sstep + ": " : "") + fInt(pr.done) + " of " + fInt(pr.total) + " " + str(pr.unit) + " (" + fPct(pr.pct) + ")" + (lv && isObj(lv.eta) && ms(lv.eta.at) ? ", " + (sstep ? "all done about " + fDayTime(ms(lv.eta.at)) : "about " + fDay(ms(lv.eta.at))) + " (estimate)" : "")));
+        } else if (s.status === "done" && ymdMs(str(s.date)) && s.detail) row.appendChild(h("span", { "class": "step-detail" }, str(s.detail)));   // a dated step that is done says what it left
+        else if (s.status !== "done" && (s.needs || s.detail)) row.appendChild(h("span", { "class": "step-detail" }, s.status === "running" ? str(s.detail) : "Needs: " + (str(s.needs) || str(s.detail))));
         steps.appendChild(row);
       });
       li.appendChild(steps);
       box.appendChild(li);
     });
+    // the project's tools (the supervisor, this page): hand-kept in the roadmap, not a phase
+    var opsBox = clear($("ops"));
+    var ops = arr(g(st(), "project.operations")).filter(isObj);
+    if (ops.length) {
+      var oc = h("div", { "class": "card ops" }, h("div", { "class": "card-head" }, h("h3", { "class": "card-title" }, "Operations"), h("span", { "class": "card-note" }, "what keeps the work going; not a phase")));
+      var ul = h("ul", { "class": "ops-list" });
+      ops.forEach(function (o) {
+        ul.appendChild(h("li", { "class": "ops-item step " + str(o.status) }, stepIcon(o.status), stepName(o), o.detail ? h("span", { "class": "step-detail" }, str(o.detail)) : null));
+      });
+      oc.appendChild(ul);
+      opsBox.appendChild(oc);
+    }
     var rel = clear($("releases"));
     ["beta", "v1"].forEach(function (k) {
       var r = st()[k];
@@ -2242,6 +2288,538 @@
     box.appendChild(h("p", { "class": "muted" }, "Law Tags Mission Control v2 · numbers marked estimate are estimates · times in your time zone."));
   }
 
+  // ------------------------------------------------------------------ everything in one place
+  // The links are fixed in the page (index.html); the private test page's state and the commands come from the data.
+  var EVERY_NOTE = "A Hugging Face Space would need a paid plan, so the test page stays on the Mac and is reached over Tailscale.";
+  function previewRow() {
+    return arr(keepalive().k.jobs).filter(function (r) { return isObj(r) && (r.job === "preview" || r.name === "preview"); })[0] || null;
+  }
+  function renderEverything() {
+    var K = keepalive(), k = K.k;
+    fillCmdList(clear($("every-cmds")), k, arr(k.jobs).filter(isObj));
+    var stEl = clear($("every-state")), live = clear($("every-live"));
+    if (!S.status) {
+      stEl.appendChild(light("unknown", null, S.error ? "State unknown" : "Loading"));
+      live.appendChild(h("span", null, EVERY_NOTE));
+      return;
+    }
+    var n = nowOf(job("preview")), row = previewRow(), old = freshness() === "stale";
+    var serving = n.serving === true ? true : n.serving === false ? false : row && row.running === true ? true : row && row.running === false ? false : null;
+    stEl.appendChild(serving === true ? light("serving", null, old ? "Answering (old data)" : "Answering on the Mac", !old)
+      : serving === false ? light("stopped", null, "Not answering on the Mac") : light("unknown", null, "State unknown"));
+    var chk = ms(n.port_checked_at);
+    if (chk) live.appendChild(h("span", null, "the Mac checked it ", h("b", { "data-ago": chk }, fAgo(chk))));
+    if (row && row.auto_restart === true) live.appendChild(h("span", null, "the supervisor restarts it if it stops"));
+    if (row && serving === false) { var p = kaPrimary(row), c = p.cmd ? cmdChip(p.cmd, kaAttn(row)) : null; if (c) live.appendChild(c); }
+    live.appendChild(h("span", null, EVERY_NOTE));
+  }
+
+  // ------------------------------------------------------------------ contents: every section, its newest update, where you are
+  // One panel: a sticky rail beside the page from 1280 px; below that, a bar at the bottom of the screen opens it as a
+  // sheet. Each entry names a section and its newest update in one line, derived from the data (ages tick every
+  // second). A dot marks a section that changed since this browser last looked at it: a section counts as looked at
+  // after it has been in view for a moment, or once opened from here. That record stays in this browser only.
+  var TOC = [
+    ["bridge", "Bridge"], ["runbook", "Keep-alive"], ["running", "Running now"], ["measurements", "Measurements"],
+    ["grids", "Grids"], ["map", "Mission map"], ["crew", "Crew"], ["log", "Mission log"], ["milestones", "Milestones"],
+    ["notes", "Talk to the team"], ["links", "Links"], ["everything", "Everything in one place"]
+  ];
+  var TOC_IDS = {};
+  TOC.forEach(function (x) { TOC_IDS[x[0]] = x[1]; });
+  var SEEN_KEY = "lawtags-v2-toc-seen", DWELL_MS = 1500;
+  var GO = ["running", "serving", "pairing", "training"];
+  var SHEET = mq("(max-width: 1279px)");
+  var T = { items: {}, subs: {}, slots: [], keys: {}, store: undefined, cur: null, curSince: 0, pin: null, built: false, headH: 0 };
+
+  function clause(s) { return str(s).split(/;\s+/)[0].trim(); }   // the first clause of a status sentence
+  function hashStr(s) { var x = 5381; s = String(s); for (var i = 0; i < s.length; i++) x = ((x << 5) + x + s.charCodeAt(i)) | 0; return (x >>> 0).toString(36); }
+  function sheetOpen() { var t = $("toc"); return !!t && t.classList.contains("open"); }
+  function loadingLine() { return { text: S.error ? "No data yet" : "Loading…", muted: true, t: null, key: null }; }
+
+  // each section's newest update: { text, t (ms, ticks as "N min ago") or when (a word), pre, key (what counts as a change) }
+  function tocBridge() {
+    if (!S.status) return { text: S.error ? "No data: " + S.error : "Loading the latest status…", muted: true, t: null, key: null };
+    var s = st(), hd = isObj(s.headline) ? s.headline : {}, fr = freshness(), bits = [];
+    var fp = arr(s.phases).filter(function (p) { return isObj(p) && p.id === hd.focus_phase; })[0];
+    var al = arr(s.alerts).filter(isObj), crit = al.filter(function (a) { return a.severity === "critical"; }).length, warn = al.filter(function (a) { return a.severity === "warn"; }).length;
+    if (fr === "stale") bits.push("Stale data");
+    else if (fr === "undated") bits.push("Undated data");
+    if (fp) bits.push(str(fp.name) + " in focus");
+    if (isNum(hd.must_total)) bits.push(fInt(hd.must_up) + "/" + fInt(hd.must_total) + " must-run up");
+    bits.push(crit ? crit + " critical" + (warn ? ", " + warn + " warning" + (warn === 1 ? "" : "s") : "") : warn ? warn + (warn === 1 ? " warning" : " warnings") : "no warnings");
+    return { text: bits.join(" · "), t: genMs(), key: [str(hd.sentence), al.map(function (a) { return str(a.severity) + ":" + str(a.job); }).join(",")].join("|") };
+  }
+  function tocKeepalive() {
+    if (!S.status) return loadingLine();   // no status: the supervisor's state is unknown here, not "not reporting"
+    var k = keepalive().k, sup = isObj(k.supervisor) ? k.supervisor : { state: "missing" }, rows = arr(k.jobs).filter(isObj);
+    var word = { running: "On duty", stale: "Quiet", missing: "Not reporting", unreadable: "Unreadable", off: "Turned off" }[sup.state] || "Unknown";
+    if (sup.state === "stale" && sup.switch_on === true) word = "On (paused by macOS)";
+    var bits = ["Supervisor: " + word], bad = rows.filter(kaAttn);
+    if (rows.length) bits.push(rows.filter(function (r) { return r.running === true; }).length + " of " + rows.length + " running");
+    if (bad.length) bits.push(bad.map(function (r) { return str(r.label) || str(r.name); }).join(", ") + (bad.length === 1 ? " needs a start" : " need a start"));
+    else if (rows.some(kaHandled)) bits.push("a restart is under way");
+    return { text: bits.join(" · "), t: ms(sup.at), pre: "checked", key: [sup.state, sup.switch_on === true, str(k.warning), rows.map(function (r) { return str(r.name) + ":" + str(r.state) + ":" + str(r.last_restart_at); }).join(",")].join("|") };
+  }
+  function tocRunning() {
+    if (!S.status) return loadingLine();
+    var best = null;
+    jobs().forEach(function (j) {
+      if (j.id === "updater") return;   // the page's own relay is always newest; the work is what counts here
+      var t = ms(j.last_activity) || ms(nowOf(j).at);
+      if (t && (!best || t > best.t)) best = { j: j, t: t };
+    });
+    var key = jobs().map(function (j) {
+      return j.id + ":" + str(j.state) + ":" + str(j.health) + (/^coding/.test(j.id) ? ":" + str(g(j, "progress.done")) + ":" + arr(nowOf(j).in_flight).filter(isObj).map(function (u) { return str(u.unit); }).join("+") : "");
+    }).join("|");
+    if (!best) return { text: "No job reports any activity.", muted: true, t: null, key: key };
+    var what = clause(nowOf(best.j).step) || clause(best.j.line) || str(best.j.state);
+    return { text: (str(best.j.label) || best.j.id) + ": " + (what.replace(/\s*\([^()]*\)/g, "") || what), t: best.t, key: key };   // one short line: no asides in brackets
+  }
+  function tocMeasure() {
+    if (!S.merged.length) return { text: S.status ? "No measurements yet: the history is empty." : loadingLine().text, muted: true, t: null, key: null };
+    var p = lastPoint(), bits = [];
+    if (isNum(p.h_rpm)) bits.push("harvest " + f1(p.h_rpm) + " req/min");
+    if (isNum(p.c_ppm)) bits.push("CORE " + f1(p.c_ppm) + " papers/min");
+    bits.push(fInt(S.merged.length) + " points");
+    return { text: bits.join(" · "), t: p._t || null, key: p._t ? String(Math.floor(p._t / 1800e3)) : null };   // a dot once 30 more minutes are measured
+  }
+  function newestUnit() {
+    var best = null;
+    codingJobs().forEach(function (j) {
+      var u = arr(nowOf(j).recent_units).filter(isObj)[0];
+      if (u && ms(u.at) && (!best || ms(u.at) > best.t)) best = { t: ms(u.at), u: u, j: j };
+    });
+    return best;
+  }
+  function modelFact() {   // the newest fact of the model lab
+    var m = isObj(st().model) ? st().model : {}, c = [];
+    var ts = isObj(m.tests) ? m.tests : null;
+    if (ts && ms(ts.as_of) && isNum(ts.passed)) c.push({ t: ms(ts.as_of), text: fInt(ts.passed) + " model tests passed" });
+    var pv = isObj(m.preview) ? m.preview : {};
+    if (ms(pv.model_card_at)) c.push({ t: ms(pv.model_card_at), text: "preview model card written" });
+    if (ms(pv.metrics_at)) c.push({ t: ms(pv.metrics_at), text: "preview DEV numbers made" });
+    jobs().filter(function (j) { return j.source === "heartbeat"; }).forEach(function (j) {
+      var b = isObj(nowOf(j).beat) ? nowOf(j).beat : {}, t = ms(b.at) || ms(j.last_activity);
+      if (t) c.push({ t: t, text: beatText(j, b) });
+    });
+    var ct = isObj(m.contest) ? m.contest : {};
+    c.sort(function (a, b) { return b.t - a.t; });
+    return c[0] || { text: ct.training_now ? "contest training now" : str(ct.status) ? "contest " + str(ct.status) : "–", t: null };
+  }
+  function beatText(j, b) {
+    var lab = str(j.label) || j.id;
+    if (b.state === "finished") return lab + " finished" + (str(b.note) ? ": " + clause(b.note) : "");
+    return lab + ": " + (clause(b.step) || str(b.state) || "beating");
+  }
+  function tocSubs() {
+    var s = st(), out = {}, p = lastPoint(), pt = p._t || null;
+    if (!S.status) { Object.keys(T.subs).forEach(function (k) { out[k] = { text: "–", t: null }; }); return out; }
+    var hj = job("harvest"), left = g(hj || {}, "queue.left"), rpm = hj && isObj(hj.rate) && isNum(hj.rate.last10) ? hj.rate.last10 : hv("h_rpm");
+    out.harvest = { text: [isNum(rpm) ? f1(rpm) + " req/min" : null, isNum(left) ? fInt(left) + " left" : null].filter(Boolean).join(" · ") || "–", t: ms(g(hj || {}, "last_activity")) || pt };
+    var cj = job("core"), cp = cj && isObj(cj.progress) ? cj.progress : {};
+    out.core = { text: [isNum(cp.done) ? fInt(cp.done) + " of " + fInt(cp.total) : null, isNum(g(cj || {}, "rate.last60")) ? f1(cj.rate.last60) + "/min" : null].filter(Boolean).join(" · ") || "–", t: ms(g(cj || {}, "last_activity")) };
+    var sj = job("s2");
+    out.s2 = sj ? { text: (sj.state === "finished" ? "finished · " : str(sj.state) + " · ") + fInt(g(nowOf(sj), "pair.match")) + " matched", t: ms(sj.last_activity) } : { text: "–", t: null };
+    var bits = [];
+    codingJobs().forEach(function (j) { var pr = isObj(j.progress) ? j.progress : {}; if (isNum(pr.done) && !(isNum(pr.total) && pr.done >= pr.total)) bits.push(runName(j.id) + " " + fInt(pr.done) + "/" + fInt(pr.total)); });
+    var nu = newestUnit();   // labels: units done, and when the last unit finished
+    out.coding = { text: (bits.join(" · ") || "–") + (nu ? " · last " + runName(nu.j.id) + " " + str(nu.u.batch) + " " + str(nu.u.coder) : ""), t: nu ? nu.t : null };
+    out.model = modelFact();
+    var mem = g(s, "machine.memory_pct"), disk = g(s, "machine.disk_free_gb");
+    out.machine = { text: [isNum(mem) ? "memory " + fPct(mem, 0) : null, isNum(disk) ? f1(disk) + " GB free" : null].filter(Boolean).join(" · ") || "–", t: pt };
+    return out;
+  }
+  function tocGrids() {
+    if (!S.status) return loadingLine();
+    var bits = [], keys = [], t = null, nu = newestUnit();
+    if (nu) t = nu.t;
+    codingJobs().forEach(function (j) {
+      var p = isObj(j.progress) ? j.progress : {};
+      if (!isNum(p.done)) return;
+      keys.push(j.id + "=" + p.done);
+      if (!(isNum(p.total) && p.done >= p.total)) bits.push(runName(j.id) + " " + fInt(p.done) + "/" + fInt(p.total));
+    });
+    var ps = g(nowOf(job("harvest")), "passes");
+    if (isObj(ps) && isNum(ps.done)) { bits.push("passes " + fInt(ps.done) + "/" + fInt(ps.planned)); keys.push("p=" + ps.done); }
+    var w = g(nowOf(job("core")), "window");
+    if (isObj(w) && isNum(w.n)) {
+      bits.push("CORE window " + fInt(w.n) + "/" + fInt(w.of));
+      keys.push("w=" + Math.floor(w.n / 100));   // a dot every 100 windows (2,000 papers), not every window
+      var ct = ms(nowOf(job("core")).at);
+      if (ct && ct > (t || 0)) t = ct;
+    }
+    arr(st().phases).forEach(function (p) { if (isObj(p)) arr(p.steps).forEach(function (x) { if (isObj(x)) keys.push(str(x.id) + "=" + str(x.status)); }); });
+    return { text: bits.join(" · ") || "Nothing to draw as cells.", muted: !bits.length, t: t, key: keys.join(",") };
+  }
+  function datedItems() {   // the roadmap's dated steps and operations, done or running, newest first (a later step wins a tie)
+    var out = [];
+    arr(g(st(), "project.operations")).forEach(function (x) { if (isObj(x)) out.push(x); });
+    arr(st().phases).forEach(function (p) { if (isObj(p)) arr(p.steps).forEach(function (x) { if (isObj(x)) out.push(x); }); });
+    return out.map(function (x, i) { return { x: x, i: i, d: ymdMs(str(x.date)) }; })
+      .filter(function (o) { return (o.x.status === "done" || o.x.status === "running") && o.d; })
+      .sort(function (a, b) { return b.d - a.d || b.i - a.i; }).map(function (o) { return o.x; });
+  }
+  function tocMap() {
+    var ph = arr(st().phases).filter(isObj);
+    if (!ph.length) return { text: S.status ? "This status has no phases." : loadingLine().text, muted: true, t: null, key: S.status ? "none" : null };
+    var done = 0, tot = 0, keys = [];
+    ph.forEach(function (p) {
+      keys.push(str(p.id) + "=" + str(p.status));
+      arr(p.steps).filter(isObj).forEach(function (x) { tot++; if (x.status === "done") done++; keys.push(str(x.id) + "=" + str(x.status)); });
+    });
+    arr(g(st(), "project.operations")).filter(isObj).forEach(function (o) { keys.push(str(o.id) + "=" + str(o.status)); });
+    arr(st().estimates).filter(isObj).forEach(function (e) { keys.push(str(e.id) + ":" + str(e.from) + ":" + str(e.to)); });
+    var nw = datedItems()[0];
+    return { text: fInt(done) + " of " + fInt(tot) + " steps done" + (nw ? " · newest: " + str(nw.name) : ""), t: null, when: nw ? dayWord(ymdMs(str(nw.date))) : "", key: keys.join(",") };
+  }
+  function crewJobs(c) {
+    var hb = jobs().filter(function (j) { return j.source === "heartbeat"; }).map(function (j) { return j.id; });
+    return (c.id === "lab" ? c.jobs.concat(hb) : c.jobs).map(job).filter(Boolean);
+  }
+  function tocCrew() {
+    if (!S.status) return loadingLine();
+    var on = [], t = null, keys = [];
+    CREW.forEach(function (c) {
+      if (c.id === "pi") return;
+      if (c.id === "keeper") { var ss = str(g(keepalive().k, "supervisor.state")); keys.push("keeper=" + ss); if (ss === "running") on.push(c); return; }
+      var js = crewJobs(c), act = js.filter(function (j) { return GO.indexOf(j.state) >= 0; });
+      keys.push(c.id + "=" + js.map(function (j) { return str(j.state); }).join("+"));
+      if (!act.length) return;
+      on.push(c);
+      act.forEach(function (j) { var la = ms(j.last_activity); if (la && j.id !== "updater" && la > (t || 0)) t = la; });
+    });
+    return { text: on.length + " of " + (CREW.length - 1) + " on duty" + (on.length ? ": " + on.map(function (c) { return c.name.replace(/^The /, ""); }).join(", ") : ""), t: t, key: keys.join(",") };
+  }
+  function tocLog() {
+    if (!S.status) return loadingLine();
+    var ev = events().slice().sort(function (a, b) { return ms(b.t) - ms(a.t); })[0];
+    if (!ev) return { text: "No events yet.", muted: true, t: null, key: "none" };
+    return { text: labelled(ev.job, ev.text), t: ms(ev.t), key: str(ev.t) + "|" + str(ev.text) };
+  }
+  function upcoming() {
+    return arr(st().estimates).filter(function (e) { return isObj(e) && !estimateDone(e.id); }).map(function (e) { return { e: e, a: ymdMs(e.from), b: ymdMs(e.to, true) }; })
+      .filter(function (x) { return x.b && x.b >= Date.now() - 86400e3; }).sort(function (x, y) { return (x.a || 0) - (y.a || 0); });
+  }
+  function tocMilestones() {
+    if (!S.status) return loadingLine();
+    var m = events().filter(function (e) { return e.kind === "milestone"; }).sort(function (a, b) { return ms(b.t) - ms(a.t); })[0];
+    var nx = upcoming()[0], won = badgeList().filter(function (b) { return b.ok; }).map(function (b) { return b.id; });
+    var key = [m ? str(m.t) : "", won.join(","), upcoming().map(function (x) { return str(x.e.id) + ":" + str(x.e.from) + ":" + str(x.e.to); }).join(",")].join("|");
+    if (m && ms(m.t) > Date.now() - 86400e3) return { text: labelled(m.job, m.text), t: ms(m.t), key: key };   // a milestone of the last day is the news; else what comes next
+    if (nx) return { text: "Next: " + str(nx.e.what) + ", " + rangeText(nx.e), t: null, when: "estimate", key: key };
+    return { text: won.length + " badges earned", t: null, key: key };
+  }
+  function tocNotes() {
+    if (!S.status) return loadingLine();
+    var n = isObj(st().notes) ? st().notes : null;
+    if (!n) return { text: "The notes channel is not in this data.", muted: true, t: null, key: "none" };
+    var items = arr(n.items).filter(isObj).map(function (it) { return { it: it, t: ms(it.updated_at) || ms(it.at) }; }).sort(function (a, b) { return (b.t || 0) - (a.t || 0); });
+    var key = items.map(function (x) { return str(x.it.number) + "@" + str(x.it.updated_at || x.it.at); }).join(",") + "|" + str(n.withheld);
+    if (items.length) return { text: items.length + " open · Note #" + fInt(items[0].it.number) + ": " + str(items[0].it.title), t: items[0].t, key: key };
+    return { text: "No open notes", t: ms(n.read_at), pre: "the Mac read them", key: key };
+  }
+  function tocLinks() {
+    if (!S.status) return { text: "Links from the roadmap show once a status loads.", muted: true, t: null, key: null };
+    var ls = arr(st().links).filter(isObj);
+    var web = ls.filter(function (l) { return l.url && safeUrl(str(l.url)); }).length, loc = ls.filter(function (l) { return !l.url && l.local; }).length;
+    return { text: fInt(web) + " on the web · " + fInt(loc) + " to use at the Mac", t: null, key: ls.map(function (l) { return str(l.label) + "=" + str(l.url || l.local); }).join(",") };
+  }
+  function tocEvery() {
+    var k = keepalive().k, nc = arr(k.commands).filter(function (c) { return isObj(c) && safeCmd(c.cmd); }).length || KA_GENERAL.filter(function (c) { return c.cmd; }).length;
+    var n = nowOf(job("preview")), row = previewRow();
+    var serving = n.serving === true || (n.serving == null && row && row.running === true) ? "answering" : n.serving === false ? "not answering" : null;
+    var nl = document.querySelectorAll("#everything .link-list a").length;
+    return { text: "Private test page" + (S.status && serving ? " " + serving : "") + " · " + nl + " links · " + nc + " commands", t: S.status ? ms(n.port_checked_at) : null, pre: "checked", key: S.status ? String(serving) + ":" + nc : null };
+  }
+
+  // the newest updates across everything: each exact item once, with the place on the page that shows it
+  function eventTarget(e) {
+    if (e.kind === "milestone") return "milestones";
+    if (e.kind === "note") return "notes";
+    if (e.kind === "alert") return $("alerts") && $("alerts").childNodes.length ? "alerts" : "log";
+    if (/supervisor/i.test(str(e.text)) || e.job === "machine") return "runbook";
+    if (e.job && $("job-" + e.job)) return "job-" + e.job;
+    return "log";
+  }
+  function latestUpdates() {
+    var out = [];
+    function add(t, jb, crew, text, target, prio) { if (isNum(t) && text) out.push({ t: t, job: jb || "", c: crew, text: text, target: target, prio: prio }); }
+    codingJobs().forEach(function (j) {
+      var u = arr(nowOf(j).recent_units).filter(isObj)[0];
+      if (u) add(ms(u.at), j.id, CREW_BY.coders, runName(j.id) + " unit " + str(u.batch) + " " + str(u.coder) + " finished" + (isNum(u.items) ? " (" + fInt(u.items) + " lines)" : ""), $("job-" + j.id) ? "job-" + j.id : "grids", 1);
+      var fl = arr(nowOf(j).in_flight).filter(isObj).sort(function (a, b) { return (ms(b.started_at) || 0) - (ms(a.started_at) || 0); })[0];
+      if (fl) add(ms(fl.started_at), j.id, CREW_BY.coders, runName(j.id) + " unit " + str(fl.batch) + " " + str(fl.coder) + " started", "flight-card", 1);
+    });
+    jobs().filter(function (j) { return j.source === "heartbeat"; }).forEach(function (j) { var b = isObj(nowOf(j).beat) ? nowOf(j).beat : {}; add(ms(b.at), j.id, crewOf(j.id), beatText(j, b), "job-" + j.id, 1); });
+    arr(g(st(), "notes.items")).filter(isObj).forEach(function (it) { add(ms(it.updated_at) || ms(it.at), "note", CREW_BY.pi, "Note #" + fInt(it.number) + ": " + str(it.title), "notes", 1); });
+    arr(st().alerts).filter(function (a) { return isObj(a) && a.severity !== "info"; }).forEach(function (a) { add(ms(a.since), a.job, crewOf(a.job), (a.severity === "critical" ? "Critical: " : "Warning: ") + labelled(a.job, a.text), "alerts", 1); });
+    events().forEach(function (e) {   // routine lines (starts, stops, progress) may merge with an exact item; milestones, notes, alerts never do
+      var routine = ["start", "stop", "progress", "log"].indexOf(str(e.kind)) >= 0;
+      add(ms(e.t), e.job, crewOf(e.job), labelled(e.job, e.text), eventTarget(e), routine ? 2 : 0);
+    });
+    out.sort(function (a, b) { return b.t - a.t || a.prio - b.prio; });
+    var kept = [];
+    out.forEach(function (x) {   // a routine log line within 5 minutes of a more exact item about the same job is the same news
+      var same = kept.filter(function (k) { return k.job === x.job && Math.abs(k.t - x.t) <= 300e3 && k.prio + x.prio === 3; })[0];   // one exact (1), one routine (2)
+      if (!same) { kept.push(x); return; }
+      if (x.prio < same.prio) { same.text = x.text; same.target = x.target; same.prio = x.prio; same.t = x.t; }   // the exact item's words and time
+    });
+    kept.sort(function (a, b) { return b.t - a.t || a.prio - b.prio; });
+    return kept.slice(0, 6);
+  }
+
+  // building the panel once, then updating its text in place (no layout jumps: every row keeps its height)
+  function tocBuild() {
+    if (T.built || !$("toc")) return;
+    T.built = true;
+    document.querySelectorAll("#toc-list > .toc-item").forEach(function (li) {
+      var id = li.getAttribute("data-sec"), a = li.querySelector("a"), name = a.querySelector(".toc-name"), age = a.querySelector(".toc-age");
+      var dot = h("i", { "class": "toc-dot", "aria-hidden": "true", hidden: true }), sr = h("span", { "class": "sr-only" });
+      name.appendChild(dot); name.appendChild(sr);
+      var pre = document.createTextNode(""), v = h("span");
+      age.appendChild(pre); age.appendChild(v);
+      T.items[id] = { a: a, line: a.querySelector(".toc-line"), age: age, pre: pre, v: v, dot: dot, sr: sr };
+    });
+    document.querySelectorAll("#toc-list .toc-subs a[data-sub]").forEach(function (a) {
+      var age = a.querySelector(".ts-age"), pre = document.createTextNode(""), v = h("span");
+      age.appendChild(pre); age.appendChild(v);
+      T.subs[a.getAttribute("data-sub")] = { a: a, line: a.querySelector(".ts-line"), age: age, pre: pre, v: v };
+    });
+    var ol = clear($("lu-list"));
+    for (var i = 0; i < 6; i++) {
+      var dot = h("i", { "class": "lu-dot", "aria-hidden": "true" }), text = h("span", { "class": "lu-text" }), age = h("time", { "class": "lu-age" });
+      var a = h("a", { href: "#log" }, dot, text, age), li = h("li", { "class": "empty" }, a);
+      ol.appendChild(li);
+      T.slots.push({ li: li, a: a, dot: dot, text: text, age: age });
+    }
+    $("toc").addEventListener("click", function (ev) {
+      var a = ev.target && ev.target.closest ? ev.target.closest("a[href^='#']") : null;
+      if (a && a.getAttribute("href").length > 1) tocJump(a.getAttribute("href").slice(1), ev);
+    });
+    $("toc-open").addEventListener("click", function () { if (sheetOpen()) closeSheet(true); else openSheet(); });
+    var sk = $("skip-toc");   // the second skip link: the rail's heading, or the sheet opened
+    if (sk) sk.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      if (SHEET.matches) { openSheet(); return; }
+      var th = $("toc-h");
+      th.setAttribute("tabindex", "-1");
+      try { th.focus({ preventScroll: true }); } catch (e) {}
+    });
+    $("toc-close").addEventListener("click", function () { closeSheet(true); });
+    $("toc-scrim").addEventListener("click", function () { closeSheet(true); });
+    document.addEventListener("keydown", function (ev) { if ((ev.key === "Escape" || ev.key === "Esc") && sheetOpen()) { ev.preventDefault(); closeSheet(true); } });
+    function onMode() { closeSheet(false); tocSpy(true); }
+    if (SHEET.addEventListener) SHEET.addEventListener("change", onMode); else if (SHEET.addListener) SHEET.addListener(onMode);
+    var spyT = 0;   // a timer, not a frame callback: it also runs where frames are paused
+    window.addEventListener("scroll", function () { if (!spyT) spyT = setTimeout(function () { spyT = 0; tocSpy(); }, 60); }, { passive: true });
+    window.addEventListener("resize", function () { measureHead(); tocSpy(true); });
+    measureHead();
+    if (window.ResizeObserver) { try { new ResizeObserver(function () { measureHead(); }).observe(document.querySelector(".topbar")); } catch (e) {} }
+    tocSpy(true);
+  }
+  function measureHead() {   // the sticky top bar's real height: where the rail sticks and where a jump lands
+    var hd = document.querySelector(".topbar");
+    if (!hd) return;
+    var hh = Math.round(hd.getBoundingClientRect().height);
+    if (hh > 0 && hh !== T.headH) { T.headH = hh; document.documentElement.style.setProperty("--head-h", hh + "px"); }
+  }
+  function setAge(it, d, shortForm) {
+    var attr = shortForm ? "data-ago-short" : "data-ago";
+    if (isNum(d.t)) {
+      it.pre.nodeValue = d.pre ? d.pre + " " : "";
+      it.v.setAttribute(attr, d.t);
+      setText(it.v, shortForm ? fAgoShort(d.t) : fAgo(d.t));
+      it.age.title = (d.pre ? d.pre + " " : "") + fDayTime(d.t);
+    } else {
+      it.pre.nodeValue = "";
+      it.v.removeAttribute(attr);
+      setText(it.v, d.when || "");
+      it.age.title = d.when === "estimate" ? "An estimate, not a promise" : "";
+    }
+  }
+  function renderToc() {
+    if (!T.built) return;
+    var d = { bridge: tocBridge(), runbook: tocKeepalive(), running: tocRunning(), measurements: tocMeasure(), grids: tocGrids(), map: tocMap(),
+      crew: tocCrew(), log: tocLog(), milestones: tocMilestones(), notes: tocNotes(), links: tocLinks(), everything: tocEvery() };
+    Object.keys(T.items).forEach(function (id) {
+      var it = T.items[id], x = d[id] || { text: "–", t: null };
+      setText(it.line, x.text || "–");
+      it.line.title = x.text || "";
+      it.line.classList.toggle("muted", !!x.muted);
+      setAge(it, x, false);
+    });
+    var subs = tocSubs();
+    Object.keys(T.subs).forEach(function (id) {
+      var it = T.subs[id], x = subs[id] || { text: "–", t: null };
+      setText(it.line, x.text || "–");
+      it.line.title = x.text || "";
+      setAge(it, x, true);
+    });
+    renderLatest();
+    // what counts as a change, per section; only a dated status records anything
+    var dated = !!genMs();
+    Object.keys(T.items).forEach(function (id) { var k = d[id] && d[id].key; T.keys[id] = dated && k !== null && k !== undefined ? hashStr(k) : null; });
+    if (dated) {
+      if (T.store === undefined) {
+        try { var v = JSON.parse(localStorage.getItem(SEEN_KEY) || "null"); T.store = isObj(v) && isObj(v.seen) ? v : null; } catch (e) { T.store = null; }
+      }
+      if (!T.store) T.store = { v: 1, seen: {}, at: Date.now() };   // a first visit: everything counts as seen now
+      var add = false;
+      Object.keys(T.keys).forEach(function (id) { if (T.keys[id] !== null && T.store.seen[id] === undefined) { T.store.seen[id] = T.keys[id]; add = true; } });
+      if (add) tocSave();
+      if (T.cur && !document.hidden && !sheetOpen() && Date.now() - T.curSince >= DWELL_MS) markSeen(T.cur);
+    }
+    tocDots();
+    tocSpy(true);
+    if (!T.hashDone && S.status) {   // a link to a section (#log, #job-core): the first data render moved it, so land there once
+      T.hashDone = true;
+      var hid = "";
+      try { hid = decodeURIComponent(location.hash.slice(1)); } catch (e) {}
+      if (hid && /^[A-Za-z][\w-]*$/.test(hid) && $(hid) && hid !== "toc" && hid !== "top" && (!window.performance || performance.now() < 8000)) {
+        setTimeout(function () {
+          var el = $(hid);
+          if (el && Math.abs(el.getBoundingClientRect().top - (T.headH || 86)) > 40) el.scrollIntoView({ block: "start" });
+          tocSpy(true);
+        }, 0);
+      }
+    }
+  }
+  function renderLatest() {
+    var items = S.status ? latestUpdates() : [];
+    T.slots.forEach(function (sl, i) {
+      var x = items[i];
+      if (!x) {
+        sl.li.className = i === 0 ? "note" : "empty";
+        setText(sl.text, i === 0 ? (S.status ? "No updates in this status yet." : S.error ? "No data: updates show once a status loads." : "Waiting for the first status…") : "–");
+        sl.text.title = "";
+        sl.age.removeAttribute("data-ago"); sl.age.removeAttribute("datetime"); setText(sl.age, "");
+        sl.a.setAttribute("href", "#log");
+        return;
+      }
+      sl.li.className = "";
+      sl.a.setAttribute("href", "#" + x.target);
+      sl.dot.style.setProperty("--crew", crewVar(x.c));
+      setText(sl.text, x.text);
+      sl.text.title = x.text + " (" + fDayTime(x.t) + ")";
+      sl.age.setAttribute("data-ago", x.t);
+      try { sl.age.setAttribute("datetime", new Date(x.t).toISOString()); } catch (e) {}
+      setText(sl.age, fAgo(x.t));
+    });
+    $("toc").setAttribute("data-fresh", freshness());
+  }
+  function tocSave() { if (!T.store) return; try { localStorage.setItem(SEEN_KEY, JSON.stringify(T.store)); } catch (e) {} }
+  function markSeen(id) {
+    if (!T.store || !T.keys[id]) return;
+    if (T.store.seen[id] !== T.keys[id]) { T.store.seen[id] = T.keys[id]; T.store.at = Date.now(); tocSave(); tocDots(); }
+  }
+  function tocDots() {
+    var n = 0;
+    Object.keys(T.items).forEach(function (id) {
+      var it = T.items[id], k = T.keys[id], seen = T.store && T.store.seen ? T.store.seen[id] : undefined;
+      var on = !!k && seen !== undefined && seen !== k;
+      it.dot.hidden = !on;
+      setText(it.sr, on ? " (new since you looked)" : "");
+      if (on) n++;
+    });
+    var nb = $("tb-new");
+    if (nb) { nb.hidden = !n; setText(nb, n ? n + " new" : ""); }
+  }
+
+  // where you are: the section under a line just below the top bar (the innermost one, so the keep-alive card wins
+  // over the bridge around it); after a jump from the panel, the section jumped to until you scroll on
+  function tocSpy(force) {
+    if (!T.built) return;
+    var line = (T.headH || 86) + Math.min(window.innerHeight * 0.22, 160), cur = null, last = null;
+    TOC.forEach(function (x) {
+      var el = $(x[0]);
+      if (!el) return;
+      var r = el.getBoundingClientRect();
+      if (!r.height) return;
+      if (r.top <= line) { last = x[0]; if (r.bottom > line) cur = x[0]; }
+    });
+    var pick = cur || last || TOC[0][0], doc = document.documentElement;
+    if (window.scrollY > 0 && window.scrollY + window.innerHeight >= doc.scrollHeight - 2) {   // at the very end: the last section in view
+      for (var i = TOC.length - 1; i >= 0; i--) { var e2 = $(TOC[i][0]); if (e2 && e2.getBoundingClientRect().top < window.innerHeight * 0.8) { pick = TOC[i][0]; break; } }
+    }
+    if (T.pin) {
+      if (Date.now() < T.pin.until) pick = T.pin.id;
+      else {
+        if (T.pin.y === null) T.pin.y = window.scrollY;
+        if (Math.abs(window.scrollY - T.pin.y) < 48) pick = T.pin.id; else T.pin = null;
+      }
+    }
+    if (pick !== T.cur || force) tocSetCurrent(pick);
+  }
+  function tocSetCurrent(id) {
+    var changed = T.cur !== id;
+    if (changed) { T.cur = id; T.curSince = Date.now(); }
+    Object.keys(T.items).forEach(function (k) { if (k === id) T.items[k].a.setAttribute("aria-current", "location"); else T.items[k].a.removeAttribute("aria-current"); });
+    setText("tb-cur", TOC_IDS[id] || "");
+    var nav = document.querySelector(".toc-nav"), it = T.items[id];
+    if (changed && it && nav && !SHEET.matches && nav.scrollHeight > nav.clientHeight + 4) {   // keep the entry in view inside the rail (never moves the page)
+      var y = it.a.offsetTop, hh = it.a.offsetHeight;
+      if (y < nav.scrollTop + 8) nav.scrollTop = Math.max(0, y - 8);
+      else if (y + hh > nav.scrollTop + nav.clientHeight - 8) nav.scrollTop = y + hh - nav.clientHeight + 8;
+    }
+  }
+  function tocSecOf(id) {
+    if (id === "alerts") return "bridge";
+    var el = $(id);
+    while (el && el !== document.body) { if (el.id && TOC_IDS[el.id]) return el.id; el = el.parentElement; }
+    return null;
+  }
+  function tocJump(id, ev) {
+    var el = $(id);
+    if (!el || (id === "alerts" && !el.childNodes.length)) { var s0 = tocSecOf(id) || (id === "alerts" ? "bridge" : null); el = s0 ? $(s0) : null; if (el) id = el.id; }
+    if (!el) return;   // nothing by that name: the browser follows the link
+    if (ev) ev.preventDefault();
+    var sec = tocSecOf(id) || id;
+    closeSheet(false);
+    var smooth = !REDUCED.matches;
+    el.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+    T.pin = { id: sec, until: Date.now() + (smooth ? 1500 : 250), y: null };
+    tocSetCurrent(sec);
+    var isSec = el.classList.contains("section"), isGroup = el.classList.contains("mgroup");
+    var target = isSec ? (el.querySelector("h1, h2") || el) : isGroup ? (el.querySelector(".mgroup-head") || el) : el;
+    if (!/^(A|BUTTON|INPUT|SELECT|TEXTAREA|SUMMARY)$/.test(target.tagName) && !target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+    try { target.focus({ preventScroll: true }); } catch (e) {}
+    if (!REDUCED.matches) { target.classList.remove("toc-hit"); void target.offsetWidth; target.classList.add("toc-hit"); setTimeout(function () { target.classList.remove("toc-hit"); }, 1700); }
+    T.curSince = Date.now() - DWELL_MS;   // opened from here: it counts as looked at
+    markSeen(sec);
+    try { history.replaceState(null, "", "#" + id); } catch (e) {}
+  }
+
+  // the sheet (below 1280 px): a modal panel over the page; Escape, the scrim or Close shut it
+  function inertOthers(on) {
+    Array.prototype.slice.call(document.querySelectorAll(".skip")).concat([$("top"), $("alerts"), $("main"), document.querySelector(".foot"), $("toc-bar")]).forEach(function (el) {
+      if (!el) return;
+      if (on) el.setAttribute("inert", ""); else el.removeAttribute("inert");
+    });
+  }
+  function openSheet() {
+    if (!SHEET.matches || sheetOpen()) return;
+    var t = $("toc");
+    t.classList.add("open");
+    t.setAttribute("role", "dialog");
+    t.setAttribute("aria-modal", "true");
+    $("toc-open").setAttribute("aria-expanded", "true");
+    $("toc-scrim").hidden = false;
+    inertOthers(true);
+    t.scrollTop = 0;
+    try { $("toc-close").focus({ preventScroll: true }); } catch (e) {}
+  }
+  function closeSheet(restore) {
+    if (!sheetOpen()) return;
+    var t = $("toc");
+    t.classList.remove("open");
+    t.removeAttribute("role");
+    t.removeAttribute("aria-modal");
+    $("toc-open").setAttribute("aria-expanded", "false");
+    $("toc-scrim").hidden = true;
+    inertOthers(false);
+    if (restore) { try { $("toc-open").focus({ preventScroll: true }); } catch (e) {} }
+  }
+
   // ------------------------------------------------------------------ the ticking clock (every second)
   function pollSeconds() { var p = g(st(), "live.poll_s"); return isNum(p) ? Math.max(60, p) : CFG.pollS; }
   function tick() {
@@ -2258,6 +2836,12 @@
     document.querySelectorAll("[data-clock-since]").forEach(function (el) { var t = +el.getAttribute("data-clock-since"); if (t) setText(el, fClock((Date.now() - t) / 1000)); });
     document.querySelectorAll("[data-dur-since]").forEach(function (el) { var t = +el.getAttribute("data-dur-since"); if (t) setText(el, fDurShort((Date.now() - t) / 1000)); });
     document.querySelectorAll("[data-ago-min]").forEach(function (el) { var t = +el.getAttribute("data-ago-min"); if (t && el._raf == null) setText(el, fInt((Date.now() - t) / 60000)); });
+    document.querySelectorAll("[data-ago-short]").forEach(function (el) { var t = +el.getAttribute("data-ago-short"); if (t) setText(el, fAgoShort(t)); });
+    if (T.built) {   // a section in view for a moment counts as looked at: its dot goes
+      if (T.cur && T.store && !document.hidden && !sheetOpen() && Date.now() - T.curSince >= DWELL_MS) markSeen(T.cur);
+      $("toc").setAttribute("data-fresh", fr);
+      setText("lu-state", fr === "stale" || fr === "late" ? "· data " + fAgoShort(genMs()) + " old" : fr === "error" ? "· no data" : fr === "undated" ? "· undated data" : "");   // the color is never the only sign
+    }
     var pb = $("pollbar"), nx = nextAt();
     if (pb) {
       pb.parentNode.setAttribute("data-state", fr);
@@ -2268,7 +2852,7 @@
     }
     tickUnits();
     if (!REDUCED.matches) S.cells.forEach(function (C) { if (C.geom) drawCells(C, true); });
-    if (fr !== S._lastFr) { S._lastFr = fr; renderAlerts(); renderKaStrip(); renderRunbook(); }
+    if (fr !== S._lastFr) { S._lastFr = fr; renderAlerts(); renderKaStrip(); renderRunbook(); renderEverything(); renderToc(); }
   }
   function nextAt() {   // when this page checks for new data next
     var t = Math.min(S.pages.next || Infinity, WANT_LIVE && S.live.state !== "limited" ? (S.live.next || Infinity) : Infinity);
@@ -2439,7 +3023,9 @@
     if (sig("since", [gen])) { renderSince(); renderMilestones(); renderBadges(); }
     if (sig("notes", [gen, s.notes])) renderNotes();
     if (sig("links", [gen])) renderLinks();
+    if (sig("every", [gen, s.keepalive, freshness()])) renderEverything();
     renderFoot();
+    renderToc();
     tick();
     S.firstRender = !S.status;
   }
@@ -2483,6 +3069,7 @@
       clearTimeout(rt); rt = setTimeout(redrawVisuals, 180);
     });
     document.addEventListener("visibilitychange", function () { if (!document.hidden) loop(Date.now() - Math.max(S.pages.at, S.live.at) > 30000); });
+    tocBuild();
     renderAll();
     renderRunbook();
     renderKaStrip();

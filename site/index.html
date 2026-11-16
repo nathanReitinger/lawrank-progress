@@ -11,11 +11,13 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='8' fill='%230e131a'/%3E%3Cpath d='M7 21 L12 14 L16 18 L21 9 L25 13' fill='none' stroke='%23ffffff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='25' cy='13' r='3' fill='%230ca30c'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 <script>
+  document.documentElement.classList.add("js");
   try { var t = localStorage.getItem("progress-theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
 </script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the content</a>
+<a class="skip" href="#toc" id="skip-toc">Skip to the contents</a>
 
 <header class="topbar" id="top">
   <div class="wrap topbar-in">
@@ -42,23 +44,20 @@
   </div>
   <div class="pollbar" aria-hidden="true"><span id="pollbar"></span></div>
 </header>
-<nav class="wrap jump" aria-label="Sections">
-  <a href="#bridge">Bridge</a>
-  <a href="#runbook">Keep-alive</a>
-  <a href="#running">Running now</a>
-  <a href="#measurements">Measurements</a>
-  <a href="#grids">Grids</a>
-  <a href="#map">Mission map</a>
-  <a href="#crew">Crew</a>
-  <a href="#log">Mission log</a>
-  <a href="#milestones">Milestones</a>
-  <a href="#notes">Talk to the team</a>
-  <a href="#links">Links</a>
-</nav>
-
+<!-- the contents bar (below 1280 px it sits at the bottom of the screen; here, early in the order, for the keyboard) -->
+<div class="toc-bar" id="toc-bar">
+  <button type="button" class="toc-open" id="toc-open" aria-expanded="false" aria-controls="toc">
+    <svg class="tb-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6.5h16M4 12h16M4 17.5h10"/></svg>
+    <span class="tb-label">Contents</span>
+    <span class="tb-cur" id="tb-cur"></span>
+    <span class="tb-new" id="tb-new" hidden></span>
+    <svg class="tb-chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 14.5l6-6l6 6"/></svg>
+  </button>
+</div>
 <div class="wrap" id="alerts" aria-live="polite"></div>
 
-<main id="main" class="wrap">
+<div class="layout wrap" id="layout">
+<main id="main">
   <noscript><p class="banner crit">This page needs JavaScript to read its status file. The runbook: open Terminal on the Mac and run <code>lawrank status</code>, <code>lawrank start all</code>, <code>lawrank stop all</code> or <code>lawrank logs &lt;job&gt;</code>.</p></noscript>
 
   <section id="bridge" class="section bridge" aria-labelledby="bridge-h">
@@ -152,6 +151,7 @@
       <p class="section-sub" id="map-sub">Five phases, each step with its status. Dates are estimates and say what they assume.</p>
     </div>
     <ol class="phases" id="phases"></ol>
+    <div id="ops"></div>
     <div class="releases" id="releases"></div>
   </section>
 
@@ -198,7 +198,93 @@
     </div>
     <div class="links" id="links-body"></div>
   </section>
+
+  <section id="everything" class="section" aria-labelledby="every-h">
+    <div class="section-head">
+      <h2 id="every-h">Everything in one place</h2>
+      <p class="section-sub">The private test page, the public sites, every command to run at the Mac, and where the runbook lives.</p>
+    </div>
+    <div class="every-grid">
+      <div class="card every-test" aria-labelledby="every-pv-h">
+        <div class="card-head">
+          <h3 class="card-title" id="every-pv-h">Private test page</h3>
+          <span class="every-state" id="every-state"></span>
+        </div>
+        <p class="every-what">The preview model: paste an abstract or upload a PDF and see its ranked subject tags.</p>
+        <p class="every-where"><b>To open it:</b> on your phone or the Mac with Tailscale on, use the address in <b>RUNBOOK.md</b> on the Mac (its part on the test page on your phone). On the Mac itself: <code class="every-host">localhost:8765</code></p>
+        <p class="every-private"><b>Private:</b> opens only on your own devices in your tailnet (Tailscale). Anyone else gets no answer, and this public page does not print its address.</p>
+        <p class="every-live" id="every-live">A Hugging Face Space would need a paid plan, so the test page stays on the Mac and is reached over Tailscale.</p>
+      </div>
+      <div class="card" aria-labelledby="every-web-h">
+        <div class="card-head"><h3 class="card-title" id="every-web-h">On the web</h3><span class="card-note">public</span></div>
+        <ul class="link-list">
+          <li><a href="https://nathanreitinger.github.io/lawrank-progress/" target="_blank" rel="noopener noreferrer">This page</a><small>nathanreitinger.github.io/lawrank-progress</small></li>
+          <li><a href="https://github.com/nathanReitinger/lawrank-progress" target="_blank" rel="noopener noreferrer">Its source</a><small>github.com/nathanReitinger/lawrank-progress</small></li>
+          <li><a href="https://nathanreitinger.github.io/lawRankings/" target="_blank" rel="noopener noreferrer">The law school rankings site</a><small>nathanreitinger.github.io/lawRankings</small></li>
+          <li><a href="https://huggingface.co/nathanReitinger" target="_blank" rel="noopener noreferrer">Hugging Face profile</a><small>huggingface.co/nathanReitinger · models start private</small></li>
+        </ul>
+      </div>
+      <div class="card every-cmds" aria-labelledby="every-cmd-h">
+        <div class="card-head"><h3 class="card-title" id="every-cmd-h">The lawrank commands</h3><span class="card-note">run at the Mac</span></div>
+        <ul class="cmd-list" id="every-cmds">
+          <li class="cmd-row"><code>lawrank status</code></li>
+          <li class="cmd-row"><code>lawrank start all</code></li>
+          <li class="cmd-row"><code>lawrank stop all</code></li>
+          <li class="cmd-row"><code>lawrank check</code></li>
+          <li class="cmd-row"><code>lawrank logs &lt;job&gt;</code></li>
+          <li class="cmd-row"><code>lawrank supervisor on</code></li>
+          <li class="cmd-row"><code>lawrank supervisor status</code></li>
+          <li class="cmd-row"><code>lawrank help</code></li>
+        </ul>
+        <p class="runbook-how">To run one: open Terminal on the Mac, paste it, press Return. This page cannot run anything itself.</p>
+      </div>
+      <div class="card every-book" aria-labelledby="every-book-h">
+        <div class="card-head"><h3 class="card-title" id="every-book-h">The runbook</h3><span class="card-note">on the Mac only</span></div>
+        <p class="every-file"><b>RUNBOOK.md</b> in the project folder on the Mac.</p>
+        <p class="every-what">Every lawrank command, what to do if everything stopped, what each stop file means, how the supervisor works, and how to open the private test page on your phone.</p>
+      </div>
+    </div>
+  </section>
 </main>
+
+<aside class="toc" id="toc" aria-labelledby="toc-h">
+  <div class="toc-head">
+    <h2 class="toc-title" id="toc-h">Contents</h2>
+    <span class="toc-key"><i class="toc-dot" aria-hidden="true"></i>new since you looked</span>
+    <button type="button" class="btn sm toc-close" id="toc-close">Close</button>
+  </div>
+  <section class="toc-latest" aria-labelledby="lu-h">
+    <h3 class="lu-h" id="lu-h">Latest updates <span class="lu-state" id="lu-state"></span></h3>
+    <ol class="lu-list" id="lu-list"></ol>
+  </section>
+  <nav class="toc-nav" aria-label="Sections">
+    <ol class="toc-list" id="toc-list">
+      <li class="toc-item" data-sec="bridge"><a href="#bridge"><span class="toc-name">Bridge</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+      <li class="toc-item" data-sec="runbook"><a href="#runbook"><span class="toc-name">Keep-alive</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+      <li class="toc-item" data-sec="running"><a href="#running"><span class="toc-name">Running now</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+      <li class="toc-item" data-sec="measurements"><a href="#measurements"><span class="toc-name">Measurements</span><span class="toc-line"></span><span class="toc-age"></span></a>
+        <ul class="toc-subs" aria-label="Measurement groups">
+          <li><a href="#m-harvest" data-sub="harvest"><span class="ts-name">Harvest</span><span class="ts-line"></span><span class="ts-age"></span></a></li>
+          <li><a href="#m-core" data-sub="core"><span class="ts-name">CORE</span><span class="ts-line"></span><span class="ts-age"></span></a></li>
+          <li><a href="#m-s2" data-sub="s2"><span class="ts-name">Sem. Scholar</span><span class="ts-line"></span><span class="ts-age"></span></a></li>
+          <li><a href="#m-coding" data-sub="coding"><span class="ts-name">Labels</span><span class="ts-line"></span><span class="ts-age"></span></a></li>
+          <li><a href="#m-model" data-sub="model"><span class="ts-name">Model lab</span><span class="ts-line"></span><span class="ts-age"></span></a></li>
+          <li><a href="#m-machine" data-sub="machine"><span class="ts-name">Machine</span><span class="ts-line"></span><span class="ts-age"></span></a></li>
+        </ul>
+      </li>
+      <li class="toc-item" data-sec="grids"><a href="#grids"><span class="toc-name">Grids</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+      <li class="toc-item" data-sec="map"><a href="#map"><span class="toc-name">Mission map</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+      <li class="toc-item" data-sec="crew"><a href="#crew"><span class="toc-name">Crew</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+      <li class="toc-item" data-sec="log"><a href="#log"><span class="toc-name">Mission log</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+      <li class="toc-item" data-sec="milestones"><a href="#milestones"><span class="toc-name">Milestones</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+      <li class="toc-item" data-sec="notes"><a href="#notes"><span class="toc-name">Talk to the team</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+      <li class="toc-item" data-sec="links"><a href="#links"><span class="toc-name">Links</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+      <li class="toc-item" data-sec="everything"><a href="#everything"><span class="toc-name">Everything in one place</span><span class="toc-line"></span><span class="toc-age"></span></a></li>
+    </ol>
+  </nav>
+</aside>
+</div>
+<div class="toc-scrim" id="toc-scrim" hidden></div>
 
 <footer class="foot">
   <div class="wrap foot-in" id="foot"></div>
