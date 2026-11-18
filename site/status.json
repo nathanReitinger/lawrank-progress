@@ -1,6 +1,6 @@
 {
  "schema": "lawrank-progress status 2",
- "generated_at": "2026-11-18T04:55:09Z",
+ "generated_at": "2026-11-18T05:05:09Z",
  "project": {
   "name": "Law review subject tags",
   "tagline": "Every law review paper on our list gets its abstract or first pages; our own model then tags each paper with its subjects, and the tags go paper -> professor -> school on the law school rankings site.",
@@ -27,7 +27,7 @@
   ]
  },
  "headline": {
-  "sentence": "Phase 2 of 5 (Labels) is the focus now: Silver S1 coding at 151 of 317 units; TEST coding at 123 of 861 units. Phase 1 (Collect) and Phase 3 (Model) keep running beside it. 3 of 3 jobs that must keep running are running. Next milestone: the v0.9 beta, estimated 2026-11-22 to 2026-12-02.",
+  "sentence": "Phase 2 of 5 (Labels) is the focus now: Silver S1 coding at 153 of 317 units; TEST coding at 124 of 861 units. Phase 1 (Collect) and Phase 3 (Model) keep running beside it. 3 of 3 jobs that must keep running are running. Next milestone: the v0.9 beta, estimated 2026-11-22 to 2026-12-02.",
   "focus_phase": "p2",
   "must_up": 3,
   "must_total": 3,
@@ -125,20 +125,20 @@
      "detail": "Looks up the papers still without a text in CORE, by OAI id, DOI or title.",
      "needs": "Keeps running (the always-on supervisor restarts it); about 2-3 weeks at the pace of 2026-11-13.",
      "live": {
-      "state": "waiting",
+      "state": "running",
       "health": "ok",
       "progress": {
-       "done": 65800,
+       "done": 65940,
        "total": 383403,
        "unit": "papers looked up",
-       "pct": 17.16
+       "pct": 17.2
       },
       "eta": {
-       "seconds": 1465860,
-       "at": "2026-12-05T04:06:09Z",
+       "seconds": 1465213,
+       "at": "2026-12-05T04:05:23Z",
        "basis": "papers in the last 60 minutes"
       },
-      "last_activity": "2026-11-18T04:48:03Z"
+      "last_activity": "2026-11-18T05:04:38Z"
      }
     },
     {
@@ -152,18 +152,18 @@
       "state": "running",
       "health": "ok",
       "progress": {
-       "done": 23199,
+       "done": 23210,
        "total": 209547,
        "unit": "papers of the gaps queue tried",
-       "pct": 11.07,
+       "pct": 11.08,
        "since": "2026-11-13"
       },
       "eta": {
-       "seconds": 8948598,
-       "at": "2027-03-01T18:38:27Z",
+       "seconds": 8953210,
+       "at": "2027-03-01T20:05:20Z",
        "basis": "the harvest's own estimate (48.0 s a paper)"
       },
-      "last_activity": "2026-11-18T04:55:06Z"
+      "last_activity": "2026-11-18T05:04:43Z"
      }
     },
     {
@@ -243,17 +243,17 @@
       "state": "running",
       "health": "ok",
       "progress": {
-       "done": 151,
+       "done": 153,
        "total": 317,
        "unit": "coding units",
-       "pct": 47.63
+       "pct": 48.26
       },
       "eta": {
-       "seconds": 387632,
-       "at": "2026-11-22T16:35:41Z",
+       "seconds": 363323,
+       "at": "2026-11-22T10:00:33Z",
        "basis": "units finished in the last 24 hours (usage windows decide)"
       },
-      "last_activity": "2026-11-18T04:55:06Z"
+      "last_activity": "2026-11-18T04:58:55Z"
      }
     },
     {
@@ -267,13 +267,13 @@
       "state": "running",
       "health": "ok",
       "progress": {
-       "done": 123,
+       "done": 124,
        "total": 861,
        "unit": "coding units",
-       "pct": 14.29
+       "pct": 14.4
       },
       "eta": null,
-      "last_activity": "2026-11-18T04:55:10Z"
+      "last_activity": "2026-11-18T04:59:27Z"
      }
     },
     {
@@ -350,7 +350,7 @@
       "health": "ok",
       "progress": null,
       "eta": null,
-      "last_activity": "2026-11-18T04:52:40Z"
+      "last_activity": "2026-11-18T04:57:29Z"
      }
     },
     {
@@ -365,17 +365,17 @@
       "state": "running",
       "health": "ok",
       "progress": {
-       "done": 6926,
+       "done": 8150,
        "total": 16021,
        "unit": "batches",
-       "pct": 43.23
+       "pct": 50.87
       },
       "eta": {
-       "seconds": 4472,
-       "at": "2026-11-18T06:09:42Z",
+       "seconds": 3841,
+       "at": "2026-11-18T06:09:11Z",
        "basis": "its pace between its last two heartbeats"
       },
-      "last_activity": "2026-11-18T04:55:01Z"
+      "last_activity": "2026-11-18T05:05:04Z"
      }
     },
     {
@@ -685,25 +685,25 @@
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 135062,
-   "last_activity": "2026-11-18T04:55:06Z",
+   "uptime_s": 135663,
+   "last_activity": "2026-11-18T05:04:43Z",
    "rate": {
     "unit": "requests a minute",
-    "last10": 3.3,
-    "last60": 4.8
+    "last10": 2.9,
+    "last60": 3.7
    },
    "rates": [
     {
      "label": "requests (last 10 min)",
-     "value": 33
+     "value": 29
     },
     {
      "label": "requests (last 60 min)",
-     "value": 288
+     "value": 224
     },
     {
      "label": "not found, refused or no answer (last 10 min)",
-     "value": 1
+     "value": 2
     },
     {
      "label": "sites asked (last 15 min)",
@@ -711,7 +711,7 @@
     },
     {
      "label": "records kept (last 10 min, harvest's count)",
-     "value": 8
+     "value": 11
     },
     {
      "label": "abstracts kept (last 10 min, harvest's count)",
@@ -719,26 +719,26 @@
     }
    ],
    "progress": {
-    "done": 23199,
+    "done": 23210,
     "total": 209547,
     "unit": "papers of the gaps queue tried",
-    "pct": 11.07,
+    "pct": 11.08,
     "since": "2026-11-13"
    },
    "queue": {
-    "left": 186348,
+    "left": 186337,
     "unit": "papers in the gaps queue",
-    "done_this_run": 2782,
-    "texts_this_run": 2022,
+    "done_this_run": 2793,
+    "texts_this_run": 2032,
     "skipped_for_now": 2919,
     "secs_each": 48.0
    },
    "eta": {
-    "seconds": 8948598,
-    "at": "2027-03-01T18:38:27Z",
+    "seconds": 8953210,
+    "at": "2027-03-01T20:05:20Z",
     "basis": "the harvest's own estimate (48.0 s a paper)"
    },
-   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 39 requests (3.9 a minute), 5 records, 0 abstracts; this run: 7,378 requests, 2,721 records, 919 abstracts; gaps beside the passes: 2,772 papers done (2,015 texts), 186,358 left, about 103.5 days left at 48 s each (2,919 skipped for now); workers: 1 working of 35 (34 waiting for work); memory 77%, aiming at 90-95%",
+   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 33 requests (3.3 a minute), 10 records, 1 abstracts; this run: 7,411 requests, 2,731 records, 920 abstracts; gaps beside the passes: 2,784 papers done (2,024 texts), 186,346 left, about 103.5 days left at 48 s each (2,919 skipped for now); workers: 1 working of 35 (34 waiting for work); memory 80%, aiming at 90-95%",
    "details": [
     {
      "k": "journal passes",
@@ -746,7 +746,7 @@
     },
     {
      "k": "workers",
-     "v": "1 working of 35 (memory 81.6%, aiming at 90-95%)"
+     "v": "1 working of 35 (memory 80.6%, aiming at 90-95%)"
     },
     {
      "k": "sites paused or left alone",
@@ -754,7 +754,7 @@
     },
     {
      "k": "this run",
-     "v": "7,407 requests, 2,729 records, 920 abstracts"
+     "v": "7,437 requests, 2,740 records, 921 abstracts"
     },
     {
      "k": "this run started",
@@ -771,8 +771,8 @@
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
    },
    "now": {
-    "at": "2026-11-18T04:54:55Z",
-    "step": "journal passes 531 of 536 done (1 running, 4 waiting); gaps beside the passes: 186,348 papers left (2,782 asked this run, 2,022 texts); 1 of 35 workers working; archive.org at x4.0 of today's pace",
+    "at": "2026-11-18T05:05:00Z",
+    "step": "journal passes 531 of 536 done (1 running, 4 waiting); gaps beside the passes: 186,337 papers left (2,793 asked this run, 2,032 texts); 1 of 35 workers working; archive.org at x3.6 of today's pace",
     "bars": [
      {
       "id": "passes",
@@ -785,10 +785,10 @@
      {
       "id": "gaps",
       "label": "gaps queue tried (of the largest queue seen)",
-      "done": 23199,
+      "done": 23210,
       "total": 209547,
       "unit": "papers",
-      "pct": 11.07
+      "pct": 11.08
      },
      {
       "id": "workers",
@@ -801,24 +801,24 @@
      {
       "id": "memory",
       "label": "memory in use (the pool aims at 90-95%)",
-      "done": 81.6,
+      "done": 80.6,
       "total": 100,
       "unit": "%",
-      "pct": 81.6
+      "pct": 80.6
      }
     ],
     "facts": [
      {
       "k": "requests a minute (last 10 min)",
-      "v": 3.3
-     },
-     {
-      "k": "archive.org requests a minute (last 10 min)",
       "v": 2.9
      },
      {
+      "k": "archive.org requests a minute (last 10 min)",
+      "v": 2.4
+     },
+     {
       "k": "requests that failed (last 10 min)",
-      "v": 1
+      "v": 2
      },
      {
       "k": "sites asked (last 15 min)",
@@ -826,7 +826,7 @@
      },
      {
       "k": "records kept (last 10 min)",
-      "v": 8
+      "v": 11
      },
      {
       "k": "abstracts kept (last 10 min)",
@@ -834,7 +834,7 @@
      },
      {
       "k": "requests this run",
-      "v": 7407
+      "v": 7437
      },
      {
       "k": "seconds a gaps paper takes",
@@ -855,7 +855,7 @@
      },
      {
       "k": "requests waiting to be tried again (last 10 min)",
-      "v": 1
+      "v": 0
      }
     ],
     "passes": {
@@ -870,20 +870,20 @@
       "kind": "pass",
       "id": "pass 1",
       "mode": "feed",
-      "pages": 634,
-      "records": 141,
-      "abstracts": 135,
-      "running_s": 135050,
-      "last_request_s_ago": 87
+      "pages": 639,
+      "records": 142,
+      "abstracts": 136,
+      "running_s": 135650,
+      "last_request_s_ago": 56
      }
     ],
     "gaps": {
-     "left": 186348,
-     "asked_this_run": 2782,
-     "texts_this_run": 2022,
+     "left": 186337,
+     "asked_this_run": 2793,
+     "texts_this_run": 2032,
      "skipped_this_run": 2919,
      "secs_each": 48.0,
-     "eta_at": "2027-03-01T18:38:27Z",
+     "eta_at": "2027-03-01T20:05:20Z",
      "largest_queue": 209547
     },
     "workers": {
@@ -893,7 +893,7 @@
      "parked": 0,
      "peak": 35,
      "start": 30,
-     "memory_pct": 81.6,
+     "memory_pct": 80.6,
      "aim_low_pct": 90.0,
      "aim_high_pct": 95.0,
      "adaptive": true
@@ -902,13 +902,13 @@
      "lanes": 2,
      "items_in_plan": 185177,
      "live_pdfs_for_workers": 10283,
-     "requests_10m": 29,
-     "rpm10": 2.9,
-     "requests_60m": 260,
+     "requests_10m": 24,
+     "rpm10": 2.4,
+     "requests_60m": 196,
      "pace": {
-      "x": 4.0,
-      "good_in_a_row": null,
-      "at": "2026-11-18T04:49:12Z"
+      "x": 3.6,
+      "good_in_a_row": 20,
+      "at": "2026-11-18T04:58:03Z"
      },
      "busy_until": null
     },
@@ -916,16 +916,16 @@
      {
       "kind": "archive",
       "id": "archive.org",
-      "items_10m": 8,
-      "texts_10m": 8,
+      "items_10m": 9,
+      "texts_10m": 9,
       "requests_10m": 23,
       "last": {
        "method": "wayback_pdf",
        "outcome": "read",
        "detail": "first_pages",
-       "at": "2026-11-18T04:55:07Z"
+       "at": "2026-11-18T05:04:44Z"
       },
-      "last_s_ago": 2
+      "last_s_ago": 25
      },
      {
       "kind": "pdf_worker",
@@ -941,25 +941,25 @@
        "at": "2026-11-16T20:23:04Z"
       },
       "group_papers": 593,
-      "last_s_ago": 117125
+      "last_s_ago": 117725
      }
     ],
     "requests_per_min": [
-     6,
-     4,
-     4,
      4,
      2,
      3,
      3,
      2,
+     3,
+     3,
      4,
-     2
+     3,
+     3
     ],
     "request_kinds_10m": {
-     "wayback_pdf": 28,
-     "article": 4,
-     "cdx": 1
+     "wayback_pdf": 22,
+     "article": 5,
+     "cdx": 2
     },
     "network_down": false,
     "watchers": [
@@ -975,7 +975,7 @@
       "name": "replan_harvest.sh",
       "running": true,
       "state": "sleeping",
-      "next_at": "2026-11-18T04:55:09Z",
+      "next_at": "2026-11-18T05:05:09Z",
       "detail": "asks the harvest to save and plan again in 0 s (every 24 h), so new side-store lines are used",
       "pids": 1,
       "every_s": 86400
@@ -983,11 +983,11 @@
     ]
    },
    "eta_alt": {
-    "seconds": 4514321,
-    "at": "2027-01-09T10:53:50Z",
+    "seconds": 4519236,
+    "at": "2027-01-09T12:25:46Z",
     "basis": "the queue's fall over the last 6 hours"
    },
-   "line_at": "2026-11-18T04:45:45Z"
+   "line_at": "2026-11-18T04:55:56Z"
   },
   {
    "id": "core",
@@ -1000,21 +1000,21 @@
    "kept_alive_by": "the supervisor (restarts it within a few minutes; by hand: lawrank start core)",
    "check": "cd .recovery/s18/build/core && python3 -B -m corelane status",
    "stop": "lawrank stop core (nothing restarts it until lawrank start core)",
-   "state": "waiting",
+   "state": "running",
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 221828,
-   "last_activity": "2026-11-18T04:48:03Z",
+   "uptime_s": 222429,
+   "last_activity": "2026-11-18T05:04:38Z",
    "rate": {
     "unit": "papers a minute",
-    "last10": 6.0,
+    "last10": 14.0,
     "last60": 13.0
    },
    "rates": [
     {
      "label": "papers (last 10 min)",
-     "value": 60
+     "value": 140
     },
     {
      "label": "papers (last 60 min)",
@@ -1022,38 +1022,38 @@
     },
     {
      "label": "with a text (last 10 min)",
-     "value": 28
+     "value": 94
     }
    ],
    "progress": {
-    "done": 65800,
+    "done": 65940,
     "total": 383403,
     "unit": "papers looked up",
-    "pct": 17.16
+    "pct": 17.2
    },
    "queue": null,
    "eta": {
-    "seconds": 1465860,
-    "at": "2026-12-05T04:06:09Z",
+    "seconds": 1465213,
+    "at": "2026-12-05T04:05:23Z",
     "basis": "papers in the last 60 minutes"
    },
-   "line": "33,300 papers in 3688 min, 22,791 requests (0.68 a paper): matched 16,067 (13,337 with a text, 2,444 a link only), review 548, never-source 225, no match 1,615, no hits 14,835, errors 2; side lines written 15,781",
+   "line": "33,400 papers in 3703 min, 22,835 requests (0.68 a paper): matched 16,144 (13,411 with a text, 2,447 a link only), review 548, never-source 225, no match 1,630, no hits 14,843, errors 2; side lines written 15,858",
    "details": [
     {
      "k": "requests to CORE",
-     "v": "43,009 in all"
+     "v": "43,069 in all"
     },
     {
      "k": "pace",
-     "v": "7.88 s between requests"
+     "v": "6.3 s between requests"
     },
     {
      "k": "matched",
-     "v": "16,067 papers (13,337 with a text)"
+     "v": "16,144 papers (13,411 with a text)"
     },
     {
      "k": "side-store lines written",
-     "v": "15,781"
+     "v": "15,858"
     }
    ],
    "notes": [],
@@ -1066,38 +1066,38 @@
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
    },
    "now": {
-    "at": "2026-11-18T04:48:03Z",
-    "step": "Looking up papers #65,801 to #65,820 (window 3,291 of 19,171); 65,800 of 383,403 papers done; holding its requests until 2026-11-18T04:58:30Z (CORE's rate limit)",
+    "at": "2026-11-18T05:04:38Z",
+    "step": "Looking up papers #65,941 to #65,960 (window 3,298 of 19,171); 65,940 of 383,403 papers done",
     "bars": [
      {
       "id": "papers",
       "label": "papers looked up",
-      "done": 65800,
+      "done": 65940,
       "total": 383403,
       "unit": "papers",
-      "pct": 17.16
+      "pct": 17.2
      },
      {
       "id": "windows",
       "label": "windows of 20 papers done",
-      "done": 3290,
+      "done": 3297,
       "total": 19171,
       "unit": "windows",
-      "pct": 17.16
+      "pct": 17.2
      },
      {
       "id": "text",
       "label": "papers looked up that got a text",
-      "done": 26467,
-      "total": 65800,
+      "done": 26561,
+      "total": 65940,
       "unit": "papers",
-      "pct": 40.22
+      "pct": 40.28
      }
     ],
     "facts": [
      {
       "k": "papers a minute (last 10 min)",
-      "v": 6.0
+      "v": 14.0
      },
      {
       "k": "papers a minute (last 60 min)",
@@ -1105,15 +1105,15 @@
      },
      {
       "k": "requests a minute (last 10 min)",
-      "v": 3.0
+      "v": 6.0
      },
      {
       "k": "requests in all",
-      "v": 43009
+      "v": 43069
      },
      {
       "k": "seconds between requests",
-      "v": 7.88,
+      "v": 6.3,
       "unit": "s"
      },
      {
@@ -1130,31 +1130,31 @@
      },
      {
       "k": "matched papers",
-      "v": 32452
+      "v": 32555
      }
     ],
     "window": {
-     "n": 3291,
+     "n": 3298,
      "of": 19171,
      "size": 20,
-     "first": 65801,
-     "last": 65820
+     "first": 65941,
+     "last": 65960
     },
     "eta": {
-     "seconds": 1465860,
-     "at": "2026-12-05T04:06:09Z",
+     "seconds": 1465213,
+     "at": "2026-12-05T04:05:23Z",
      "basis": "papers in the last 60 minutes"
     },
     "outcomes": [
      {
       "k": "match_text",
       "label": "matched, with a text",
-      "n": 26467
+      "n": 26561
      },
      {
       "k": "match_link",
       "label": "matched, a PDF link only",
-      "n": 5009
+      "n": 5018
      },
      {
       "k": "match_none",
@@ -1164,7 +1164,7 @@
      {
       "k": "review",
       "label": "held for review (never credited)",
-      "n": 1126
+      "n": 1127
      },
      {
       "k": "never_source",
@@ -1174,12 +1174,12 @@
      {
       "k": "no_match",
       "label": "records, none the paper",
-      "n": 4079
+      "n": 4095
      },
      {
       "k": "no_hits",
       "label": "no record at all",
-      "n": 26437
+      "n": 26457
      },
      {
       "k": "no_query",
@@ -1194,16 +1194,16 @@
     ],
     "outcomes_other": 0,
     "requests": {
-     "total": 43009,
-     "last10": 30,
-     "last60": 483,
+     "total": 43069,
+     "last10": 60,
+     "last60": 451,
      "errors60": 0,
      "rate_limited60": 0,
-     "gap_s": 7.88,
+     "gap_s": 6.3,
      "limit": 10,
-     "remaining": 1
+     "remaining": 9
     },
-    "waiting_until": "2026-11-18T04:58:30Z",
+    "waiting_until": null,
     "watchers": [
      {
       "name": "keep_core.sh",
@@ -1216,11 +1216,11 @@
     ]
    },
    "found": {
-    "with_text": 26467,
+    "with_text": 26561,
     "unit": "papers with a text found",
-    "of": 65800
+    "of": 65940
    },
-   "line_at": "2026-11-18T04:46:23Z"
+   "line_at": "2026-11-18T05:01:13Z"
   },
   {
    "id": "s2",
@@ -1384,35 +1384,35 @@
    "running": null,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-18T04:55:06Z",
+   "last_activity": "2026-11-18T04:58:55Z",
    "rate": {
     "unit": "units an hour",
     "last10": null,
-    "last60": 1.0
+    "last60": 3.0
    },
    "rates": [
     {
      "label": "units (last 60 min)",
-     "value": 1
+     "value": 3
     },
     {
      "label": "units (last 24 h)",
-     "value": 37
+     "value": 39
     }
    ],
    "progress": {
-    "done": 151,
+    "done": 153,
     "total": 317,
     "unit": "coding units",
-    "pct": 47.63
+    "pct": 48.26
    },
    "queue": null,
    "eta": {
-    "seconds": 387632,
-    "at": "2026-11-22T16:35:41Z",
+    "seconds": 363323,
+    "at": "2026-11-22T10:00:33Z",
     "basis": "units finished in the last 24 hours (usage windows decide)"
    },
-   "line": "stage s1: 151 of 264 units (264 batches, 1 coder(s))",
+   "line": "stage s1: 153 of 264 units (264 batches, 1 coder(s))",
    "details": [],
    "notes": [
     "4 unit(s) partly written (cut off; re-run fresh next time)."
@@ -1426,24 +1426,24 @@
     "assumes": "About 7 five-hour usage windows (5.6 for the 10,000 papers, 1.1 for the doubled 2,000), one or two dedicated windows a day."
    },
    "now": {
-    "at": "2026-11-18T04:55:06Z",
-    "step": "stage s1: 151 of 264 units final; 10 unit(s) in flight: b159 c1 (9 min 20 s), b154 c1 (9 min 20 s), b148 c1 (9 min 19 s), b149 c1 (9 min 19 s), b147 c1 (9 min 19 s), b151 c1 (9 min 19 s) and 4 more",
+    "at": "2026-11-18T04:58:55Z",
+    "step": "stage s1: 153 of 264 units final; 112 unit(s) in flight: b159 c1 (19 min 20 s), b154 c1 (19 min 20 s), b148 c1 (19 min 20 s), b149 c1 (19 min 20 s), b147 c1 (19 min 20 s), b151 c1 (19 min 20 s) and 106 more",
     "bars": [
      {
       "id": "units",
       "label": "coding units final",
-      "done": 151,
+      "done": 153,
       "total": 317,
       "unit": "units",
-      "pct": 47.63
+      "pct": 48.26
      },
      {
       "id": "stage_s1",
       "label": "stage s1",
-      "done": 151,
+      "done": 153,
       "total": 264,
       "unit": "units",
-      "pct": 57.2
+      "pct": 57.95
      },
      {
       "id": "stage_s1_double",
@@ -1457,15 +1457,15 @@
     "facts": [
      {
       "k": "units in flight now",
-      "v": 10
+      "v": 112
      },
      {
       "k": "units finished (last 60 min)",
-      "v": 1
+      "v": 3
      },
      {
       "k": "units finished (last 24 h)",
-      "v": 37
+      "v": 39
      }
     ],
     "in_flight": [
@@ -1475,8 +1475,8 @@
       "coder": "c1",
       "stage": "s1",
       "started_at": "2026-11-18T04:45:49Z",
-      "running_s": 560,
-      "quiet_s": 540
+      "running_s": 1160,
+      "quiet_s": 481
      },
      {
       "unit": "b154:c1",
@@ -1484,8 +1484,8 @@
       "coder": "c1",
       "stage": "s1",
       "started_at": "2026-11-18T04:45:49Z",
-      "running_s": 560,
-      "quiet_s": 20
+      "running_s": 1160,
+      "quiet_s": 528
      },
      {
       "unit": "b148:c1",
@@ -1493,8 +1493,8 @@
       "coder": "c1",
       "stage": "s1",
       "started_at": "2026-11-18T04:45:49Z",
-      "running_s": 559,
-      "quiet_s": 63
+      "running_s": 1160,
+      "quiet_s": 528
      },
      {
       "unit": "b149:c1",
@@ -1502,8 +1502,8 @@
       "coder": "c1",
       "stage": "s1",
       "started_at": "2026-11-18T04:45:49Z",
-      "running_s": 559,
-      "quiet_s": 526
+      "running_s": 1160,
+      "quiet_s": 450
      },
      {
       "unit": "b147:c1",
@@ -1511,8 +1511,8 @@
       "coder": "c1",
       "stage": "s1",
       "started_at": "2026-11-18T04:45:49Z",
-      "running_s": 559,
-      "quiet_s": 3
+      "running_s": 1160,
+      "quiet_s": 526
      },
      {
       "unit": "b151:c1",
@@ -1520,17 +1520,8 @@
       "coder": "c1",
       "stage": "s1",
       "started_at": "2026-11-18T04:45:49Z",
-      "running_s": 559,
-      "quiet_s": 244
-     },
-     {
-      "unit": "b153:c1",
-      "batch": "b153",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T04:45:51Z",
-      "running_s": 558,
-      "quiet_s": 135
+      "running_s": 1160,
+      "quiet_s": 517
      },
      {
       "unit": "b160:c1",
@@ -1538,8 +1529,8 @@
       "coder": "c1",
       "stage": "s1",
       "started_at": "2026-11-18T04:45:51Z",
-      "running_s": 558,
-      "quiet_s": 518
+      "running_s": 1158,
+      "quiet_s": 374
      },
      {
       "unit": "b152:c1",
@@ -1547,8 +1538,8 @@
       "coder": "c1",
       "stage": "s1",
       "started_at": "2026-11-18T04:45:51Z",
-      "running_s": 557,
-      "quiet_s": 534
+      "running_s": 1158,
+      "quiet_s": 398
      },
      {
       "unit": "b161:c1",
@@ -1556,12 +1547,953 @@
       "coder": "c1",
       "stage": "s1",
       "started_at": "2026-11-18T04:45:55Z",
-      "running_s": 554,
-      "quiet_s": 480
+      "running_s": 1154,
+      "quiet_s": 516
+     },
+     {
+      "unit": "b162:c1",
+      "batch": "b162",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:17Z",
+      "running_s": 532,
+      "quiet_s": 532
+     },
+     {
+      "unit": "b163:c1",
+      "batch": "b163",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:18Z",
+      "running_s": 531,
+      "quiet_s": 531
+     },
+     {
+      "unit": "b164:c1",
+      "batch": "b164",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:19Z",
+      "running_s": 530,
+      "quiet_s": 529
+     },
+     {
+      "unit": "b165:c1",
+      "batch": "b165",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:20Z",
+      "running_s": 529,
+      "quiet_s": 528
+     },
+     {
+      "unit": "b166:c1",
+      "batch": "b166",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:21Z",
+      "running_s": 528,
+      "quiet_s": 527
+     },
+     {
+      "unit": "b167:c1",
+      "batch": "b167",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:22Z",
+      "running_s": 527,
+      "quiet_s": 526
+     },
+     {
+      "unit": "b168:c1",
+      "batch": "b168",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:22Z",
+      "running_s": 527,
+      "quiet_s": 526
+     },
+     {
+      "unit": "b169:c1",
+      "batch": "b169",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:22Z",
+      "running_s": 527,
+      "quiet_s": 526
+     },
+     {
+      "unit": "b170:c1",
+      "batch": "b170",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:23Z",
+      "running_s": 526,
+      "quiet_s": 525
+     },
+     {
+      "unit": "b172:c1",
+      "batch": "b172",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:23Z",
+      "running_s": 526,
+      "quiet_s": 525
+     },
+     {
+      "unit": "b171:c1",
+      "batch": "b171",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:23Z",
+      "running_s": 526,
+      "quiet_s": 525
+     },
+     {
+      "unit": "b173:c1",
+      "batch": "b173",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:23Z",
+      "running_s": 526,
+      "quiet_s": 525
+     },
+     {
+      "unit": "b175:c1",
+      "batch": "b175",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:24Z",
+      "running_s": 525,
+      "quiet_s": 524
+     },
+     {
+      "unit": "b174:c1",
+      "batch": "b174",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:24Z",
+      "running_s": 525,
+      "quiet_s": 524
+     },
+     {
+      "unit": "b176:c1",
+      "batch": "b176",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:24Z",
+      "running_s": 525,
+      "quiet_s": 524
+     },
+     {
+      "unit": "b177:c1",
+      "batch": "b177",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:24Z",
+      "running_s": 525,
+      "quiet_s": 524
+     },
+     {
+      "unit": "b179:c1",
+      "batch": "b179",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:25Z",
+      "running_s": 524,
+      "quiet_s": 523
+     },
+     {
+      "unit": "b178:c1",
+      "batch": "b178",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:25Z",
+      "running_s": 524,
+      "quiet_s": 523
+     },
+     {
+      "unit": "b180:c1",
+      "batch": "b180",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:25Z",
+      "running_s": 524,
+      "quiet_s": 523
+     },
+     {
+      "unit": "b181:c1",
+      "batch": "b181",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:25Z",
+      "running_s": 523,
+      "quiet_s": 523
+     },
+     {
+      "unit": "b183:c1",
+      "batch": "b183",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:26Z",
+      "running_s": 522,
+      "quiet_s": 522
+     },
+     {
+      "unit": "b182:c1",
+      "batch": "b182",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:26Z",
+      "running_s": 522,
+      "quiet_s": 522
+     },
+     {
+      "unit": "b184:c1",
+      "batch": "b184",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:27Z",
+      "running_s": 522,
+      "quiet_s": 522
+     },
+     {
+      "unit": "b185:c1",
+      "batch": "b185",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:27Z",
+      "running_s": 522,
+      "quiet_s": 522
+     },
+     {
+      "unit": "b186:c1",
+      "batch": "b186",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:28Z",
+      "running_s": 521,
+      "quiet_s": 520
+     },
+     {
+      "unit": "b188:c1",
+      "batch": "b188",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:28Z",
+      "running_s": 521,
+      "quiet_s": 520
+     },
+     {
+      "unit": "b187:c1",
+      "batch": "b187",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:28Z",
+      "running_s": 521,
+      "quiet_s": 520
+     },
+     {
+      "unit": "b189:c1",
+      "batch": "b189",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:28Z",
+      "running_s": 521,
+      "quiet_s": 520
+     },
+     {
+      "unit": "b190:c1",
+      "batch": "b190",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:29Z",
+      "running_s": 520,
+      "quiet_s": 519
+     },
+     {
+      "unit": "b191:c1",
+      "batch": "b191",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:29Z",
+      "running_s": 520,
+      "quiet_s": 519
+     },
+     {
+      "unit": "b193:c1",
+      "batch": "b193",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:29Z",
+      "running_s": 520,
+      "quiet_s": 519
+     },
+     {
+      "unit": "b192:c1",
+      "batch": "b192",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:29Z",
+      "running_s": 520,
+      "quiet_s": 519
+     },
+     {
+      "unit": "b194:c1",
+      "batch": "b194",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:30Z",
+      "running_s": 519,
+      "quiet_s": 518
+     },
+     {
+      "unit": "b197:c1",
+      "batch": "b197",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:30Z",
+      "running_s": 519,
+      "quiet_s": 518
+     },
+     {
+      "unit": "b195:c1",
+      "batch": "b195",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:30Z",
+      "running_s": 519,
+      "quiet_s": 518
+     },
+     {
+      "unit": "b196:c1",
+      "batch": "b196",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:30Z",
+      "running_s": 519,
+      "quiet_s": 518
+     },
+     {
+      "unit": "b198:c1",
+      "batch": "b198",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:31Z",
+      "running_s": 518,
+      "quiet_s": 517
+     },
+     {
+      "unit": "b199:c1",
+      "batch": "b199",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:31Z",
+      "running_s": 517,
+      "quiet_s": 517
+     },
+     {
+      "unit": "b201:c1",
+      "batch": "b201",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:31Z",
+      "running_s": 517,
+      "quiet_s": 517
+     },
+     {
+      "unit": "b200:c1",
+      "batch": "b200",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:32Z",
+      "running_s": 517,
+      "quiet_s": 517
+     },
+     {
+      "unit": "b202:c1",
+      "batch": "b202",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:32Z",
+      "running_s": 517,
+      "quiet_s": 516
+     },
+     {
+      "unit": "b203:c1",
+      "batch": "b203",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:33Z",
+      "running_s": 516,
+      "quiet_s": 516
+     },
+     {
+      "unit": "b204:c1",
+      "batch": "b204",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:33Z",
+      "running_s": 516,
+      "quiet_s": 516
+     },
+     {
+      "unit": "b205:c1",
+      "batch": "b205",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:33Z",
+      "running_s": 516,
+      "quiet_s": 515
+     },
+     {
+      "unit": "b206:c1",
+      "batch": "b206",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:33Z",
+      "running_s": 516,
+      "quiet_s": 515
+     },
+     {
+      "unit": "b207:c1",
+      "batch": "b207",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:33Z",
+      "running_s": 515,
+      "quiet_s": 515
+     },
+     {
+      "unit": "b208:c1",
+      "batch": "b208",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:34Z",
+      "running_s": 515,
+      "quiet_s": 515
+     },
+     {
+      "unit": "b209:c1",
+      "batch": "b209",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:34Z",
+      "running_s": 515,
+      "quiet_s": 514
+     },
+     {
+      "unit": "b210:c1",
+      "batch": "b210",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:34Z",
+      "running_s": 515,
+      "quiet_s": 514
+     },
+     {
+      "unit": "b211:c1",
+      "batch": "b211",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:34Z",
+      "running_s": 515,
+      "quiet_s": 514
+     },
+     {
+      "unit": "b212:c1",
+      "batch": "b212",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:34Z",
+      "running_s": 515,
+      "quiet_s": 514
+     },
+     {
+      "unit": "b213:c1",
+      "batch": "b213",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:35Z",
+      "running_s": 514,
+      "quiet_s": 514
+     },
+     {
+      "unit": "b214:c1",
+      "batch": "b214",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:35Z",
+      "running_s": 514,
+      "quiet_s": 514
+     },
+     {
+      "unit": "b215:c1",
+      "batch": "b215",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:35Z",
+      "running_s": 514,
+      "quiet_s": 513
+     },
+     {
+      "unit": "b217:c1",
+      "batch": "b217",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:35Z",
+      "running_s": 514,
+      "quiet_s": 513
+     },
+     {
+      "unit": "b216:c1",
+      "batch": "b216",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:35Z",
+      "running_s": 514,
+      "quiet_s": 513
+     },
+     {
+      "unit": "b218:c1",
+      "batch": "b218",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:35Z",
+      "running_s": 514,
+      "quiet_s": 513
+     },
+     {
+      "unit": "b219:c1",
+      "batch": "b219",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:36Z",
+      "running_s": 513,
+      "quiet_s": 512
+     },
+     {
+      "unit": "b220:c1",
+      "batch": "b220",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:36Z",
+      "running_s": 513,
+      "quiet_s": 512
+     },
+     {
+      "unit": "b221:c1",
+      "batch": "b221",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:36Z",
+      "running_s": 513,
+      "quiet_s": 512
+     },
+     {
+      "unit": "b223:c1",
+      "batch": "b223",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:36Z",
+      "running_s": 513,
+      "quiet_s": 512
+     },
+     {
+      "unit": "b224:c1",
+      "batch": "b224",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:37Z",
+      "running_s": 512,
+      "quiet_s": 512
+     },
+     {
+      "unit": "b222:c1",
+      "batch": "b222",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:37Z",
+      "running_s": 512,
+      "quiet_s": 512
+     },
+     {
+      "unit": "b225:c1",
+      "batch": "b225",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:37Z",
+      "running_s": 512,
+      "quiet_s": 511
+     },
+     {
+      "unit": "b226:c1",
+      "batch": "b226",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:37Z",
+      "running_s": 512,
+      "quiet_s": 511
+     },
+     {
+      "unit": "b227:c1",
+      "batch": "b227",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:37Z",
+      "running_s": 511,
+      "quiet_s": 511
+     },
+     {
+      "unit": "b228:c1",
+      "batch": "b228",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:38Z",
+      "running_s": 511,
+      "quiet_s": 511
+     },
+     {
+      "unit": "b229:c1",
+      "batch": "b229",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:38Z",
+      "running_s": 511,
+      "quiet_s": 511
+     },
+     {
+      "unit": "b230:c1",
+      "batch": "b230",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:38Z",
+      "running_s": 511,
+      "quiet_s": 510
+     },
+     {
+      "unit": "b231:c1",
+      "batch": "b231",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:38Z",
+      "running_s": 511,
+      "quiet_s": 510
+     },
+     {
+      "unit": "b232:c1",
+      "batch": "b232",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:38Z",
+      "running_s": 511,
+      "quiet_s": 510
+     },
+     {
+      "unit": "b233:c1",
+      "batch": "b233",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:39Z",
+      "running_s": 510,
+      "quiet_s": 509
+     },
+     {
+      "unit": "b234:c1",
+      "batch": "b234",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:39Z",
+      "running_s": 510,
+      "quiet_s": 509
+     },
+     {
+      "unit": "b235:c1",
+      "batch": "b235",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:39Z",
+      "running_s": 510,
+      "quiet_s": 509
+     },
+     {
+      "unit": "b236:c1",
+      "batch": "b236",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:39Z",
+      "running_s": 510,
+      "quiet_s": 509
+     },
+     {
+      "unit": "b237:c1",
+      "batch": "b237",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:39Z",
+      "running_s": 510,
+      "quiet_s": 509
+     },
+     {
+      "unit": "b238:c1",
+      "batch": "b238",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:40Z",
+      "running_s": 509,
+      "quiet_s": 509
+     },
+     {
+      "unit": "b241:c1",
+      "batch": "b241",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:40Z",
+      "running_s": 509,
+      "quiet_s": 508
+     },
+     {
+      "unit": "b240:c1",
+      "batch": "b240",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:40Z",
+      "running_s": 509,
+      "quiet_s": 508
+     },
+     {
+      "unit": "b239:c1",
+      "batch": "b239",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:40Z",
+      "running_s": 509,
+      "quiet_s": 508
+     },
+     {
+      "unit": "b242:c1",
+      "batch": "b242",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:40Z",
+      "running_s": 509,
+      "quiet_s": 508
+     },
+     {
+      "unit": "b243:c1",
+      "batch": "b243",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:41Z",
+      "running_s": 508,
+      "quiet_s": 508
+     },
+     {
+      "unit": "b244:c1",
+      "batch": "b244",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:41Z",
+      "running_s": 508,
+      "quiet_s": 507
+     },
+     {
+      "unit": "b245:c1",
+      "batch": "b245",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:41Z",
+      "running_s": 508,
+      "quiet_s": 507
+     },
+     {
+      "unit": "b246:c1",
+      "batch": "b246",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:41Z",
+      "running_s": 508,
+      "quiet_s": 507
+     },
+     {
+      "unit": "b247:c1",
+      "batch": "b247",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:41Z",
+      "running_s": 508,
+      "quiet_s": 507
+     },
+     {
+      "unit": "b248:c1",
+      "batch": "b248",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:41Z",
+      "running_s": 508,
+      "quiet_s": 507
+     },
+     {
+      "unit": "b249:c1",
+      "batch": "b249",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:42Z",
+      "running_s": 507,
+      "quiet_s": 507
+     },
+     {
+      "unit": "b250:c1",
+      "batch": "b250",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:42Z",
+      "running_s": 507,
+      "quiet_s": 506
+     },
+     {
+      "unit": "b251:c1",
+      "batch": "b251",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:42Z",
+      "running_s": 507,
+      "quiet_s": 506
+     },
+     {
+      "unit": "b252:c1",
+      "batch": "b252",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:43Z",
+      "running_s": 506,
+      "quiet_s": 506
+     },
+     {
+      "unit": "b253:c1",
+      "batch": "b253",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:43Z",
+      "running_s": 506,
+      "quiet_s": 506
+     },
+     {
+      "unit": "b254:c1",
+      "batch": "b254",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:43Z",
+      "running_s": 506,
+      "quiet_s": 506
+     },
+     {
+      "unit": "b255:c1",
+      "batch": "b255",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:43Z",
+      "running_s": 506,
+      "quiet_s": 506
+     },
+     {
+      "unit": "b256:c1",
+      "batch": "b256",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:43Z",
+      "running_s": 506,
+      "quiet_s": 505
+     },
+     {
+      "unit": "b258:c1",
+      "batch": "b258",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:44Z",
+      "running_s": 505,
+      "quiet_s": 504
+     },
+     {
+      "unit": "b257:c1",
+      "batch": "b257",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:44Z",
+      "running_s": 505,
+      "quiet_s": 504
+     },
+     {
+      "unit": "b259:c1",
+      "batch": "b259",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:44Z",
+      "running_s": 505,
+      "quiet_s": 504
+     },
+     {
+      "unit": "b260:c1",
+      "batch": "b260",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:44Z",
+      "running_s": 505,
+      "quiet_s": 504
+     },
+     {
+      "unit": "b261:c1",
+      "batch": "b261",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:44Z",
+      "running_s": 505,
+      "quiet_s": 504
+     },
+     {
+      "unit": "b262:c1",
+      "batch": "b262",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:44Z",
+      "running_s": 504,
+      "quiet_s": 504
+     },
+     {
+      "unit": "b263:c1",
+      "batch": "b263",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:45Z",
+      "running_s": 504,
+      "quiet_s": 503
+     },
+     {
+      "unit": "b264:c1",
+      "batch": "b264",
+      "coder": "c1",
+      "stage": "s1",
+      "started_at": "2026-11-18T04:56:45Z",
+      "running_s": 504,
+      "quiet_s": 503
      }
     ],
-    "finished_last_hour": 1,
+    "finished_last_hour": 3,
     "recent_units": [
+     {
+      "unit": "b148:c1",
+      "batch": "b148",
+      "coder": "c1",
+      "at": "2026-11-18T04:56:15Z",
+      "items": 40
+     },
+     {
+      "unit": "b153:c1",
+      "batch": "b153",
+      "coder": "c1",
+      "at": "2026-11-18T04:55:43Z",
+      "items": 40
+     },
      {
       "unit": "b150:c1",
       "batch": "b150",
@@ -1617,23 +2549,9 @@
       "coder": "c1",
       "at": "2026-11-17T18:48:35Z",
       "items": 40
-     },
-     {
-      "unit": "b135:c1",
-      "batch": "b135",
-      "coder": "c1",
-      "at": "2026-11-17T18:48:33Z",
-      "items": 40
-     },
-     {
-      "unit": "b142:c1",
-      "batch": "b142",
-      "coder": "c1",
-      "at": "2026-11-17T18:48:27Z",
-      "items": 40
      }
     ],
-    "plan_at": "2026-11-18T04:55:09Z"
+    "plan_at": "2026-11-18T05:05:09Z"
    },
    "run": "silver_s1",
    "stages": [
@@ -1642,9 +2560,9 @@
      "batches": 264,
      "n_coders": 1,
      "adjudicated": false,
-     "done": 151,
+     "done": 153,
      "total": 264,
-     "pct": 57.2
+     "pct": 57.95
     },
     {
      "stage": "s1_double",
@@ -1675,7 +2593,7 @@
    "running": true,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-18T04:52:40Z",
+   "last_activity": "2026-11-18T04:57:29Z",
    "rate": null,
    "rates": [],
    "progress": null,
@@ -1692,7 +2610,7 @@
    "spark": null,
    "estimate": null,
    "now": {
-    "at": "2026-11-18T04:52:40Z",
+    "at": "2026-11-18T04:57:29Z",
     "step": "The test page answers on localhost:8765 on the owner's Mac",
     "bars": [],
     "facts": [
@@ -1733,7 +2651,7 @@
     ],
     "serving": true,
     "port": 8765,
-    "port_checked_at": "2026-11-18T04:55:09Z",
+    "port_checked_at": "2026-11-18T05:05:09Z",
     "metrics_at": "2026-11-15T00:24:02Z",
     "model_card_at": "2026-11-15T05:35:12Z",
     "page_code": true
@@ -1755,49 +2673,49 @@
    "running": true,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-18T04:55:01Z",
+   "last_activity": "2026-11-18T05:05:04Z",
    "rate": {
     "unit": "batches a minute",
-    "last10": 122.0,
+    "last10": 122.95,
     "last60": null
    },
    "rates": [],
    "progress": {
-    "done": 6926,
+    "done": 8150,
     "total": 16021,
     "unit": "batches",
-    "pct": 43.23
+    "pct": 50.87
    },
    "queue": null,
    "eta": {
-    "seconds": 4472,
-    "at": "2026-11-18T06:09:42Z",
+    "seconds": 3841,
+    "at": "2026-11-18T06:09:11Z",
     "basis": "its pace between its last two heartbeats"
    },
    "line": "forward epoch 3/10",
    "details": [],
    "notes": [
-    "loss 4.155, ppl 63.7 (this epoch so far); held-out ppl 71.0 after epoch 2; 9,373 tok/s; forward done in about 16.6 h; job 5.0 GB, swap 7.9 GB"
+    "loss 4.153, ppl 63.6 (this epoch so far); held-out ppl 71.0 after epoch 2; 9,534 tok/s; forward done in about 16.1 h; job 5.0 GB, swap 7.4 GB"
    ],
    "spark": "b_ulmfit_lm",
    "estimate": null,
    "now": {
-    "at": "2026-11-18T04:55:01Z",
+    "at": "2026-11-18T05:05:04Z",
     "step": "forward epoch 3/10",
     "bars": [
      {
       "id": "progress",
       "label": "batches",
-      "done": 6926,
+      "done": 8150,
       "total": 16021,
       "unit": "batches",
-      "pct": 43.23
+      "pct": 50.87
      }
     ],
     "facts": [
      {
       "k": "batches done",
-      "v": 6926
+      "v": 8150
      },
      {
       "k": "total",
@@ -1805,11 +2723,11 @@
      },
      {
       "k": "batches a minute",
-      "v": 122.0
+      "v": 122.95
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 8,
+      "v": 5,
       "unit": "s"
      }
     ],
@@ -1821,27 +2739,27 @@
      "state": "running",
      "health": "ok",
      "step": "forward epoch 3/10",
-     "done": 6926,
+     "done": 8150,
      "total": 16021,
-     "pct": 43.23,
+     "pct": 50.87,
      "unit": "batches",
-     "note": "loss 4.155, ppl 63.7 (this epoch so far); held-out ppl 71.0 after epoch 2; 9,373 tok/s; forward done in about 16.6 h; job 5.0 GB, swap 7.9 GB",
-     "at": "2026-11-18T04:55:01Z",
-     "age_s": 8,
+     "note": "loss 4.153, ppl 63.6 (this epoch so far); held-out ppl 71.0 after epoch 2; 9,534 tok/s; forward done in about 16.1 h; job 5.0 GB, swap 7.4 GB",
+     "at": "2026-11-18T05:05:04Z",
+     "age_s": 5,
      "started_at": "2026-11-17T23:35:21Z",
      "seq": null,
      "every_s": 60,
      "alive": true,
-     "rate_per_min": 122.0,
+     "rate_per_min": 122.95,
      "eta": {
-      "seconds": 4472,
-      "at": "2026-11-18T06:09:42Z",
+      "seconds": 3841,
+      "at": "2026-11-18T06:09:11Z",
       "basis": "its pace between its last two heartbeats"
      }
     }
    },
    "source": "heartbeat",
-   "line_at": "2026-11-18T04:55:01Z"
+   "line_at": "2026-11-18T05:05:04Z"
   },
   {
    "id": "model_curve",
@@ -1859,7 +2777,7 @@
    "running": true,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-18T03:58:18Z",
+   "last_activity": "2026-11-18T04:58:25Z",
    "rate": {
     "unit": "final silver items a minute",
     "last10": 0.0,
@@ -1877,12 +2795,12 @@
    "line": "4,047 silver items: J_silver E1 78.0 [75.7, 79.8], L1 65.8 [64.1, 68.2]; preview 77.1 [74.6, 78.8]",
    "details": [],
    "notes": [
-    "next point at 4,447 final silver items; silver S1: 134 of 264 batches final, 150 coded"
+    "next point at 4,447 final silver items; silver S1: 134 of 264 batches final, 153 coded"
    ],
    "spark": "b_model_curve",
    "estimate": null,
    "now": {
-    "at": "2026-11-18T03:58:18Z",
+    "at": "2026-11-18T04:58:25Z",
     "step": "4,047 silver items: J_silver E1 78.0 [75.7, 79.8], L1 65.8 [64.1, 68.2]; preview 77.1 [74.6, 78.8]",
     "bars": [
      {
@@ -1909,7 +2827,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 3411,
+      "v": 404,
       "unit": "s"
      }
     ],
@@ -1925,11 +2843,11 @@
      "total": 8000,
      "pct": 50.59,
      "unit": "final silver items",
-     "note": "next point at 4,447 final silver items; silver S1: 134 of 264 batches final, 150 coded",
-     "at": "2026-11-18T03:58:18Z",
-     "age_s": 3411,
+     "note": "next point at 4,447 final silver items; silver S1: 134 of 264 batches final, 153 coded",
+     "at": "2026-11-18T04:58:25Z",
+     "age_s": 404,
      "started_at": "2026-11-16T11:31:34Z",
-     "seq": 82,
+     "seq": 83,
      "every_s": 3900,
      "alive": true,
      "rate_per_min": 0.0,
@@ -1937,7 +2855,7 @@
     }
    },
    "source": "heartbeat",
-   "line_at": "2026-11-18T03:58:18Z"
+   "line_at": "2026-11-18T04:58:25Z"
   },
   {
    "id": "quality_v1",
@@ -2005,7 +2923,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 72719,
+      "v": 73319,
       "unit": "s"
      }
     ],
@@ -2023,7 +2941,7 @@
      "unit": "parts",
      "note": "bake-off and contest training refuse them (leakage gate check); learning-curve monitor v2 trains without them (2,868 of 2,884 silver items); next pretraining pool drops 1,556; held-out sets unchanged",
      "at": "2026-11-17T08:43:10Z",
-     "age_s": 72719,
+     "age_s": 73319,
      "started_at": "2026-11-16T11:19:24Z",
      "seq": 145,
      "every_s": null,
@@ -2093,7 +3011,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 72865,
+      "v": 73465,
       "unit": "s"
      }
     ],
@@ -2111,7 +3029,7 @@
      "unit": "checks",
      "note": "own code; near-duplicate pairs in scope 0, same-work titles 0, exact copies 0; tokens identical to pool v2 texts; counts only",
      "at": "2026-11-17T08:40:44Z",
-     "age_s": 72865,
+     "age_s": 73465,
      "started_at": "2026-11-17T02:55:00Z",
      "seq": null,
      "every_s": 1800,
@@ -2189,7 +3107,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 128910,
+      "v": 129510,
       "unit": "s"
      }
     ],
@@ -2207,7 +3125,7 @@
      "unit": "checks",
      "note": "attempt 3 (own code); 5 of 5 checks; counts only",
      "at": "2026-11-16T17:06:39Z",
-     "age_s": 128910,
+     "age_s": 129510,
      "started_at": "2026-11-16T11:33:07Z",
      "seq": null,
      "every_s": 1800,
@@ -2251,7 +3169,7 @@
    "queue": null,
    "eta": {
     "seconds": 1061,
-    "at": "2026-11-18T05:12:50Z",
+    "at": "2026-11-18T05:22:51Z",
     "basis": "its pace between its last two heartbeats"
    },
    "line": "weak_v1 finished: coverage, quality against silver S1 (95 of 264 batches final), R3/R4 recommendation",
@@ -2289,7 +3207,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 130645,
+      "v": 131245,
       "unit": "s"
      }
     ],
@@ -2307,7 +3225,7 @@
      "unit": "TRAIN rows whose weak labels may train",
      "note": "71 of 78 leaves reached; random part, train-use rows (n 1,033): precision 0.454 (0.370-0.521), recall 0.551 (0.494-0.596), silver rank-1 group among weak groups 0.822; 39,205 train-use rows incl. TRAIN_EXT",
      "at": "2026-11-16T16:37:44Z",
-     "age_s": 130645,
+     "age_s": 131245,
      "started_at": "2026-11-16T16:19:02Z",
      "seq": 9,
      "every_s": null,
@@ -2315,7 +3233,7 @@
      "rate_per_min": 1450.34,
      "eta": {
       "seconds": 1061,
-      "at": "2026-11-18T05:12:50Z",
+      "at": "2026-11-18T05:22:51Z",
       "basis": "its pace between its last two heartbeats"
      }
     }
@@ -2389,7 +3307,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 215280,
+      "v": 215880,
       "unit": "s"
      }
     ],
@@ -2407,7 +3325,7 @@
      "unit": "rows",
      "note": "245,499 rows; 162,098 abstracts and 160,514 titles encoded, the rest reused from corpus_v0",
      "at": "2026-11-15T17:07:09Z",
-     "age_s": 215280,
+     "age_s": 215880,
      "started_at": "2026-11-15T10:53:06Z",
      "seq": 377,
      "every_s": 60,
@@ -2477,7 +3395,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 234453,
+      "v": 235053,
       "unit": "s"
      }
     ],
@@ -2495,7 +3413,7 @@
      "unit": "steps",
      "note": "corpus_v1 and split_v1_ext written",
      "at": "2026-11-15T11:47:36Z",
-     "age_s": 234453,
+     "age_s": 235053,
      "started_at": null,
      "seq": null,
      "every_s": null,
@@ -2523,7 +3441,7 @@
    "running": true,
    "watcher_running": true,
    "uptime_s": null,
-   "last_activity": "2026-11-18T04:54:08Z",
+   "last_activity": "2026-11-18T05:04:08Z",
    "rate": null,
    "rates": [],
    "progress": null,
@@ -2533,11 +3451,11 @@
    "details": [
     {
      "k": "last push of the page (main)",
-     "v": "2026-11-18T04:45:18Z (ok)"
+     "v": "2026-11-18T04:55:18Z (ok)"
     },
     {
      "k": "last push of the live data",
-     "v": "2026-11-18T04:54:11Z (ok)"
+     "v": "2026-11-18T05:04:11Z (ok)"
     },
     {
      "k": "last scan",
@@ -2545,20 +3463,20 @@
     },
     {
      "k": "cycles",
-     "v": "3,766"
+     "v": "3,776"
     }
    ],
    "notes": [],
    "spark": null,
    "estimate": null,
    "now": {
-    "at": "2026-11-18T04:54:08Z",
-    "step": "Cycle 3,766; live data pushed 58 s ago (ok); the page (main) pushed 9 min 51 s ago",
+    "at": "2026-11-18T05:04:08Z",
+    "step": "Cycle 3,776; live data pushed 58 s ago (ok); the page (main) pushed 9 min 51 s ago",
     "bars": [],
     "facts": [
      {
       "k": "cycles",
-      "v": 3766
+      "v": 3776
      },
      {
       "k": "seconds between cycles",
@@ -2567,7 +3485,7 @@
      },
      {
       "k": "live pushes so far",
-      "v": 3581
+      "v": 3591
      },
      {
       "k": "live pushes failed in a row",
@@ -2575,7 +3493,7 @@
      },
      {
       "k": "seconds the last live push took",
-      "v": 3,
+      "v": 2,
       "unit": "s"
      },
      {
@@ -2585,21 +3503,21 @@
     ],
     "live": {
      "branch": "live",
-     "at": "2026-11-18T04:54:11Z",
+     "at": "2026-11-18T05:04:11Z",
      "ok": true,
      "failures": 0,
-     "pushes": 3581,
-     "secs": 3,
+     "pushes": 3591,
+     "secs": 2,
      "scan": "ok"
     },
     "main": {
-     "at": "2026-11-18T04:45:18Z",
+     "at": "2026-11-18T04:55:18Z",
      "ok": true,
      "failures": 0,
      "every_s": 600,
-     "next_at": "2026-11-18T04:55:18Z"
+     "next_at": "2026-11-18T05:05:18Z"
     },
-    "notes_read_at": "2026-11-18T04:55:09Z",
+    "notes_read_at": "2026-11-18T05:05:09Z",
     "watchers": [
      {
       "name": "keep_updater.sh",
@@ -2628,31 +3546,31 @@
    "running": null,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-18T04:55:10Z",
+   "last_activity": "2026-11-18T04:59:27Z",
    "rate": {
     "unit": "units an hour",
     "last10": null,
-    "last60": 2.0
+    "last60": 3.0
    },
    "rates": [
     {
      "label": "units (last 60 min)",
-     "value": 2
+     "value": 3
     },
     {
      "label": "units (last 24 h)",
-     "value": 5
+     "value": 6
     }
    ],
    "progress": {
-    "done": 123,
+    "done": 124,
     "total": 861,
     "unit": "coding units",
-    "pct": 14.29
+    "pct": 14.4
    },
    "queue": null,
    "eta": null,
-   "line": "stage test: 123 of 476 units (119 batches, 3 coder(s) + adjudicator)",
+   "line": "stage test: 124 of 476 units (119 batches, 3 coder(s) + adjudicator)",
    "details": [],
    "notes": [
     "1 unit(s) partly written (cut off; re-run fresh next time)."
@@ -2666,24 +3584,24 @@
     "assumes": "About 14 more usage windows after S1 (102 of 861 TEST units were done on 11-13)."
    },
    "now": {
-    "at": "2026-11-18T04:55:10Z",
-    "step": "stage test: 123 of 476 units final; 3 unit(s) in flight: b031 c3 (10 min 22 s), b032 c2 (10 min 21 s), b032 c3 (6 min 40 s)",
+    "at": "2026-11-18T04:59:27Z",
+    "step": "stage test: 124 of 476 units final; 2 unit(s) in flight: b032 c2 (20 min 22 s), b032 c3 (16 min 41 s)",
     "bars": [
      {
       "id": "units",
       "label": "coding units final",
-      "done": 123,
+      "done": 124,
       "total": 861,
       "unit": "units",
-      "pct": 14.29
+      "pct": 14.4
      },
      {
       "id": "stage_test",
       "label": "stage test",
-      "done": 123,
+      "done": 124,
       "total": 476,
       "unit": "units",
-      "pct": 25.84
+      "pct": 26.05
      },
      {
       "id": "stage_retest",
@@ -2713,35 +3631,26 @@
     "facts": [
      {
       "k": "units in flight now",
-      "v": 3
-     },
-     {
-      "k": "units finished (last 60 min)",
       "v": 2
      },
      {
+      "k": "units finished (last 60 min)",
+      "v": 3
+     },
+     {
       "k": "units finished (last 24 h)",
-      "v": 5
+      "v": 6
      }
     ],
     "in_flight": [
-     {
-      "unit": "b031:c3",
-      "batch": "b031",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-18T04:44:46Z",
-      "running_s": 622,
-      "quiet_s": 8
-     },
      {
       "unit": "b032:c2",
       "batch": "b032",
       "coder": "c2",
       "stage": "test",
       "started_at": "2026-11-18T04:44:47Z",
-      "running_s": 621,
-      "quiet_s": 586
+      "running_s": 1222,
+      "quiet_s": 532
      },
      {
       "unit": "b032:c3",
@@ -2749,12 +3658,19 @@
       "coder": "c3",
       "stage": "test",
       "started_at": "2026-11-18T04:48:28Z",
-      "running_s": 400,
-      "quiet_s": 385
+      "running_s": 1001,
+      "quiet_s": 341
      }
     ],
-    "finished_last_hour": 2,
+    "finished_last_hour": 3,
     "recent_units": [
+     {
+      "unit": "b031:c3",
+      "batch": "b031",
+      "coder": "c3",
+      "at": "2026-11-18T04:55:22Z",
+      "items": 27
+     },
      {
       "unit": "b030:adj",
       "batch": "b030",
@@ -2817,16 +3733,9 @@
       "coder": "adj",
       "at": "2026-11-16T01:35:20Z",
       "items": 5
-     },
-     {
-      "unit": "b029:adj",
-      "batch": "b029",
-      "coder": "adj",
-      "at": "2026-11-16T01:27:16Z",
-      "items": 2
      }
     ],
-    "plan_at": "2026-11-18T04:55:09Z"
+    "plan_at": "2026-11-18T05:05:09Z"
    },
    "run": "test_coding",
    "stages": [
@@ -2835,9 +3744,9 @@
      "batches": 119,
      "n_coders": 3,
      "adjudicated": true,
-     "done": 123,
+     "done": 124,
      "total": 476,
-     "pct": 25.84
+     "pct": 26.05
     },
     {
      "stage": "retest",
@@ -3406,29 +4315,22 @@
   {
    "severity": "warn",
    "job": "machine",
-   "text": "15.6 GB of disk left.",
+   "text": "15.5 GB of disk left.",
    "since": null
-  },
-  {
-   "severity": "info",
-   "job": "core",
-   "text": "The CORE lane holds its requests for a while (CORE's rate limit); it goes on by itself.",
-   "since": null,
-   "until": "2026-11-18T04:58:30Z"
   }
  ],
  "events": [
   {
-   "t": "2026-11-18T04:48:09Z",
-   "job": "coding_test",
-   "kind": "progress",
-   "text": "TEST coding: 5 unit(s) finished on 2026-11-17"
-  },
-  {
-   "t": "2026-11-18T04:45:33Z",
+   "t": "2026-11-18T04:56:15Z",
    "job": "coding_s1",
    "kind": "progress",
-   "text": "Silver S1 coding: 37 unit(s) finished on 2026-11-17"
+   "text": "Silver S1 coding: 39 unit(s) finished on 2026-11-17"
+  },
+  {
+   "t": "2026-11-18T04:55:22Z",
+   "job": "coding_test",
+   "kind": "progress",
+   "text": "TEST coding: 6 unit(s) finished on 2026-11-17"
   },
   {
    "t": "2026-11-18T00:42:40Z",
@@ -3749,12 +4651,6 @@
    "text": "push failed (rc 128): the commits wait here and the push is tried again in 10 minutes"
   },
   {
-   "t": "2026-11-17T05:23:59Z",
-   "job": "updater",
-   "kind": "updater",
-   "text": "push failed (rc 128): the commits wait here and the push is tried again in 10 minutes"
-  },
-  {
    "t": "2026-11-16T21:59:09Z",
    "job": "coding_s1",
    "kind": "progress",
@@ -3777,14 +4673,20 @@
    "job": "core",
    "kind": "milestone",
    "text": "CORE lane: 20,000 papers looked up"
+  },
+  {
+   "t": "2026-11-16T17:14:03Z",
+   "job": "quality_v1",
+   "kind": "stop",
+   "text": "Data-quality audit of corpus_v1 stopped running"
   }
  ],
  "machine": {
-  "disk_free_gb": 15.6,
-  "memory_pct": 81.6,
+  "disk_free_gb": 15.5,
+  "memory_pct": 80.6,
   "memory_source": "the harvest's own reading",
-  "swap_used_gb": 7.93,
-  "load_1m": 6.09
+  "swap_used_gb": 7.41,
+  "load_1m": 4.86
  },
  "links": [
   {
@@ -3867,10 +4769,10 @@
  "collector": {
   "version": "2",
   "mode": "full",
-  "seconds": 2.48,
+  "seconds": 3.02,
   "max_rss_mb": 48.5,
   "errors": [],
-  "history_points": 877,
+  "history_points": 878,
   "note": "read-only; a cycle every minute when the updater runs (data on the live branch every minute, the page on GitHub Pages every 10 minutes)"
  },
  "live": {
@@ -3879,12 +4781,12 @@
   "main_every_s": 600,
   "poll_s": 75,
   "notes_every_s": 300,
-  "seq": 3767
+  "seq": 3777
  },
  "team": {
-  "agents_in_flight": 18,
-  "coding_units_in_flight": 13,
-  "other_agents_in_flight": 5,
+  "agents_in_flight": 224,
+  "coding_units_in_flight": 114,
+  "other_agents_in_flight": 110,
   "workflows_active": 7,
   "journals_read": 25,
   "open_without_activity": 270
@@ -3903,7 +4805,7 @@
   "items": [],
   "count": 0,
   "withheld": 0,
-  "read_at": "2026-11-18T04:55:08Z",
+  "read_at": "2026-11-18T05:05:09Z",
   "read_ok": true,
   "every_s": 300
  },
@@ -3913,8 +4815,8 @@
   "how": "To run a command by hand: open Terminal on the Mac, paste the command, press Return.",
   "supervisor": {
    "state": "running",
-   "at": "2026-11-18T04:54:07Z",
-   "age_s": 62,
+   "at": "2026-11-18T05:04:33Z",
+   "age_s": 36,
    "every_s": 120,
    "restart_within_s": 240,
    "auto_restart": true,
@@ -3938,15 +4840,15 @@
     "stopped_on_purpose": null,
     "last_restart_at": "2026-11-16T15:24:03Z",
     "restarts_24h": null,
-    "last_check_at": "2026-11-18T04:54:07Z",
-    "pid_since": "2026-11-16T15:24:07Z",
+    "last_check_at": "2026-11-18T05:04:33Z",
+    "pid_since": "2026-11-16T15:24:06Z",
     "next_try_at": null,
     "last_start_by": "supervisor",
     "starts_today": 0,
     "failed_starts": 0,
     "watcher_running": true,
     "pids": 4,
-    "last_seen_running_at": "2026-11-18T04:55:09Z",
+    "last_seen_running_at": "2026-11-18T05:05:09Z",
     "suggest": null,
     "note": null,
     "commands": [
@@ -3984,15 +4886,15 @@
     "stopped_on_purpose": null,
     "last_restart_at": "2026-11-15T15:17:59Z",
     "restarts_24h": null,
-    "last_check_at": "2026-11-18T04:54:07Z",
-    "pid_since": "2026-11-15T15:18:01Z",
+    "last_check_at": "2026-11-18T05:04:33Z",
+    "pid_since": "2026-11-15T15:18:00Z",
     "next_try_at": null,
     "last_start_by": "supervisor",
     "starts_today": 0,
     "failed_starts": 0,
     "watcher_running": true,
     "pids": 4,
-    "last_seen_running_at": "2026-11-18T04:55:09Z",
+    "last_seen_running_at": "2026-11-18T05:05:09Z",
     "suggest": null,
     "note": null,
     "commands": [
@@ -4030,15 +4932,15 @@
     "stopped_on_purpose": null,
     "last_restart_at": "2026-11-15T15:21:40Z",
     "restarts_24h": null,
-    "last_check_at": "2026-11-18T04:54:07Z",
-    "pid_since": "2026-11-15T15:21:42Z",
+    "last_check_at": "2026-11-18T05:04:33Z",
+    "pid_since": "2026-11-15T15:21:41Z",
     "next_try_at": null,
     "last_start_by": "owner",
     "starts_today": 0,
     "failed_starts": 0,
     "watcher_running": true,
     "pids": 1,
-    "last_seen_running_at": "2026-11-18T04:55:09Z",
+    "last_seen_running_at": "2026-11-18T05:05:09Z",
     "suggest": null,
     "note": null,
     "commands": [
@@ -4076,15 +4978,15 @@
     "stopped_on_purpose": null,
     "last_restart_at": "2026-11-15T00:44:56Z",
     "restarts_24h": null,
-    "last_check_at": "2026-11-18T04:54:07Z",
-    "pid_since": "2026-11-15T11:23:44Z",
+    "last_check_at": "2026-11-18T05:04:33Z",
+    "pid_since": "2026-11-15T11:23:43Z",
     "next_try_at": null,
     "last_start_by": "supervisor",
     "starts_today": 0,
     "failed_starts": 0,
     "watcher_running": true,
     "pids": 2,
-    "last_seen_running_at": "2026-11-18T04:55:09Z",
+    "last_seen_running_at": "2026-11-18T05:05:09Z",
     "suggest": null,
     "note": null,
     "commands": [
@@ -4122,7 +5024,7 @@
     "stopped_on_purpose": true,
     "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-18T04:54:07Z",
+    "last_check_at": "2026-11-18T05:04:33Z",
     "pid_since": null,
     "next_try_at": null,
     "last_start_by": null,
@@ -4168,7 +5070,7 @@
     "stopped_on_purpose": null,
     "last_restart_at": "2026-11-18T00:03:38Z",
     "restarts_24h": null,
-    "last_check_at": "2026-11-18T04:54:07Z",
+    "last_check_at": "2026-11-18T05:04:33Z",
     "pid_since": null,
     "next_try_at": null,
     "last_start_by": "owner",
@@ -4176,7 +5078,7 @@
     "failed_starts": 0,
     "watcher_running": true,
     "pids": 2,
-    "last_seen_running_at": "2026-11-18T04:55:09Z",
+    "last_seen_running_at": "2026-11-18T05:05:09Z",
     "suggest": null,
     "note": null,
     "commands": [
@@ -4214,7 +5116,7 @@
     "stopped_on_purpose": null,
     "last_restart_at": "2026-11-17T23:33:46Z",
     "restarts_24h": null,
-    "last_check_at": "2026-11-18T04:54:07Z",
+    "last_check_at": "2026-11-18T05:04:33Z",
     "pid_since": null,
     "next_try_at": null,
     "last_start_by": "owner",
@@ -4222,7 +5124,7 @@
     "failed_starts": 0,
     "watcher_running": true,
     "pids": 2,
-    "last_seen_running_at": "2026-11-18T04:55:09Z",
+    "last_seen_running_at": "2026-11-18T05:05:09Z",
     "suggest": null,
     "note": null,
     "commands": [
@@ -4260,7 +5162,7 @@
     "stopped_on_purpose": null,
     "last_restart_at": "2026-11-17T23:46:09Z",
     "restarts_24h": null,
-    "last_check_at": "2026-11-18T04:54:07Z",
+    "last_check_at": "2026-11-18T05:04:33Z",
     "pid_since": null,
     "next_try_at": null,
     "last_start_by": "owner",
@@ -4268,7 +5170,7 @@
     "failed_starts": 0,
     "watcher_running": true,
     "pids": 1,
-    "last_seen_running_at": "2026-11-18T04:55:09Z",
+    "last_seen_running_at": "2026-11-18T05:05:09Z",
     "suggest": null,
     "note": null,
     "commands": [
@@ -4360,476 +5262,6 @@
   }
  },
  "recent": [
-  {
-   "t": "2026-11-18T04:26:08Z",
-   "h_rpm": 3.1,
-   "h_arpm": 2.6,
-   "h_err": 0,
-   "h_rec": 6,
-   "h_abs": 1,
-   "h_left": 186402,
-   "h_gd": 2743,
-   "h_gt": 2001,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 35,
-   "c_done": 65440,
-   "c_txt": 26292,
-   "c_ppm": 13.3,
-   "c_req": 42807,
-   "c_rpm": 9.0,
-   "c_match": 32241,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 150,
-   "s1_fl": 0,
-   "s1_h": 0,
-   "te": 121,
-   "te_fl": 0,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 3723,
-   "b_model_curve": 4047,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 17.1,
-   "mem": 84.7,
-   "swap": 6.41,
-   "st": 154224,
-   "sl": 396405,
-   "run": 3,
-   "alerts": 2,
-   "team": 0
-  },
-  {
-   "t": "2026-11-18T04:27:08Z",
-   "h_rpm": 3.2,
-   "h_arpm": 2.7,
-   "h_err": 2,
-   "h_rec": 7,
-   "h_abs": 1,
-   "h_left": 186399,
-   "h_gd": 2746,
-   "h_gt": 2002,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 35,
-   "c_done": 65460,
-   "c_txt": 26297,
-   "c_ppm": 13.3,
-   "c_req": 42816,
-   "c_rpm": 9.0,
-   "c_match": 32247,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 150,
-   "s1_fl": 0,
-   "s1_h": 0,
-   "te": 121,
-   "te_fl": 0,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 3843,
-   "b_model_curve": 4047,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 17.1,
-   "mem": 84.1,
-   "swap": 6.4,
-   "st": 154224,
-   "sl": 396405,
-   "run": 3,
-   "alerts": 2,
-   "team": 0
-  },
-  {
-   "t": "2026-11-18T04:28:08Z",
-   "h_rpm": 3.2,
-   "h_arpm": 2.7,
-   "h_err": 3,
-   "h_rec": 7,
-   "h_abs": 1,
-   "h_left": 186398,
-   "h_gd": 2747,
-   "h_gt": 2002,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 35,
-   "c_done": 65480,
-   "c_txt": 26303,
-   "c_ppm": 13.7,
-   "c_req": 42826,
-   "c_rpm": 9.1,
-   "c_match": 32253,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 150,
-   "s1_fl": 0,
-   "s1_h": 0,
-   "te": 121,
-   "te_fl": 0,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 3961,
-   "b_model_curve": 4047,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 17.1,
-   "mem": 83.5,
-   "swap": 6.47,
-   "st": 154343,
-   "sl": 396524,
-   "run": 3,
-   "alerts": 2,
-   "team": 0
-  },
-  {
-   "t": "2026-11-18T04:29:08Z",
-   "h_rpm": 3.2,
-   "h_arpm": 2.7,
-   "h_err": 3,
-   "h_rec": 9,
-   "h_abs": 2,
-   "h_left": 186396,
-   "h_gd": 2749,
-   "h_gt": 2004,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 35,
-   "c_done": 65480,
-   "c_txt": 26303,
-   "c_ppm": 13.3,
-   "c_req": 42834,
-   "c_rpm": 9.0,
-   "c_match": 32253,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 150,
-   "s1_fl": 0,
-   "s1_h": 0,
-   "te": 121,
-   "te_fl": 0,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 4084,
-   "b_model_curve": 4047,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 17.1,
-   "mem": 83.5,
-   "swap": 6.41,
-   "st": 154343,
-   "sl": 396524,
-   "run": 3,
-   "alerts": 2,
-   "team": 0
-  },
-  {
-   "t": "2026-11-18T04:30:09Z",
-   "h_rpm": 3.4,
-   "h_arpm": 2.9,
-   "h_err": 4,
-   "h_rec": 10,
-   "h_abs": 2,
-   "h_left": 186395,
-   "h_gd": 2750,
-   "h_gt": 2005,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 35,
-   "c_done": 65500,
-   "c_txt": 26306,
-   "c_ppm": 13.7,
-   "c_req": 42842,
-   "c_rpm": 8.9,
-   "c_match": 32256,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 150,
-   "s1_fl": 0,
-   "s1_h": 0,
-   "te": 121,
-   "te_fl": 0,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 4206,
-   "b_model_curve": 4047,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 17.1,
-   "mem": 83.9,
-   "swap": 6.4,
-   "st": 154343,
-   "sl": 396524,
-   "run": 3,
-   "alerts": 2,
-   "team": 0
-  },
-  {
-   "t": "2026-11-18T04:31:08Z",
-   "h_rpm": 3.5,
-   "h_arpm": 3.0,
-   "h_err": 4,
-   "h_rec": 10,
-   "h_abs": 1,
-   "h_left": 186394,
-   "h_gd": 2751,
-   "h_gt": 2006,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 35,
-   "c_done": 65520,
-   "c_txt": 26324,
-   "c_ppm": 14.0,
-   "c_req": 42851,
-   "c_rpm": 8.9,
-   "c_match": 32275,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 150,
-   "s1_fl": 1,
-   "s1_h": 0,
-   "te": 121,
-   "te_fl": 1,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 4329,
-   "b_model_curve": 4047,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 17.1,
-   "mem": 84.2,
-   "swap": 6.33,
-   "st": 154343,
-   "sl": 396524,
-   "run": 3,
-   "alerts": 1,
-   "team": 4
-  },
-  {
-   "t": "2026-11-18T04:32:08Z",
-   "h_rpm": 3.5,
-   "h_arpm": 3.0,
-   "h_err": 4,
-   "h_rec": 10,
-   "h_abs": 2,
-   "h_left": 186392,
-   "h_gd": 2753,
-   "h_gt": 2008,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 35,
-   "c_done": 65540,
-   "c_txt": 26334,
-   "c_ppm": 14.0,
-   "c_req": 42860,
-   "c_rpm": 8.9,
-   "c_match": 32295,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 150,
-   "s1_fl": 1,
-   "s1_h": 0,
-   "te": 121,
-   "te_fl": 1,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 4451,
-   "b_model_curve": 4047,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 17.1,
-   "mem": 84.6,
-   "swap": 6.44,
-   "st": 154343,
-   "sl": 396524,
-   "run": 3,
-   "alerts": 1,
-   "team": 5
-  },
-  {
-   "t": "2026-11-18T04:33:09Z",
-   "h_rpm": 3.6,
-   "h_arpm": 3.1,
-   "h_err": 4,
-   "h_rec": 10,
-   "h_abs": 2,
-   "h_left": 186390,
-   "h_gd": 2755,
-   "h_gt": 2009,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 35,
-   "c_done": 65560,
-   "c_txt": 26348,
-   "c_ppm": 14.3,
-   "c_req": 42870,
-   "c_rpm": 8.9,
-   "c_match": 32309,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 150,
-   "s1_fl": 1,
-   "s1_h": 0,
-   "te": 121,
-   "te_fl": 1,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 4569,
-   "b_model_curve": 4047,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 17.1,
-   "mem": 83.8,
-   "swap": 6.42,
-   "st": 154343,
-   "sl": 396524,
-   "run": 3,
-   "alerts": 1,
-   "team": 5
-  },
-  {
-   "t": "2026-11-18T04:34:09Z",
-   "h_rpm": 3.4,
-   "h_arpm": 3.0,
-   "h_err": 4,
-   "h_rec": 10,
-   "h_abs": 2,
-   "h_left": 186389,
-   "h_gd": 2756,
-   "h_gt": 2009,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 35,
-   "c_done": 65560,
-   "c_txt": 26348,
-   "c_ppm": 14.0,
-   "c_req": 42879,
-   "c_rpm": 8.9,
-   "c_match": 32309,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 150,
-   "s1_fl": 1,
-   "s1_h": 0,
-   "te": 121,
-   "te_fl": 1,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 4687,
-   "b_model_curve": 4047,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 17.1,
-   "mem": 84.1,
-   "swap": 6.6,
-   "st": 154343,
-   "sl": 396524,
-   "run": 3,
-   "alerts": 1,
-   "team": 5
-  },
-  {
-   "t": "2026-11-18T04:35:10Z",
-   "h_rpm": 3.5,
-   "h_arpm": 3.0,
-   "h_err": 4,
-   "h_rec": 9,
-   "h_abs": 2,
-   "h_left": 186389,
-   "h_gd": 2756,
-   "h_gt": 2009,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 35,
-   "c_done": 65580,
-   "c_txt": 26350,
-   "c_ppm": 14.3,
-   "c_req": 42888,
-   "c_rpm": 8.9,
-   "c_match": 32311,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 150,
-   "s1_fl": 1,
-   "s1_h": 0,
-   "te": 121,
-   "te_fl": 1,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 4803,
-   "b_model_curve": 4047,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 17.1,
-   "mem": 83.6,
-   "swap": 6.6,
-   "st": 154343,
-   "sl": 396524,
-   "run": 3,
-   "alerts": 1,
-   "team": 6
-  },
   {
    "t": "2026-11-18T04:36:08Z",
    "h_rpm": 3.6,
@@ -5767,6 +6199,476 @@
    "run": 3,
    "alerts": 1,
    "team": 18
+  },
+  {
+   "t": "2026-11-18T04:56:08Z",
+   "h_rpm": 3.2,
+   "h_arpm": 2.7,
+   "h_err": 1,
+   "h_rec": 10,
+   "h_abs": 1,
+   "h_left": 186346,
+   "h_gd": 2784,
+   "h_gt": 2024,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 35,
+   "c_done": 65800,
+   "c_txt": 26467,
+   "c_ppm": 13.0,
+   "c_req": 43009,
+   "c_rpm": 2.2,
+   "c_match": 32452,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 151,
+   "s1_fl": 9,
+   "s1_h": 2,
+   "te": 123,
+   "te_fl": 2,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 7045,
+   "b_model_curve": 4047,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 15.6,
+   "mem": 79.6,
+   "swap": 7.74,
+   "st": 154343,
+   "sl": 396524,
+   "run": 3,
+   "alerts": 1,
+   "team": 18
+  },
+  {
+   "t": "2026-11-18T04:57:08Z",
+   "h_rpm": 3.1,
+   "h_arpm": 2.6,
+   "h_err": 2,
+   "h_rec": 8,
+   "h_abs": 1,
+   "h_left": 186346,
+   "h_gd": 2784,
+   "h_gt": 2024,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 35,
+   "c_done": 65800,
+   "c_txt": 26467,
+   "c_ppm": 12.3,
+   "c_req": 43009,
+   "c_rpm": 1.3,
+   "c_match": 32452,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 151,
+   "s1_fl": 112,
+   "s1_h": 3,
+   "te": 123,
+   "te_fl": 2,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 7160,
+   "b_model_curve": 4047,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 15.5,
+   "mem": 79.2,
+   "swap": 7.59,
+   "st": 154343,
+   "sl": 396524,
+   "run": 3,
+   "alerts": 1,
+   "team": 223
+  },
+  {
+   "t": "2026-11-18T04:58:08Z",
+   "h_rpm": 2.9,
+   "h_arpm": 2.4,
+   "h_err": 2,
+   "h_rec": 6,
+   "h_abs": 0,
+   "h_left": 186345,
+   "h_gd": 2785,
+   "h_gt": 2025,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 35,
+   "c_done": 65800,
+   "c_txt": 26467,
+   "c_ppm": 12.3,
+   "c_req": 43009,
+   "c_rpm": 0.4,
+   "c_match": 32452,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 151,
+   "s1_fl": 112,
+   "s1_h": 3,
+   "te": 123,
+   "te_fl": 2,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 7282,
+   "b_model_curve": 4047,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 15.5,
+   "mem": 78.8,
+   "swap": 7.58,
+   "st": 154343,
+   "sl": 396524,
+   "run": 3,
+   "alerts": 1,
+   "team": 223
+  },
+  {
+   "t": "2026-11-18T04:59:09Z",
+   "h_rpm": 2.8,
+   "h_arpm": 2.3,
+   "h_err": 2,
+   "h_rec": 8,
+   "h_abs": 0,
+   "h_left": 186343,
+   "h_gd": 2787,
+   "h_gt": 2027,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 35,
+   "c_done": 65820,
+   "c_txt": 26486,
+   "c_ppm": 11.7,
+   "c_req": 43015,
+   "c_rpm": 0.6,
+   "c_match": 32471,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 151,
+   "s1_fl": 112,
+   "s1_h": 3,
+   "te": 123,
+   "te_fl": 2,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 7404,
+   "b_model_curve": 4047,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 15.5,
+   "mem": 78.8,
+   "swap": 7.51,
+   "st": 154343,
+   "sl": 396524,
+   "run": 3,
+   "alerts": 1,
+   "team": 224
+  },
+  {
+   "t": "2026-11-18T05:00:09Z",
+   "h_rpm": 2.9,
+   "h_arpm": 2.4,
+   "h_err": 1,
+   "h_rec": 9,
+   "h_abs": 0,
+   "h_left": 186342,
+   "h_gd": 2788,
+   "h_gt": 2028,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 35,
+   "c_done": 65840,
+   "c_txt": 26504,
+   "c_ppm": 12.0,
+   "c_req": 43024,
+   "c_rpm": 1.5,
+   "c_match": 32490,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 151,
+   "s1_fl": 112,
+   "s1_h": 3,
+   "te": 123,
+   "te_fl": 2,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 7528,
+   "b_model_curve": 4047,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 15.5,
+   "mem": 80.6,
+   "swap": 7.5,
+   "st": 154343,
+   "sl": 396524,
+   "run": 3,
+   "alerts": 1,
+   "team": 224
+  },
+  {
+   "t": "2026-11-18T05:01:08Z",
+   "h_rpm": 2.9,
+   "h_arpm": 2.4,
+   "h_err": 1,
+   "h_rec": 9,
+   "h_abs": 1,
+   "h_left": 186342,
+   "h_gd": 2788,
+   "h_gt": 2028,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 35,
+   "c_done": 65860,
+   "c_txt": 26515,
+   "c_ppm": 12.3,
+   "c_req": 43033,
+   "c_rpm": 2.4,
+   "c_match": 32503,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 151,
+   "s1_fl": 112,
+   "s1_h": 3,
+   "te": 123,
+   "te_fl": 2,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 7652,
+   "b_model_curve": 4047,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 15.5,
+   "mem": 80.2,
+   "swap": 7.49,
+   "st": 154343,
+   "sl": 396524,
+   "run": 3,
+   "alerts": 1,
+   "team": 224
+  },
+  {
+   "t": "2026-11-18T05:02:08Z",
+   "h_rpm": 2.9,
+   "h_arpm": 2.4,
+   "h_err": 1,
+   "h_rec": 9,
+   "h_abs": 1,
+   "h_left": 186340,
+   "h_gd": 2790,
+   "h_gt": 2029,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 35,
+   "c_done": 65900,
+   "c_txt": 26545,
+   "c_ppm": 12.7,
+   "c_req": 43042,
+   "c_rpm": 3.3,
+   "c_match": 32536,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 151,
+   "s1_fl": 112,
+   "s1_h": 3,
+   "te": 123,
+   "te_fl": 2,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 7777,
+   "b_model_curve": 4047,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 15.5,
+   "mem": 80.4,
+   "swap": 7.49,
+   "st": 154343,
+   "sl": 396524,
+   "run": 3,
+   "alerts": 1,
+   "team": 224
+  },
+  {
+   "t": "2026-11-18T05:03:08Z",
+   "h_rpm": 2.9,
+   "h_arpm": 2.4,
+   "h_err": 1,
+   "h_rec": 10,
+   "h_abs": 1,
+   "h_left": 186339,
+   "h_gd": 2791,
+   "h_gt": 2030,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 35,
+   "c_done": 65920,
+   "c_txt": 26561,
+   "c_ppm": 13.0,
+   "c_req": 43051,
+   "c_rpm": 4.2,
+   "c_match": 32554,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 151,
+   "s1_fl": 112,
+   "s1_h": 3,
+   "te": 123,
+   "te_fl": 2,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 7901,
+   "b_model_curve": 4047,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 15.5,
+   "mem": 80.2,
+   "swap": 7.43,
+   "st": 154343,
+   "sl": 396524,
+   "run": 3,
+   "alerts": 1,
+   "team": 224
+  },
+  {
+   "t": "2026-11-18T05:04:08Z",
+   "h_rpm": 2.9,
+   "h_arpm": 2.5,
+   "h_err": 2,
+   "h_rec": 10,
+   "h_abs": 1,
+   "h_left": 186338,
+   "h_gd": 2792,
+   "h_gt": 2031,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 35,
+   "c_done": 65920,
+   "c_txt": 26561,
+   "c_ppm": 12.7,
+   "c_req": 43060,
+   "c_rpm": 5.1,
+   "c_match": 32554,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 151,
+   "s1_fl": 112,
+   "s1_h": 3,
+   "te": 123,
+   "te_fl": 2,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 8025,
+   "b_model_curve": 4047,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 15.5,
+   "mem": 80.5,
+   "swap": 7.41,
+   "st": 154343,
+   "sl": 396524,
+   "run": 3,
+   "alerts": 1,
+   "team": 224
+  },
+  {
+   "t": "2026-11-18T05:05:09Z",
+   "h_rpm": 2.9,
+   "h_arpm": 2.4,
+   "h_err": 2,
+   "h_rec": 11,
+   "h_abs": 1,
+   "h_left": 186337,
+   "h_gd": 2793,
+   "h_gt": 2032,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 35,
+   "c_done": 65940,
+   "c_txt": 26561,
+   "c_ppm": 13.0,
+   "c_req": 43069,
+   "c_rpm": 6.0,
+   "c_match": 32555,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 153,
+   "s1_fl": 112,
+   "s1_h": 3,
+   "te": 124,
+   "te_fl": 2,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 8150,
+   "b_model_curve": 4047,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 15.5,
+   "mem": 80.6,
+   "swap": 7.41,
+   "st": 154343,
+   "sl": 396524,
+   "run": 3,
+   "alerts": 1,
+   "team": 224
   }
  ]
 }
