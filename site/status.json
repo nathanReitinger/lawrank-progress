@@ -1,6 +1,6 @@
 {
  "schema": "lawrank-progress status 2",
- "generated_at": "2026-11-18T22:00:28Z",
+ "generated_at": "2026-11-18T22:17:44Z",
  "project": {
   "name": "Law review subject tags",
   "tagline": "Every law review paper on our list gets its abstract or first pages; our own model then tags each paper with its subjects, and the tags go paper -> professor -> school on the law school rankings site.",
@@ -134,8 +134,8 @@
        "pct": 18.86
       },
       "eta": {
-       "seconds": 5168533,
-       "at": "2027-01-17T17:42:41Z",
+       "seconds": 5238350,
+       "at": "2027-01-18T13:23:34Z",
        "basis": "papers in the last 6 hours"
       },
       "last_activity": "2026-11-18T18:11:11Z"
@@ -159,11 +159,11 @@
        "since": "2026-11-13"
       },
       "eta": {
-       "seconds": 34537652,
-       "at": "2027-12-23T15:48:00Z",
-       "basis": "the harvest's own estimate (187.7 s a paper)"
+       "seconds": 35265326,
+       "at": "2028-01-01T02:13:10Z",
+       "basis": "the harvest's own estimate (191.6 s a paper)"
       },
-      "last_activity": "2026-11-18T21:49:01Z"
+      "last_activity": "2026-11-18T22:17:43Z"
      }
     },
     {
@@ -240,8 +240,8 @@
      "detail": "10,000 training papers, one coder each; 2,000 of them coded a second time in a later window (SILVER-VAL).",
      "needs": "About 7-8 five-hour usage windows (about 40 units a window), one coding workflow per window; the doubled 2,000 only in a window after the first pass is final.",
      "live": {
-      "state": "running",
-      "health": "ok",
+      "state": "idle",
+      "health": "info",
       "progress": {
        "done": 166,
        "total": 317,
@@ -250,10 +250,10 @@
       },
       "eta": {
        "seconds": 652320,
-       "at": "2026-11-26T11:12:28Z",
+       "at": "2026-11-26T11:29:44Z",
        "basis": "units finished in the last 24 hours (usage windows decide)"
       },
-      "last_activity": "2026-11-18T21:30:19Z"
+      "last_activity": "2026-11-18T21:22:38Z"
      }
     },
     {
@@ -264,20 +264,16 @@
      "detail": "Paused on 2026-11-13 after its first 25 batches, then coded again beside silver S1. TEST stays sealed until the final report: only counts are shown.",
      "needs": "About 14 more usage windows (an estimate).",
      "live": {
-      "state": "running",
-      "health": "ok",
+      "state": "paused",
+      "health": "info",
       "progress": {
        "done": 133,
        "total": 861,
        "unit": "coding units",
        "pct": 15.45
       },
-      "eta": {
-       "seconds": 4492800,
-       "at": "2027-01-09T22:00:28Z",
-       "basis": "units finished in the last 24 hours (usage windows decide)"
-      },
-      "last_activity": "2026-11-18T21:21:37Z"
+      "eta": null,
+      "last_activity": "2026-11-18T21:21:36Z"
      }
     },
     {
@@ -369,17 +365,17 @@
       "state": "running",
       "health": "ok",
       "progress": {
-       "done": 6221,
+       "done": 6232,
        "total": 16021,
        "unit": "batches",
-       "pct": 38.83
+       "pct": 38.9
       },
       "eta": {
-       "seconds": 48554,
-       "at": "2026-11-19T11:29:43Z",
+       "seconds": 917718,
+       "at": "2026-11-29T13:13:03Z",
        "basis": "its pace between its last two heartbeats"
       },
-      "last_activity": "2026-11-18T22:00:27Z"
+      "last_activity": "2026-11-18T22:17:44Z"
      }
     },
     {
@@ -689,25 +685,25 @@
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 50670,
-   "last_activity": "2026-11-18T21:49:01Z",
+   "uptime_s": 51706,
+   "last_activity": "2026-11-18T22:17:43Z",
    "rate": {
     "unit": "requests a minute",
-    "last10": 0.0,
-    "last60": 1.7
+    "last10": 0.1,
+    "last60": 1.4
    },
    "rates": [
     {
      "label": "requests (last 10 min)",
-     "value": 0
+     "value": 1
     },
     {
      "label": "requests (last 60 min)",
-     "value": 100
+     "value": 81
     },
     {
      "label": "not found, refused or no answer (last 10 min)",
-     "value": 0
+     "value": 1
     },
     {
      "label": "sites asked (last 15 min)",
@@ -735,14 +731,14 @@
     "done_this_run": 262,
     "texts_this_run": 128,
     "skipped_for_now": 2823,
-    "secs_each": 187.7
+    "secs_each": 191.6
    },
    "eta": {
-    "seconds": 34537652,
-    "at": "2027-12-23T15:48:00Z",
-    "basis": "the harvest's own estimate (187.7 s a paper)"
+    "seconds": 35265326,
+    "at": "2028-01-01T02:13:10Z",
+    "basis": "the harvest's own estimate (191.6 s a paper)"
    },
-   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 0 requests (0 a minute), 0 records, 0 abstracts; this run: 841 requests, 189 records, 84 abstracts; gaps beside the passes: 262 papers done (128 texts), 184,036 left, about 399.7 days left at 187.7 s each (2,823 skipped for now); workers: 1 working of 37 (36 waiting for work); memory 82%, aiming at 90-95%",
+   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 1 requests (0.1 a minute), 0 records, 0 abstracts; this run: 842 requests, 189 records, 84 abstracts; gaps beside the passes: 262 papers done (128 texts), 184,036 left, about 408.2 days left at 191.6 s each (2,823 skipped for now); workers: 1 working of 37 (36 waiting for work); memory 83%, aiming at 90-95%",
    "details": [
     {
      "k": "journal passes",
@@ -750,7 +746,7 @@
     },
     {
      "k": "workers",
-     "v": "1 working of 37 (memory 82.1%, aiming at 90-95%)"
+     "v": "1 working of 37 (memory 82.6%, aiming at 90-95%)"
     },
     {
      "k": "sites paused or left alone",
@@ -758,7 +754,7 @@
     },
     {
      "k": "this run",
-     "v": "841 requests, 189 records, 84 abstracts"
+     "v": "842 requests, 189 records, 84 abstracts"
     },
     {
      "k": "this run started",
@@ -775,7 +771,7 @@
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
    },
    "now": {
-    "at": "2026-11-18T22:00:27Z",
+    "at": "2026-11-18T22:17:43Z",
     "step": "journal passes 531 of 536 done (1 running, 4 waiting); gaps beside the passes: 184,036 papers left (262 asked this run, 128 texts); 1 of 37 workers working; archive.org at x4.0 of today's pace",
     "bars": [
      {
@@ -805,24 +801,24 @@
      {
       "id": "memory",
       "label": "memory in use (the pool aims at 90-95%)",
-      "done": 82.1,
+      "done": 82.6,
       "total": 100,
       "unit": "%",
-      "pct": 82.1
+      "pct": 82.6
      }
     ],
     "facts": [
      {
       "k": "requests a minute (last 10 min)",
-      "v": 0.0
+      "v": 0.1
      },
      {
       "k": "archive.org requests a minute (last 10 min)",
-      "v": 0.0
+      "v": 0.1
      },
      {
       "k": "requests that failed (last 10 min)",
-      "v": 0
+      "v": 1
      },
      {
       "k": "sites asked (last 15 min)",
@@ -838,11 +834,11 @@
      },
      {
       "k": "requests this run",
-      "v": 841
+      "v": 842
      },
      {
       "k": "seconds a gaps paper takes",
-      "v": 187.7,
+      "v": 191.6,
       "unit": "s"
      },
      {
@@ -877,8 +873,8 @@
       "pages": 271,
       "records": 60,
       "abstracts": 57,
-      "running_s": 50659,
-      "last_request_s_ago": 686
+      "running_s": 51695,
+      "last_request_s_ago": 1722
      }
     ],
     "gaps": {
@@ -886,8 +882,8 @@
      "asked_this_run": 262,
      "texts_this_run": 128,
      "skipped_this_run": 2823,
-     "secs_each": 187.7,
-     "eta_at": "2027-12-23T15:48:00Z",
+     "secs_each": 191.6,
+     "eta_at": "2028-01-01T02:13:10Z",
      "largest_queue": 209547
     },
     "workers": {
@@ -897,7 +893,7 @@
      "parked": 0,
      "peak": 37,
      "start": 30,
-     "memory_pct": 82.1,
+     "memory_pct": 82.6,
      "aim_low_pct": 90.0,
      "aim_high_pct": 95.0,
      "adaptive": true
@@ -906,9 +902,9 @@
      "lanes": 2,
      "items_in_plan": 185126,
      "live_pdfs_for_workers": 9391,
-     "requests_10m": 0,
-     "rpm10": 0.0,
-     "requests_60m": 81,
+     "requests_10m": 1,
+     "rpm10": 0.1,
+     "requests_60m": 66,
      "pace": {
       "x": 4.0,
       "good_in_a_row": null,
@@ -929,7 +925,7 @@
        "detail": "first_pages",
        "at": "2026-11-18T21:41:10Z"
       },
-      "last_s_ago": 1158
+      "last_s_ago": 2194
      },
      {
       "kind": "pdf_worker",
@@ -945,7 +941,7 @@
        "at": "2026-11-18T15:00:25Z"
       },
       "group_papers": 414,
-      "last_s_ago": 25203
+      "last_s_ago": 26239
      },
      {
       "kind": "pdf_worker",
@@ -961,7 +957,7 @@
        "at": "2026-11-18T14:05:48Z"
       },
       "group_papers": 135,
-      "last_s_ago": 28480
+      "last_s_ago": 29516
      },
      {
       "kind": "pdf_worker",
@@ -977,7 +973,7 @@
        "at": "2026-11-18T08:55:39Z"
       },
       "group_papers": 1835,
-      "last_s_ago": 47089
+      "last_s_ago": 48125
      },
      {
       "kind": "pdf_worker",
@@ -993,7 +989,7 @@
        "at": "2026-11-18T08:54:35Z"
       },
       "group_papers": 224,
-      "last_s_ago": 47153
+      "last_s_ago": 48189
      },
      {
       "kind": "pdf_worker",
@@ -1009,7 +1005,7 @@
        "at": "2026-11-18T08:53:15Z"
       },
       "group_papers": 5,
-      "last_s_ago": 47233
+      "last_s_ago": 48269
      },
      {
       "kind": "pdf_worker",
@@ -1025,7 +1021,7 @@
        "at": "2026-11-18T08:52:20Z"
       },
       "group_papers": 1,
-      "last_s_ago": 47288
+      "last_s_ago": 48324
      },
      {
       "kind": "pdf_worker",
@@ -1041,7 +1037,7 @@
        "at": "2026-11-18T08:52:15Z"
       },
       "group_papers": 6,
-      "last_s_ago": 47293
+      "last_s_ago": 48329
      },
      {
       "kind": "pdf_worker",
@@ -1057,7 +1053,7 @@
        "at": "2026-11-18T08:52:14Z"
       },
       "group_papers": 31,
-      "last_s_ago": 47294
+      "last_s_ago": 48330
      },
      {
       "kind": "pdf_worker",
@@ -1073,7 +1069,7 @@
        "at": "2026-11-18T08:51:43Z"
       },
       "group_papers": 69,
-      "last_s_ago": 47325
+      "last_s_ago": 48361
      },
      {
       "kind": "pdf_worker",
@@ -1089,7 +1085,7 @@
        "at": "2026-11-18T08:46:24Z"
       },
       "group_papers": 2,
-      "last_s_ago": 47644
+      "last_s_ago": 48680
      },
      {
       "kind": "pdf_worker",
@@ -1105,7 +1101,7 @@
        "at": "2026-11-18T08:46:23Z"
       },
       "group_papers": 5,
-      "last_s_ago": 47645
+      "last_s_ago": 48681
      },
      {
       "kind": "pdf_worker",
@@ -1121,7 +1117,7 @@
        "at": "2026-11-18T08:46:21Z"
       },
       "group_papers": 175,
-      "last_s_ago": 47647
+      "last_s_ago": 48683
      },
      {
       "kind": "pdf_worker",
@@ -1137,7 +1133,7 @@
        "at": "2026-11-18T08:46:20Z"
       },
       "group_papers": 7,
-      "last_s_ago": 47648
+      "last_s_ago": 48684
      },
      {
       "kind": "pdf_worker",
@@ -1153,7 +1149,7 @@
        "at": "2026-11-18T08:46:20Z"
       },
       "group_papers": 11,
-      "last_s_ago": 47648
+      "last_s_ago": 48684
      },
      {
       "kind": "pdf_worker",
@@ -1179,7 +1175,9 @@
      0,
      0
     ],
-    "request_kinds_10m": {},
+    "request_kinds_10m": {
+     "wayback_pdf": 1
+    },
     "network_down": false,
     "watchers": [
      {
@@ -1195,18 +1193,18 @@
       "running": true,
       "state": "sleeping",
       "next_at": "2026-11-19T07:52:03Z",
-      "detail": "asks the harvest to save and plan again in 9 h 51 min (every 24 h), so new side-store lines are used",
+      "detail": "asks the harvest to save and plan again in 9 h 34 min (every 24 h), so new side-store lines are used",
       "pids": 1,
       "every_s": 86400
      }
     ]
    },
    "eta_alt": {
-    "seconds": 35808167,
-    "at": "2028-01-07T08:43:16Z",
+    "seconds": 35733529,
+    "at": "2028-01-06T12:16:34Z",
     "basis": "the queue's fall over the last 6 hours"
    },
-   "line_at": "2026-11-18T22:00:27Z"
+   "line_at": "2026-11-18T22:17:43Z"
   },
   {
    "id": "core",
@@ -1223,7 +1221,7 @@
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 283347,
+   "uptime_s": 284383,
    "last_activity": "2026-11-18T18:11:11Z",
    "rate": {
     "unit": "papers a minute",
@@ -1252,8 +1250,8 @@
    },
    "queue": null,
    "eta": {
-    "seconds": 5168533,
-    "at": "2027-01-17T17:42:41Z",
+    "seconds": 5238350,
+    "at": "2027-01-18T13:23:34Z",
     "basis": "papers in the last 6 hours"
    },
    "line": "39,817 papers in 4493 min, 27,411 requests (0.69 a paper): matched 18,937 (15,684 with a text, 2,840 a link only), review 733, never-source 356, no match 2,010, no hits 17,770, errors 2; side lines written 18,524",
@@ -1360,8 +1358,8 @@
      "last": 72317
     },
     "eta": {
-     "seconds": 5168533,
-     "at": "2027-01-17T17:42:41Z",
+     "seconds": 5238350,
+     "at": "2027-01-18T13:23:34Z",
      "basis": "papers in the last 6 hours"
     },
     "outcomes": [
@@ -1415,7 +1413,7 @@
     "requests": {
      "total": 47598,
      "last10": 0,
-     "last60": 5,
+     "last60": 4,
      "errors60": 0,
      "rate_limited60": 0,
      "gap_s": 325.8,
@@ -1598,12 +1596,12 @@
    "kept_alive_by": "a coding workflow launched at the start of each usage window (coding-run-v022, run silver_s1)",
    "check": "python3 classifier/annotation/runs/coding_plan.py silver_s1",
    "stop": "",
-   "state": "running",
-   "health": "ok",
+   "state": "idle",
+   "health": "info",
    "running": null,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-18T21:30:19Z",
+   "last_activity": "2026-11-18T21:22:38Z",
    "rate": {
     "unit": "units an hour",
     "last10": null,
@@ -1628,7 +1626,7 @@
    "queue": null,
    "eta": {
     "seconds": 652320,
-    "at": "2026-11-26T11:12:28Z",
+    "at": "2026-11-26T11:29:44Z",
     "basis": "units finished in the last 24 hours (usage windows decide)"
    },
    "line": "stage s1: 166 of 264 units (264 batches, 1 coder(s))",
@@ -1645,8 +1643,8 @@
     "assumes": "About 7 five-hour usage windows (5.6 for the 10,000 papers, 1.1 for the doubled 2,000), one or two dedicated windows a day."
    },
    "now": {
-    "at": "2026-11-18T21:30:19Z",
-    "step": "stage s1: 166 of 264 units final; 86 unit(s) in flight: b184 c1 (49 min 54 s), b186 c1 (49 min 53 s), b181 c1 (49 min 43 s), b180 c1 (49 min 41 s), b182 c1 (49 min 40 s), b177 c1 (49 min 40 s) and 80 more",
+    "at": "2026-11-18T21:22:38Z",
+    "step": "stage s1: 166 of 264 units final; no unit in flight now (it waits for the next coding workflow or usage window)",
     "bars": [
      {
       "id": "units",
@@ -1676,7 +1674,7 @@
     "facts": [
      {
       "k": "units in flight now",
-      "v": 86
+      "v": 0
      },
      {
       "k": "units finished (last 60 min)",
@@ -1687,782 +1685,7 @@
       "v": 20
      }
     ],
-    "in_flight": [
-     {
-      "unit": "b184:c1",
-      "batch": "b184",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:10:33Z",
-      "running_s": 2994,
-      "quiet_s": 2283
-     },
-     {
-      "unit": "b186:c1",
-      "batch": "b186",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:10:35Z",
-      "running_s": 2993,
-      "quiet_s": 2332
-     },
-     {
-      "unit": "b181:c1",
-      "batch": "b181",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:10:45Z",
-      "running_s": 2983,
-      "quiet_s": 2305
-     },
-     {
-      "unit": "b180:c1",
-      "batch": "b180",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:10:46Z",
-      "running_s": 2981,
-      "quiet_s": 2327
-     },
-     {
-      "unit": "b182:c1",
-      "batch": "b182",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:10:48Z",
-      "running_s": 2980,
-      "quiet_s": 2317
-     },
-     {
-      "unit": "b177:c1",
-      "batch": "b177",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:10:48Z",
-      "running_s": 2980,
-      "quiet_s": 2207
-     },
-     {
-      "unit": "b183:c1",
-      "batch": "b183",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:10:49Z",
-      "running_s": 2978,
-      "quiet_s": 2269
-     },
-     {
-      "unit": "b185:c1",
-      "batch": "b185",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:10:50Z",
-      "running_s": 2977,
-      "quiet_s": 2327
-     },
-     {
-      "unit": "b187:c1",
-      "batch": "b187",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:11Z",
-      "running_s": 1817,
-      "quiet_s": 1816
-     },
-     {
-      "unit": "b188:c1",
-      "batch": "b188",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:11Z",
-      "running_s": 1816,
-      "quiet_s": 1816
-     },
-     {
-      "unit": "b195:c1",
-      "batch": "b195",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:11Z",
-      "running_s": 1816,
-      "quiet_s": 1816
-     },
-     {
-      "unit": "b192:c1",
-      "batch": "b192",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:11Z",
-      "running_s": 1816,
-      "quiet_s": 1816
-     },
-     {
-      "unit": "b196:c1",
-      "batch": "b196",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:11Z",
-      "running_s": 1816,
-      "quiet_s": 1816
-     },
-     {
-      "unit": "b189:c1",
-      "batch": "b189",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:11Z",
-      "running_s": 1816,
-      "quiet_s": 1816
-     },
-     {
-      "unit": "b193:c1",
-      "batch": "b193",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:12Z",
-      "running_s": 1816,
-      "quiet_s": 1815
-     },
-     {
-      "unit": "b191:c1",
-      "batch": "b191",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:12Z",
-      "running_s": 1816,
-      "quiet_s": 1815
-     },
-     {
-      "unit": "b194:c1",
-      "batch": "b194",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:12Z",
-      "running_s": 1816,
-      "quiet_s": 1815
-     },
-     {
-      "unit": "b190:c1",
-      "batch": "b190",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:12Z",
-      "running_s": 1816,
-      "quiet_s": 1815
-     },
-     {
-      "unit": "b197:c1",
-      "batch": "b197",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:12Z",
-      "running_s": 1816,
-      "quiet_s": 1815
-     },
-     {
-      "unit": "b199:c1",
-      "batch": "b199",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:12Z",
-      "running_s": 1815,
-      "quiet_s": 1815
-     },
-     {
-      "unit": "b201:c1",
-      "batch": "b201",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:12Z",
-      "running_s": 1815,
-      "quiet_s": 1815
-     },
-     {
-      "unit": "b198:c1",
-      "batch": "b198",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:12Z",
-      "running_s": 1815,
-      "quiet_s": 1815
-     },
-     {
-      "unit": "b200:c1",
-      "batch": "b200",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:12Z",
-      "running_s": 1815,
-      "quiet_s": 1815
-     },
-     {
-      "unit": "b207:c1",
-      "batch": "b207",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:12Z",
-      "running_s": 1815,
-      "quiet_s": 1815
-     },
-     {
-      "unit": "b206:c1",
-      "batch": "b206",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:13Z",
-      "running_s": 1815,
-      "quiet_s": 1814
-     },
-     {
-      "unit": "b203:c1",
-      "batch": "b203",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:13Z",
-      "running_s": 1815,
-      "quiet_s": 1814
-     },
-     {
-      "unit": "b202:c1",
-      "batch": "b202",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:13Z",
-      "running_s": 1815,
-      "quiet_s": 1814
-     },
-     {
-      "unit": "b205:c1",
-      "batch": "b205",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:13Z",
-      "running_s": 1815,
-      "quiet_s": 1814
-     },
-     {
-      "unit": "b204:c1",
-      "batch": "b204",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:13Z",
-      "running_s": 1815,
-      "quiet_s": 1814
-     },
-     {
-      "unit": "b208:c1",
-      "batch": "b208",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:13Z",
-      "running_s": 1815,
-      "quiet_s": 1814
-     },
-     {
-      "unit": "b210:c1",
-      "batch": "b210",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:13Z",
-      "running_s": 1814,
-      "quiet_s": 1814
-     },
-     {
-      "unit": "b212:c1",
-      "batch": "b212",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:13Z",
-      "running_s": 1814,
-      "quiet_s": 1814
-     },
-     {
-      "unit": "b211:c1",
-      "batch": "b211",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:13Z",
-      "running_s": 1814,
-      "quiet_s": 1814
-     },
-     {
-      "unit": "b209:c1",
-      "batch": "b209",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:13Z",
-      "running_s": 1814,
-      "quiet_s": 1814
-     },
-     {
-      "unit": "b213:c1",
-      "batch": "b213",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:14Z",
-      "running_s": 1814,
-      "quiet_s": 1813
-     },
-     {
-      "unit": "b215:c1",
-      "batch": "b215",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:14Z",
-      "running_s": 1814,
-      "quiet_s": 1813
-     },
-     {
-      "unit": "b217:c1",
-      "batch": "b217",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:14Z",
-      "running_s": 1813,
-      "quiet_s": 1813
-     },
-     {
-      "unit": "b216:c1",
-      "batch": "b216",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:14Z",
-      "running_s": 1813,
-      "quiet_s": 1813
-     },
-     {
-      "unit": "b219:c1",
-      "batch": "b219",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:14Z",
-      "running_s": 1813,
-      "quiet_s": 1813
-     },
-     {
-      "unit": "b214:c1",
-      "batch": "b214",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:14Z",
-      "running_s": 1813,
-      "quiet_s": 1813
-     },
-     {
-      "unit": "b218:c1",
-      "batch": "b218",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:14Z",
-      "running_s": 1813,
-      "quiet_s": 1813
-     },
-     {
-      "unit": "b220:c1",
-      "batch": "b220",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:14Z",
-      "running_s": 1813,
-      "quiet_s": 1813
-     },
-     {
-      "unit": "b221:c1",
-      "batch": "b221",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1813,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b222:c1",
-      "batch": "b222",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1813,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b223:c1",
-      "batch": "b223",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1813,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b224:c1",
-      "batch": "b224",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1813,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b225:c1",
-      "batch": "b225",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1812,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b228:c1",
-      "batch": "b228",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1812,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b230:c1",
-      "batch": "b230",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1812,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b226:c1",
-      "batch": "b226",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1812,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b231:c1",
-      "batch": "b231",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1812,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b227:c1",
-      "batch": "b227",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1812,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b229:c1",
-      "batch": "b229",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:15Z",
-      "running_s": 1812,
-      "quiet_s": 1812
-     },
-     {
-      "unit": "b232:c1",
-      "batch": "b232",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:16Z",
-      "running_s": 1812,
-      "quiet_s": 1811
-     },
-     {
-      "unit": "b235:c1",
-      "batch": "b235",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:16Z",
-      "running_s": 1811,
-      "quiet_s": 1811
-     },
-     {
-      "unit": "b234:c1",
-      "batch": "b234",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:16Z",
-      "running_s": 1811,
-      "quiet_s": 1811
-     },
-     {
-      "unit": "b233:c1",
-      "batch": "b233",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:16Z",
-      "running_s": 1811,
-      "quiet_s": 1811
-     },
-     {
-      "unit": "b237:c1",
-      "batch": "b237",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:16Z",
-      "running_s": 1811,
-      "quiet_s": 1811
-     },
-     {
-      "unit": "b238:c1",
-      "batch": "b238",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:16Z",
-      "running_s": 1811,
-      "quiet_s": 1811
-     },
-     {
-      "unit": "b236:c1",
-      "batch": "b236",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:16Z",
-      "running_s": 1811,
-      "quiet_s": 1811
-     },
-     {
-      "unit": "b240:c1",
-      "batch": "b240",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:16Z",
-      "running_s": 1811,
-      "quiet_s": 1811
-     },
-     {
-      "unit": "b239:c1",
-      "batch": "b239",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:16Z",
-      "running_s": 1811,
-      "quiet_s": 1811
-     },
-     {
-      "unit": "b241:c1",
-      "batch": "b241",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:17Z",
-      "running_s": 1811,
-      "quiet_s": 1810
-     },
-     {
-      "unit": "b243:c1",
-      "batch": "b243",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:17Z",
-      "running_s": 1811,
-      "quiet_s": 1810
-     },
-     {
-      "unit": "b242:c1",
-      "batch": "b242",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:17Z",
-      "running_s": 1811,
-      "quiet_s": 1810
-     },
-     {
-      "unit": "b245:c1",
-      "batch": "b245",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:17Z",
-      "running_s": 1810,
-      "quiet_s": 1810
-     },
-     {
-      "unit": "b247:c1",
-      "batch": "b247",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:17Z",
-      "running_s": 1810,
-      "quiet_s": 1810
-     },
-     {
-      "unit": "b244:c1",
-      "batch": "b244",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:17Z",
-      "running_s": 1810,
-      "quiet_s": 1810
-     },
-     {
-      "unit": "b250:c1",
-      "batch": "b250",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:17Z",
-      "running_s": 1810,
-      "quiet_s": 1810
-     },
-     {
-      "unit": "b246:c1",
-      "batch": "b246",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:17Z",
-      "running_s": 1810,
-      "quiet_s": 1810
-     },
-     {
-      "unit": "b248:c1",
-      "batch": "b248",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:17Z",
-      "running_s": 1810,
-      "quiet_s": 1810
-     },
-     {
-      "unit": "b249:c1",
-      "batch": "b249",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:18Z",
-      "running_s": 1810,
-      "quiet_s": 1809
-     },
-     {
-      "unit": "b251:c1",
-      "batch": "b251",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:18Z",
-      "running_s": 1810,
-      "quiet_s": 1809
-     },
-     {
-      "unit": "b253:c1",
-      "batch": "b253",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:18Z",
-      "running_s": 1810,
-      "quiet_s": 1809
-     },
-     {
-      "unit": "b255:c1",
-      "batch": "b255",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:18Z",
-      "running_s": 1809,
-      "quiet_s": 1809
-     },
-     {
-      "unit": "b252:c1",
-      "batch": "b252",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:18Z",
-      "running_s": 1809,
-      "quiet_s": 1809
-     },
-     {
-      "unit": "b254:c1",
-      "batch": "b254",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:18Z",
-      "running_s": 1809,
-      "quiet_s": 1809
-     },
-     {
-      "unit": "b257:c1",
-      "batch": "b257",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:18Z",
-      "running_s": 1809,
-      "quiet_s": 1809
-     },
-     {
-      "unit": "b259:c1",
-      "batch": "b259",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:19Z",
-      "running_s": 1809,
-      "quiet_s": 1808
-     },
-     {
-      "unit": "b258:c1",
-      "batch": "b258",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:19Z",
-      "running_s": 1809,
-      "quiet_s": 1808
-     },
-     {
-      "unit": "b256:c1",
-      "batch": "b256",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:19Z",
-      "running_s": 1809,
-      "quiet_s": 1808
-     },
-     {
-      "unit": "b260:c1",
-      "batch": "b260",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:19Z",
-      "running_s": 1809,
-      "quiet_s": 1808
-     },
-     {
-      "unit": "b262:c1",
-      "batch": "b262",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:19Z",
-      "running_s": 1809,
-      "quiet_s": 1808
-     },
-     {
-      "unit": "b263:c1",
-      "batch": "b263",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:19Z",
-      "running_s": 1808,
-      "quiet_s": 1808
-     },
-     {
-      "unit": "b261:c1",
-      "batch": "b261",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:19Z",
-      "running_s": 1808,
-      "quiet_s": 1808
-     },
-     {
-      "unit": "b264:c1",
-      "batch": "b264",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-18T21:30:19Z",
-      "running_s": 1808,
-      "quiet_s": 1808
-     }
-    ],
+    "in_flight": [],
     "finished_last_hour": 3,
     "recent_units": [
      {
@@ -2636,7 +1859,7 @@
     ],
     "serving": true,
     "port": 8765,
-    "port_checked_at": "2026-11-18T22:00:28Z",
+    "port_checked_at": "2026-11-18T22:17:44Z",
     "metrics_at": "2026-11-15T00:24:02Z",
     "model_card_at": "2026-11-15T05:35:12Z",
     "page_code": true
@@ -2658,49 +1881,49 @@
    "running": true,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-18T22:00:27Z",
+   "last_activity": "2026-11-18T22:17:44Z",
    "rate": {
     "unit": "batches a minute",
-    "last10": 12.11,
+    "last10": 0.64,
     "last60": null
    },
    "rates": [],
    "progress": {
-    "done": 6221,
+    "done": 6232,
     "total": 16021,
     "unit": "batches",
-    "pct": 38.83
+    "pct": 38.9
    },
    "queue": null,
    "eta": {
-    "seconds": 48554,
-    "at": "2026-11-19T11:29:43Z",
+    "seconds": 917718,
+    "at": "2026-11-29T13:13:03Z",
     "basis": "its pace between its last two heartbeats"
    },
    "line": "forward epoch 10/10",
    "details": [],
    "notes": [
-    "loss 3.706, ppl 40.7 (this epoch so far); held-out ppl 41.5 after epoch 9; 1,338 tok/s; forward done in about 9.4 h; job 4.9 GB, swap 6.5 GB"
+    "loss 3.706, ppl 40.7 (this epoch so far); held-out ppl 41.5 after epoch 9; 534 tok/s; forward done in about 23.5 h; job 4.9 GB, swap 6.2 GB"
    ],
    "spark": "b_ulmfit_lm",
    "estimate": null,
    "now": {
-    "at": "2026-11-18T22:00:27Z",
+    "at": "2026-11-18T22:17:44Z",
     "step": "forward epoch 10/10",
     "bars": [
      {
       "id": "progress",
       "label": "batches",
-      "done": 6221,
+      "done": 6232,
       "total": 16021,
       "unit": "batches",
-      "pct": 38.83
+      "pct": 38.9
      }
     ],
     "facts": [
      {
       "k": "batches done",
-      "v": 6221
+      "v": 6232
      },
      {
       "k": "total",
@@ -2708,11 +1931,11 @@
      },
      {
       "k": "batches a minute",
-      "v": 12.11
+      "v": 0.64
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 1,
+      "v": 0,
       "unit": "s"
      }
     ],
@@ -2724,27 +1947,27 @@
      "state": "running",
      "health": "ok",
      "step": "forward epoch 10/10",
-     "done": 6221,
+     "done": 6232,
      "total": 16021,
-     "pct": 38.83,
+     "pct": 38.9,
      "unit": "batches",
-     "note": "loss 3.706, ppl 40.7 (this epoch so far); held-out ppl 41.5 after epoch 9; 1,338 tok/s; forward done in about 9.4 h; job 4.9 GB, swap 6.5 GB",
-     "at": "2026-11-18T22:00:27Z",
-     "age_s": 1,
+     "note": "loss 3.706, ppl 40.7 (this epoch so far); held-out ppl 41.5 after epoch 9; 534 tok/s; forward done in about 23.5 h; job 4.9 GB, swap 6.2 GB",
+     "at": "2026-11-18T22:17:44Z",
+     "age_s": 0,
      "started_at": "2026-11-17T23:35:21Z",
      "seq": null,
      "every_s": 60,
      "alive": true,
-     "rate_per_min": 12.11,
+     "rate_per_min": 0.64,
      "eta": {
-      "seconds": 48554,
-      "at": "2026-11-19T11:29:43Z",
+      "seconds": 917718,
+      "at": "2026-11-29T13:13:03Z",
       "basis": "its pace between its last two heartbeats"
      }
     }
    },
    "source": "heartbeat",
-   "line_at": "2026-11-18T22:00:27Z"
+   "line_at": "2026-11-18T22:17:44Z"
   },
   {
    "id": "model_curve",
@@ -2778,7 +2001,7 @@
    "queue": null,
    "eta": {
     "seconds": 40592,
-    "at": "2026-11-19T09:17:00Z",
+    "at": "2026-11-19T09:34:16Z",
     "basis": "its pace between its last two heartbeats"
    },
    "line": "4,610 silver items: J_silver E1 78.3 [76.1, 80.1], L1 67.3 [65.5, 69.7]; preview 77.3 [74.9, 78.9]",
@@ -2816,7 +2039,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 2934,
+      "v": 3970,
       "unit": "s"
      }
     ],
@@ -2834,7 +2057,7 @@
      "unit": "final silver items",
      "note": "next point at 5,010 final silver items; silver S1: 163 of 264 batches final, 163 coded",
      "at": "2026-11-18T21:11:34Z",
-     "age_s": 2934,
+     "age_s": 3970,
      "started_at": "2026-11-16T11:31:34Z",
      "seq": 103,
      "every_s": 3900,
@@ -2842,7 +2065,7 @@
      "rate_per_min": 4.56,
      "eta": {
       "seconds": 40592,
-      "at": "2026-11-19T09:17:00Z",
+      "at": "2026-11-19T09:34:16Z",
       "basis": "its pace between its last two heartbeats"
      }
     }
@@ -2916,7 +2139,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 134238,
+      "v": 135274,
       "unit": "s"
      }
     ],
@@ -2934,7 +2157,7 @@
      "unit": "parts",
      "note": "bake-off and contest training refuse them (leakage gate check); learning-curve monitor v2 trains without them (2,868 of 2,884 silver items); next pretraining pool drops 1,556; held-out sets unchanged",
      "at": "2026-11-17T08:43:10Z",
-     "age_s": 134238,
+     "age_s": 135274,
      "started_at": "2026-11-16T11:19:24Z",
      "seq": 145,
      "every_s": null,
@@ -3004,7 +2227,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 134384,
+      "v": 135420,
       "unit": "s"
      }
     ],
@@ -3022,7 +2245,7 @@
      "unit": "checks",
      "note": "own code; near-duplicate pairs in scope 0, same-work titles 0, exact copies 0; tokens identical to pool v2 texts; counts only",
      "at": "2026-11-17T08:40:44Z",
-     "age_s": 134384,
+     "age_s": 135420,
      "started_at": "2026-11-17T02:55:00Z",
      "seq": null,
      "every_s": 1800,
@@ -3100,7 +2323,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 190429,
+      "v": 191465,
       "unit": "s"
      }
     ],
@@ -3118,7 +2341,7 @@
      "unit": "checks",
      "note": "attempt 3 (own code); 5 of 5 checks; counts only",
      "at": "2026-11-16T17:06:39Z",
-     "age_s": 190429,
+     "age_s": 191465,
      "started_at": "2026-11-16T11:33:07Z",
      "seq": null,
      "every_s": 1800,
@@ -3162,7 +2385,7 @@
    "queue": null,
    "eta": {
     "seconds": 1061,
-    "at": "2026-11-18T22:18:09Z",
+    "at": "2026-11-18T22:35:25Z",
     "basis": "its pace between its last two heartbeats"
    },
    "line": "weak_v1 finished: coverage, quality against silver S1 (95 of 264 batches final), R3/R4 recommendation",
@@ -3200,7 +2423,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 192164,
+      "v": 193200,
       "unit": "s"
      }
     ],
@@ -3218,7 +2441,7 @@
      "unit": "TRAIN rows whose weak labels may train",
      "note": "71 of 78 leaves reached; random part, train-use rows (n 1,033): precision 0.454 (0.370-0.521), recall 0.551 (0.494-0.596), silver rank-1 group among weak groups 0.822; 39,205 train-use rows incl. TRAIN_EXT",
      "at": "2026-11-16T16:37:44Z",
-     "age_s": 192164,
+     "age_s": 193200,
      "started_at": "2026-11-16T16:19:02Z",
      "seq": 9,
      "every_s": null,
@@ -3226,7 +2449,7 @@
      "rate_per_min": 1450.34,
      "eta": {
       "seconds": 1061,
-      "at": "2026-11-18T22:18:09Z",
+      "at": "2026-11-18T22:35:25Z",
       "basis": "its pace between its last two heartbeats"
      }
     }
@@ -3300,7 +2523,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 276799,
+      "v": 277835,
       "unit": "s"
      }
     ],
@@ -3318,7 +2541,7 @@
      "unit": "rows",
      "note": "245,499 rows; 162,098 abstracts and 160,514 titles encoded, the rest reused from corpus_v0",
      "at": "2026-11-15T17:07:09Z",
-     "age_s": 276799,
+     "age_s": 277835,
      "started_at": "2026-11-15T10:53:06Z",
      "seq": 377,
      "every_s": 60,
@@ -3388,7 +2611,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 295972,
+      "v": 297008,
       "unit": "s"
      }
     ],
@@ -3406,7 +2629,7 @@
      "unit": "steps",
      "note": "corpus_v1 and split_v1_ext written",
      "at": "2026-11-15T11:47:36Z",
-     "age_s": 295972,
+     "age_s": 297008,
      "started_at": null,
      "seq": null,
      "every_s": null,
@@ -3434,21 +2657,21 @@
    "running": true,
    "watcher_running": true,
    "uptime_s": null,
-   "last_activity": "2026-11-18T21:50:30Z",
+   "last_activity": "2026-11-18T22:00:28Z",
    "rate": null,
    "rates": [],
    "progress": null,
    "queue": null,
    "eta": null,
-   "line": "collected, scanned, committed and pushed",
+   "line": "collected, scanned and committed; the push failed and is retried in 10 minutes",
    "details": [
     {
      "k": "last push of the page (main)",
-     "v": "2026-11-18T21:48:36Z (ok)"
+     "v": "2026-11-18T22:00:30Z (failed)"
     },
     {
      "k": "last push of the live data",
-     "v": "2026-11-18T22:00:27Z (failed)"
+     "v": "2026-11-18T22:00:29Z (failed)"
     },
     {
      "k": "last scan",
@@ -3456,20 +2679,20 @@
     },
     {
      "k": "cycles",
-     "v": "4,683"
+     "v": "4,684"
     }
    ],
    "notes": [],
    "spark": null,
    "estimate": null,
    "now": {
-    "at": "2026-11-18T21:50:30Z",
-    "step": "Cycle 4,683; live data pushed 1 s ago (failed); the page (main) pushed 11 min 52 s ago",
+    "at": "2026-11-18T22:00:28Z",
+    "step": "Cycle 4,684; live data pushed 17 min 15 s ago (failed); the page (main) pushed 17 min 14 s ago",
     "bars": [],
     "facts": [
      {
       "k": "cycles",
-      "v": 4683
+      "v": 4684
      },
      {
       "k": "seconds between cycles",
@@ -3482,35 +2705,35 @@
      },
      {
       "k": "live pushes failed in a row",
-      "v": 1
+      "v": 2
      },
      {
       "k": "seconds the last live push took",
-      "v": 597,
+      "v": 1,
       "unit": "s"
      },
      {
       "k": "main pushes failed in a row",
-      "v": 0
+      "v": 1
      }
     ],
     "live": {
      "branch": "live",
-     "at": "2026-11-18T22:00:27Z",
+     "at": "2026-11-18T22:00:29Z",
      "ok": false,
-     "failures": 1,
+     "failures": 2,
      "pushes": 4314,
-     "secs": 597,
+     "secs": 1,
      "scan": "ok"
     },
     "main": {
-     "at": "2026-11-18T21:48:36Z",
-     "ok": true,
-     "failures": 0,
+     "at": "2026-11-18T22:00:30Z",
+     "ok": false,
+     "failures": 1,
      "every_s": 600,
-     "next_at": "2026-11-18T21:58:36Z"
+     "next_at": "2026-11-18T22:10:30Z"
     },
-    "notes_read_at": "2026-11-18T22:00:28Z",
+    "notes_read_at": "2026-11-18T22:17:44Z",
     "watchers": [
      {
       "name": "keep_updater.sh",
@@ -3534,12 +2757,12 @@
    "kept_alive_by": "",
    "check": "python3 classifier/annotation/runs/coding_plan.py test_coding",
    "stop": "",
-   "state": "running",
-   "health": "ok",
+   "state": "paused",
+   "health": "info",
    "running": null,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-18T21:21:37Z",
+   "last_activity": "2026-11-18T21:21:36Z",
    "rate": {
     "unit": "units an hour",
     "last10": null,
@@ -3562,11 +2785,7 @@
     "pct": 15.45
    },
    "queue": null,
-   "eta": {
-    "seconds": 4492800,
-    "at": "2027-01-09T22:00:28Z",
-    "basis": "units finished in the last 24 hours (usage windows decide)"
-   },
+   "eta": null,
    "line": "stage test: 133 of 476 units (119 batches, 3 coder(s) + adjudicator)",
    "details": [],
    "notes": [
@@ -3581,8 +2800,8 @@
     "assumes": "About 14 more usage windows after S1 (102 of 861 TEST units were done on 11-13)."
    },
    "now": {
-    "at": "2026-11-18T21:21:37Z",
-    "step": "stage test: 133 of 476 units final; 2 unit(s) in flight: b035 c3 (49 min 39 s), b036 c2 (49 min 7 s)",
+    "at": "2026-11-18T21:21:36Z",
+    "step": "stage test: 133 of 476 units final; paused (no unit in flight)",
     "bars": [
      {
       "id": "units",
@@ -3628,7 +2847,7 @@
     "facts": [
      {
       "k": "units in flight now",
-      "v": 2
+      "v": 0
      },
      {
       "k": "units finished (last 60 min)",
@@ -3639,26 +2858,7 @@
       "v": 14
      }
     ],
-    "in_flight": [
-     {
-      "unit": "b035:c3",
-      "batch": "b035",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-18T21:10:49Z",
-      "running_s": 2979,
-      "quiet_s": 2332
-     },
-     {
-      "unit": "b036:c2",
-      "batch": "b036",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-18T21:11:21Z",
-      "running_s": 2947,
-      "quiet_s": 2330
-     }
-    ],
+    "in_flight": [],
     "finished_last_hour": 1,
     "recent_units": [
      {
@@ -4311,18 +3511,36 @@
  "alerts": [
   {
    "severity": "warn",
+   "job": "updater",
+   "text": "The last push of the page failed (1 in a row); it is tried again next time.",
+   "since": null
+  },
+  {
+   "severity": "warn",
    "job": "machine",
-   "text": "17.7 GB of disk left.",
+   "text": "18.9 GB of disk left.",
    "since": null
   },
   {
    "severity": "info",
    "job": "machine",
-   "text": "The keep-alive supervisor is on but has not checked for 10 min: macOS holds background checks back while the Mac is idle or locked. Nothing to do.",
+   "text": "The keep-alive supervisor is on but has not checked for 27 min: macOS holds background checks back while the Mac is idle or locked. Nothing to do.",
    "since": null
   }
  ],
  "events": [
+  {
+   "t": "2026-11-18T22:00:30Z",
+   "job": "updater",
+   "kind": "updater",
+   "text": "push failed (rc 128): the commits wait here and the push is tried again in 10 minutes"
+  },
+  {
+   "t": "2026-11-18T22:00:29Z",
+   "job": "updater",
+   "kind": "updater",
+   "text": "live: push failed (rc 128, 2 in a row); tried again next minute"
+  },
   {
    "t": "2026-11-18T22:00:27Z",
    "job": "updater",
@@ -4670,26 +3888,14 @@
    "job": "quality_v1",
    "kind": "stop",
    "text": "Data-quality audit of corpus_v1 stopped running"
-  },
-  {
-   "t": "2026-11-16T17:12:03Z",
-   "job": "ulmfit_lm",
-   "kind": "stop",
-   "text": "ULMFiT language model pretraining stopped running"
-  },
-  {
-   "t": "2026-11-16T16:44:00Z",
-   "job": "quality_v1",
-   "kind": "start",
-   "text": "Data-quality audit of corpus_v1 started running"
   }
  ],
  "machine": {
-  "disk_free_gb": 17.7,
-  "memory_pct": 82.1,
+  "disk_free_gb": 18.9,
+  "memory_pct": 82.6,
   "memory_source": "the harvest's own reading",
-  "swap_used_gb": 6.31,
-  "load_1m": 12.69
+  "swap_used_gb": 6.18,
+  "load_1m": 17.75
  },
  "links": [
   {
@@ -4772,10 +3978,10 @@
  "collector": {
   "version": "2",
   "mode": "full",
-  "seconds": 0.33,
-  "max_rss_mb": 48.3,
+  "seconds": 0.3,
+  "max_rss_mb": 43.5,
   "errors": [],
-  "history_points": 872,
+  "history_points": 857,
   "note": "read-only; a cycle every minute when the updater runs (data on the live branch every minute, the page on GitHub Pages every 10 minutes)"
  },
  "live": {
@@ -4784,15 +3990,15 @@
   "main_every_s": 600,
   "poll_s": 75,
   "notes_every_s": 300,
-  "seq": 4684
+  "seq": 4685
  },
  "team": {
-  "agents_in_flight": 182,
-  "coding_units_in_flight": 88,
-  "other_agents_in_flight": 94,
-  "workflows_active": 7,
+  "agents_in_flight": 0,
+  "coding_units_in_flight": 0,
+  "other_agents_in_flight": 0,
+  "workflows_active": 0,
   "journals_read": 22,
-  "open_without_activity": 440
+  "open_without_activity": 622
  },
  "notes": {
   "title": "Notes from Nathan",
@@ -4808,7 +4014,7 @@
   "items": [],
   "count": 0,
   "withheld": 0,
-  "read_at": "2026-11-18T22:00:27Z",
+  "read_at": "2026-11-18T22:17:44Z",
   "read_ok": false,
   "every_s": 300
  },
@@ -4819,7 +4025,7 @@
   "supervisor": {
    "state": "stale",
    "at": "2026-11-18T21:50:03Z",
-   "age_s": 625,
+   "age_s": 1661,
    "every_s": 120,
    "restart_within_s": null,
    "auto_restart": true,
@@ -4829,7 +4035,7 @@
    "problem": null,
    "switch_on": true
   },
-  "warning": "The supervisor is on, but macOS has not let it check for 10 min (it holds background checks back while the Mac is idle or locked). The jobs keep running and their own watchers restart them; the supervisor catches up by itself. Nothing to do.",
+  "warning": "The supervisor is on, but macOS has not let it check for 27 min (it holds background checks back while the Mac is idle or locked). The jobs keep running and their own watchers restart them; the supervisor catches up by itself. Nothing to do.",
   "jobs": [
    {
     "name": "harvest",
@@ -4851,7 +4057,7 @@
     "failed_starts": null,
     "watcher_running": null,
     "pids": null,
-    "last_seen_running_at": "2026-11-18T22:00:28Z",
+    "last_seen_running_at": "2026-11-18T22:17:44Z",
     "suggest": null,
     "note": "its Terminal watcher restarts it (the supervisor is not reporting)",
     "commands": [
@@ -4897,7 +4103,7 @@
     "failed_starts": null,
     "watcher_running": null,
     "pids": null,
-    "last_seen_running_at": "2026-11-18T22:00:28Z",
+    "last_seen_running_at": "2026-11-18T22:17:44Z",
     "suggest": null,
     "note": "its Terminal watcher restarts it (the supervisor is not reporting)",
     "commands": [
@@ -4943,7 +4149,7 @@
     "failed_starts": null,
     "watcher_running": null,
     "pids": null,
-    "last_seen_running_at": "2026-11-18T22:00:28Z",
+    "last_seen_running_at": "2026-11-18T22:17:44Z",
     "suggest": null,
     "note": null,
     "commands": [
@@ -4989,7 +4195,7 @@
     "failed_starts": null,
     "watcher_running": null,
     "pids": null,
-    "last_seen_running_at": "2026-11-18T22:00:28Z",
+    "last_seen_running_at": "2026-11-18T22:17:44Z",
     "suggest": null,
     "note": "its Terminal watcher restarts it (the supervisor is not reporting)",
     "commands": [
@@ -5311,53 +4517,6 @@
   }
  },
  "recent": [
-  {
-   "t": "2026-11-18T21:22:29Z",
-   "h_rpm": 3.0,
-   "h_arpm": 2.5,
-   "h_err": 2,
-   "h_rec": 10,
-   "h_abs": 1,
-   "h_left": 184062,
-   "h_gd": 236,
-   "h_gt": 110,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 37,
-   "c_done": 72297,
-   "c_txt": 28803,
-   "c_ppm": 0.0,
-   "c_req": 47594,
-   "c_rpm": 0.1,
-   "c_match": 35311,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 163,
-   "s1_fl": 8,
-   "s1_h": 3,
-   "te": 131,
-   "te_fl": 2,
-   "te_h": 1,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_ulmfit_lm": 2754,
-   "b_model_curve": 4915,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 16.9,
-   "mem": 78.4,
-   "swap": 7.9,
-   "st": 154797,
-   "sl": 396982,
-   "run": 3,
-   "alerts": 1,
-   "team": 25
-  },
   {
    "t": "2026-11-18T21:23:30Z",
    "h_rpm": 2.9,
@@ -6720,6 +5879,53 @@
    "run": 3,
    "alerts": 1,
    "team": 182
+  },
+  {
+   "t": "2026-11-18T22:17:44Z",
+   "h_rpm": 0.1,
+   "h_arpm": 0.1,
+   "h_err": 1,
+   "h_rec": 0,
+   "h_abs": 0,
+   "h_left": 184036,
+   "h_gd": 262,
+   "h_gt": 128,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 37,
+   "c_done": 72297,
+   "c_txt": 28803,
+   "c_ppm": 0.0,
+   "c_req": 47598,
+   "c_rpm": 0.0,
+   "c_match": 35311,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 166,
+   "s1_fl": 0,
+   "s1_h": 3,
+   "te": 133,
+   "te_fl": 0,
+   "te_h": 1,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_ulmfit_lm": 6232,
+   "b_model_curve": 4915,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 18.9,
+   "mem": 82.6,
+   "swap": 6.18,
+   "st": 154823,
+   "sl": 397008,
+   "run": 3,
+   "alerts": 2,
+   "team": 0
   }
  ]
 }
