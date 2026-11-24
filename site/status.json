@@ -1,6 +1,6 @@
 {
  "schema": "lawrank-progress status 2",
- "generated_at": "2026-11-24T05:00:02Z",
+ "generated_at": "2026-11-24T05:24:53Z",
  "project": {
   "name": "Law review subject tags",
   "tagline": "Every law review paper on our list gets its abstract or first pages; our own model then tags each paper with its subjects, and the tags go paper -> professor -> school on the law school rankings site.",
@@ -128,17 +128,17 @@
       "state": "running",
       "health": "ok",
       "progress": {
-       "done": 152657,
+       "done": 152677,
        "total": 383403,
        "unit": "papers looked up",
        "pct": 39.82
       },
       "eta": {
-       "seconds": 1297946,
-       "at": "2026-12-09T05:32:28Z",
+       "seconds": 2185825,
+       "at": "2026-12-19T12:35:18Z",
        "basis": "papers in the last 60 minutes"
       },
-      "last_activity": "2026-11-24T04:48:41Z"
+      "last_activity": "2026-11-24T05:07:00Z"
      }
     },
     {
@@ -159,11 +159,11 @@
        "since": "2026-11-13"
       },
       "eta": {
-       "seconds": 4649246,
-       "at": "2027-01-17T00:27:29Z",
-       "basis": "the harvest's own estimate (38.5 s a paper)"
+       "seconds": 5235370,
+       "at": "2027-01-23T19:41:04Z",
+       "basis": "the harvest's own estimate (43.4 s a paper)"
       },
-      "last_activity": "2026-11-24T05:00:02Z"
+      "last_activity": "2026-11-24T05:07:50Z"
      }
     },
     {
@@ -240,8 +240,8 @@
      "detail": "10,000 training papers, one coder each; 2,000 of them coded a second time in a later window (SILVER-VAL).",
      "needs": "About 7-8 five-hour usage windows (about 40 units a window), one coding workflow per window; the doubled 2,000 only in a window after the first pass is final.",
      "live": {
-      "state": "running",
-      "health": "ok",
+      "state": "idle",
+      "health": "info",
       "progress": {
        "done": 252,
        "total": 317,
@@ -250,10 +250,10 @@
       },
       "eta": {
        "seconds": 468000,
-       "at": "2026-11-29T15:00:02Z",
+       "at": "2026-11-29T15:24:53Z",
        "basis": "units finished in the last 24 hours (usage windows decide)"
       },
-      "last_activity": "2026-11-24T04:29:42Z"
+      "last_activity": "2026-11-24T04:22:39Z"
      }
     },
     {
@@ -264,20 +264,16 @@
      "detail": "Paused on 2026-11-13 after its first 25 batches, then coded again beside silver S1. TEST stays sealed until the final report: only counts are shown.",
      "needs": "About 14 more usage windows (an estimate).",
      "live": {
-      "state": "running",
-      "health": "ok",
+      "state": "paused",
+      "health": "info",
       "progress": {
        "done": 194,
        "total": 861,
        "unit": "coding units",
        "pct": 22.53
       },
-      "eta": {
-       "seconds": 3389929,
-       "at": "2027-01-02T10:38:52Z",
-       "basis": "units finished in the last 24 hours (usage windows decide)"
-      },
-      "last_activity": "2026-11-24T04:28:31Z"
+      "eta": null,
+      "last_activity": "2026-11-24T04:21:50Z"
      }
     },
     {
@@ -680,21 +676,21 @@
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 15578,
-   "last_activity": "2026-11-24T05:00:02Z",
+   "uptime_s": 17069,
+   "last_activity": "2026-11-24T05:07:50Z",
    "rate": {
     "unit": "requests a minute",
-    "last10": 0.4,
-    "last60": 2.7
+    "last10": 0.0,
+    "last60": 0.4
    },
    "rates": [
     {
      "label": "requests (last 10 min)",
-     "value": 4
+     "value": 0
     },
     {
      "label": "requests (last 60 min)",
-     "value": 163
+     "value": 23
     },
     {
      "label": "not found, refused or no answer (last 10 min)",
@@ -702,15 +698,15 @@
     },
     {
      "label": "sites asked (last 15 min)",
-     "value": 1
+     "value": 0
     },
     {
      "label": "records kept (last 10 min, harvest's count)",
-     "value": 1
+     "value": 0
     },
     {
      "label": "abstracts kept (last 10 min, harvest's count)",
-     "value": 1
+     "value": 0
     }
    ],
    "progress": {
@@ -726,14 +722,14 @@
     "done_this_run": 120,
     "texts_this_run": 95,
     "skipped_for_now": 1647,
-    "secs_each": 38.5
+    "secs_each": 43.4
    },
    "eta": {
-    "seconds": 4649246,
-    "at": "2027-01-17T00:27:29Z",
-    "basis": "the harvest's own estimate (38.5 s a paper)"
+    "seconds": 5235370,
+    "at": "2027-01-23T19:41:04Z",
+    "basis": "the harvest's own estimate (43.4 s a paper)"
    },
-   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 4 requests (0.4 a minute), 1 records, 1 abstracts; this run: 383 requests, 189 records, 145 abstracts; gaps beside the passes: 120 papers done (95 texts), 120,635 left, about 46.9 days left at 33.6 s each (1,647 skipped for now); archive.org busy: asked again at 22:04:24; workers: 1 working of 30 (29 waiting for work); memory 76%, aiming at 90-95%",
+   "line": "passes 531 done, 1 running, 4 waiting (of 536); last 10 min: 2 requests (0.2 a minute), 0 records, 0 abstracts; this run: 387 requests, 190 records, 146 abstracts; gaps beside the passes: 120 papers done (95 texts), 120,635 left, about 57.6 days left at 41.3 s each (1,647 skipped for now); workers: 1 working of 30 (29 waiting for work); memory 76%, aiming at 90-95%",
    "details": [
     {
      "k": "journal passes",
@@ -741,7 +737,7 @@
     },
     {
      "k": "workers",
-     "v": "1 working of 30 (memory 76.2%, aiming at 90-95%)"
+     "v": "1 working of 30 (memory 74.5%, aiming at 90-95%)"
     },
     {
      "k": "sites paused or left alone",
@@ -749,7 +745,7 @@
     },
     {
      "k": "this run",
-     "v": "386 requests, 190 records, 146 abstracts"
+     "v": "391 requests, 190 records, 146 abstracts"
     },
     {
      "k": "this run started",
@@ -766,7 +762,7 @@
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
    },
    "now": {
-    "at": "2026-11-24T05:00:00Z",
+    "at": "2026-11-24T05:09:44Z",
     "step": "journal passes 531 of 536 done (1 running, 4 waiting); gaps beside the passes: 120,635 papers left (120 asked this run, 95 texts); 1 of 30 workers working; archive.org at x4.0 of today's pace",
     "bars": [
      {
@@ -796,16 +792,16 @@
      {
       "id": "memory",
       "label": "memory in use (the pool aims at 90-95%)",
-      "done": 76.2,
+      "done": 74.5,
       "total": 100,
       "unit": "%",
-      "pct": 76.2
+      "pct": 74.5
      }
     ],
     "facts": [
      {
       "k": "requests a minute (last 10 min)",
-      "v": 0.4
+      "v": 0.0
      },
      {
       "k": "archive.org requests a minute (last 10 min)",
@@ -817,23 +813,23 @@
      },
      {
       "k": "sites asked (last 15 min)",
-      "v": 1
+      "v": 0
      },
      {
       "k": "records kept (last 10 min)",
-      "v": 1
+      "v": 0
      },
      {
       "k": "abstracts kept (last 10 min)",
-      "v": 1
+      "v": 0
      },
      {
       "k": "requests this run",
-      "v": 386
+      "v": 391
      },
      {
       "k": "seconds a gaps paper takes",
-      "v": 38.5,
+      "v": 43.4,
       "unit": "s"
      },
      {
@@ -865,11 +861,11 @@
       "kind": "pass",
       "id": "pass 1",
       "mode": "feed",
-      "pages": 70,
+      "pages": 73,
       "records": 20,
       "abstracts": 19,
-      "running_s": 15570,
-      "last_request_s_ago": 149
+      "running_s": 17061,
+      "last_request_s_ago": 1023
      }
     ],
     "gaps": {
@@ -877,8 +873,8 @@
      "asked_this_run": 120,
      "texts_this_run": 95,
      "skipped_this_run": 1647,
-     "secs_each": 38.5,
-     "eta_at": "2027-01-17T00:27:29Z",
+     "secs_each": 43.4,
+     "eta_at": "2027-01-23T19:41:04Z",
      "largest_queue": 209547
     },
     "workers": {
@@ -888,7 +884,7 @@
      "parked": 0,
      "peak": 30,
      "start": 30,
-     "memory_pct": 76.2,
+     "memory_pct": 74.5,
      "aim_low_pct": 90.0,
      "aim_high_pct": 95.0,
      "adaptive": true
@@ -899,13 +895,13 @@
      "live_pdfs_for_workers": 7011,
      "requests_10m": 0,
      "rpm10": 0.0,
-     "requests_60m": 88,
+     "requests_60m": 5,
      "pace": {
       "x": 4.0,
       "good_in_a_row": null,
       "at": "2026-11-24T04:13:12Z"
      },
-     "busy_until": "2026-11-24T05:04:24Z"
+     "busy_until": null
     },
     "lanes": [
      {
@@ -920,7 +916,7 @@
        "detail": "",
        "at": "2026-11-24T04:34:24Z"
       },
-      "last_s_ago": 1538
+      "last_s_ago": 3029
      },
      {
       "kind": "pdf_worker",
@@ -936,7 +932,7 @@
        "at": "2026-11-24T04:18:16Z"
       },
       "group_papers": 936,
-      "last_s_ago": 2506
+      "last_s_ago": 3997
      },
      {
       "kind": "pdf_worker",
@@ -952,7 +948,7 @@
        "at": "2026-11-24T04:14:08Z"
       },
       "group_papers": 27,
-      "last_s_ago": 2754
+      "last_s_ago": 4245
      },
      {
       "kind": "pdf_worker",
@@ -968,7 +964,7 @@
        "at": "2026-11-24T04:12:29Z"
       },
       "group_papers": 25,
-      "last_s_ago": 2853
+      "last_s_ago": 4344
      },
      {
       "kind": "pdf_worker",
@@ -984,7 +980,7 @@
        "at": "2026-11-24T04:11:14Z"
       },
       "group_papers": 220,
-      "last_s_ago": 2928
+      "last_s_ago": 4419
      },
      {
       "kind": "pdf_worker",
@@ -1000,7 +996,7 @@
        "at": "2026-11-24T04:09:31Z"
       },
       "group_papers": 5,
-      "last_s_ago": 3031
+      "last_s_ago": 4522
      },
      {
       "kind": "pdf_worker",
@@ -1016,7 +1012,7 @@
        "at": "2026-11-24T04:09:31Z"
       },
       "group_papers": 46,
-      "last_s_ago": 3031
+      "last_s_ago": 4522
      },
      {
       "kind": "pdf_worker",
@@ -1032,7 +1028,7 @@
        "at": "2026-11-24T04:09:29Z"
       },
       "group_papers": 11,
-      "last_s_ago": 3033
+      "last_s_ago": 4524
      },
      {
       "kind": "pdf_worker",
@@ -1048,7 +1044,7 @@
        "at": "2026-11-24T03:58:17Z"
       },
       "group_papers": 224,
-      "last_s_ago": 3705
+      "last_s_ago": 5196
      },
      {
       "kind": "pdf_worker",
@@ -1064,7 +1060,7 @@
        "at": "2026-11-24T03:58:15Z"
       },
       "group_papers": 49,
-      "last_s_ago": 3707
+      "last_s_ago": 5198
      },
      {
       "kind": "pdf_worker",
@@ -1080,7 +1076,7 @@
        "at": "2026-11-24T03:57:54Z"
       },
       "group_papers": 1,
-      "last_s_ago": 3728
+      "last_s_ago": 5219
      },
      {
       "kind": "pdf_worker",
@@ -1096,39 +1092,7 @@
        "at": "2026-11-24T03:57:15Z"
       },
       "group_papers": 87,
-      "last_s_ago": 3767
-     },
-     {
-      "kind": "pdf_worker",
-      "id": "worker 20",
-      "worker": 20,
-      "items_10m": 0,
-      "texts_10m": 0,
-      "requests_10m": 0,
-      "last": {
-       "method": "page_then_pdf",
-       "outcome": "skipped",
-       "detail": "",
-       "at": "2026-11-24T03:57:14Z"
-      },
-      "group_papers": 26,
-      "last_s_ago": 3768
-     },
-     {
-      "kind": "pdf_worker",
-      "id": "worker 17",
-      "worker": 17,
-      "items_10m": 0,
-      "texts_10m": 0,
-      "requests_10m": 0,
-      "last": {
-       "method": "page_then_pdf",
-       "outcome": "skipped",
-       "detail": "",
-       "at": "2026-11-24T03:57:14Z"
-      },
-      "group_papers": 58,
-      "last_s_ago": 3768
+      "last_s_ago": 5258
      },
      {
       "kind": "pdf_worker",
@@ -1144,7 +1108,39 @@
        "at": "2026-11-24T03:57:14Z"
       },
       "group_papers": 26,
-      "last_s_ago": 3768
+      "last_s_ago": 5259
+     },
+     {
+      "kind": "pdf_worker",
+      "id": "worker 20",
+      "worker": 20,
+      "items_10m": 0,
+      "texts_10m": 0,
+      "requests_10m": 0,
+      "last": {
+       "method": "page_then_pdf",
+       "outcome": "skipped",
+       "detail": "",
+       "at": "2026-11-24T03:57:14Z"
+      },
+      "group_papers": 26,
+      "last_s_ago": 5259
+     },
+     {
+      "kind": "pdf_worker",
+      "id": "worker 17",
+      "worker": 17,
+      "items_10m": 0,
+      "texts_10m": 0,
+      "requests_10m": 0,
+      "last": {
+       "method": "page_then_pdf",
+       "outcome": "skipped",
+       "detail": "",
+       "at": "2026-11-24T03:57:14Z"
+      },
+      "group_papers": 58,
+      "last_s_ago": 5259
      },
      {
       "kind": "pdf_worker",
@@ -1160,7 +1156,7 @@
        "at": "2026-11-24T03:57:14Z"
       },
       "group_papers": 33,
-      "last_s_ago": 3768
+      "last_s_ago": 5259
      },
      {
       "kind": "pdf_worker",
@@ -1176,55 +1172,7 @@
        "at": "2026-11-24T03:57:14Z"
       },
       "group_papers": 14,
-      "last_s_ago": 3768
-     },
-     {
-      "kind": "pdf_worker",
-      "id": "worker 6",
-      "worker": 6,
-      "items_10m": 0,
-      "texts_10m": 0,
-      "requests_10m": 0,
-      "last": {
-       "method": "page_then_pdf",
-       "outcome": "skipped",
-       "detail": "",
-       "at": "2026-11-24T03:57:13Z"
-      },
-      "group_papers": 1,
-      "last_s_ago": 3769
-     },
-     {
-      "kind": "pdf_worker",
-      "id": "worker 8",
-      "worker": 8,
-      "items_10m": 0,
-      "texts_10m": 0,
-      "requests_10m": 0,
-      "last": {
-       "method": "page_then_pdf",
-       "outcome": "skipped",
-       "detail": "",
-       "at": "2026-11-24T03:57:13Z"
-      },
-      "group_papers": 3,
-      "last_s_ago": 3769
-     },
-     {
-      "kind": "pdf_worker",
-      "id": "worker 9",
-      "worker": 9,
-      "items_10m": 0,
-      "texts_10m": 0,
-      "requests_10m": 0,
-      "last": {
-       "method": "page_then_pdf",
-       "outcome": "skipped",
-       "detail": "",
-       "at": "2026-11-24T03:57:13Z"
-      },
-      "group_papers": 1,
-      "last_s_ago": 3769
+      "last_s_ago": 5259
      },
      {
       "kind": "pdf_worker",
@@ -1240,7 +1188,7 @@
        "at": "2026-11-24T03:57:13Z"
       },
       "group_papers": 1,
-      "last_s_ago": 3769
+      "last_s_ago": 5260
      },
      {
       "kind": "pdf_worker",
@@ -1256,7 +1204,7 @@
        "at": "2026-11-24T03:57:13Z"
       },
       "group_papers": 2,
-      "last_s_ago": 3769
+      "last_s_ago": 5260
      },
      {
       "kind": "pdf_worker",
@@ -1272,7 +1220,7 @@
        "at": "2026-11-24T03:57:13Z"
       },
       "group_papers": 1,
-      "last_s_ago": 3769
+      "last_s_ago": 5260
      },
      {
       "kind": "pdf_worker",
@@ -1288,24 +1236,70 @@
        "at": "2026-11-24T03:57:13Z"
       },
       "group_papers": 1,
-      "last_s_ago": 3769
+      "last_s_ago": 5260
+     },
+     {
+      "kind": "pdf_worker",
+      "id": "worker 6",
+      "worker": 6,
+      "items_10m": 0,
+      "texts_10m": 0,
+      "requests_10m": 0,
+      "last": {
+       "method": "page_then_pdf",
+       "outcome": "skipped",
+       "detail": "",
+       "at": "2026-11-24T03:57:13Z"
+      },
+      "group_papers": 1,
+      "last_s_ago": 5260
+     },
+     {
+      "kind": "pdf_worker",
+      "id": "worker 18",
+      "worker": 18,
+      "items_10m": 0,
+      "texts_10m": 0,
+      "requests_10m": 0,
+      "last": {
+       "method": "page_then_pdf",
+       "outcome": "skipped",
+       "detail": "",
+       "at": "2026-11-24T03:57:13Z"
+      },
+      "group_papers": 1,
+      "last_s_ago": 5260
+     },
+     {
+      "kind": "pdf_worker",
+      "id": "worker 9",
+      "worker": 9,
+      "items_10m": 0,
+      "texts_10m": 0,
+      "requests_10m": 0,
+      "last": {
+       "method": "page_then_pdf",
+       "outcome": "skipped",
+       "detail": "",
+       "at": "2026-11-24T03:57:13Z"
+      },
+      "group_papers": 1,
+      "last_s_ago": 5260
      }
     ],
     "requests_per_min": [
-     1,
      0,
      0,
      0,
-     1,
      0,
      0,
-     1,
+     0,
+     0,
+     0,
      0,
      0
     ],
-    "request_kinds_10m": {
-     "article": 4
-    },
+    "request_kinds_10m": {},
     "network_down": false,
     "watchers": [
      {
@@ -1321,18 +1315,18 @@
       "running": true,
       "state": "sleeping",
       "next_at": "2026-11-24T17:33:20Z",
-      "detail": "asks the harvest to save and plan again in 12 h 33 min (every 24 h), so new side-store lines are used",
+      "detail": "asks the harvest to save and plan again in 12 h 08 min (every 24 h), so new side-store lines are used",
       "pids": 1,
       "every_s": 86400
      }
     ]
    },
    "eta_alt": {
-    "seconds": 597157,
-    "at": "2026-12-01T02:52:40Z",
+    "seconds": 742174,
+    "at": "2026-12-02T19:34:27Z",
     "basis": "the queue's fall over the last 6 hours"
    },
-   "line_at": "2026-11-24T04:50:07Z"
+   "line_at": "2026-11-24T05:05:29Z"
   },
   {
    "id": "core",
@@ -1349,12 +1343,12 @@
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 740521,
-   "last_activity": "2026-11-24T04:48:41Z",
+   "uptime_s": 742012,
+   "last_activity": "2026-11-24T05:07:00Z",
    "rate": {
     "unit": "papers a minute",
     "last10": 0.0,
-    "last60": 10.7
+    "last60": 6.3
    },
    "rates": [
     {
@@ -1363,7 +1357,7 @@
     },
     {
      "label": "papers (last 60 min)",
-     "value": 640
+     "value": 380
     },
     {
      "label": "with a text (last 10 min)",
@@ -1371,22 +1365,22 @@
     }
    ],
    "progress": {
-    "done": 152657,
+    "done": 152677,
     "total": 383403,
     "unit": "papers looked up",
     "pct": 39.82
    },
    "queue": null,
    "eta": {
-    "seconds": 1297946,
-    "at": "2026-12-09T05:32:28Z",
+    "seconds": 2185825,
+    "at": "2026-12-19T12:35:18Z",
     "basis": "papers in the last 60 minutes"
    },
    "line": "120,117 papers in 12327 min, 87,677 requests (0.73 a paper): matched 50,410 (40,339 with a text, 7,698 a link only), review 2,212, never-source 2,037, no match 8,183, no hits 57,249, errors 12; side lines written 48,037",
    "details": [
     {
      "k": "requests to CORE",
-     "v": "107,868 in all"
+     "v": "107,887 in all"
     },
     {
      "k": "pace",
@@ -1411,13 +1405,13 @@
     "assumes": "Rates measured on 2026-11-13: the harvest's gaps queue (about 207,500 papers) falls fast enough for about 2026-12-01, while the harvest's own estimate at 14 s a paper is about 2026-12-17 (it was 7 s a paper at noon; archive.org allows about 15 requests a minute); the CORE lane does 14-18 papers a minute for about 368,000 papers (2026-11-27 to 2026-12-02). About 10 days only if both run at their best measured pace. No long outage and no reinstall pause."
    },
    "now": {
-    "at": "2026-11-24T04:48:41Z",
-    "step": "Looking up papers #152,658 to #152,677 (window 7,633 of 19,171); 152,657 of 383,403 papers done",
+    "at": "2026-11-24T05:07:00Z",
+    "step": "Looking up papers #152,678 to #152,697 (window 7,634 of 19,171); 152,677 of 383,403 papers done",
     "bars": [
      {
       "id": "papers",
       "label": "papers looked up",
-      "done": 152657,
+      "done": 152677,
       "total": 383403,
       "unit": "papers",
       "pct": 39.82
@@ -1425,18 +1419,18 @@
      {
       "id": "windows",
       "label": "windows of 20 papers done",
-      "done": 7632,
+      "done": 7633,
       "total": 19171,
       "unit": "windows",
-      "pct": 39.81
+      "pct": 39.82
      },
      {
       "id": "text",
       "label": "papers looked up that got a text",
       "done": 53484,
-      "total": 152657,
+      "total": 152677,
       "unit": "papers",
-      "pct": 35.04
+      "pct": 35.03
      }
     ],
     "facts": [
@@ -1446,7 +1440,7 @@
      },
      {
       "k": "papers a minute (last 60 min)",
-      "v": 10.7
+      "v": 6.3
      },
      {
       "k": "requests a minute (last 10 min)",
@@ -1454,7 +1448,7 @@
      },
      {
       "k": "requests in all",
-      "v": 107868
+      "v": 107887
      },
      {
       "k": "seconds between requests",
@@ -1471,23 +1465,23 @@
      },
      {
       "k": "CORE server errors handed back (last 60 min)",
-      "v": 1
+      "v": 0
      },
      {
       "k": "matched papers",
-      "v": 66812
+      "v": 66813
      }
     ],
     "window": {
-     "n": 7633,
+     "n": 7634,
      "of": 19171,
      "size": 20,
-     "first": 152658,
-     "last": 152677
+     "first": 152678,
+     "last": 152697
     },
     "eta": {
-     "seconds": 1297946,
-     "at": "2026-12-09T05:32:28Z",
+     "seconds": 2185825,
+     "at": "2026-12-19T12:35:18Z",
      "basis": "papers in the last 60 minutes"
     },
     "outcomes": [
@@ -1504,7 +1498,7 @@
      {
       "k": "match_none",
       "label": "matched, nothing to keep",
-      "n": 3065
+      "n": 3066
      },
      {
       "k": "review",
@@ -1519,12 +1513,12 @@
      {
       "k": "no_match",
       "label": "records, none the paper",
-      "n": 10650
+      "n": 10652
      },
      {
       "k": "no_hits",
       "label": "no record at all",
-      "n": 68870
+      "n": 68887
      },
      {
       "k": "no_query",
@@ -1539,14 +1533,14 @@
     ],
     "outcomes_other": 0,
     "requests": {
-     "total": 107868,
+     "total": 107887,
      "last10": 0,
-     "last60": 441,
+     "last60": 243,
      "errors60": 1,
      "rate_limited60": 0,
      "gap_s": 6.3,
      "limit": 10,
-     "remaining": 3
+     "remaining": 7
     },
     "waiting_until": null,
     "watchers": [
@@ -1563,7 +1557,7 @@
    "found": {
     "with_text": 53484,
     "unit": "papers with a text found",
-    "of": 152657
+    "of": 152677
    },
    "line_at": "2026-11-24T04:44:46Z"
   },
@@ -1724,21 +1718,21 @@
    "kept_alive_by": "a coding workflow launched at the start of each usage window (coding-run-v022, run silver_s1)",
    "check": "python3 classifier/annotation/runs/coding_plan.py silver_s1",
    "stop": "",
-   "state": "running",
-   "health": "ok",
+   "state": "idle",
+   "health": "info",
    "running": null,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-24T04:29:42Z",
+   "last_activity": "2026-11-24T04:22:39Z",
    "rate": {
     "unit": "units an hour",
     "last10": null,
-    "last60": 2.0
+    "last60": 0.0
    },
    "rates": [
     {
      "label": "units (last 60 min)",
-     "value": 2
+     "value": 0
     },
     {
      "label": "units (last 24 h)",
@@ -1754,7 +1748,7 @@
    "queue": null,
    "eta": {
     "seconds": 468000,
-    "at": "2026-11-29T15:00:02Z",
+    "at": "2026-11-29T15:24:53Z",
     "basis": "units finished in the last 24 hours (usage windows decide)"
    },
    "line": "stage s1: 252 of 264 units (264 batches, 1 coder(s))",
@@ -1771,8 +1765,8 @@
     "assumes": "About 7 five-hour usage windows (5.6 for the 10,000 papers, 1.1 for the doubled 2,000), one or two dedicated windows a day."
    },
    "now": {
-    "at": "2026-11-24T04:29:42Z",
-    "step": "stage s1: 252 of 264 units final; 12 unit(s) in flight: b253 c1 (49 min 1 s), b254 c1 (30 min 24 s), b255 c1 (30 min 23 s), b256 c1 (30 min 23 s), b257 c1 (30 min 23 s), b258 c1 (30 min 22 s) and 6 more",
+    "at": "2026-11-24T04:22:39Z",
+    "step": "stage s1: 252 of 264 units final; no unit in flight now (it waits for the next coding workflow or usage window)",
     "bars": [
      {
       "id": "units",
@@ -1802,128 +1796,19 @@
     "facts": [
      {
       "k": "units in flight now",
-      "v": 12
+      "v": 0
      },
      {
       "k": "units finished (last 60 min)",
-      "v": 2
+      "v": 0
      },
      {
       "k": "units finished (last 24 h)",
       "v": 12
      }
     ],
-    "in_flight": [
-     {
-      "unit": "b253:c1",
-      "batch": "b253",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:11:00Z",
-      "running_s": 2941,
-      "quiet_s": 2242
-     },
-     {
-      "unit": "b254:c1",
-      "batch": "b254",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:38Z",
-      "running_s": 1824,
-      "quiet_s": 1823
-     },
-     {
-      "unit": "b255:c1",
-      "batch": "b255",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:38Z",
-      "running_s": 1823,
-      "quiet_s": 1823
-     },
-     {
-      "unit": "b256:c1",
-      "batch": "b256",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:39Z",
-      "running_s": 1823,
-      "quiet_s": 1823
-     },
-     {
-      "unit": "b257:c1",
-      "batch": "b257",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:39Z",
-      "running_s": 1823,
-      "quiet_s": 1822
-     },
-     {
-      "unit": "b258:c1",
-      "batch": "b258",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:39Z",
-      "running_s": 1822,
-      "quiet_s": 1822
-     },
-     {
-      "unit": "b259:c1",
-      "batch": "b259",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:39Z",
-      "running_s": 1822,
-      "quiet_s": 1822
-     },
-     {
-      "unit": "b260:c1",
-      "batch": "b260",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:40Z",
-      "running_s": 1822,
-      "quiet_s": 1821
-     },
-     {
-      "unit": "b261:c1",
-      "batch": "b261",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:40Z",
-      "running_s": 1822,
-      "quiet_s": 1821
-     },
-     {
-      "unit": "b262:c1",
-      "batch": "b262",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:40Z",
-      "running_s": 1821,
-      "quiet_s": 1821
-     },
-     {
-      "unit": "b263:c1",
-      "batch": "b263",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:41Z",
-      "running_s": 1821,
-      "quiet_s": 1820
-     },
-     {
-      "unit": "b264:c1",
-      "batch": "b264",
-      "coder": "c1",
-      "stage": "s1",
-      "started_at": "2026-11-24T04:29:41Z",
-      "running_s": 1820,
-      "quiet_s": 1820
-     }
-    ],
-    "finished_last_hour": 2,
+    "in_flight": [],
+    "finished_last_hour": 0,
     "recent_units": [
      {
       "unit": "b252:c1",
@@ -2096,7 +1981,7 @@
     ],
     "serving": true,
     "port": 8765,
-    "port_checked_at": "2026-11-24T05:00:02Z",
+    "port_checked_at": "2026-11-24T05:24:53Z",
     "metrics_at": "2026-11-15T00:24:02Z",
     "model_card_at": "2026-11-15T05:35:12Z",
     "page_code": true
@@ -2168,7 +2053,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 491,
+      "v": 1982,
       "unit": "s"
      }
     ],
@@ -2186,7 +2071,7 @@
      "unit": "final silver items",
      "note": "next point at 7,883 final silver items; silver S1: 248 of 264 batches final, 252 coded",
      "at": "2026-11-24T04:51:51Z",
-     "age_s": 491,
+     "age_s": 1982,
      "started_at": "2026-11-16T11:31:34Z",
      "seq": 249,
      "every_s": 3900,
@@ -2254,7 +2139,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 23906,
+      "v": 25397,
       "unit": "s"
      }
     ],
@@ -2272,7 +2157,7 @@
      "unit": "papers",
      "note": "",
      "at": "2026-11-23T22:21:36Z",
-     "age_s": 23906,
+     "age_s": 25397,
      "started_at": "2026-11-23T08:28:11Z",
      "seq": 5662,
      "every_s": 60,
@@ -2320,7 +2205,7 @@
     "facts": [
      {
       "k": "seconds since the last heartbeat",
-      "v": 347763,
+      "v": 349254,
       "unit": "s"
      }
     ],
@@ -2338,7 +2223,7 @@
      "unit": "",
      "note": "init_from of configs/ulmfit/o7_ulmfit.json",
      "at": "2026-11-20T04:23:59Z",
-     "age_s": 347763,
+     "age_s": 349254,
      "started_at": "2026-11-20T04:23:59Z",
      "seq": null,
      "every_s": 60,
@@ -2416,7 +2301,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 591412,
+      "v": 592903,
       "unit": "s"
      }
     ],
@@ -2434,7 +2319,7 @@
      "unit": "parts",
      "note": "bake-off and contest training refuse them (leakage gate check); learning-curve monitor v2 trains without them (2,868 of 2,884 silver items); next pretraining pool drops 1,556; held-out sets unchanged",
      "at": "2026-11-17T08:43:10Z",
-     "age_s": 591412,
+     "age_s": 592903,
      "started_at": "2026-11-16T11:19:24Z",
      "seq": 145,
      "every_s": null,
@@ -2504,7 +2389,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 591558,
+      "v": 593049,
       "unit": "s"
      }
     ],
@@ -2522,7 +2407,7 @@
      "unit": "checks",
      "note": "own code; near-duplicate pairs in scope 0, same-work titles 0, exact copies 0; tokens identical to pool v2 texts; counts only",
      "at": "2026-11-17T08:40:44Z",
-     "age_s": 591558,
+     "age_s": 593049,
      "started_at": "2026-11-17T02:55:00Z",
      "seq": null,
      "every_s": 1800,
@@ -2600,7 +2485,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 647603,
+      "v": 649094,
       "unit": "s"
      }
     ],
@@ -2618,7 +2503,7 @@
      "unit": "checks",
      "note": "attempt 3 (own code); 5 of 5 checks; counts only",
      "at": "2026-11-16T17:06:39Z",
-     "age_s": 647603,
+     "age_s": 649094,
      "started_at": "2026-11-16T11:33:07Z",
      "seq": null,
      "every_s": 1800,
@@ -2662,7 +2547,7 @@
    "queue": null,
    "eta": {
     "seconds": 1061,
-    "at": "2026-11-24T05:17:44Z",
+    "at": "2026-11-24T05:42:35Z",
     "basis": "its pace between its last two heartbeats"
    },
    "line": "weak_v1 finished: coverage, quality against silver S1 (95 of 264 batches final), R3/R4 recommendation",
@@ -2700,7 +2585,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 649338,
+      "v": 650829,
       "unit": "s"
      }
     ],
@@ -2718,7 +2603,7 @@
      "unit": "TRAIN rows whose weak labels may train",
      "note": "71 of 78 leaves reached; random part, train-use rows (n 1,033): precision 0.454 (0.370-0.521), recall 0.551 (0.494-0.596), silver rank-1 group among weak groups 0.822; 39,205 train-use rows incl. TRAIN_EXT",
      "at": "2026-11-16T16:37:44Z",
-     "age_s": 649338,
+     "age_s": 650829,
      "started_at": "2026-11-16T16:19:02Z",
      "seq": 9,
      "every_s": null,
@@ -2726,7 +2611,7 @@
      "rate_per_min": 1450.34,
      "eta": {
       "seconds": 1061,
-      "at": "2026-11-24T05:17:44Z",
+      "at": "2026-11-24T05:42:35Z",
       "basis": "its pace between its last two heartbeats"
      }
     }
@@ -2800,7 +2685,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 733973,
+      "v": 735464,
       "unit": "s"
      }
     ],
@@ -2818,7 +2703,7 @@
      "unit": "rows",
      "note": "245,499 rows; 162,098 abstracts and 160,514 titles encoded, the rest reused from corpus_v0",
      "at": "2026-11-15T17:07:09Z",
-     "age_s": 733973,
+     "age_s": 735464,
      "started_at": "2026-11-15T10:53:06Z",
      "seq": 377,
      "every_s": 60,
@@ -2888,7 +2773,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 753146,
+      "v": 754637,
       "unit": "s"
      }
     ],
@@ -2906,7 +2791,7 @@
      "unit": "steps",
      "note": "corpus_v1 and split_v1_ext written",
      "at": "2026-11-15T11:47:36Z",
-     "age_s": 753146,
+     "age_s": 754637,
      "started_at": null,
      "seq": null,
      "every_s": null,
@@ -2934,7 +2819,7 @@
    "running": true,
    "watcher_running": true,
    "uptime_s": null,
-   "last_activity": "2026-11-24T04:57:28Z",
+   "last_activity": "2026-11-24T05:08:57Z",
    "rate": null,
    "rates": [],
    "progress": null,
@@ -2944,11 +2829,11 @@
    "details": [
     {
      "k": "last push of the page (main)",
-     "v": "2026-11-24T04:49:36Z (ok)"
+     "v": "2026-11-24T05:05:42Z (ok)"
     },
     {
      "k": "last push of the live data",
-     "v": "2026-11-24T04:57:46Z (ok)"
+     "v": "2026-11-24T05:09:46Z (failed)"
     },
     {
      "k": "last scan",
@@ -2956,20 +2841,20 @@
     },
     {
      "k": "cycles",
-     "v": "11,716"
+     "v": "11,721"
     }
    ],
    "notes": [],
    "spark": null,
    "estimate": null,
    "now": {
-    "at": "2026-11-24T04:57:28Z",
-    "step": "Cycle 11,716; live data pushed 2 min 16 s ago (ok); the page (main) pushed 10 min 26 s ago",
+    "at": "2026-11-24T05:08:57Z",
+    "step": "Cycle 11,721; live data pushed 15 min 7 s ago (failed); the page (main) pushed 19 min 11 s ago",
     "bars": [],
     "facts": [
      {
       "k": "cycles",
-      "v": 11716
+      "v": 11721
      },
      {
       "k": "seconds between cycles",
@@ -2978,15 +2863,15 @@
      },
      {
       "k": "live pushes so far",
-      "v": 11304
+      "v": 11308
      },
      {
       "k": "live pushes failed in a row",
-      "v": 0
+      "v": 1
      },
      {
       "k": "seconds the last live push took",
-      "v": 18,
+      "v": 48,
       "unit": "s"
      },
      {
@@ -2996,21 +2881,21 @@
     ],
     "live": {
      "branch": "live",
-     "at": "2026-11-24T04:57:46Z",
-     "ok": true,
-     "failures": 0,
-     "pushes": 11304,
-     "secs": 18,
+     "at": "2026-11-24T05:09:46Z",
+     "ok": false,
+     "failures": 1,
+     "pushes": 11308,
+     "secs": 48,
      "scan": "ok"
     },
     "main": {
-     "at": "2026-11-24T04:49:36Z",
+     "at": "2026-11-24T05:05:42Z",
      "ok": true,
      "failures": 0,
      "every_s": 600,
-     "next_at": "2026-11-24T04:59:36Z"
+     "next_at": "2026-11-24T05:15:42Z"
     },
-    "notes_read_at": "2026-11-24T05:00:02Z",
+    "notes_read_at": "2026-11-24T05:24:53Z",
     "watchers": [
      {
       "name": "keep_updater.sh",
@@ -3034,21 +2919,21 @@
    "kept_alive_by": "",
    "check": "python3 classifier/annotation/runs/coding_plan.py test_coding",
    "stop": "",
-   "state": "running",
-   "health": "ok",
+   "state": "paused",
+   "health": "info",
    "running": null,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-24T04:28:31Z",
+   "last_activity": "2026-11-24T04:21:50Z",
    "rate": {
     "unit": "units an hour",
     "last10": null,
-    "last60": 4.0
+    "last60": 0.0
    },
    "rates": [
     {
      "label": "units (last 60 min)",
-     "value": 4
+     "value": 0
     },
     {
      "label": "units (last 24 h)",
@@ -3062,11 +2947,7 @@
     "pct": 22.53
    },
    "queue": null,
-   "eta": {
-    "seconds": 3389929,
-    "at": "2027-01-02T10:38:52Z",
-    "basis": "units finished in the last 24 hours (usage windows decide)"
-   },
+   "eta": null,
    "line": "stage test: 194 of 476 units (119 batches, 3 coder(s) + adjudicator)",
    "details": [],
    "notes": [
@@ -3081,8 +2962,8 @@
     "assumes": "About 14 more usage windows after S1 (102 of 861 TEST units were done on 11-13)."
    },
    "now": {
-    "at": "2026-11-24T04:28:31Z",
-    "step": "stage test: 194 of 476 units final; 109 unit(s) in flight: b050 c3 (31 min 54 s), b049 c3 (31 min 53 s), b047 adj (31 min 53 s), b051 c2 (31 min 52 s), b051 c1 (31 min 52 s), b050 adj (31 min 52 s) and 103 more",
+    "at": "2026-11-24T04:21:50Z",
+    "step": "stage test: 194 of 476 units final; paused (no unit in flight)",
     "bars": [
      {
       "id": "units",
@@ -3128,1001 +3009,19 @@
     "facts": [
      {
       "k": "units in flight now",
-      "v": 109
+      "v": 0
      },
      {
       "k": "units finished (last 60 min)",
-      "v": 4
+      "v": 0
      },
      {
       "k": "units finished (last 24 h)",
       "v": 17
      }
     ],
-    "in_flight": [
-     {
-      "unit": "b050:c3",
-      "batch": "b050",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:08Z",
-      "running_s": 1914,
-      "quiet_s": 1913
-     },
-     {
-      "unit": "b049:c3",
-      "batch": "b049",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:09Z",
-      "running_s": 1913,
-      "quiet_s": 1912
-     },
-     {
-      "unit": "b047:adj",
-      "batch": "b047",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:09Z",
-      "running_s": 1913,
-      "quiet_s": 1912
-     },
-     {
-      "unit": "b051:c2",
-      "batch": "b051",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:09Z",
-      "running_s": 1912,
-      "quiet_s": 1912
-     },
-     {
-      "unit": "b051:c1",
-      "batch": "b051",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:09Z",
-      "running_s": 1912,
-      "quiet_s": 1912
-     },
-     {
-      "unit": "b050:adj",
-      "batch": "b050",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:10Z",
-      "running_s": 1912,
-      "quiet_s": 1911
-     },
-     {
-      "unit": "b049:adj",
-      "batch": "b049",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:10Z",
-      "running_s": 1911,
-      "quiet_s": 1911
-     },
-     {
-      "unit": "b052:c1",
-      "batch": "b052",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:10Z",
-      "running_s": 1911,
-      "quiet_s": 1911
-     },
-     {
-      "unit": "b051:c3",
-      "batch": "b051",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:11Z",
-      "running_s": 1911,
-      "quiet_s": 1910
-     },
-     {
-      "unit": "b052:c2",
-      "batch": "b052",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:11Z",
-      "running_s": 1911,
-      "quiet_s": 1910
-     },
-     {
-      "unit": "b052:c3",
-      "batch": "b052",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:11Z",
-      "running_s": 1911,
-      "quiet_s": 1910
-     },
-     {
-      "unit": "b053:c1",
-      "batch": "b053",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:11Z",
-      "running_s": 1910,
-      "quiet_s": 1910
-     },
-     {
-      "unit": "b053:c2",
-      "batch": "b053",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:12Z",
-      "running_s": 1910,
-      "quiet_s": 1910
-     },
-     {
-      "unit": "b051:adj",
-      "batch": "b051",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:12Z",
-      "running_s": 1910,
-      "quiet_s": 1909
-     },
-     {
-      "unit": "b053:c3",
-      "batch": "b053",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:12Z",
-      "running_s": 1910,
-      "quiet_s": 1909
-     },
-     {
-      "unit": "b052:adj",
-      "batch": "b052",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:12Z",
-      "running_s": 1910,
-      "quiet_s": 1909
-     },
-     {
-      "unit": "b054:c1",
-      "batch": "b054",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:13Z",
-      "running_s": 1909,
-      "quiet_s": 1909
-     },
-     {
-      "unit": "b054:c3",
-      "batch": "b054",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:13Z",
-      "running_s": 1909,
-      "quiet_s": 1909
-     },
-     {
-      "unit": "b054:c2",
-      "batch": "b054",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:13Z",
-      "running_s": 1909,
-      "quiet_s": 1908
-     },
-     {
-      "unit": "b053:adj",
-      "batch": "b053",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:13Z",
-      "running_s": 1909,
-      "quiet_s": 1908
-     },
-     {
-      "unit": "b055:c1",
-      "batch": "b055",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:13Z",
-      "running_s": 1909,
-      "quiet_s": 1908
-     },
-     {
-      "unit": "b055:c2",
-      "batch": "b055",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:13Z",
-      "running_s": 1908,
-      "quiet_s": 1908
-     },
-     {
-      "unit": "b055:c3",
-      "batch": "b055",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:14Z",
-      "running_s": 1908,
-      "quiet_s": 1908
-     },
-     {
-      "unit": "b056:c1",
-      "batch": "b056",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:14Z",
-      "running_s": 1908,
-      "quiet_s": 1908
-     },
-     {
-      "unit": "b054:adj",
-      "batch": "b054",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:14Z",
-      "running_s": 1908,
-      "quiet_s": 1907
-     },
-     {
-      "unit": "b056:c2",
-      "batch": "b056",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:14Z",
-      "running_s": 1908,
-      "quiet_s": 1907
-     },
-     {
-      "unit": "b057:c1",
-      "batch": "b057",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:14Z",
-      "running_s": 1907,
-      "quiet_s": 1907
-     },
-     {
-      "unit": "b056:c3",
-      "batch": "b056",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:15Z",
-      "running_s": 1907,
-      "quiet_s": 1907
-     },
-     {
-      "unit": "b055:adj",
-      "batch": "b055",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:15Z",
-      "running_s": 1907,
-      "quiet_s": 1907
-     },
-     {
-      "unit": "b057:c2",
-      "batch": "b057",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:15Z",
-      "running_s": 1907,
-      "quiet_s": 1907
-     },
-     {
-      "unit": "b057:c3",
-      "batch": "b057",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:15Z",
-      "running_s": 1907,
-      "quiet_s": 1906
-     },
-     {
-      "unit": "b058:c1",
-      "batch": "b058",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:15Z",
-      "running_s": 1906,
-      "quiet_s": 1906
-     },
-     {
-      "unit": "b056:adj",
-      "batch": "b056",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:16Z",
-      "running_s": 1906,
-      "quiet_s": 1906
-     },
-     {
-      "unit": "b058:c2",
-      "batch": "b058",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:16Z",
-      "running_s": 1906,
-      "quiet_s": 1906
-     },
-     {
-      "unit": "b058:c3",
-      "batch": "b058",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:16Z",
-      "running_s": 1906,
-      "quiet_s": 1906
-     },
-     {
-      "unit": "b057:adj",
-      "batch": "b057",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:16Z",
-      "running_s": 1906,
-      "quiet_s": 1905
-     },
-     {
-      "unit": "b059:c1",
-      "batch": "b059",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:16Z",
-      "running_s": 1905,
-      "quiet_s": 1905
-     },
-     {
-      "unit": "b058:adj",
-      "batch": "b058",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:17Z",
-      "running_s": 1905,
-      "quiet_s": 1905
-     },
-     {
-      "unit": "b060:c1",
-      "batch": "b060",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:17Z",
-      "running_s": 1905,
-      "quiet_s": 1904
-     },
-     {
-      "unit": "b059:c2",
-      "batch": "b059",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:17Z",
-      "running_s": 1905,
-      "quiet_s": 1904
-     },
-     {
-      "unit": "b059:c3",
-      "batch": "b059",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:17Z",
-      "running_s": 1905,
-      "quiet_s": 1904
-     },
-     {
-      "unit": "b060:c2",
-      "batch": "b060",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:17Z",
-      "running_s": 1904,
-      "quiet_s": 1904
-     },
-     {
-      "unit": "b060:c3",
-      "batch": "b060",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:18Z",
-      "running_s": 1904,
-      "quiet_s": 1904
-     },
-     {
-      "unit": "b059:adj",
-      "batch": "b059",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:18Z",
-      "running_s": 1904,
-      "quiet_s": 1904
-     },
-     {
-      "unit": "b061:c1",
-      "batch": "b061",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:18Z",
-      "running_s": 1904,
-      "quiet_s": 1904
-     },
-     {
-      "unit": "b061:c2",
-      "batch": "b061",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:18Z",
-      "running_s": 1904,
-      "quiet_s": 1903
-     },
-     {
-      "unit": "b061:c3",
-      "batch": "b061",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:18Z",
-      "running_s": 1903,
-      "quiet_s": 1903
-     },
-     {
-      "unit": "b062:c1",
-      "batch": "b062",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:18Z",
-      "running_s": 1903,
-      "quiet_s": 1903
-     },
-     {
-      "unit": "b060:adj",
-      "batch": "b060",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:19Z",
-      "running_s": 1903,
-      "quiet_s": 1903
-     },
-     {
-      "unit": "b062:c2",
-      "batch": "b062",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:19Z",
-      "running_s": 1903,
-      "quiet_s": 1902
-     },
-     {
-      "unit": "b062:c3",
-      "batch": "b062",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:19Z",
-      "running_s": 1903,
-      "quiet_s": 1902
-     },
-     {
-      "unit": "b061:adj",
-      "batch": "b061",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:19Z",
-      "running_s": 1902,
-      "quiet_s": 1902
-     },
-     {
-      "unit": "b063:c1",
-      "batch": "b063",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:19Z",
-      "running_s": 1902,
-      "quiet_s": 1902
-     },
-     {
-      "unit": "b063:c2",
-      "batch": "b063",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:19Z",
-      "running_s": 1902,
-      "quiet_s": 1902
-     },
-     {
-      "unit": "b063:c3",
-      "batch": "b063",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:20Z",
-      "running_s": 1902,
-      "quiet_s": 1901
-     },
-     {
-      "unit": "b062:adj",
-      "batch": "b062",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:20Z",
-      "running_s": 1902,
-      "quiet_s": 1901
-     },
-     {
-      "unit": "b064:c1",
-      "batch": "b064",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:20Z",
-      "running_s": 1901,
-      "quiet_s": 1901
-     },
-     {
-      "unit": "b064:c3",
-      "batch": "b064",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:20Z",
-      "running_s": 1901,
-      "quiet_s": 1901
-     },
-     {
-      "unit": "b064:c2",
-      "batch": "b064",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:21Z",
-      "running_s": 1901,
-      "quiet_s": 1901
-     },
-     {
-      "unit": "b065:c1",
-      "batch": "b065",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:21Z",
-      "running_s": 1901,
-      "quiet_s": 1901
-     },
-     {
-      "unit": "b063:adj",
-      "batch": "b063",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:21Z",
-      "running_s": 1901,
-      "quiet_s": 1900
-     },
-     {
-      "unit": "b065:c2",
-      "batch": "b065",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:21Z",
-      "running_s": 1901,
-      "quiet_s": 1900
-     },
-     {
-      "unit": "b065:c3",
-      "batch": "b065",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:21Z",
-      "running_s": 1900,
-      "quiet_s": 1900
-     },
-     {
-      "unit": "b066:c1",
-      "batch": "b066",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:22Z",
-      "running_s": 1900,
-      "quiet_s": 1900
-     },
-     {
-      "unit": "b064:adj",
-      "batch": "b064",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:22Z",
-      "running_s": 1900,
-      "quiet_s": 1900
-     },
-     {
-      "unit": "b066:c2",
-      "batch": "b066",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:22Z",
-      "running_s": 1900,
-      "quiet_s": 1899
-     },
-     {
-      "unit": "b066:c3",
-      "batch": "b066",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:22Z",
-      "running_s": 1900,
-      "quiet_s": 1899
-     },
-     {
-      "unit": "b065:adj",
-      "batch": "b065",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:22Z",
-      "running_s": 1899,
-      "quiet_s": 1899
-     },
-     {
-      "unit": "b067:c1",
-      "batch": "b067",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:23Z",
-      "running_s": 1899,
-      "quiet_s": 1899
-     },
-     {
-      "unit": "b067:c2",
-      "batch": "b067",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:23Z",
-      "running_s": 1899,
-      "quiet_s": 1899
-     },
-     {
-      "unit": "b067:c3",
-      "batch": "b067",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:23Z",
-      "running_s": 1899,
-      "quiet_s": 1898
-     },
-     {
-      "unit": "b066:adj",
-      "batch": "b066",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:23Z",
-      "running_s": 1899,
-      "quiet_s": 1898
-     },
-     {
-      "unit": "b068:c1",
-      "batch": "b068",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:23Z",
-      "running_s": 1898,
-      "quiet_s": 1898
-     },
-     {
-      "unit": "b068:c2",
-      "batch": "b068",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:24Z",
-      "running_s": 1898,
-      "quiet_s": 1898
-     },
-     {
-      "unit": "b068:c3",
-      "batch": "b068",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:24Z",
-      "running_s": 1898,
-      "quiet_s": 1897
-     },
-     {
-      "unit": "b067:adj",
-      "batch": "b067",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:24Z",
-      "running_s": 1898,
-      "quiet_s": 1897
-     },
-     {
-      "unit": "b069:c1",
-      "batch": "b069",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:24Z",
-      "running_s": 1897,
-      "quiet_s": 1897
-     },
-     {
-      "unit": "b069:c2",
-      "batch": "b069",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:24Z",
-      "running_s": 1897,
-      "quiet_s": 1897
-     },
-     {
-      "unit": "b069:c3",
-      "batch": "b069",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:25Z",
-      "running_s": 1897,
-      "quiet_s": 1897
-     },
-     {
-      "unit": "b068:adj",
-      "batch": "b068",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:25Z",
-      "running_s": 1897,
-      "quiet_s": 1897
-     },
-     {
-      "unit": "b070:c1",
-      "batch": "b070",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:25Z",
-      "running_s": 1897,
-      "quiet_s": 1896
-     },
-     {
-      "unit": "b070:c2",
-      "batch": "b070",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:25Z",
-      "running_s": 1897,
-      "quiet_s": 1896
-     },
-     {
-      "unit": "b071:c1",
-      "batch": "b071",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:25Z",
-      "running_s": 1896,
-      "quiet_s": 1896
-     },
-     {
-      "unit": "b070:c3",
-      "batch": "b070",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:25Z",
-      "running_s": 1896,
-      "quiet_s": 1896
-     },
-     {
-      "unit": "b069:adj",
-      "batch": "b069",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:26Z",
-      "running_s": 1896,
-      "quiet_s": 1896
-     },
-     {
-      "unit": "b071:c2",
-      "batch": "b071",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:26Z",
-      "running_s": 1896,
-      "quiet_s": 1895
-     },
-     {
-      "unit": "b071:c3",
-      "batch": "b071",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:26Z",
-      "running_s": 1896,
-      "quiet_s": 1895
-     },
-     {
-      "unit": "b072:c1",
-      "batch": "b072",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:26Z",
-      "running_s": 1895,
-      "quiet_s": 1895
-     },
-     {
-      "unit": "b072:c2",
-      "batch": "b072",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:27Z",
-      "running_s": 1895,
-      "quiet_s": 1895
-     },
-     {
-      "unit": "b070:adj",
-      "batch": "b070",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:27Z",
-      "running_s": 1895,
-      "quiet_s": 1895
-     },
-     {
-      "unit": "b072:c3",
-      "batch": "b072",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:27Z",
-      "running_s": 1895,
-      "quiet_s": 1895
-     },
-     {
-      "unit": "b071:adj",
-      "batch": "b071",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:27Z",
-      "running_s": 1895,
-      "quiet_s": 1894
-     },
-     {
-      "unit": "b073:c2",
-      "batch": "b073",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:27Z",
-      "running_s": 1894,
-      "quiet_s": 1894
-     },
-     {
-      "unit": "b073:c3",
-      "batch": "b073",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:28Z",
-      "running_s": 1894,
-      "quiet_s": 1894
-     },
-     {
-      "unit": "b073:c1",
-      "batch": "b073",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:28Z",
-      "running_s": 1894,
-      "quiet_s": 1894
-     },
-     {
-      "unit": "b072:adj",
-      "batch": "b072",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:28Z",
-      "running_s": 1894,
-      "quiet_s": 1894
-     },
-     {
-      "unit": "b074:c1",
-      "batch": "b074",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:28Z",
-      "running_s": 1894,
-      "quiet_s": 1893
-     },
-     {
-      "unit": "b074:c2",
-      "batch": "b074",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:28Z",
-      "running_s": 1893,
-      "quiet_s": 1893
-     },
-     {
-      "unit": "b074:c3",
-      "batch": "b074",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:29Z",
-      "running_s": 1893,
-      "quiet_s": 1893
-     },
-     {
-      "unit": "b073:adj",
-      "batch": "b073",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:29Z",
-      "running_s": 1893,
-      "quiet_s": 1893
-     },
-     {
-      "unit": "b075:c1",
-      "batch": "b075",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:29Z",
-      "running_s": 1893,
-      "quiet_s": 1893
-     },
-     {
-      "unit": "b075:c2",
-      "batch": "b075",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:29Z",
-      "running_s": 1893,
-      "quiet_s": 1892
-     },
-     {
-      "unit": "b075:c3",
-      "batch": "b075",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:29Z",
-      "running_s": 1893,
-      "quiet_s": 1892
-     },
-     {
-      "unit": "b074:adj",
-      "batch": "b074",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:29Z",
-      "running_s": 1892,
-      "quiet_s": 1892
-     },
-     {
-      "unit": "b076:c1",
-      "batch": "b076",
-      "coder": "c1",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:29Z",
-      "running_s": 1892,
-      "quiet_s": 1892
-     },
-     {
-      "unit": "b076:c2",
-      "batch": "b076",
-      "coder": "c2",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:30Z",
-      "running_s": 1892,
-      "quiet_s": 1892
-     },
-     {
-      "unit": "b076:c3",
-      "batch": "b076",
-      "coder": "c3",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:30Z",
-      "running_s": 1892,
-      "quiet_s": 1891
-     },
-     {
-      "unit": "b075:adj",
-      "batch": "b075",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:30Z",
-      "running_s": 1891,
-      "quiet_s": 1891
-     },
-     {
-      "unit": "b076:adj",
-      "batch": "b076",
-      "coder": "adj",
-      "stage": "test",
-      "started_at": "2026-11-24T04:28:30Z",
-      "running_s": 1891,
-      "quiet_s": 1891
-     }
-    ],
-    "finished_last_hour": 4,
+    "in_flight": [],
+    "finished_last_hour": 0,
     "recent_units": [
      {
       "unit": "b050:c2",
@@ -4793,11 +3692,17 @@
   {
    "severity": "info",
    "job": "machine",
-   "text": "The keep-alive supervisor is on but has not checked for 10 min: macOS holds background checks back while the Mac is idle or locked. Nothing to do.",
+   "text": "The keep-alive supervisor is on but has not checked for 17 min: macOS holds background checks back while the Mac is idle or locked. Nothing to do.",
    "since": null
   }
  ],
  "events": [
+  {
+   "t": "2026-11-24T05:09:46Z",
+   "job": "updater",
+   "kind": "updater",
+   "text": "live: push failed (rc 128, 1 in a row); tried again next minute"
+  },
   {
    "t": "2026-11-24T04:21:50Z",
    "job": "coding_test",
@@ -5151,20 +4056,14 @@
    "job": "preview",
    "kind": "start",
    "text": "The supervisor restarted the preview test page (private over Tailscale)"
-  },
-  {
-   "t": "2026-11-17T23:46:09Z",
-   "job": "updater",
-   "kind": "start",
-   "text": "The supervisor restarted the learning-curve monitor (silver S1)"
   }
  ],
  "machine": {
   "disk_free_gb": 18.1,
-  "memory_pct": 76.2,
+  "memory_pct": 74.5,
   "memory_source": "the harvest's own reading",
-  "swap_used_gb": 6.33,
-  "load_1m": 8.22
+  "swap_used_gb": 6.31,
+  "load_1m": 4.87
  },
  "links": [
   {
@@ -5247,10 +4146,10 @@
  "collector": {
   "version": "2",
   "mode": "full",
-  "seconds": 0.32,
-  "max_rss_mb": 48.5,
+  "seconds": 0.31,
+  "max_rss_mb": 49.1,
   "errors": [],
-  "history_points": 1575,
+  "history_points": 1558,
   "note": "read-only; a cycle every minute when the updater runs (data on the live branch every minute, the page on GitHub Pages every 10 minutes)"
  },
  "live": {
@@ -5259,15 +4158,15 @@
   "main_every_s": 600,
   "poll_s": 75,
   "notes_every_s": 300,
-  "seq": 11717
+  "seq": 11722
  },
  "team": {
-  "agents_in_flight": 276,
-  "coding_units_in_flight": 121,
-  "other_agents_in_flight": 155,
-  "workflows_active": 7,
+  "agents_in_flight": 0,
+  "coding_units_in_flight": 0,
+  "other_agents_in_flight": 0,
+  "workflows_active": 0,
   "journals_read": 22,
-  "open_without_activity": 602
+  "open_without_activity": 878
  },
  "notes": {
   "title": "Notes from Nathan",
@@ -5283,8 +4182,8 @@
   "items": [],
   "count": 0,
   "withheld": 0,
-  "read_at": "2026-11-24T05:00:01Z",
-  "read_ok": true,
+  "read_at": "2026-11-24T05:24:53Z",
+  "read_ok": false,
   "every_s": 300
  },
  "keepalive": {
@@ -5293,8 +4192,8 @@
   "how": "To run a command by hand: open Terminal on the Mac, paste the command, press Return.",
   "supervisor": {
    "state": "stale",
-   "at": "2026-11-24T04:49:26Z",
-   "age_s": 636,
+   "at": "2026-11-24T05:07:32Z",
+   "age_s": 1041,
    "every_s": 120,
    "restart_within_s": null,
    "auto_restart": true,
@@ -5304,7 +4203,7 @@
    "problem": null,
    "switch_on": true
   },
-  "warning": "The supervisor is on, but macOS has not let it check for 10 min (it holds background checks back while the Mac is idle or locked). The jobs keep running and their own watchers restart them; the supervisor catches up by itself. Nothing to do.",
+  "warning": "The supervisor is on, but macOS has not let it check for 17 min (it holds background checks back while the Mac is idle or locked). The jobs keep running and their own watchers restart them; the supervisor catches up by itself. Nothing to do.",
   "jobs": [
    {
     "name": "harvest",
@@ -5326,7 +4225,7 @@
     "failed_starts": null,
     "watcher_running": null,
     "pids": null,
-    "last_seen_running_at": "2026-11-24T05:00:02Z",
+    "last_seen_running_at": "2026-11-24T05:24:53Z",
     "suggest": null,
     "note": "its Terminal watcher restarts it (the supervisor is not reporting)",
     "commands": [
@@ -5372,7 +4271,7 @@
     "failed_starts": null,
     "watcher_running": null,
     "pids": null,
-    "last_seen_running_at": "2026-11-24T05:00:02Z",
+    "last_seen_running_at": "2026-11-24T05:24:53Z",
     "suggest": null,
     "note": "its Terminal watcher restarts it (the supervisor is not reporting)",
     "commands": [
@@ -5418,7 +4317,7 @@
     "failed_starts": null,
     "watcher_running": null,
     "pids": null,
-    "last_seen_running_at": "2026-11-24T05:00:02Z",
+    "last_seen_running_at": "2026-11-24T05:24:53Z",
     "suggest": null,
     "note": null,
     "commands": [
@@ -5464,7 +4363,7 @@
     "failed_starts": null,
     "watcher_running": null,
     "pids": null,
-    "last_seen_running_at": "2026-11-24T05:00:02Z",
+    "last_seen_running_at": "2026-11-24T05:24:53Z",
     "suggest": null,
     "note": "its Terminal watcher restarts it (the supervisor is not reporting)",
     "commands": [
@@ -5878,241 +4777,6 @@
   }
  },
  "recent": [
-  {
-   "t": "2026-11-24T04:24:28Z",
-   "h_rpm": 0.6,
-   "h_arpm": 0.1,
-   "h_err": 2,
-   "h_rec": 0,
-   "h_abs": 0,
-   "h_left": 120675,
-   "h_gd": 119,
-   "h_gt": 95,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 30,
-   "c_done": 152297,
-   "c_txt": 53312,
-   "c_ppm": 8.3,
-   "c_req": 107641,
-   "c_rpm": 9.0,
-   "c_match": 66613,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 251,
-   "s1_fl": 1,
-   "s1_h": 2,
-   "te": 193,
-   "te_fl": 0,
-   "te_h": 4,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_model_curve": 7483,
-   "b_cclane": 57713,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 18.2,
-   "mem": 75.4,
-   "swap": 7.35,
-   "st": 172567,
-   "sl": 414996,
-   "run": 3,
-   "alerts": 1,
-   "team": 9
-  },
-  {
-   "t": "2026-11-24T04:25:29Z",
-   "h_rpm": 0.6,
-   "h_arpm": 0.1,
-   "h_err": 1,
-   "h_rec": 0,
-   "h_abs": 0,
-   "h_left": 120675,
-   "h_gd": 119,
-   "h_gt": 95,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 30,
-   "c_done": 152317,
-   "c_txt": 53322,
-   "c_ppm": 8.7,
-   "c_req": 107650,
-   "c_rpm": 8.9,
-   "c_match": 66624,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 251,
-   "s1_fl": 1,
-   "s1_h": 2,
-   "te": 193,
-   "te_fl": 0,
-   "te_h": 4,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_model_curve": 7483,
-   "b_cclane": 57713,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 18.2,
-   "mem": 74.8,
-   "swap": 7.31,
-   "st": 172567,
-   "sl": 414996,
-   "run": 3,
-   "alerts": 1,
-   "team": 9
-  },
-  {
-   "t": "2026-11-24T04:26:28Z",
-   "h_rpm": 0.6,
-   "h_arpm": 0.1,
-   "h_err": 1,
-   "h_rec": 0,
-   "h_abs": 0,
-   "h_left": 120675,
-   "h_gd": 119,
-   "h_gt": 95,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 30,
-   "c_done": 152337,
-   "c_txt": 53338,
-   "c_ppm": 9.0,
-   "c_req": 107659,
-   "c_rpm": 9.0,
-   "c_match": 66641,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 251,
-   "s1_fl": 1,
-   "s1_h": 2,
-   "te": 193,
-   "te_fl": 0,
-   "te_h": 4,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_model_curve": 7483,
-   "b_cclane": 57713,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 18.1,
-   "mem": 70.6,
-   "swap": 7.29,
-   "st": 172567,
-   "sl": 414996,
-   "run": 3,
-   "alerts": 1,
-   "team": 9
-  },
-  {
-   "t": "2026-11-24T04:27:28Z",
-   "h_rpm": 0.6,
-   "h_arpm": 0.1,
-   "h_err": 1,
-   "h_rec": 0,
-   "h_abs": 0,
-   "h_left": 120675,
-   "h_gd": 119,
-   "h_gt": 95,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 30,
-   "c_done": 152357,
-   "c_txt": 53358,
-   "c_ppm": 9.3,
-   "c_req": 107668,
-   "c_rpm": 8.9,
-   "c_match": 66661,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 251,
-   "s1_fl": 1,
-   "s1_h": 2,
-   "te": 193,
-   "te_fl": 0,
-   "te_h": 4,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_model_curve": 7483,
-   "b_cclane": 57713,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 18.1,
-   "mem": 75.8,
-   "swap": 7.27,
-   "st": 172567,
-   "sl": 414996,
-   "run": 3,
-   "alerts": 1,
-   "team": 9
-  },
-  {
-   "t": "2026-11-24T04:28:29Z",
-   "h_rpm": 0.6,
-   "h_arpm": 0.1,
-   "h_err": 1,
-   "h_rec": 0,
-   "h_abs": 0,
-   "h_left": 120675,
-   "h_gd": 119,
-   "h_gt": 95,
-   "h_pass": 531,
-   "h_wk": 1,
-   "h_ws": 30,
-   "c_done": 152377,
-   "c_txt": 53372,
-   "c_ppm": 9.7,
-   "c_req": 107678,
-   "c_rpm": 9.0,
-   "c_match": 66675,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 251,
-   "s1_fl": 1,
-   "s1_h": 2,
-   "te": 193,
-   "te_fl": 105,
-   "te_h": 4,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_model_curve": 7483,
-   "b_cclane": 57713,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 18.1,
-   "mem": 71.8,
-   "swap": 7.09,
-   "st": 172567,
-   "sl": 414996,
-   "run": 3,
-   "alerts": 1,
-   "team": 220
-  },
   {
    "t": "2026-11-24T04:29:28Z",
    "h_rpm": 0.7,
@@ -7287,6 +5951,241 @@
    "run": 3,
    "alerts": 1,
    "team": 276
+  },
+  {
+   "t": "2026-11-24T05:05:48Z",
+   "h_rpm": 0.4,
+   "h_arpm": 0.1,
+   "h_err": 1,
+   "h_rec": 0,
+   "h_abs": 0,
+   "h_left": 120635,
+   "h_gd": 120,
+   "h_gt": 95,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 30,
+   "c_done": 152657,
+   "c_txt": 53484,
+   "c_ppm": 9.3,
+   "c_req": 107868,
+   "c_rpm": 0.1,
+   "c_match": 66812,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 252,
+   "s1_fl": 12,
+   "s1_h": 2,
+   "te": 194,
+   "te_fl": 109,
+   "te_h": 4,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_model_curve": 7483,
+   "b_cclane": 57713,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 18.1,
+   "mem": 75.4,
+   "swap": 6.32,
+   "st": 172667,
+   "sl": 415096,
+   "run": 3,
+   "alerts": 1,
+   "team": 276
+  },
+  {
+   "t": "2026-11-24T05:06:42Z",
+   "h_rpm": 0.4,
+   "h_arpm": 0.1,
+   "h_err": 1,
+   "h_rec": 0,
+   "h_abs": 0,
+   "h_left": 120635,
+   "h_gd": 120,
+   "h_gt": 95,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 30,
+   "c_done": 152657,
+   "c_txt": 53484,
+   "c_ppm": 9.0,
+   "c_req": 107873,
+   "c_rpm": 0.6,
+   "c_match": 66812,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 252,
+   "s1_fl": 12,
+   "s1_h": 2,
+   "te": 194,
+   "te_fl": 109,
+   "te_h": 4,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_model_curve": 7483,
+   "b_cclane": 57713,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 18.1,
+   "mem": 75.4,
+   "swap": 6.32,
+   "st": 172667,
+   "sl": 415096,
+   "run": 3,
+   "alerts": 1,
+   "team": 276
+  },
+  {
+   "t": "2026-11-24T05:07:42Z",
+   "h_rpm": 0.4,
+   "h_arpm": 0.2,
+   "h_err": 2,
+   "h_rec": 0,
+   "h_abs": 0,
+   "h_left": 120635,
+   "h_gd": 120,
+   "h_gt": 95,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 30,
+   "c_done": 152677,
+   "c_txt": 53484,
+   "c_ppm": 9.3,
+   "c_req": 107879,
+   "c_rpm": 1.2,
+   "c_match": 66813,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 252,
+   "s1_fl": 11,
+   "s1_h": 2,
+   "te": 194,
+   "te_fl": 109,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_model_curve": 7483,
+   "b_cclane": 57713,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 18.1,
+   "mem": 74.4,
+   "swap": 6.32,
+   "st": 172667,
+   "sl": 415096,
+   "run": 3,
+   "alerts": 1,
+   "team": 273
+  },
+  {
+   "t": "2026-11-24T05:08:57Z",
+   "h_rpm": 0.5,
+   "h_arpm": 0.2,
+   "h_err": 2,
+   "h_rec": 0,
+   "h_abs": 0,
+   "h_left": 120635,
+   "h_gd": 120,
+   "h_gt": 95,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 30,
+   "c_done": 152677,
+   "c_txt": 53484,
+   "c_ppm": 9.0,
+   "c_req": 107887,
+   "c_rpm": 2.0,
+   "c_match": 66813,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 252,
+   "s1_fl": 11,
+   "s1_h": 2,
+   "te": 194,
+   "te_fl": 109,
+   "te_h": 3,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_model_curve": 7483,
+   "b_cclane": 57713,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 18.1,
+   "mem": 76.0,
+   "swap": 6.32,
+   "st": 172667,
+   "sl": 415096,
+   "run": 3,
+   "alerts": 1,
+   "team": 270
+  },
+  {
+   "t": "2026-11-24T05:24:53Z",
+   "h_rpm": 0.0,
+   "h_arpm": 0.0,
+   "h_err": 0,
+   "h_rec": 0,
+   "h_abs": 0,
+   "h_left": 120635,
+   "h_gd": 120,
+   "h_gt": 95,
+   "h_pass": 531,
+   "h_wk": 1,
+   "h_ws": 30,
+   "c_done": 152677,
+   "c_txt": 53484,
+   "c_ppm": 6.3,
+   "c_req": 107887,
+   "c_rpm": 0.0,
+   "c_match": 66813,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 252,
+   "s1_fl": 0,
+   "s1_h": 0,
+   "te": 194,
+   "te_fl": 0,
+   "te_h": 0,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_model_curve": 7483,
+   "b_cclane": 57713,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 18.1,
+   "mem": 74.5,
+   "swap": 6.31,
+   "st": 172667,
+   "sl": 415096,
+   "run": 3,
+   "alerts": 1,
+   "team": 0
   }
  ]
 }
