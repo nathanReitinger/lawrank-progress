@@ -1,6 +1,6 @@
 {
  "schema": "lawrank-progress status 2",
- "generated_at": "2026-11-25T14:04:42Z",
+ "generated_at": "2026-11-25T14:18:52Z",
  "project": {
   "name": "Law review subject tags",
   "tagline": "Every law review paper on our list gets its abstract or first pages; our own model then tags each paper with its subjects, and the tags go paper -> professor -> school on the law school rankings site.",
@@ -135,7 +135,7 @@
       },
       "eta": {
        "seconds": 41329705,
-       "at": "2028-03-17T22:33:08Z",
+       "at": "2028-03-17T22:47:18Z",
        "basis": "papers in the last 60 minutes"
       },
       "last_activity": "2026-11-25T13:42:26Z"
@@ -159,7 +159,7 @@
        "since": "2026-11-13"
       },
       "eta": {
-       "seconds": 2722627,
+       "seconds": 2721777,
        "at": "2026-12-27T02:21:50Z",
        "basis": "the harvest's own estimate (23.7 s a paper)"
       },
@@ -240,8 +240,8 @@
      "detail": "10,000 training papers, one coder each; 2,000 of them coded a second time in a later window (SILVER-VAL).",
      "needs": "About 7-8 five-hour usage windows (about 40 units a window), one coding workflow per window; the doubled 2,000 only in a window after the first pass is final.",
      "live": {
-      "state": "running",
-      "health": "ok",
+      "state": "idle",
+      "health": "warn",
       "progress": {
        "done": 265,
        "total": 317,
@@ -250,10 +250,10 @@
       },
       "eta": {
        "seconds": 408436,
-       "at": "2026-11-30T07:31:59Z",
+       "at": "2026-11-30T07:46:09Z",
        "basis": "units finished in the last 24 hours (usage windows decide)"
       },
-      "last_activity": "2026-11-25T14:04:31Z"
+      "last_activity": "2026-11-25T12:04:44Z"
      }
     },
     {
@@ -669,7 +669,7 @@
    "must_keep_running": true,
    "must_continue": false,
    "expected": "running",
-   "kept_alive_by": "the supervisor (restarts it within a few minutes; by hand: lawrank start harvest)",
+   "kept_alive_by": "the always-on supervisor (launchd and the lawrank commands), through its keep-alive watcher",
    "check": "python3 .recovery/tools/progress.py --watch 60",
    "stop": "lawrank stop harvest (nothing restarts it until lawrank start harvest)",
    "state": "waiting",
@@ -725,7 +725,7 @@
     "secs_each": 23.7
    },
    "eta": {
-    "seconds": 2722627,
+    "seconds": 2721777,
     "at": "2026-12-27T02:21:50Z",
     "basis": "the harvest's own estimate (23.7 s a paper)"
    },
@@ -905,7 +905,7 @@
        "detail": "first_pages",
        "at": "2026-11-25T11:57:44Z"
       },
-      "last_s_ago": 7618
+      "last_s_ago": 8468
      },
      {
       "kind": "pdf_worker",
@@ -921,7 +921,7 @@
        "at": "2026-11-25T02:19:46Z"
       },
       "group_papers": 22,
-      "last_s_ago": 42296
+      "last_s_ago": 43146
      },
      {
       "kind": "pdf_worker",
@@ -937,7 +937,7 @@
        "at": "2026-11-25T02:19:45Z"
       },
       "group_papers": 25,
-      "last_s_ago": 42297
+      "last_s_ago": 43147
      },
      {
       "kind": "pdf_worker",
@@ -953,7 +953,7 @@
        "at": "2026-11-25T02:18:34Z"
       },
       "group_papers": 882,
-      "last_s_ago": 42368
+      "last_s_ago": 43218
      },
      {
       "kind": "pdf_worker",
@@ -969,7 +969,7 @@
        "at": "2026-11-25T02:18:06Z"
       },
       "group_papers": 218,
-      "last_s_ago": 42396
+      "last_s_ago": 43246
      },
      {
       "kind": "pdf_worker",
@@ -985,7 +985,7 @@
        "at": "2026-11-25T02:16:52Z"
       },
       "group_papers": 5,
-      "last_s_ago": 42470
+      "last_s_ago": 43320
      },
      {
       "kind": "pdf_worker",
@@ -1001,7 +1001,7 @@
        "at": "2026-11-25T02:16:49Z"
       },
       "group_papers": 46,
-      "last_s_ago": 42473
+      "last_s_ago": 43323
      },
      {
       "kind": "pdf_worker",
@@ -1017,7 +1017,7 @@
        "at": "2026-11-25T02:16:47Z"
       },
       "group_papers": 11,
-      "last_s_ago": 42475
+      "last_s_ago": 43325
      },
      {
       "kind": "pdf_worker",
@@ -1033,7 +1033,7 @@
        "at": "2026-11-25T02:07:17Z"
       },
       "group_papers": 224,
-      "last_s_ago": 43045
+      "last_s_ago": 43895
      },
      {
       "kind": "pdf_worker",
@@ -1049,7 +1049,7 @@
        "at": "2026-11-25T02:06:51Z"
       },
       "group_papers": 49,
-      "last_s_ago": 43071
+      "last_s_ago": 43921
      }
     ],
     "requests_per_min": [
@@ -1071,8 +1071,8 @@
       "name": "keep_harvest.sh",
       "running": true,
       "state": "waiting",
-      "next_at": "2026-11-25T14:05:02Z",
-      "detail": "an install runs; it checks again in 20 s",
+      "next_at": "2026-11-25T14:18:52Z",
+      "detail": "an install runs; it checks again in 0 s",
       "pids": 1
      },
      {
@@ -1080,15 +1080,15 @@
       "running": true,
       "state": "sleeping",
       "next_at": "2026-11-26T01:00:14Z",
-      "detail": "asks the harvest to save and plan again in 10 h 55 min (every 24 h), so new side-store lines are used",
+      "detail": "asks the harvest to save and plan again in 10 h 41 min (every 24 h), so new side-store lines are used",
       "pids": 1,
       "every_s": 86400
      }
     ]
    },
    "eta_alt": {
-    "seconds": 4392140,
-    "at": "2027-01-15T10:07:03Z",
+    "seconds": 5071966,
+    "at": "2027-01-23T07:11:39Z",
     "basis": "the queue's fall over the last 6 hours"
    },
    "line_at": "2026-11-25T11:54:55Z"
@@ -1101,14 +1101,14 @@
    "must_keep_running": true,
    "must_continue": false,
    "expected": "running",
-   "kept_alive_by": "the supervisor (restarts it within a few minutes; by hand: lawrank start core)",
+   "kept_alive_by": "the always-on supervisor (launchd and the lawrank commands)",
    "check": "cd .recovery/s18/build/core && python3 -B -m corelane status",
    "stop": "lawrank stop core (nothing restarts it until lawrank start core)",
    "state": "running",
    "health": "ok",
    "running": true,
    "watcher_running": true,
-   "uptime_s": 859602,
+   "uptime_s": 860452,
    "last_activity": "2026-11-25T13:42:26Z",
    "rate": {
     "unit": "papers a minute",
@@ -1138,7 +1138,7 @@
    "queue": null,
    "eta": {
     "seconds": 41329705,
-    "at": "2028-03-17T22:33:08Z",
+    "at": "2028-03-17T22:47:18Z",
     "basis": "papers in the last 60 minutes"
    },
    "line": "132,735 papers in 14203 min, 97,494 requests (0.73 a paper): matched 54,792 (43,887 with a text, 8,414 a link only), review 2,505, never-source 2,350, no match 9,284, no hits 63,777, errors 13; side lines written 52,301",
@@ -1209,7 +1209,7 @@
      },
      {
       "k": "requests a minute (last 10 min)",
-      "v": 0.1
+      "v": 0.0
      },
      {
       "k": "requests in all",
@@ -1246,7 +1246,7 @@
     },
     "eta": {
      "seconds": 41329705,
-     "at": "2028-03-17T22:33:08Z",
+     "at": "2028-03-17T22:47:18Z",
      "basis": "papers in the last 60 minutes"
     },
     "outcomes": [
@@ -1299,7 +1299,7 @@
     "outcomes_other": 0,
     "requests": {
      "total": 117672,
-     "last10": 1,
+     "last10": 0,
      "last60": 10,
      "errors60": 10,
      "rate_limited60": 0,
@@ -1483,12 +1483,12 @@
    "kept_alive_by": "a coding workflow launched at the start of each usage window (coding-run-v022, run silver_s1)",
    "check": "python3 classifier/annotation/runs/coding_plan.py silver_s1",
    "stop": "",
-   "state": "running",
-   "health": "ok",
+   "state": "idle",
+   "health": "warn",
    "running": null,
    "watcher_running": null,
    "uptime_s": null,
-   "last_activity": "2026-11-25T14:04:31Z",
+   "last_activity": "2026-11-25T12:04:44Z",
    "rate": {
     "unit": "units an hour",
     "last10": null,
@@ -1513,7 +1513,7 @@
    "queue": null,
    "eta": {
     "seconds": 408436,
-    "at": "2026-11-30T07:31:59Z",
+    "at": "2026-11-30T07:46:09Z",
     "basis": "units finished in the last 24 hours (usage windows decide)"
    },
    "line": "stage s1_double: 1 of 53 units (53 batches, 1 coder(s))",
@@ -1528,8 +1528,8 @@
     "assumes": "About 7 five-hour usage windows (5.6 for the 10,000 papers, 1.1 for the doubled 2,000), one or two dedicated windows a day."
    },
    "now": {
-    "at": "2026-11-25T14:04:31Z",
-    "step": "stage s1_double: 1 of 53 units final; 1 unit(s) in flight: b273 c1 (28 s)",
+    "at": "2026-11-25T12:04:44Z",
+    "step": "stage s1_double: 1 of 53 units final; no unit in flight now (it waits for the next coding workflow or usage window)",
     "bars": [
      {
       "id": "units",
@@ -1559,7 +1559,7 @@
     "facts": [
      {
       "k": "units in flight now",
-      "v": 1
+      "v": 0
      },
      {
       "k": "units finished (last 60 min)",
@@ -1570,17 +1570,7 @@
       "v": 11
      }
     ],
-    "in_flight": [
-     {
-      "unit": "b273:c1",
-      "batch": "b273",
-      "coder": "c1",
-      "stage": "s1_double",
-      "started_at": "2026-11-25T14:04:14Z",
-      "running_s": 28,
-      "quiet_s": 10
-     }
-    ],
+    "in_flight": [],
     "finished_last_hour": 0,
     "recent_units": [
      {
@@ -1752,7 +1742,7 @@
     ],
     "serving": true,
     "port": 8765,
-    "port_checked_at": "2026-11-25T14:04:42Z",
+    "port_checked_at": "2026-11-25T14:18:52Z",
     "metrics_at": "2026-11-15T00:24:02Z",
     "model_card_at": "2026-11-15T05:35:12Z",
     "page_code": true
@@ -1824,7 +1814,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 2395,
+      "v": 3245,
       "unit": "s"
      }
     ],
@@ -1842,7 +1832,7 @@
      "unit": "final silver items",
      "note": "silver S1 is complete: the curve has its last point for monitor_v3; silver S1: 264 of 264 batches final, 264 coded",
      "at": "2026-11-25T13:24:47Z",
-     "age_s": 2395,
+     "age_s": 3245,
      "started_at": "2026-11-16T11:31:34Z",
      "seq": 285,
      "every_s": 3900,
@@ -1890,7 +1880,7 @@
    "estimate": null,
    "now": {
     "at": "2026-11-25T12:08:04Z",
-    "step": "reading first pages: 1,423 texts so far (no heartbeat for 1 h 56 min)",
+    "step": "reading first pages: 1,423 texts so far (no heartbeat for 2 h 10 min)",
     "bars": [
      {
       "id": "progress",
@@ -1912,7 +1902,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 6998,
+      "v": 7848,
       "unit": "s"
      }
     ],
@@ -1930,7 +1920,7 @@
      "unit": "targets",
      "note": "2,960 requests this run; 125 held",
      "at": "2026-11-25T12:08:04Z",
-     "age_s": 6998,
+     "age_s": 7848,
      "started_at": "2026-11-25T00:43:23Z",
      "seq": 1182,
      "every_s": 60,
@@ -1998,7 +1988,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 142986,
+      "v": 143836,
       "unit": "s"
      }
     ],
@@ -2016,7 +2006,7 @@
      "unit": "papers",
      "note": "",
      "at": "2026-11-23T22:21:36Z",
-     "age_s": 142986,
+     "age_s": 143836,
      "started_at": "2026-11-23T08:28:11Z",
      "seq": 5662,
      "every_s": 60,
@@ -2064,7 +2054,7 @@
     "facts": [
      {
       "k": "seconds since the last heartbeat",
-      "v": 466843,
+      "v": 467693,
       "unit": "s"
      }
     ],
@@ -2082,7 +2072,7 @@
      "unit": "",
      "note": "init_from of configs/ulmfit/o7_ulmfit.json",
      "at": "2026-11-20T04:23:59Z",
-     "age_s": 466843,
+     "age_s": 467693,
      "started_at": "2026-11-20T04:23:59Z",
      "seq": null,
      "every_s": 60,
@@ -2160,7 +2150,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 710492,
+      "v": 711342,
       "unit": "s"
      }
     ],
@@ -2178,7 +2168,7 @@
      "unit": "parts",
      "note": "bake-off and contest training refuse them (leakage gate check); learning-curve monitor v2 trains without them (2,868 of 2,884 silver items); next pretraining pool drops 1,556; held-out sets unchanged",
      "at": "2026-11-17T08:43:10Z",
-     "age_s": 710492,
+     "age_s": 711342,
      "started_at": "2026-11-16T11:19:24Z",
      "seq": 145,
      "every_s": null,
@@ -2248,7 +2238,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 710638,
+      "v": 711488,
       "unit": "s"
      }
     ],
@@ -2266,7 +2256,7 @@
      "unit": "checks",
      "note": "own code; near-duplicate pairs in scope 0, same-work titles 0, exact copies 0; tokens identical to pool v2 texts; counts only",
      "at": "2026-11-17T08:40:44Z",
-     "age_s": 710638,
+     "age_s": 711488,
      "started_at": "2026-11-17T02:55:00Z",
      "seq": null,
      "every_s": 1800,
@@ -2344,7 +2334,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 766683,
+      "v": 767533,
       "unit": "s"
      }
     ],
@@ -2362,7 +2352,7 @@
      "unit": "checks",
      "note": "attempt 3 (own code); 5 of 5 checks; counts only",
      "at": "2026-11-16T17:06:39Z",
-     "age_s": 766683,
+     "age_s": 767533,
      "started_at": "2026-11-16T11:33:07Z",
      "seq": null,
      "every_s": 1800,
@@ -2406,7 +2396,7 @@
    "queue": null,
    "eta": {
     "seconds": 1061,
-    "at": "2026-11-25T14:22:24Z",
+    "at": "2026-11-25T14:36:34Z",
     "basis": "its pace between its last two heartbeats"
    },
    "line": "weak_v1 finished: coverage, quality against silver S1 (95 of 264 batches final), R3/R4 recommendation",
@@ -2444,7 +2434,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 768418,
+      "v": 769268,
       "unit": "s"
      }
     ],
@@ -2462,7 +2452,7 @@
      "unit": "TRAIN rows whose weak labels may train",
      "note": "71 of 78 leaves reached; random part, train-use rows (n 1,033): precision 0.454 (0.370-0.521), recall 0.551 (0.494-0.596), silver rank-1 group among weak groups 0.822; 39,205 train-use rows incl. TRAIN_EXT",
      "at": "2026-11-16T16:37:44Z",
-     "age_s": 768418,
+     "age_s": 769268,
      "started_at": "2026-11-16T16:19:02Z",
      "seq": 9,
      "every_s": null,
@@ -2470,7 +2460,7 @@
      "rate_per_min": 1450.34,
      "eta": {
       "seconds": 1061,
-      "at": "2026-11-25T14:22:24Z",
+      "at": "2026-11-25T14:36:34Z",
       "basis": "its pace between its last two heartbeats"
      }
     }
@@ -2544,7 +2534,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 853053,
+      "v": 853903,
       "unit": "s"
      }
     ],
@@ -2562,7 +2552,7 @@
      "unit": "rows",
      "note": "245,499 rows; 162,098 abstracts and 160,514 titles encoded, the rest reused from corpus_v0",
      "at": "2026-11-15T17:07:09Z",
-     "age_s": 853053,
+     "age_s": 853903,
      "started_at": "2026-11-15T10:53:06Z",
      "seq": 377,
      "every_s": 60,
@@ -2632,7 +2622,7 @@
      },
      {
       "k": "seconds since the last heartbeat",
-      "v": 872226,
+      "v": 873076,
       "unit": "s"
      }
     ],
@@ -2650,7 +2640,7 @@
      "unit": "steps",
      "note": "corpus_v1 and split_v1_ext written",
      "at": "2026-11-15T11:47:36Z",
-     "age_s": 872226,
+     "age_s": 873076,
      "started_at": null,
      "seq": null,
      "every_s": null,
@@ -2670,7 +2660,7 @@
    "must_keep_running": true,
    "must_continue": false,
    "expected": "running",
-   "kept_alive_by": "the supervisor (restarts it within a few minutes; by hand: lawrank start updater)",
+   "kept_alive_by": "the always-on supervisor (launchd and the lawrank commands), through keep_updater.sh",
    "check": "lawrank status updater",
    "stop": "lawrank stop updater",
    "state": "running",
@@ -2678,7 +2668,7 @@
    "running": true,
    "watcher_running": true,
    "uptime_s": null,
-   "last_activity": "2026-11-25T14:03:43Z",
+   "last_activity": "2026-11-25T14:08:42Z",
    "rate": null,
    "rates": [],
    "progress": null,
@@ -2688,11 +2678,11 @@
    "details": [
     {
      "k": "last push of the page (main)",
-     "v": "2026-11-25T13:54:46Z (failed)"
+     "v": "2026-11-25T14:04:46Z (failed)"
     },
     {
      "k": "last push of the live data",
-     "v": "2026-11-25T14:03:43Z (failed)"
+     "v": "2026-11-25T14:08:43Z (failed)"
     },
     {
      "k": "last scan",
@@ -2700,20 +2690,20 @@
     },
     {
      "k": "cycles",
-     "v": "13,239"
+     "v": "13,244"
     }
    ],
    "notes": [],
    "spark": null,
    "estimate": null,
    "now": {
-    "at": "2026-11-25T14:03:43Z",
-    "step": "Cycle 13,239; live data pushed 59 s ago (failed); the page (main) pushed 9 min 56 s ago",
+    "at": "2026-11-25T14:08:42Z",
+    "step": "Cycle 13,244; live data pushed 10 min 9 s ago (failed); the page (main) pushed 14 min 6 s ago",
     "bars": [],
     "facts": [
      {
       "k": "cycles",
-      "v": 13239
+      "v": 13244
      },
      {
       "k": "seconds between cycles",
@@ -2726,35 +2716,35 @@
      },
      {
       "k": "live pushes failed in a row",
-      "v": 44
+      "v": 49
      },
      {
       "k": "seconds the last live push took",
-      "v": 0,
+      "v": 1,
       "unit": "s"
      },
      {
       "k": "main pushes failed in a row",
-      "v": 8
+      "v": 9
      }
     ],
     "live": {
      "branch": "live",
-     "at": "2026-11-25T14:03:43Z",
+     "at": "2026-11-25T14:08:43Z",
      "ok": false,
-     "failures": 44,
+     "failures": 49,
      "pushes": 12674,
-     "secs": 0,
+     "secs": 1,
      "scan": "ok"
     },
     "main": {
-     "at": "2026-11-25T13:54:46Z",
+     "at": "2026-11-25T14:04:46Z",
      "ok": false,
-     "failures": 8,
+     "failures": 9,
      "every_s": 600,
-     "next_at": "2026-11-25T14:04:46Z"
+     "next_at": "2026-11-25T14:14:46Z"
     },
-    "notes_read_at": "2026-11-25T14:04:42Z",
+    "notes_read_at": "2026-11-25T14:18:52Z",
     "watchers": [
      {
       "name": "keep_updater.sh",
@@ -3549,7 +3539,7 @@
   {
    "severity": "critical",
    "job": "updater",
-   "text": "The last 8 pushes of the page failed; it is not being updated.",
+   "text": "The last 9 pushes of the page failed; it is not being updated.",
    "since": null
   },
   {
@@ -3566,18 +3556,36 @@
   },
   {
    "severity": "warn",
+   "job": "coding_s1",
+   "text": "Silver S1 coding: no unit finished for 2.2 h; it waits for a usage window, or no coding workflow is running.",
+   "since": "2026-11-25T12:04:44Z"
+  },
+  {
+   "severity": "warn",
    "job": "updater",
-   "text": "The last 44 live-data pushes failed; the page falls back to its 10-minute copy.",
+   "text": "The last 49 live-data pushes failed; the page falls back to its 10-minute copy.",
+   "since": null
+  },
+  {
+   "severity": "info",
+   "job": "machine",
+   "text": "The keep-alive supervisor is on but has not checked for 10 min: macOS holds background checks back while the Mac is idle or locked. Nothing to do.",
    "since": null
   },
   {
    "severity": "info",
    "job": "ejclane",
-   "text": "Early Journal Content lane: no heartbeat for 1 h 56 min.",
+   "text": "Early Journal Content lane: no heartbeat for 2 h 10 min.",
    "since": "2026-11-25T12:08:04Z"
   }
  ],
  "events": [
+  {
+   "t": "2026-11-25T14:04:46Z",
+   "job": "updater",
+   "kind": "updater",
+   "text": "push failed (rc 128): the commits wait here and the push is tried again in 10 minutes"
+  },
   {
    "t": "2026-11-25T13:54:46Z",
    "job": "updater",
@@ -3931,20 +3939,14 @@
    "job": "harvest",
    "kind": "start",
    "text": "Journal harvest started running"
-  },
-  {
-   "t": "2026-11-22T17:34:12Z",
-   "job": "harvest",
-   "kind": "stop",
-   "text": "Journal harvest stopped running"
   }
  ],
  "machine": {
-  "disk_free_gb": 52.4,
-  "memory_pct": 78.7,
+  "disk_free_gb": 53.9,
+  "memory_pct": 75.6,
   "memory_source": "vm_stat (free + inactive counted as available)",
-  "swap_used_gb": 6.63,
-  "load_1m": 7.16
+  "swap_used_gb": 6.56,
+  "load_1m": 12.98
  },
  "links": [
   {
@@ -4027,10 +4029,10 @@
  "collector": {
   "version": "2",
   "mode": "full",
-  "seconds": 0.54,
-  "max_rss_mb": 54.5,
+  "seconds": 0.79,
+  "max_rss_mb": 54.4,
   "errors": [],
-  "history_points": 1707,
+  "history_points": 1698,
   "note": "read-only; a cycle every minute when the updater runs (data on the live branch every minute, the page on GitHub Pages every 10 minutes)"
  },
  "live": {
@@ -4039,12 +4041,12 @@
   "main_every_s": 600,
   "poll_s": 75,
   "notes_every_s": 300,
-  "seq": 13240
+  "seq": 13245
  },
  "team": {
   "agents_in_flight": 4,
-  "coding_units_in_flight": 1,
-  "other_agents_in_flight": 3,
+  "coding_units_in_flight": 0,
+  "other_agents_in_flight": 4,
   "workflows_active": 3,
   "journals_read": 33,
   "open_without_activity": 497
@@ -4063,7 +4065,7 @@
   "items": [],
   "count": 0,
   "withheld": 0,
-  "read_at": "2026-11-25T14:04:42Z",
+  "read_at": "2026-11-25T14:18:52Z",
   "read_ok": false,
   "every_s": 300
  },
@@ -4072,11 +4074,11 @@
   "sentence": "This page cannot start programs on the Mac; the supervisor restarts anything that stops within a few minutes, unless you stopped it on purpose.",
   "how": "To run a command by hand: open Terminal on the Mac, paste the command, press Return.",
   "supervisor": {
-   "state": "running",
-   "at": "2026-11-25T14:04:21Z",
-   "age_s": 21,
+   "state": "stale",
+   "at": "2026-11-25T14:08:34Z",
+   "age_s": 618,
    "every_s": 120,
-   "restart_within_s": 240,
+   "restart_within_s": null,
    "auto_restart": true,
    "version": "lawrank-supervisor status 1",
    "run_by": "launchd",
@@ -4084,7 +4086,7 @@
    "problem": null,
    "switch_on": true
   },
-  "warning": null,
+  "warning": "The supervisor is on, but macOS has not let it check for 10 min (it holds background checks back while the Mac is idle or locked). The jobs keep running and their own watchers restart them; the supervisor catches up by itself. Nothing to do.",
   "jobs": [
    {
     "name": "harvest",
@@ -4094,21 +4096,21 @@
     "running": false,
     "seen_running": false,
     "auto_restart": true,
-    "auto_by": "supervisor",
+    "auto_by": "watcher",
     "stopped_on_purpose": null,
-    "last_restart_at": "2026-11-16T15:24:03Z",
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": null,
     "next_try_at": null,
-    "last_start_by": "supervisor",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": true,
-    "pids": 1,
-    "last_seen_running_at": "2026-11-25T14:04:21Z",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": null,
     "suggest": null,
-    "note": null,
+    "note": "its Terminal watcher restarts it (the supervisor is not reporting)",
     "commands": [
      {
       "id": "start",
@@ -4140,21 +4142,21 @@
     "running": true,
     "seen_running": true,
     "auto_restart": true,
-    "auto_by": "supervisor",
+    "auto_by": "watcher",
     "stopped_on_purpose": null,
-    "last_restart_at": "2026-11-15T15:17:59Z",
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": "2026-11-15T15:18:00Z",
     "next_try_at": null,
-    "last_start_by": "supervisor",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": true,
-    "pids": 4,
-    "last_seen_running_at": "2026-11-25T14:04:42Z",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": "2026-11-25T14:18:52Z",
     "suggest": null,
-    "note": null,
+    "note": "its Terminal watcher restarts it (the supervisor is not reporting)",
     "commands": [
      {
       "id": "start",
@@ -4185,20 +4187,20 @@
     "state": "running",
     "running": true,
     "seen_running": true,
-    "auto_restart": true,
-    "auto_by": "supervisor",
+    "auto_restart": null,
+    "auto_by": null,
     "stopped_on_purpose": null,
-    "last_restart_at": "2026-11-15T15:21:40Z",
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": "2026-11-15T15:21:41Z",
     "next_try_at": null,
-    "last_start_by": "owner",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": true,
-    "pids": 1,
-    "last_seen_running_at": "2026-11-25T14:04:42Z",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": "2026-11-25T14:18:52Z",
     "suggest": null,
     "note": null,
     "commands": [
@@ -4232,21 +4234,21 @@
     "running": true,
     "seen_running": true,
     "auto_restart": true,
-    "auto_by": "supervisor",
+    "auto_by": "watcher",
     "stopped_on_purpose": null,
-    "last_restart_at": "2026-11-15T00:44:56Z",
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": "2026-11-15T11:23:43Z",
     "next_try_at": null,
-    "last_start_by": "supervisor",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": true,
-    "pids": 2,
-    "last_seen_running_at": "2026-11-25T14:04:42Z",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": "2026-11-25T14:18:52Z",
     "suggest": null,
-    "note": null,
+    "note": "its Terminal watcher restarts it (the supervisor is not reporting)",
     "commands": [
      {
       "id": "start",
@@ -4274,25 +4276,25 @@
     "name": "embed_v1",
     "label": "corpus_v1 encodings (GPU + CPU)",
     "job": null,
-    "state": "stopped_on_purpose",
-    "running": false,
+    "state": "unknown",
+    "running": null,
     "seen_running": null,
-    "auto_restart": false,
+    "auto_restart": null,
     "auto_by": null,
-    "stopped_on_purpose": true,
+    "stopped_on_purpose": null,
     "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": null,
     "next_try_at": null,
     "last_start_by": null,
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": false,
-    "pids": 0,
-    "last_seen_running_at": "2026-11-15T17:06:31Z",
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": null,
     "suggest": null,
-    "note": "finished: its work is done, so nothing starts it again",
+    "note": null,
     "commands": [
      {
       "id": "start",
@@ -4320,23 +4322,23 @@
     "name": "preview",
     "label": "preview test page (private over Tailscale)",
     "job": "preview",
-    "state": "running",
-    "running": true,
+    "state": "unknown",
+    "running": null,
     "seen_running": null,
-    "auto_restart": true,
-    "auto_by": "supervisor",
+    "auto_restart": null,
+    "auto_by": null,
     "stopped_on_purpose": null,
-    "last_restart_at": "2026-11-23T16:59:44Z",
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": null,
     "next_try_at": null,
-    "last_start_by": "supervisor",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": true,
-    "pids": 2,
-    "last_seen_running_at": "2026-11-25T14:04:42Z",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": null,
     "suggest": null,
     "note": null,
     "commands": [
@@ -4366,25 +4368,25 @@
     "name": "ulmfit_lm",
     "label": "ULMFiT language-model pretraining (GPU)",
     "job": null,
-    "state": "stopped_on_purpose",
-    "running": false,
+    "state": "unknown",
+    "running": null,
     "seen_running": null,
-    "auto_restart": false,
+    "auto_restart": null,
     "auto_by": null,
-    "stopped_on_purpose": true,
-    "last_restart_at": "2026-11-20T04:24:41Z",
+    "stopped_on_purpose": null,
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": null,
     "next_try_at": null,
-    "last_start_by": "supervisor",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": false,
-    "pids": 0,
-    "last_seen_running_at": "2026-11-20T04:22:32Z",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": null,
     "suggest": null,
-    "note": "finished: its work is done, so nothing starts it again",
+    "note": null,
     "commands": [
      {
       "id": "start",
@@ -4412,23 +4414,23 @@
     "name": "monitor",
     "label": "learning-curve monitor (silver S1)",
     "job": null,
-    "state": "running",
-    "running": true,
+    "state": "unknown",
+    "running": null,
     "seen_running": null,
-    "auto_restart": true,
-    "auto_by": "supervisor",
+    "auto_restart": null,
+    "auto_by": null,
     "stopped_on_purpose": null,
-    "last_restart_at": "2026-11-17T23:46:09Z",
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": null,
     "next_try_at": null,
-    "last_start_by": "owner",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": true,
-    "pids": 1,
-    "last_seen_running_at": "2026-11-25T14:04:42Z",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": null,
     "suggest": null,
     "note": null,
     "commands": [
@@ -4458,25 +4460,25 @@
     "name": "labeling",
     "label": "owner labeling app (private over Tailscale)",
     "job": null,
-    "state": "stopped_on_purpose",
-    "running": false,
+    "state": "unknown",
+    "running": null,
     "seen_running": null,
-    "auto_restart": false,
+    "auto_restart": null,
     "auto_by": null,
-    "stopped_on_purpose": true,
-    "last_restart_at": "2026-11-18T21:20:58Z",
+    "stopped_on_purpose": null,
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": null,
     "next_try_at": null,
-    "last_start_by": "owner",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": false,
-    "pids": 0,
-    "last_seen_running_at": "2026-11-20T05:02:10Z",
-    "suggest": "lawrank start labeling",
-    "note": "stopped by the owner; not started again until lawrank start",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": null,
+    "suggest": null,
+    "note": null,
     "commands": [
      {
       "id": "start",
@@ -4504,23 +4506,23 @@
     "name": "leads",
     "label": "gap-journal leads lane",
     "job": null,
-    "state": "running",
-    "running": true,
+    "state": "unknown",
+    "running": null,
     "seen_running": null,
-    "auto_restart": true,
-    "auto_by": "supervisor",
+    "auto_restart": null,
+    "auto_by": null,
     "stopped_on_purpose": null,
-    "last_restart_at": "2026-11-25T04:44:52Z",
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": null,
     "next_try_at": null,
-    "last_start_by": "supervisor",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": true,
-    "pids": 4,
-    "last_seen_running_at": "2026-11-25T14:04:42Z",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": null,
     "suggest": null,
     "note": null,
     "commands": [
@@ -4550,25 +4552,25 @@
     "name": "cclane",
     "label": "Common Crawl lane",
     "job": null,
-    "state": "stopped_on_purpose",
-    "running": false,
+    "state": "unknown",
+    "running": null,
     "seen_running": null,
-    "auto_restart": false,
+    "auto_restart": null,
     "auto_by": null,
-    "stopped_on_purpose": true,
-    "last_restart_at": "2026-11-21T16:42:56Z",
+    "stopped_on_purpose": null,
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": null,
     "next_try_at": null,
-    "last_start_by": "owner",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": false,
-    "pids": 0,
-    "last_seen_running_at": "2026-11-23T22:20:45Z",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": null,
     "suggest": null,
-    "note": "finished: its work is done, so nothing starts it again",
+    "note": null,
     "commands": [
      {
       "id": "start",
@@ -4596,23 +4598,23 @@
     "name": "ejclane",
     "label": "Early Journal Content lane",
     "job": null,
-    "state": "running",
-    "running": true,
+    "state": "unknown",
+    "running": null,
     "seen_running": null,
-    "auto_restart": true,
-    "auto_by": "supervisor",
+    "auto_restart": null,
+    "auto_by": null,
     "stopped_on_purpose": null,
-    "last_restart_at": "2026-11-25T00:43:19Z",
+    "last_restart_at": null,
     "restarts_24h": null,
-    "last_check_at": "2026-11-25T14:04:21Z",
+    "last_check_at": null,
     "pid_since": null,
     "next_try_at": null,
-    "last_start_by": "owner",
-    "starts_today": 0,
-    "failed_starts": 0,
-    "watcher_running": true,
-    "pids": 4,
-    "last_seen_running_at": "2026-11-25T14:04:42Z",
+    "last_start_by": null,
+    "starts_today": null,
+    "failed_starts": null,
+    "watcher_running": null,
+    "pids": null,
+    "last_seen_running_at": null,
     "suggest": null,
     "note": null,
     "commands": [
@@ -4697,253 +4699,13 @@
   ],
   "counts": {
    "jobs": 12,
-   "running": 7,
-   "stopped": 5,
-   "stopped_on_purpose": 4,
-   "auto_restart_on": 8
+   "running": 3,
+   "stopped": 1,
+   "stopped_on_purpose": 0,
+   "auto_restart_on": 3
   }
  },
  "recent": [
-  {
-   "t": "2026-11-25T13:35:41Z",
-   "h_rpm": 0.0,
-   "h_arpm": 0.0,
-   "h_err": 0,
-   "h_rec": 16,
-   "h_abs": 2,
-   "h_left": 115144,
-   "h_gd": 1534,
-   "h_gt": 979,
-   "h_pass": 532,
-   "h_wk": 0,
-   "h_ws": 35,
-   "c_done": 165255,
-   "c_txt": 57006,
-   "c_ppm": 0.0,
-   "c_req": 117672,
-   "c_rpm": 0.2,
-   "c_match": 71166,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 265,
-   "s1_fl": 1,
-   "s1_h": 0,
-   "te": 219,
-   "te_fl": 2,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_model_curve": 7959,
-   "b_ejclane": 1548,
-   "b_cclane": 57713,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 19.3,
-   "mem": 79.0,
-   "swap": 6.11,
-   "st": 175188,
-   "sl": 417631,
-   "run": 3,
-   "alerts": 5,
-   "team": 4
-  },
-  {
-   "t": "2026-11-25T13:36:41Z",
-   "h_rpm": 0.0,
-   "h_arpm": 0.0,
-   "h_err": 0,
-   "h_rec": 16,
-   "h_abs": 2,
-   "h_left": 115144,
-   "h_gd": 1534,
-   "h_gt": 979,
-   "h_pass": 532,
-   "h_wk": 0,
-   "h_ws": 35,
-   "c_done": 165255,
-   "c_txt": 57006,
-   "c_ppm": 0.0,
-   "c_req": 117672,
-   "c_rpm": 0.2,
-   "c_match": 71166,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 265,
-   "s1_fl": 1,
-   "s1_h": 0,
-   "te": 219,
-   "te_fl": 2,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_model_curve": 7959,
-   "b_ejclane": 1548,
-   "b_cclane": 57713,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 19.3,
-   "mem": 78.7,
-   "swap": 6.1,
-   "st": 175188,
-   "sl": 417631,
-   "run": 3,
-   "alerts": 5,
-   "team": 4
-  },
-  {
-   "t": "2026-11-25T13:37:41Z",
-   "h_rpm": 0.0,
-   "h_arpm": 0.0,
-   "h_err": 0,
-   "h_rec": 16,
-   "h_abs": 2,
-   "h_left": 115144,
-   "h_gd": 1534,
-   "h_gt": 979,
-   "h_pass": 532,
-   "h_wk": 0,
-   "h_ws": 35,
-   "c_done": 165255,
-   "c_txt": 57006,
-   "c_ppm": 0.0,
-   "c_req": 117672,
-   "c_rpm": 0.1,
-   "c_match": 71166,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 265,
-   "s1_fl": 0,
-   "s1_h": 0,
-   "te": 219,
-   "te_fl": 0,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_model_curve": 7959,
-   "b_ejclane": 1548,
-   "b_cclane": 57713,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 19.3,
-   "mem": 80.9,
-   "swap": 6.1,
-   "st": 175188,
-   "sl": 417631,
-   "run": 3,
-   "alerts": 5,
-   "team": 3
-  },
-  {
-   "t": "2026-11-25T13:38:41Z",
-   "h_rpm": 0.0,
-   "h_arpm": 0.0,
-   "h_err": 0,
-   "h_rec": 16,
-   "h_abs": 2,
-   "h_left": 115144,
-   "h_gd": 1534,
-   "h_gt": 979,
-   "h_pass": 532,
-   "h_wk": 0,
-   "h_ws": 35,
-   "c_done": 165255,
-   "c_txt": 57006,
-   "c_ppm": 0.0,
-   "c_req": 117672,
-   "c_rpm": 0.1,
-   "c_match": 71166,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 265,
-   "s1_fl": 0,
-   "s1_h": 0,
-   "te": 219,
-   "te_fl": 0,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_model_curve": 7959,
-   "b_ejclane": 1548,
-   "b_cclane": 57713,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 19.2,
-   "mem": 79.1,
-   "swap": 6.09,
-   "st": 175188,
-   "sl": 417631,
-   "run": 3,
-   "alerts": 5,
-   "team": 4
-  },
-  {
-   "t": "2026-11-25T13:39:42Z",
-   "h_rpm": 0.0,
-   "h_arpm": 0.0,
-   "h_err": 0,
-   "h_rec": 16,
-   "h_abs": 2,
-   "h_left": 115144,
-   "h_gd": 1534,
-   "h_gt": 979,
-   "h_pass": 532,
-   "h_wk": 0,
-   "h_ws": 35,
-   "c_done": 165255,
-   "c_txt": 57006,
-   "c_ppm": 0.0,
-   "c_req": 117672,
-   "c_rpm": 0.1,
-   "c_match": 71166,
-   "s2_parts": 420,
-   "s2_match": 249098,
-   "s1": 265,
-   "s1_fl": 0,
-   "s1_h": 0,
-   "te": 219,
-   "te_fl": 0,
-   "te_h": 0,
-   "dv": 252,
-   "dv_fl": 0,
-   "dv_h": 0,
-   "b_model_curve": 7959,
-   "b_ejclane": 1548,
-   "b_cclane": 57713,
-   "b_quality_v1": 3,
-   "b_verify_pool_v2": 5,
-   "b_review_pretrain": 5,
-   "b_weak_v1": 27168,
-   "b_embed_v1": 322612,
-   "b_corpus_v1": 3,
-   "disk": 19.2,
-   "mem": 79.4,
-   "swap": 6.09,
-   "st": 175188,
-   "sl": 417631,
-   "run": 3,
-   "alerts": 5,
-   "team": 4
-  },
   {
    "t": "2026-11-25T13:40:42Z",
    "h_rpm": 0.0,
@@ -6142,6 +5904,246 @@
    "sl": 417631,
    "run": 3,
    "alerts": 4,
+   "team": 4
+  },
+  {
+   "t": "2026-11-25T14:05:42Z",
+   "h_rpm": 0.0,
+   "h_arpm": 0.0,
+   "h_err": 0,
+   "h_rec": 16,
+   "h_abs": 2,
+   "h_left": 115144,
+   "h_gd": 1534,
+   "h_gt": 979,
+   "h_pass": 532,
+   "h_wk": 0,
+   "h_ws": 35,
+   "c_done": 165274,
+   "c_txt": 57006,
+   "c_ppm": 0.3,
+   "c_req": 117672,
+   "c_rpm": 0.1,
+   "c_match": 71166,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 265,
+   "s1_fl": 1,
+   "s1_h": 0,
+   "te": 219,
+   "te_fl": 2,
+   "te_h": 0,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_model_curve": 7959,
+   "b_ejclane": 1548,
+   "b_cclane": 57713,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 54.6,
+   "mem": 79.7,
+   "swap": 6.59,
+   "st": 175188,
+   "sl": 417631,
+   "run": 3,
+   "alerts": 4,
+   "team": 4
+  },
+  {
+   "t": "2026-11-25T14:06:42Z",
+   "h_rpm": 0.0,
+   "h_arpm": 0.0,
+   "h_err": 0,
+   "h_rec": 16,
+   "h_abs": 2,
+   "h_left": 115144,
+   "h_gd": 1534,
+   "h_gt": 979,
+   "h_pass": 532,
+   "h_wk": 0,
+   "h_ws": 35,
+   "c_done": 165274,
+   "c_txt": 57006,
+   "c_ppm": 0.3,
+   "c_req": 117672,
+   "c_rpm": 0.1,
+   "c_match": 71166,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 265,
+   "s1_fl": 1,
+   "s1_h": 0,
+   "te": 219,
+   "te_fl": 2,
+   "te_h": 0,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_model_curve": 7959,
+   "b_ejclane": 1548,
+   "b_cclane": 57713,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 54.4,
+   "mem": 79.7,
+   "swap": 6.59,
+   "st": 175188,
+   "sl": 417631,
+   "run": 3,
+   "alerts": 4,
+   "team": 4
+  },
+  {
+   "t": "2026-11-25T14:07:42Z",
+   "h_rpm": 0.0,
+   "h_arpm": 0.0,
+   "h_err": 0,
+   "h_rec": 16,
+   "h_abs": 2,
+   "h_left": 115144,
+   "h_gd": 1534,
+   "h_gt": 979,
+   "h_pass": 532,
+   "h_wk": 0,
+   "h_ws": 35,
+   "c_done": 165274,
+   "c_txt": 57006,
+   "c_ppm": 0.3,
+   "c_req": 117672,
+   "c_rpm": 0.1,
+   "c_match": 71166,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 265,
+   "s1_fl": 0,
+   "s1_h": 0,
+   "te": 219,
+   "te_fl": 2,
+   "te_h": 0,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_model_curve": 7959,
+   "b_ejclane": 1548,
+   "b_cclane": 57713,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 54.2,
+   "mem": 78.7,
+   "swap": 6.59,
+   "st": 175188,
+   "sl": 417631,
+   "run": 3,
+   "alerts": 5,
+   "team": 4
+  },
+  {
+   "t": "2026-11-25T14:08:42Z",
+   "h_rpm": 0.0,
+   "h_arpm": 0.0,
+   "h_err": 0,
+   "h_rec": 16,
+   "h_abs": 2,
+   "h_left": 115144,
+   "h_gd": 1534,
+   "h_gt": 979,
+   "h_pass": 532,
+   "h_wk": 0,
+   "h_ws": 35,
+   "c_done": 165274,
+   "c_txt": 57006,
+   "c_ppm": 0.3,
+   "c_req": 117672,
+   "c_rpm": 0.1,
+   "c_match": 71166,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 265,
+   "s1_fl": 0,
+   "s1_h": 0,
+   "te": 219,
+   "te_fl": 0,
+   "te_h": 0,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_model_curve": 7959,
+   "b_ejclane": 1548,
+   "b_cclane": 57713,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 53.9,
+   "mem": 78.2,
+   "swap": 6.56,
+   "st": 175188,
+   "sl": 417631,
+   "run": 3,
+   "alerts": 5,
+   "team": 4
+  },
+  {
+   "t": "2026-11-25T14:18:52Z",
+   "h_rpm": 0.0,
+   "h_arpm": 0.0,
+   "h_err": 0,
+   "h_rec": 16,
+   "h_abs": 2,
+   "h_left": 115144,
+   "h_gd": 1534,
+   "h_gt": 979,
+   "h_pass": 532,
+   "h_wk": 0,
+   "h_ws": 35,
+   "c_done": 165274,
+   "c_txt": 57006,
+   "c_ppm": 0.3,
+   "c_req": 117672,
+   "c_rpm": 0.0,
+   "c_match": 71166,
+   "s2_parts": 420,
+   "s2_match": 249098,
+   "s1": 265,
+   "s1_fl": 0,
+   "s1_h": 0,
+   "te": 219,
+   "te_fl": 0,
+   "te_h": 0,
+   "dv": 252,
+   "dv_fl": 0,
+   "dv_h": 0,
+   "b_model_curve": 7959,
+   "b_ejclane": 1548,
+   "b_cclane": 57713,
+   "b_quality_v1": 3,
+   "b_verify_pool_v2": 5,
+   "b_review_pretrain": 5,
+   "b_weak_v1": 27168,
+   "b_embed_v1": 322612,
+   "b_corpus_v1": 3,
+   "disk": 53.9,
+   "mem": 75.6,
+   "swap": 6.56,
+   "st": 175188,
+   "sl": 417631,
+   "run": 3,
+   "alerts": 5,
    "team": 4
   }
  ]
